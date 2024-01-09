@@ -40,7 +40,7 @@ const PopularCategories = () => {
                     <p className='text-lg underline cursor-pointer'>View all Categories</p>
                 </div>
             </div>
-            <div className='flex flex-row gap-2 md:gap-3 flex-wrap mt-10 mx-2 md:mx-3 cursor-pointer m-auto text-center justify-center'>
+            <div className='grid grid-cols-6 gap-2 md:gap-3 mt-10 mx-10 cursor-pointer m-auto text-center justify-center'>
                 {slides.map((slide) => (
 
                     <div key={slide.id} className='flex flex-col items-center rounded-lg pb-5 h-[190px] bg-[#f2f2f2] group'>
@@ -50,7 +50,7 @@ const PopularCategories = () => {
                             width={150}
                             height={150}
                             style={{ objectFit: 'cover' }}
-                            className='rounded-full w-[170px] h-[150px] scale-90 transition-transform transform-gpu group-hover:scale-100 duration-700 ease-in-out'
+                            className='rounded-full h-[150px] scale-90 transition-transform transform-gpu group-hover:scale-100 duration-700 ease-in-out'
                         />
                         <h5 className='font-bold pb-16'>
                             <Link href="/pages/Shop">

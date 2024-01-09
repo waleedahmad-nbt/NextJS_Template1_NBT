@@ -10,12 +10,24 @@ import Comparison from './Comparison';
 import RelatedProducts from './Related products';
 import RecentlyViewed from './RecentlyViewed';
 import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart, removeFromCart } from '@/app/lib/redux/slices/cartSlice';
 
 const Details = () => {
 
 
     const [selectedThumbnailIndex, setSelectedThumbnailIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
+    const dispatch = useDispatch();
+    const CartItems = useSelector(state => state.cart.items);
+
+    const handleAddToCart = (item) => {
+        dispatch(addToCart(item));
+    }
+
+    const handleRemoveFromCart = (item) => {
+        dispatch(removeFromCart(item));
+    }
 
     const handleMouseEnter = () => {
         setIsHovered(true);
@@ -212,6 +224,15 @@ const Details = () => {
                 <RelatedProducts />
                 <RecentlyViewed />
             </div>
+
+
+            {CartItems.map((item) => (
+                <li key={item.id}>
+                    {item.name} - Quantity: {item.quantity}
+                    <button onClick={() => handleAddToCart(item)}>Add One</button>
+                    <button onClick={() => handleRemoveFromCart(item)}>Remove One</button>
+                </li>
+            ))}
         </>
     );
 };
