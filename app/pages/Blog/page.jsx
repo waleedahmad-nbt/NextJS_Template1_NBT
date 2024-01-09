@@ -85,7 +85,6 @@ const page = () => {
                     </div>
 
 
-                    {/* Right Side */}
                     <div className='md:w-[300px] mx-4 w-full flex flex-col gap-6'>
                         <div className='mb-3'>
                             <h1 className='text-2xl font-semibold mb-3'>Categories</h1>

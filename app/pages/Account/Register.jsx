@@ -134,7 +134,6 @@ export const Register = () => {
                     <button type="submit" className="hover:scale-105 duration-300 focus:ring-4
                      focus:outline-none bg-black text-white font-medium rounded-full text-lg 
                      px-4 py-2 text-center ">
-                        {/* REGISTER */}
                         {buttonDisabled ? "No signup" : "Signup"}
                     </button>
                 </form>
