@@ -8,7 +8,6 @@ import Music from './components/Electronics&Music/Music';
 import PopularCategories from './components/Categories/PopularCategories';
 import Search from './components/Searches/Search';
 import SwiperComponent from './components/Swiper/Swiper';
-import ForgotPassword from './components/ForgotPassword/page';
 
 export default function Home() {
   return (

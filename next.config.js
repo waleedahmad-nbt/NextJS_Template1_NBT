@@ -4,9 +4,7 @@ const { parsed: localEnv } = require('dotenv').config({
 });
 
 module.exports = {
-  env: {
-    TOKEN_SECRET: localEnv.TOKEN_SECRET,
-  },
+ 
   images: {
     domains: ['minimog-4437.kxcdn.com'],
   },
