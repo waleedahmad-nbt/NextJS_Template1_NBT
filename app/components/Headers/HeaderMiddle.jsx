@@ -127,25 +127,24 @@ const HeaderMiddle = () => {
   return (
     <>
       <div className="xl:container xl:mx-auto">
-        <div className={`mb-4 mx-0 lg:mx-9 ${showNewHeader ? 'pointer-events-none' : ''}`}>
+        <div className={`mb-4 mx-4 lg:mx-9 ${showNewHeader ? 'pointer-events-none' : ''}`}>
 
-          <div className="flex flex-row justify-between gap-5 mx-6 sm:mx-0">
-
-            <div className="flex items-center flex-shrink-0">
+          <div className="flex flex-row justify-between items-center  mx-6 sm:mx-0 p-4 md:p-0">
+            <div className="flex items-center mt-3">
               <Sidebar />
               <Link href='/'>
                 <Image
                   src={Logo}
                   alt="Logo Img"
-                  className="mt-4 ml-2 md:ml-6 w-[175px]"
+                  className="ml-2 md:ml-6 w-[130px] md:w-[175px]"
                 />
               </Link>
             </div>
-            <div className="mt-3 w-[40%] rounded-3xl border-2 border-[#D2D2D2] hidden md:block">
+            <div className="mt-3 w-[36%] lg:w-[40%] rounded-3xl border-2 border-[#D2D2D2] hidden md:block">
               <form>
                 <div className="flex">
                   <button onClick={handleCategoryClick} id="dropdown-button" data-dropdown-toggle="dropdown"
-                    className="flex-shrink-0 z-10 inline-flex items-center py-2 px-4 text-base font-medium border-r text-center text-black" type="button">All Categories
+                    className="flex-shrink-0 z-10 inline-flex items-center py-2 px-2 md:px-4 text-base font-medium border-r text-center text-black" type="button">All Categories
                     <svg className="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                     </svg>
@@ -161,7 +160,7 @@ const HeaderMiddle = () => {
                       placeholder="Search Products"
                     />
 
-                    <button onClick={handleCategoryClick} type="submit" className="absolute top-0 end-0 p-2.5 text-sm font-medium border-none h-full text-black">
+                    <button onClick={handleCategoryClick} type="submit" className="absolute bg-white rounded-full top-0 end-0 p-2.5 text-sm font-medium border-none h-full text-black">
                       <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                       </svg>
@@ -205,7 +204,7 @@ const HeaderMiddle = () => {
               </div>
               {/* Search */}
               <div className="block md:hidden">
-                <div onClick={handleToggleHeader} className="block mt-4 lg:inline-block lg:mt-0 lg:ml-6 align-middle text-black hover:text-gray-700">
+                <div onClick={handleToggleHeader} className="block  lg:inline-block  align-middle text-black hover:text-gray-700">
                   <Tooltip
                     title="Search" // Tooltip text
                     position="bottom"
@@ -220,7 +219,7 @@ const HeaderMiddle = () => {
                 </div>
               </div>
 
-              <div className="block  lg:inline-block align-middle text-black hover:text-gray-700">
+              <div className="block lg:inline-block align-middle text-black hover:text-gray-700">
                 <Tooltip
                   title="Cart" // Tooltip text
                   position="bottom"

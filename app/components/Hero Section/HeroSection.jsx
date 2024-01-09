@@ -32,16 +32,16 @@ const HeroSection = () => {
 
           <div className="relative flex rounded-lg h-full w-full group overflow-hidden">
             <img
-              className="w-full h-260px object-cover rounded-lg  transition-transform transform group-hover:scale-110 duration-700"
+              className="w-full object-cover rounded-lg  transition-transform transform group-hover:scale-110 duration-700"
               src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/home-banner-01.jpg"
               alt="Background Image"
             />
-            <div className="absolute flex flex-col justify-between space-y-8 xl:space-y-10 w-[250px] p-6">
+            <div className="absolute flex flex-col justify-between md:p-6">
               <div>
                 <h3 className="text-2xl lg:text-3xl font-bold text-black">New Deals at Best Prices</h3>
-                <p className="text-xl leading-2 mt-2 font-semibold text-black">From $40.00</p>
+                <p className="text-xl font-semibold text-black">From $40.00</p>
               </div>
-              <div className="text-md mt-auto underline">
+              <div className="text-md underline">
                 <Link href="/pages/Shop">
                   <span className="button-text">Browse Deals</span>
                 </Link>
@@ -49,6 +49,7 @@ const HeroSection = () => {
             </div>
 
           </div>
+          
           <div className="relative flex rounded-lg h-full w-full group overflow-hidden">
             <img
               className="w-full h-260px object-cover rounded-lg  transition-transform transform group-hover:scale-110 duration-700"

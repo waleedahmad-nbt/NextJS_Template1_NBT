@@ -116,7 +116,7 @@ const ThreeColumn =() => {
                         <div key={product.id}
                          onMouseEnter={() => setHoveredProduct(product.id)}
                          onMouseLeave={() => setHoveredProduct(null)}
-                        className='relative cursor-pointer h-[470px] w-[300px] mt-6 p-3 rounded-lg group'>
+                        className='relative cursor-pointer h-[470px] w-[320px] mt-6 p-3 rounded-lg group'>
 
                             {/* Image container */}
                             <div className='relative w-full h-[216px] p-3 overflow-hidden transition-transform group-hover:transform duration-700 ease-in-out group-hover:scale-105'>

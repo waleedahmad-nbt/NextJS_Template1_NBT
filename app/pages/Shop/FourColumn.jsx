@@ -111,13 +111,13 @@ const FourColumn = () => {
         <>
 
 
-            <div className={`flex flex-wrap`}>
+            <div className={`grid grid-cols-4`}>
                 {products.map(product => (
                     <>
                         <div key={product.id}
                             onMouseEnter={() => setHoveredProduct(product.id)}
                             onMouseLeave={() => setHoveredProduct(null)}
-                            className='relative cursor-pointer  h-[450px] w-[246px] mt-6 p-3 rounded-lg group'>
+                            className='relative cursor-pointer  h-[460px] w-full mt-6 p-3 rounded-lg group'>
 
                             {/* Image container */}
                             <div className='relative w-full h-[216px] p-3 overflow-hidden transition-transform group-hover:transform duration-700 ease-in-out group-hover:scale-105'>
@@ -170,7 +170,7 @@ const FourColumn = () => {
 
                                 {/* Read more button */}
                                 <a
-                                    className="bg-[#F1F1F1] mt-2 text-black px-5 group-hover:bg-black group-hover:text-white flex text-center justify-center font-semibold py-3 rounded-full  duration-300 ease-in-out transform hover:scale-105 opacity-0 group-hover:opacity-100 transition-opacity"
+                                    className="bg-[#F1F1F1] mt-4 text-black px-5 group-hover:bg-black group-hover:text-white flex text-center justify-center font-semibold py-3 rounded-full  duration-300 ease-in-out transform hover:scale-105 opacity-0 group-hover:opacity-100 transition-opacity"
                                 >
                                     Select Options
                                 </a>

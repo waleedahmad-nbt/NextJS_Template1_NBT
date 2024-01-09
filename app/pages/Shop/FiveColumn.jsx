@@ -107,18 +107,18 @@ const FiveColumn = () => {
     ];
     return (
         <>
-          
 
-            <div className={`flex flex-wrap`}>
+
+            <div className={`grid grid-cols-5`}>
                 {products.map(product => (
                     <>
                         <div key={product.id}
                             onMouseEnter={() => setHoveredProduct(product.id)}
                             onMouseLeave={() => setHoveredProduct(null)}
-                            className='relative cursor-pointer  h-[450px] w-[195px] mt-6 p-2 rounded-lg group'>
+                            className='relative cursor-pointer  h-[450px] w-full mt-6 rounded-lg group'>
 
                             {/* Image container */}
-                            <div className='relative w-full h-[216px] p-3 overflow-hidden transition-transform group-hover:transform duration-700 ease-in-out group-hover:scale-105'>
+                            <div className='relative w-full h-[216px] p-2 overflow-hidden transition-transform group-hover:transform duration-700 ease-in-out group-hover:scale-105'>
                                 <img
                                     src={hoveredProduct === product.id ? product.hoverImage : product.imageSrc}
                                     className='w-full h-full object-cover'
@@ -141,7 +141,7 @@ const FiveColumn = () => {
                             </div>
 
                             {/* Content */}
-                            < div className='flex flex-col gap-2 mt-2' >
+                            < div className='flex flex-col gap-2 mt-2 p-2' >
                                 <h6 className='text-gray-500 text-xs font-medium hover:text-gray-800 duration-500 tracking-tight uppercase'>
                                     <a href="https://minimog.thememove.com/supergear/product-category/tv-audio/bluetooth-speakers/">
                                         {product.category}
@@ -168,7 +168,9 @@ const FiveColumn = () => {
 
                                 {/* Read more button */}
                                 <a
-                                    className="bg-[#F1F1F1] mt-2 text-black px-5 group-hover:bg-black group-hover:text-white flex text-center justify-center font-semibold py-3 rounded-full  duration-300 ease-in-out transform hover:scale-105 opacity-0 group-hover:opacity-100 transition-opacity"
+                                    className="bg-[#F1F1F1] mt-2 text-black px-5 group-hover:bg-black group-hover:text-white 
+                                    flex text-center justify-center font-semibold py-3 rounded-full  duration-300 ease-in-out transform 
+                                    hover:scale-105 opacity-0 group-hover:opacity-100 transition-opacity"
                                 >
                                     Select Options
                                 </a>
@@ -181,7 +183,7 @@ const FiveColumn = () => {
                     </>
                 ))}
             </div>
-            
+
         </>
     )
 }
