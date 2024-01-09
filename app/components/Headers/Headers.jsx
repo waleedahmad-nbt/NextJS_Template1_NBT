@@ -23,9 +23,9 @@ const Headers = () => {
   return (
     <>
       <header className="lg:mb-0 mb-2">
-        <div className="h-8 mt-3 mx-4 lg:mx-9 hidden md:block">
-          <div className="container mx-auto">
-            <div className="flex justify-between my-2 font-sans font-semibold">
+        <div className="py-2 hidden md:block">
+          <div className="xl:container xl:mx-auto">
+            <div className="flex justify-between items-center mx-10">
 
               <div className="hidden lg:block">
                 <div className="flex flex-row items-center gap-5">
@@ -46,14 +46,14 @@ const Headers = () => {
               </div>
 
               <div className="flex flex-row gap-1">
-                <span class="relative text-white font-bold text-16 rounded-3xl bg-red-500 w-14 h-6 mr-2 text-center">
+                <span class="relative text-white font-bold text-16 rounded-3xl bg-[#EC5D4D] w-[54px] h-[24px] mr-2 text-center">
                   Hot
                 </span>
 
                 <p>✌🏼 Free Express Shipping on orders $200!</p>
               </div>
 
-              <div className="flex items-center h-6 relative">
+              <div className="flex items-center relative">
                 <div className="relative z-50"
                   onMouseOver={handleToggleLanguageDropdown}
                   onMouseOut={handleToggleLanguageDropdown}
@@ -89,7 +89,7 @@ const Headers = () => {
                   <div
                     id="dropdownUsers"
                     className={`z-40 ${isLanguageDropdownOpen ? 'block' : 'hidden'} bg-white divide-y divide-gray-100 rounded-md shadow w-36 dark:bg-gray-700 dark:divide-gray-600 absolute right-0`}
-                 
+
                   >
                     <ul className="h-auto py-2 overflow-y-auto text-gray-700 dark:text-gray-200" aria-labelledby="dropdownUsersButton">
                       <li>
@@ -143,7 +143,7 @@ const Headers = () => {
                   <div
                     id="dropdownHover"
                     className={`z-40 ${isCurrencyDropdownOpen ? 'block' : 'hidden'} bg-white divide-y divide-gray-100 rounded-md shadow w-28 dark:bg-gray-700 absolute right-0`}
-                   
+
                   >
                     <ul className="py-2 text-sm text-gray-700 text-center dark:text-gray-200" aria-labelledby="dropdownHoverButton">
                       <li>
@@ -163,9 +163,8 @@ const Headers = () => {
 
             </div>
           </div>
-          <hr />
+          <hr className="mt-1" />
         </div>
-
         <HeaderMiddle />
         <HeaderBottom />
       </header>

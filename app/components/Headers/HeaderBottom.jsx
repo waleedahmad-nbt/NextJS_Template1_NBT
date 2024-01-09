@@ -5,7 +5,7 @@ import HomeSection from "./HomeSection";
 const HeaderBottom = () => {
     return (
         <>
-            <nav className="bg-black relative p-3 mt-14 font-normal hidden lg:block">
+            <nav className="bg-black relative p-3 font-normal hidden xl:block">
                 <div className="">
                     <div className="flex justify-evenly ">
                         <div className="flex gap-20 font-bold text-white">

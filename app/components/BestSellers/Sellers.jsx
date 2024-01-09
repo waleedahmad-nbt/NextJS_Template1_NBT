@@ -142,6 +142,7 @@ const Sellers = () => {
   };
   return (
     <>
+    <div className='xl:container xl:mx-auto'>
       <div className='mt-20 mx-6 md:mx-16'>
         <div className='flex flex-col md:flex-row justify-between border-b'>
           <h1 className='text-4xl leading-10 font-bold'>Top 20 Best Seller</h1>
@@ -218,6 +219,7 @@ const Sellers = () => {
             </div>
           ))}
         </Slider>
+      </div>
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Logo from "../../../public/images/Logo.png";
-import { IoPerson, IoBagOutline, IoMenu } from "react-icons/io5";
+import { IoPerson, IoBagOutline, IoMenu, IoPersonOutline } from "react-icons/io5";
 import { CiStar } from "react-icons/ci";
 import { IoIosSearch } from "react-icons/io";
 import React, { useEffect, useRef, useState } from "react";
@@ -13,6 +13,7 @@ import { Tooltip } from 'react-tippy';
 import 'react-tippy/dist/tippy.css';
 import AllModals from "./SingIn";
 import { GoSearch } from "react-icons/go";
+import { FaRegStar } from "react-icons/fa";
 
 
 const HeaderMiddle = () => {
@@ -101,7 +102,7 @@ const HeaderMiddle = () => {
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-      document.body.style.overflow = "auto"; 
+      document.body.style.overflow = "auto";
     };
   }, [modalRef, showNewHeader]);
 
@@ -125,10 +126,10 @@ const HeaderMiddle = () => {
 
   return (
     <>
-      <div className="container mx-auto">
-        <div className={`h-8 mt-2 mx-0 mb-4 lg:mx-9 ${showNewHeader ? 'pointer-events-none' : ''}`}>
+      <div className="xl:container xl:mx-auto">
+        <div className={`mb-4 mx-0 lg:mx-9 ${showNewHeader ? 'pointer-events-none' : ''}`}>
 
-          <div className="flex flex-row justify-between gap-10 my-2 mx-6 sm:mx-0">
+          <div className="flex flex-row justify-between gap-5 mx-6 sm:mx-0">
 
             <div className="flex items-center flex-shrink-0">
               <Sidebar />
@@ -136,15 +137,15 @@ const HeaderMiddle = () => {
                 <Image
                   src={Logo}
                   alt="Logo Img"
-                  className="mt-4 ml-2 md:ml-6 w-[150px] md:w-[200px]"
+                  className="mt-4 ml-2 md:ml-6 w-[175px]"
                 />
               </Link>
             </div>
-            <div className="mt-3 md:w-3/5 lg:w-1/2 w-1/2 rounded-3xl border-2 hidden md:block">
+            <div className="mt-3 w-[40%] rounded-3xl border-2 border-[#D2D2D2] hidden md:block">
               <form>
                 <div className="flex">
                   <button onClick={handleCategoryClick} id="dropdown-button" data-dropdown-toggle="dropdown"
-                    className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium border-r text-center text-gray-900" type="button">All categories
+                    className="flex-shrink-0 z-10 inline-flex items-center py-2 px-4 text-base font-medium border-r text-center text-black" type="button">All Categories
                     <svg className="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                     </svg>
@@ -156,7 +157,7 @@ const HeaderMiddle = () => {
                       onChange={handleInputChange}
                       type="search"
                       id="search-dropdown"
-                      className="block p-3 border-gray-200 rounded-full w-full z-20 text-sm text-gray-900"
+                      className="block p-3 border-gray-200 rounded-full w-full z-20 text-sm text-black"
                       placeholder="Search Products"
                     />
 
@@ -169,8 +170,7 @@ const HeaderMiddle = () => {
                 </div>
               </form>
             </div>
-            <div className="flex items-center gap-4 text-2xl relative">
-
+            <div className="flex items-center text-center space-x-6 text-2xl relative">
               <Tooltip
                 title="Login"
                 position="bottom"
@@ -178,13 +178,13 @@ const HeaderMiddle = () => {
                 animation="scale"
                 arrow={true}
               >
-                <IoPerson
-                  className="hidden md:block cursor-pointer hover:text-gray-500 flex-1 w-6 h-6"
+                <IoPersonOutline
+                  className="hidden md:block cursor-pointer hover:text-gray-500 w-5 h-5"
                   onClick={openSignInModal}
                 />
               </Tooltip>
               <div className="hidden md:block">
-                <div className="block mt-4 lg:inline-block lg:mt-0 lg:ml-6 align-middle text-black hover:text-gray-700">
+                <div className="flex items-center  text-black hover:text-gray-700">
                   <Link href="/pages/Wishlist">
                     <Tooltip
                       title="Wishlist" // Tooltip text
@@ -194,8 +194,8 @@ const HeaderMiddle = () => {
                       arrow={true}
                     >
                       <p className="relative flex">
-                        <CiStar className="cursor-pointer hover:text-gray-500 flex-1 w-8 h-8 fill-current" />
-                        <span className="absolute right-0 top-0 rounded-full bg-red-700 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm leading-tight text-center">
+                        <FaRegStar className="cursor-pointer hover:text-gray-500 w-5 h-5" />
+                        <span className="absolute right-2 left-4 -top-2 rounded-full bg-[#e02b2b] w-5 h-5  p-0 m-0 text-white text-sm text-center">
                           5
                         </span>
                       </p>
@@ -203,7 +203,7 @@ const HeaderMiddle = () => {
                   </Link>
                 </div>
               </div>
-
+              {/* Search */}
               <div className="block md:hidden">
                 <div onClick={handleToggleHeader} className="block mt-4 lg:inline-block lg:mt-0 lg:ml-6 align-middle text-black hover:text-gray-700">
                   <Tooltip
@@ -214,13 +214,13 @@ const HeaderMiddle = () => {
                     arrow={true}
                   >
                     <p className="relative flex">
-                      <GoSearch className="cursor-pointer hover:text-gray-500 flex-1 w-6 h-6 fill-current" />
+                      <GoSearch className="cursor-pointer hover:text-gray-500 w-6 h-6 fill-current" />
                     </p>
                   </Tooltip>
                 </div>
               </div>
 
-              <div className="block mt-4 lg:inline-block lg:mt-0 lg:ml-6 align-middle text-black hover:text-gray-700">
+              <div className="block  lg:inline-block align-middle text-black hover:text-gray-700">
                 <Tooltip
                   title="Cart" // Tooltip text
                   position="bottom"
@@ -234,9 +234,8 @@ const HeaderMiddle = () => {
                     className="relative flex"
                     onClick={handleCartIconClick}
                   >
-                    <IoBagOutline className="cursor-pointer hover:text-gray-500 flex-1 w-7 h-7 fill-current" />
-                    <span className="absolute -right-1 -top-1 rounded-full bg-red-700 w-4 h-4
-                    p-0 m-0 text-white font-mono text-sm leading-tight text-center">
+                    <IoBagOutline className="cursor-pointer hover:text-gray-500 w-6 h-6 fill-current" />
+                    <span className="absolute right-2 left-4 -top-2 rounded-full bg-[#e02b2b] w-5 h-5  p-0 m-0 text-white text-sm text-center">
                       5
                     </span>
                   </p>

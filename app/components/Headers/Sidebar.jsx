@@ -33,7 +33,7 @@ const Sidebar = () => {
     return (
         <>
             {/* Drawer init and show */}
-            <IoMenu className="text-3xl mt-4 block lg:hidden" onClick={toggleDrawer} />
+            <IoMenu className="text-3xl mt-4 block xl:hidden" onClick={toggleDrawer} />
 
             <div
                 id="drawer-navigation"

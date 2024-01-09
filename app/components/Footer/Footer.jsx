@@ -63,64 +63,66 @@ const Footer = () => {
       <div className='bg-[#F7F7F7] mt-16'>
 
         {/* Show on sm and lg screen */}
-        <div className='md:hidden lg:flex flex flex-row justify-between p-7 mx-0 md:mx-10 '>
-          <div className='w-full md:w-1/5'>
-            <div className='flex flex-col md:flex-row text-center items-center  border-gray-300'>
-              <img
-                src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/footer-image-box-01.png"
-                alt=""
-                className='w-[45px] h-[50px]'
-              />
-              <div className='flex flex-col text-center ml-2 gap-2 mt-5'>
-                <h2 className='text-base leading-6 text-start text-[#000000] font-bold'>High Quality Selection</h2>
-                <p className='text-sm text-[#666] leading-5 text-start font-medium hidden md:block'>
-                  Total Product Quality Control For Peace Of Mind
-                </p>
+        <div className='xl:container xl:mx-auto'>
+          <div className='md:hidden lg:flex flex flex-row justify-between p-7 mx-0 md:mx-10 '>
+            <div className='w-full md:w-1/5'>
+              <div className='flex flex-col md:flex-row text-center items-center  border-gray-300'>
+                <img
+                  src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/footer-image-box-01.png"
+                  alt=""
+                  className='w-[45px] h-[50px]'
+                />
+                <div className='flex flex-col text-center ml-2 gap-2 mt-5'>
+                  <h2 className='text-base leading-6 text-start text-[#000000] font-bold'>High Quality Selection</h2>
+                  <p className='text-sm text-[#666] leading-5 text-start font-medium hidden md:block'>
+                    Total Product Quality Control For Peace Of Mind
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className='w-[1px] h-[60px] my-auto bg-gray-300'></div>
+            <div className='w-[1px] h-[60px] my-auto bg-gray-300'></div>
 
-          <div className='w-full md:w-1/5 mt-4 md:mt-0'>
-            <div className='flex flex-col md:flex-row items-center border-gray-300'>
-              <img
-                src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/footer-image-box-02.png"
-                alt=""
-              />
-              <div className='flex flex-col ml-2 gap-2 mt-5'>
-                <h2 className='text-base leading-6 text-[#000000] font-bold'>Affordable Prices</h2>
-                <p className='text-sm text-[#666] leading-5 font-medium hidden md:block'>Factory Direct Prices For Maximum Savings</p>
+            <div className='w-full md:w-1/5 mt-4 md:mt-0'>
+              <div className='flex flex-col md:flex-row items-center border-gray-300'>
+                <img
+                  src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/footer-image-box-02.png"
+                  alt=""
+                />
+                <div className='flex flex-col ml-2 gap-2 mt-5'>
+                  <h2 className='text-base leading-6 text-[#000000] font-bold'>Affordable Prices</h2>
+                  <p className='text-sm text-[#666] leading-5 font-medium hidden md:block'>Factory Direct Prices For Maximum Savings</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className='w-[1px] h-[70px] my-auto bg-gray-300'></div>
+            <div className='w-[1px] h-[70px] my-auto bg-gray-300'></div>
 
-          <div className='w-full md:w-1/5 mt-4 md:mt-0'>
-            <div className='flex  flex-col md:flex-row items-center border-gray-300'>
-              <img
-                src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/footer-image-box-03.png"
-                alt=""
-              />
-              <div className='flex flex-col ml-2 gap-2 mt-5'>
-                <h2 className='text-base leading-6 text-[#000000] font-bold'>Express Shipping</h2>
-                <p className='text-sm text-[#666] leading-5 font-medium hidden md:block'>Fast, Reliable Delivery From Global Warehouses</p>
+            <div className='w-full md:w-1/5 mt-4 md:mt-0'>
+              <div className='flex  flex-col md:flex-row items-center border-gray-300'>
+                <img
+                  src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/footer-image-box-03.png"
+                  alt=""
+                />
+                <div className='flex flex-col ml-2 gap-2 mt-5'>
+                  <h2 className='text-base leading-6 text-[#000000] font-bold'>Express Shipping</h2>
+                  <p className='text-sm text-[#666] leading-5 font-medium hidden md:block'>Fast, Reliable Delivery From Global Warehouses</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className='w-[1px] h-[70px] my-auto bg-gray-300'></div>
+            <div className='w-[1px] h-[70px] my-auto bg-gray-300'></div>
 
-          <div className='w-full md:w-1/5 mt-4 md:mt-0'>
-            <div className='flex flex-col md:flex-row items-center'>
-              <img src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/footer-image-box-04.png" alt="" />
-              <div className='flex flex-col ml-2 gap-2 mt-5'>
-                <h2 className='text-base leading-6 text-[#000000] font-bold'>Worry Free</h2>
-                <p className='text-sm text-[#666] leading-5 font-medium hidden md:block'>
-                  Instant Access To Professional Support
-                </p>
+            <div className='w-full md:w-1/5 mt-4 md:mt-0'>
+              <div className='flex flex-col md:flex-row items-center'>
+                <img src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/footer-image-box-04.png" alt="" />
+                <div className='flex flex-col ml-2 gap-2 mt-5'>
+                  <h2 className='text-base leading-6 text-[#000000] font-bold'>Worry Free</h2>
+                  <p className='text-sm text-[#666] leading-5 font-medium hidden md:block'>
+                    Instant Access To Professional Support
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
 
+          </div>
         </div>
 
         {/* Show only on md:screen */}
@@ -182,60 +184,63 @@ const Footer = () => {
       </div>
 
       {/* Middle Footer */}
-      <div className='hidden md:block duration-500 ease-in-out'>
-        <div className='grid  md:grid-cols-2 lg:grid-cols-4 p-6 md:p-14 gap-4 border-b'>
+      <div className='xl:container xl:mx-auto'>
+        <div className='hidden md:block duration-500 ease-in-out'>
+          <div className='grid  md:grid-cols-2 lg:grid-cols-4 p-6 md:p-14 gap-4'>
 
-          <div className='flex flex-col gap-4'>
-            <h1 className='fast font-bold'>FIND IT FAST</h1>
-            <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300 font-medium'>Top Searches</p>
-            <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>About Us</p>
-            <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Privacy Policy</p>
-            <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Terms and Conditions</p>
-            <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Testimonials</p>
-          </div>
-
-          <div className='flex flex-col gap-4'>
-            <h1 className='fast font-bold'>CUSTOMER CARE</h1>
-            <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>My Account</p>
-            <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Track Order</p>
-            <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Shop</p>
-            <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Wishlist</p>
-            <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Returns/Exchange</p>
-          </div>
-          <div className='flex flex-col gap-4'>
-            <h1 className='fast font-bold'>OTHER BUSINESS</h1>
-            <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Partnership Programs</p>
-            <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Associate Program</p>
-            <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Wholesale Socks</p>
-            <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Wholesale Funny Socks</p>
-          </div>
-
-          <div className='flex flex-col gap-4'>
-            <div>
-              <h1 className='fast font-bold'>NEWSLETTER</h1>
+            <div className='flex flex-col gap-4'>
+              <h1 className='fast font-bold'>FIND IT FAST</h1>
+              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300 font-medium'>Top Searches</p>
+              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>About Us</p>
+              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Privacy Policy</p>
+              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Terms and Conditions</p>
+              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Testimonials</p>
             </div>
 
-            <div className='flex items-center rounded-3xl w-full md:w-[250px] border-2 border-black'>
-              <input className='py-3 rounded-3xl px-2 focus:outline-none w-full' />
-              <button type='button' className='flex-shrink-0 px-3 py-2'>
-                <GrLinkNext className='text-xl font-medium text-gray-600 hover:text-black transition duration-300' />
-              </button>
+            <div className='flex flex-col gap-4'>
+              <h1 className='fast font-bold'>CUSTOMER CARE</h1>
+              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>My Account</p>
+              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Track Order</p>
+              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Shop</p>
+              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Wishlist</p>
+              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Returns/Exchange</p>
+            </div>
+            <div className='flex flex-col gap-4'>
+              <h1 className='fast font-bold'>OTHER BUSINESS</h1>
+              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Partnership Programs</p>
+              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Associate Program</p>
+              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Wholesale Socks</p>
+              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Wholesale Funny Socks</p>
             </div>
 
-            <p className='text-sm text-[#000] leading-5'>
-              {' '}
-              <span className='text-lg'>*</span> By Signing up here I agree to receive Minigear’s email newsletter.
-            </p>
-            <div className='flex flex-row gap-6 mt-3 text-lg'>
-              <FaPinterestP className='hover:text-gray-500 duration-300 cursor-pointer' />
-              <FaFacebookF className='hover:text-gray-500 duration-300 cursor-pointer' />
-              <FaInstagram className='hover:text-gray-500 duration-300 cursor-pointer' />
-              <FaTwitter className='hover:text-gray-500 duration-300 cursor-pointer' />
+            <div className='flex flex-col gap-4'>
+              <div>
+                <h1 className='fast font-bold'>NEWSLETTER</h1>
+              </div>
+
+              <div className='flex items-center rounded-3xl w-full md:w-[250px] border-2 border-black'>
+                <input className='py-3 rounded-3xl px-2 focus:outline-none w-full' />
+                <button type='button' className='flex-shrink-0 px-3 py-2'>
+                  <GrLinkNext className='text-xl font-medium text-gray-600 hover:text-black transition duration-300' />
+                </button>
+              </div>
+
+              <p className='text-sm text-[#000] leading-5'>
+                {' '}
+                <span className='text-lg'>*</span> By Signing up here I agree to receive Minigear’s email newsletter.
+              </p>
+              <div className='flex flex-row gap-6 mt-3 text-lg'>
+                <FaPinterestP className='hover:text-gray-500 duration-300 cursor-pointer' />
+                <FaFacebookF className='hover:text-gray-500 duration-300 cursor-pointer' />
+                <FaInstagram className='hover:text-gray-500 duration-300 cursor-pointer' />
+                <FaTwitter className='hover:text-gray-500 duration-300 cursor-pointer' />
+              </div>
             </div>
+
           </div>
-
         </div>
       </div>
+      <hr />
 
       {/* Faq Footer */}
       <section className="block md:hidden">
@@ -297,9 +302,11 @@ const Footer = () => {
 
 
       {/* Bottom Footer */}
-      <div className='flex flex-col md:flex-row mb-10 md:mb-3 gap-4 text-center justify-between p-8 items-center mx-8'>
-        <p className='text-sm leading-5 tracking-wider text-gray-500'>© 2022 Minimog Theme. All rights reserved.</p>
-        <img src="https://minimog-4437.kxcdn.com/wp-content/uploads/2021/11/payment.png" alt="" />
+      <div className='xl:container xl:mx-auto'>
+        <div className='flex flex-col md:flex-row mb-10 md:mb-3 gap-4 text-center justify-between p-8 items-center mx-8'>
+          <p className='text-sm leading-5 tracking-wider text-gray-500'>© 2022 Minimog Theme. All rights reserved.</p>
+          <img src="https://minimog-4437.kxcdn.com/wp-content/uploads/2021/11/payment.png" alt="" />
+        </div>
       </div>
 
     </>

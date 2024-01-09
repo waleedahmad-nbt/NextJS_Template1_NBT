@@ -52,7 +52,7 @@ const SwiperComponent = () => {
 
   return (
     <>
-      <div className='container mx-auto'>
+      <div className='xl:container xl:mx-auto'>
         <div className='ml-3 md:ml-12 mx-10 md:mx-20 md:mt-5 lg:mt-0'>
           <div className='flex justify-between items-center'>
 
@@ -64,7 +64,7 @@ const SwiperComponent = () => {
               <Swiper
                 onSwiper={(swiper) => setSwiper(swiper)}
                 spaceBetween={10}
-                slidesPerView={6}
+                slidesPerView={7}
                 pagination={{ clickable: true }}
                 loop={true}
                 autoplay={{ delay: 1000, disableOnInteraction: false }}
@@ -91,7 +91,7 @@ const SwiperComponent = () => {
                         alt={`Slide ${slide.id}`}
                         width={120}
                         height={120}
-                        className="w-12 h-12 object-cover m-2 rounded-full transition-transform transform group-hover:scale-105 duration-700"
+                        className="w-12 h-12 object-cover m-2 bg-gray-400 rounded-full transition-transform transform group-hover:scale-105 duration-700"
                       />
                       <p className="text-sm font-semibold">{slide.text}</p>
                     </div>

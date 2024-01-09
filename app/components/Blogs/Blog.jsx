@@ -70,36 +70,38 @@ const Blog = () => {
 
     return (
         <>
-            <div className='mt-24 mx-4 sm:mx-16'>
-                <div className='flex text-center justify-center'>
-                    <h1 className='text-4xl font-bold'>Our Blog Posts</h1>
-                </div>
+            <div className='xl:container xl:mx-auto'>
+                <div className='mt-24 mx-4 sm:mx-16'>
+                    <div className='flex text-center justify-center'>
+                        <h1 className='text-4xl font-bold'>Our Blog Posts</h1>
+                    </div>
 
-                <div className='flex flex-row gap-4 mt-16'>
-                    <Swiper
-                        spaceBetween={50}
-                        slidesPerView={2}
-                        pagination={{ clickable: true }}
-                        loop={true}
-                        loopfillgroupwithblank={true}
-                        breakpoints={{
-                            640: {
-                                slidesPerView: 2,
-                            },
-                            768: {
-                                slidesPerView: 2,
-                            },
-                            1024: {
-                                slidesPerView: 3,
-                            },
-                        }}
-                    >
-                        {slides.map((slide) => (
-                            <SwiperSlide key={slide.id}>
-                                <BlogSlide {...slide} />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+                    <div className='flex flex-row gap-4 mt-16'>
+                        <Swiper
+                            spaceBetween={50}
+                            slidesPerView={2}
+                            pagination={{ clickable: true }}
+                            loop={true}
+                            loopfillgroupwithblank={true}
+                            breakpoints={{
+                                640: {
+                                    slidesPerView: 2,
+                                },
+                                768: {
+                                    slidesPerView: 2,
+                                },
+                                1024: {
+                                    slidesPerView: 3,
+                                },
+                            }}
+                        >
+                            {slides.map((slide) => (
+                                <SwiperSlide key={slide.id}>
+                                    <BlogSlide {...slide} />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
                 </div>
             </div>
         </>
