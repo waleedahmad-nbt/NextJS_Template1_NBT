@@ -20,7 +20,7 @@ const ProductSection = () => {
         <div className=''>
 
 
-            <ul className='custom-Scroll flex flex-row gap-8 mb-7 border-b border-gray-200 overflow-x-auto whitespace-nowrap'>
+            <ul className='custom-Scroll flex flex-row gap-8 mb-3 lg:mb-7 border-b border-gray-200 overflow-x-auto whitespace-nowrap'>
                 <li
                     className={`text-[#b3b3b3] font-semibold leading-6 text-lg active cursor-pointer hover:text-black duration-500 ${activeTab === 'description' ? 'text-black border-b-2 border-black' : ''
                         }`}

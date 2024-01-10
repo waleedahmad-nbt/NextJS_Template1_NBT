@@ -2,12 +2,6 @@
 import React, { useState } from 'react';
 import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 import { IoMdStar } from 'react-icons/io';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/swiper-bundle.css';
 import DealSlider from './DealSlider';
 
 
@@ -38,81 +32,7 @@ const Deals = () => {
     const [selectedImage, setSelectedImage] = useState(thumbnails.length > 0 ? thumbnails[0].imageUrl : '');
 
 
-    const sliderData = [
-        {
-            id: 1,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_29_1-170x170.jpg',
-            category: 'Bluetooth Speakers',
-            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
-            rating: 5,
-            originalPrice: '$139.00',
-            discountedPrice: '$139.00',
-        },
-        {
-            id: 2,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_13_2-170x170.jpg',
-            category: 'Bluetooth Speakers',
-            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
-            rating: 5,
-            originalPrice: '$139.00',
-            discountedPrice: '$139.00',
-        },
-        {
-            id: 3,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_01_1-655x655.jpeg',
-            category: 'Bluetooth Speakers',
-            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
-            rating: 5,
-            originalPrice: '$139.00',
-            discountedPrice: '$139.00',
-        },
-        {
-            id: 4,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_24_3-655x655.jpg',
-            category: 'Bluetooth Speakers',
-            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
-            rating: 5,
-            originalPrice: '$139.00',
-            discountedPrice: '$139.00',
-        },
-        {
-            id: 5,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_11_1-655x655.jpg',
-            category: 'Bluetooth Speakers',
-            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
-            rating: 5,
-            originalPrice: '$139.00',
-            discountedPrice: '$139.00',
-        },
-        {
-            id: 6,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_26_3-655x655.jpg',
-            category: 'Bluetooth Speakers',
-            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
-            rating: 5,
-            originalPrice: '$139.00',
-            discountedPrice: '$129.00',
-        },
-        {
-            id: 7,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_26_3-655x655.jpg',
-            category: 'Bluetooth Speakers',
-            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
-            rating: 5,
-            originalPrice: '$139.00',
-            discountedPrice: '$129.00',
-        },
-        {
-            id: 8,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_26_3-655x655.jpg',
-            category: 'Bluetooth Speakers',
-            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
-            rating: 5,
-            originalPrice: '$139.00',
-            discountedPrice: '$129.00',
-        },
 
-    ];
 
     const handleThumbnailClick = (imageUrl, index) => {
         setSelectedImage(imageUrl);
@@ -175,28 +95,31 @@ const Deals = () => {
                                 ))}
                             </div>
 
-                            <div className='flex flex-row justify-between relative items-center'
+                            <div className='relative'
                                 onMouseEnter={() => setIsHovered(true)}
                                 onMouseLeave={() => setIsHovered(false)}
                             >
-                                <img src={selectedImage} alt="Main Image" className='relative w-[250px] md:w-[300px] lg:w-[275px]' />
-                                <button
-                                    onClick={handlePrevClick}
-                                    className={`text-black absolute left-7 p-2 flex text-center  justify-center h-10  w-10 
-                                text-2xl hover:bg-black hover:text-white bg-[#F2F2F2] rounded-full transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
-                                >
-                                    <GrFormPreviousLink />
-                                </button>
-                                <div className=''>
+                                <img src={selectedImage} alt="Main Image" className='w-[250px] md:w-[300px] lg:w-[275px]' />
+
+                                <div className='absolute top-0 left-0 right-0 bottom-0 flex items-center justify-between'>
+                                    <button
+                                        onClick={handlePrevClick}
+                                        className={`text-black ml-4 p-2 text-2xl hover:bg-black hover:text-white bg-[#F2F2F2] rounded-full transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'
+                                            }`}
+                                    >
+                                        <GrFormPreviousLink />
+                                    </button>
+
                                     <button
                                         onClick={handleNextClick}
-                                        className={`text-black absolute right-7 top-1 mt-28 p-2 flex text-center m-auto justify-center h-10 w-10 text-2xl hover:bg-black hover:text-white bg-[#f8f8f8] rounded-full transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'
+                                        className={`text-black mr-4 p-2 text-2xl hover:bg-black hover:text-white bg-[#f8f8f8] rounded-full transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'
                                             }`}
                                     >
                                         <GrFormNextLink />
                                     </button>
                                 </div>
                             </div>
+
 
                         </div>
                         {/* Content */}
@@ -233,24 +156,8 @@ const Deals = () => {
                     </div>
 
                     {/* Rigth Side */}
-                    <div className='w-full lg:w-[33%] mt-12'>
-
-                        <Swiper
-                            spaceBetween={50}
-                            slidesPerView={1}
-                        >
-
-                            {sliderData.map((slide, index) => (
-                                <SwiperSlide key={slide.id}>
-                                    {index * 2 + 1 < sliderData.length && (
-                                        <DealSlider products={[sliderData[index * 2], sliderData[index * 2 + 1]]} />
-                                    )}
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-
-
-
+                    <div className='w-full lg:w-[33%] mt-8'>
+                        <DealSlider />
                     </div>
 
                 </div>

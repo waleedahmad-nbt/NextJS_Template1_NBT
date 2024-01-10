@@ -1,33 +1,126 @@
-'use client';
-import Image from 'next/image';
+import React, { useRef, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/grid';
+import 'swiper/css/pagination';
+
+import { Grid, Pagination } from 'swiper/modules';
 import { CiStar } from 'react-icons/ci';
 
+const DealSlider = () => {
 
-const DealSlider = ({ products }) => (
-    <>
-        <div className='flex flex-col'>
-            {products.map((product, index) => (
-                <div key={index} className='flex  mx-4'>
-                    {product && product.imageUrl && (
-                        <Image src={product.imageUrl} alt="" width={152} height={152} />
-                    )}
-                    <div className='flex flex-col'>
-                        <div className='flex flex-row'>
-                            {Array.from({ length: product && product.rating }).map((_, starIndex) => (
-                                <CiStar key={starIndex} />
-                            ))}
+    const sliderData = [
+        {
+            id: 1,
+            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_29_1-170x170.jpg',
+            category: 'Bluetooth Speakers',
+            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
+            rating: 5,
+            originalPrice: '$45.00',
+        },
+        {
+            id: 2,
+            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_13_2-170x170.jpg',
+            category: 'Bluetooth Speakers',
+            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
+            rating: 5,
+            originalPrice: '$139.00',
+            discountedPrice: '$139.00',
+        },
+        {
+            id: 3,
+            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_01_1-655x655.jpeg',
+            category: 'Bluetooth Speakers',
+            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
+            rating: 5,
+            originalPrice: '$139.00',
+            discountedPrice: '$139.00',
+        },
+        {
+            id: 4,
+            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_24_3-655x655.jpg',
+            category: 'Bluetooth Speakers',
+            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
+            rating: 5,
+            originalPrice: '$13.00',
+        },
+        {
+            id: 5,
+            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_11_1-655x655.jpg',
+            category: 'Bluetooth Speakers',
+            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
+            rating: 5,
+            originalPrice: '$139.00',
+            discountedPrice: '$139.00',
+        },
+        {
+            id: 6,
+            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_26_3-655x655.jpg',
+            category: 'Bluetooth Speakers',
+            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
+            rating: 5,
+            originalPrice: '$139.00',
+            discountedPrice: '$129.00',
+        },
+        {
+            id: 7,
+            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_26_3-655x655.jpg',
+            category: 'Bluetooth Speakers',
+            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
+            rating: 5,
+            originalPrice: '$139.00',
+            discountedPrice: '$129.00',
+        },
+        {
+            id: 8,
+            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_26_3-655x655.jpg',
+            category: 'Bluetooth Speakers',
+            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
+            rating: 5,
+            originalPrice: '$139.00',
+            discountedPrice: '$129.00',
+        },
+
+    ];
+    return (
+        <>
+            <Swiper
+                slidesPerView={1}
+                grid={{
+                    rows: 2,
+                }}
+                spaceBetween={0}
+                pagination={{
+                    clickable: true,
+                }}
+                modules={[Grid, Pagination]}
+                className="w-full h-[340px] mx-auto"
+            >
+                {sliderData.map((item) => (
+                    <SwiperSlide key={item.id}>
+                        <div className="flex flex-row">
+
+                            <img src={item.imageUrl} alt={item.title} className='w-[152px]' />
+                            <div className="flex flex-col">
+                                <div className='flex flex-row my-2 font-thin'>
+                                    {Array.from({ length: item.rating }).map((_, index) => (
+                                        <CiStar key={index} />
+                                    ))}
+                                </div>
+                                <span className='text-gray-400 hover:text-black text-sm duration-300 ease-in-out'>{item.category}</span>
+                                <h3 className='text-black hover:text-gray-400 font-semibold'>{item.title}</h3>
+                                <div className="text-base space-x-2">
+                                    <span className="text-red-500"><del>{item.discountedPrice}</del></span>
+                                    <span className="text-[#32BDE8]">{item.originalPrice}</span>
+                                </div>
+                            </div>
                         </div>
-                        <p className='text-base text-gray-500 hover:text-black duration-300 ease-in-out'>{product && product.category}</p>
-                        <p className='text-base text-black hover:text-gray-400 font-bold'>{product && product.title}</p>
-                        <div className='flex gap-4'>
-                        <p className='text-[#32BDE8] text-base'>{product && product.originalPrice}</p>
-                        <p className='text-[#ff4d4d] text-base'>{product && product.discountedPrice}</p>
-                        </div>
-                    </div>
-                </div>
-            ))}
-        </div>
-    </>
-);
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </>
+    );
+}
 
 export default DealSlider;

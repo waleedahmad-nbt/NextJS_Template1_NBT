@@ -38,7 +38,7 @@ const PopularCategories = () => {
                     <p className='text-lg underline cursor-pointer'>View all Categories</p>
                 </div>
             </div>
-            <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 mt-6 mx-4 md:mx-10'>
+            <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 xl:grid-cols-6 gap-4 mt-6 mx-4 md:mx-10'>
                 {slides.map((slide) => (
                     <div key={slide.id} className='flex flex-col items-center rounded-lg pb-5 bg-[#f2f2f2] group'>
                         <Image

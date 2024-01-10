@@ -15,7 +15,7 @@ const WishlistModal = () => {
 
     return (
         <>
-            <div className='text-xl'>
+            <div className=' px-3 text-xl mt-24 bg-white border-2 w-12 h-12 flex items-center rounded-full text-black hover:text-white hover:bg-black duration-700 transform-gpu'>
                 <FaRegStar onClick={toggleModal} />
             </div>
 
@@ -58,7 +58,7 @@ const WishlistModal = () => {
                                 </button>
                             </div>
                             {/* Modal body */}
-                            <div className='overflow-auto h-[350px] overflow-x-auto overflow-y-auto'>
+                            <div className='overflow-auto h-[280px] lg:h-[350px] overflow-x-auto overflow-y-auto'>
                                 <div className='flex flex-row mx-2 lg:m-6 items-center border-b-2 pb-3 border-dotted'>
                                     <p className='text-md hover:text-red-500 cursor-pointer'>X</p>
                                     <img src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_18_1-600x600.jpg" className='w-[80px] h-[80px]' alt="" />
@@ -87,13 +87,13 @@ const WishlistModal = () => {
 
                                     </div>
                                     <button
-                                type="submit"
-                                className="w-full py-2 hover:scale-105 duration-300 focus:ring-4 focus:outline-none
+                                        type="submit"
+                                        className="w-full py-2 hover:scale-105 duration-300 focus:ring-4 focus:outline-none
                                  bg-black text-white font-medium rounded-full text-lg text-center ml-auto"
-                            >
-                                <span className="hidden md:inline">Select Options</span>
-                                <span className="md:hidden">Select</span>
-                            </button>
+                                    >
+                                        <span className="hidden md:inline">Select Options</span>
+                                        <span className="md:hidden">Select</span>
+                                    </button>
                                 </div>
                                 <div className='flex flex-row mx-2 lg:m-6 items-center border-b-2 pb-3 border-dotted'>
                                     <p className='text-md hover:text-red-500 cursor-pointer'>X</p>
@@ -105,13 +105,13 @@ const WishlistModal = () => {
 
                                     </div>
                                     <button
-                                type="submit"
-                                className="w-full py-2 hover:scale-105 duration-300 focus:ring-4 focus:outline-none
+                                        type="submit"
+                                        className="w-full py-2 hover:scale-105 duration-300 focus:ring-4 focus:outline-none
                                  bg-black text-white font-medium rounded-full text-lg text-center ml-auto"
-                            >
-                                <span className="hidden md:inline">Select Options</span>
-                                <span className="md:hidden">Select</span>
-                            </button>
+                                    >
+                                        <span className="hidden md:inline">Select Options</span>
+                                        <span className="md:hidden">Select</span>
+                                    </button>
                                 </div>
                                 <div className='flex flex-row mx-2 lg:m-6 items-center border-b-2 pb-3 border-dotted'>
                                     <p className='text-md hover:text-red-500 cursor-pointer'>X</p>

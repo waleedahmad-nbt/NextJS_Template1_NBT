@@ -3,7 +3,7 @@ import React from 'react'
 const Description = () => {
     return (
         <>
-            <div className='flex flex-col m-10 text-[#66667a] font-medium gap-2'>
+            <div className='flex flex-col m-2 lg:m-10 text-[#66667a] font-medium gap-2'>
                 <h1 className='mt-6 text-gray-700 text-xl'>Specifications:</h1>
                 <p>OS: Stock Android 10</p>
                 <p>CPU: MediaTek, Helio P60, 4xCortex-A73, 2.0GHz & 4xCortex-A53, up to 2.0GHz</p>
