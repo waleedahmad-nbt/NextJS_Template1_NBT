@@ -30,7 +30,7 @@ const WishlistModal = () => {
                 >
                     <div className="relative z-40 p-4 w-full max-w-2xl max-h-full">
                         {/* Modal content */}
-                        <div className="relative bg-white shadow dark:bg-gray-700">
+                        <div className="relative bg-white shadow">
                             {/* Modal header */}
                             <div className="flex items-center justify-between p-2 bg-black border-b  dark:border-gray-600">
                                 <h3 className="text-md ml-3 font-semibold text-white">
