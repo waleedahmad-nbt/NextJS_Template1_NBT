@@ -191,15 +191,15 @@ const Page = () => {
                 <hr className='border-b mx-4 md:mx-20 mt-2 md:mt-6' />
                 <div className='w-full md:w-[400px] h-[350px] bg-[#FFFFFF] shadow-2xl flex flex-col ml-auto p-9 z-50 m-14 rounded-md'>
                     <div className='flex flex-row gap-2 h-[60px] border-b mx-auto'>
-                        <div className='flex flex-col w-[100px] items-center border-r mb-2'>
+                        <div className='flex flex-col w-[70px] sm:w-[100px] items-center border-r mb-2'>
                             <GoPencil className='text-2xl' />
                             <p>Note</p>
                         </div>
-                        <div className='flex flex-col w-[100px] items-center border-r mb-2'>
+                        <div className='flex flex-col w-[70px] sm:w-[100px] items-center border-r mb-2'>
                             <LiaShippingFastSolid className='text-2xl' />
                             <p>Shipping</p>
                         </div>
-                        <div className='flex flex-col w-[100px] items-center mb-2'>
+                        <div className='flex flex-col w-[70px] sm:w-[100px] items-center mb-2'>
                             <RiCouponLine className='text-2xl' />
                             <p className='text-lg'>Coupon</p>
                         </div>
@@ -235,7 +235,7 @@ const Page = () => {
                         <p>Total</p>
                         <p className='text-[#32BDe8]'>$1,527.39</p>
                     </div>
-                    <button className='flex items-center px-28 text-lg text-white font-semibold h-10 mt-1 bg-black rounded-full duration-500 transform hover:scale-110 scale-105'>
+                    <button className='w-full flex items-center text-center justify-center text-lg text-white font-semibold h-10 mt-1 bg-black rounded-full duration-500 transform hover:scale-110 scale-105'>
                         CHECKOUT
                     </button>
                 </div>

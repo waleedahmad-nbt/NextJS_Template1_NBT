@@ -109,7 +109,7 @@ const FiveColumn = () => {
         <>
 
 
-            <div className={`grid grid-cols-5`}>
+            <div className={`grid grid-cols-2 lg:grid-cols-5`}>
                 {products.map(product => (
                     <>
                         <div key={product.id}

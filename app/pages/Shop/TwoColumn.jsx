@@ -117,7 +117,7 @@ const TwoColumn = () => {
                         <div key={product.id}
                             onMouseEnter={() => setHoveredProduct(product.id)}
                             onMouseLeave={() => setHoveredProduct(null)}
-                            className='relative cursor-pointer h-full w-full  mt-6 p-1 rounded-lg group'>
+                            className='relative cursor-pointer h-full w-full mt-6 p-1 rounded-lg group'>
 
                             {/* Image container */}
                             <div className='relative w-full  p-3 overflow-hidden transition-transform group-hover:transform duration-700 ease-in-out group-hover:scale-105'>
@@ -170,7 +170,9 @@ const TwoColumn = () => {
 
                                 {/* Read more button */}
                                 <a
-                                    className="bg-[#F1F1F1] mt-2 text-black px-5 group-hover:bg-black group-hover:text-white flex text-center justify-center font-semibold py-3 rounded-full  duration-300 ease-in-out transform hover:scale-105 opacity-0 group-hover:opacity-100 transition-opacity"
+                                    className="bg-[#F1F1F1] mt-2 text-black w-full overflow-ellipsis group-hover:bg-black group-hover:text-white 
+                                    flex text-center justify-center font-semibold py-3 rounded-full  duration-300 ease-in-out transform 
+                                    hover:scale-105 opacity-0 group-hover:opacity-100 transition-opacity"
                                 >
                                     Select Options
                                 </a>

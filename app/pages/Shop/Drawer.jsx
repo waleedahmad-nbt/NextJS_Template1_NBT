@@ -30,13 +30,13 @@ const Drawer = () => {
 
     return (
         <>
-            <p onClick={toggleDrawer} className="p-3 -mx-3 transform rotate-90">
+            <p onClick={toggleDrawer} className="p-3 transform rotate-90">
                 Filters
             </p>
             {/* Drawer component */}
             <div
                 id="drawer-navigation"
-                className={`fixed top-0 left-0 z-50 w-[350px] h-screen p-4 overflow-y-auto transition-transform ${isDrawerOpen ? '' : '-translate-x-full'
+                className={`fixed top-0 left-0 z-50 w-[280px] h-screen p-4 overflow-y-auto transition-transform ${isDrawerOpen ? '' : '-translate-x-full'
                     } bg-white dark:bg-gray-800`}
                 tabIndex="-1"
                 aria-labelledby="drawer-navigation-label">
@@ -44,11 +44,12 @@ const Drawer = () => {
                     type="button"
                     onClick={toggleDrawer}
                     aria-controls="drawer-navigation"
-                    className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    className="text-black bg-transparent rounded-lg text-sm p-5 absolute top-2.5 end-2.5 
+                    inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
                 >
                     <svg
                         aria-hidden="true"
-                        className="w-5 h-5"
+                        className="w-6 h-6"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg"
@@ -60,6 +61,9 @@ const Drawer = () => {
                 <div className="py-4 overflow-y-auto">
                     <div className="px-3 mx-auto ">
 
+                        <h1 className='text-3xl text-black font-bold'>
+                            Filters
+                        </h1>
                         <div className="mx-auto mt-8 space-y-4 md:mt-16">
                             <div className="transition-all  duration-500">
 

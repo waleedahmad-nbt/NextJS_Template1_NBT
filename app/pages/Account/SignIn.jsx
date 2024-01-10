@@ -48,9 +48,9 @@ const SignIn = () => {
     return (
         <>
 
-            <section className="bg-white  rounded-lg shadow-xl p-10 md:p-14 border h-full w-full mx-0 lg:mx-10 mt-12">
+            <section className="bg-white  rounded-lg shadow-xl p-10 md:p-14 border h-full w-full mx-0 lg:mx-4 mt-12">
                 <div className="flex flex-col">
-                    <div className="md:mt-0 xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                    <div className="md:mt-0 xl:p-0">
                         <div className=" ">
                             <h1 className="text-2xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
 
@@ -66,7 +66,7 @@ const SignIn = () => {
                                         name="email"
                                         id="email"
                                         className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-full
-                                        block w-full p-2.5 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        block w-full p-2.5 py-3"
                                         placeholder=""
                                         required=""
                                     />
@@ -81,13 +81,12 @@ const SignIn = () => {
                                         id="password"
                                         placeholder=""
                                         className="bg-gray-50 border border-gray-300 text-gray-900 
-                                        sm:text-sm rounded-full block w-full p-2.5 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
-                                         dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        sm:text-sm rounded-full block w-full p-2.5 py-3 dark:placeholder-gray-400"
                                         required=""
                                     />
                                 </div>
                                 <p className="text-red-600 text-[16px] mb-4">{error && error}</p>
-                                <div className="flex items-center justify-between">
+                                <div className="flex flex-col md:flex-row space-y-2 items-start md:items-center justify-between">
                                     <div className="flex items-start">
                                         <div className="flex items-center h-5">
                                             <input id="remember" aria-describedby="remember" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="" />

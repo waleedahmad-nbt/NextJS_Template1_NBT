@@ -111,7 +111,7 @@ const FourColumn = () => {
         <>
 
 
-            <div className={`grid grid-cols-4`}>
+            <div className={`grid grid-cols-2 lg:grid-cols-4`}>
                 {products.map(product => (
                     <>
                         <div key={product.id}

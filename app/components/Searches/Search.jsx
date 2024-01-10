@@ -5,11 +5,10 @@ const Search = () => {
     return (
         <>
             <div className='xl:container xl:mx-auto'>
-                <div className='mt-20 mx-20'>
-                    <div className='flex flex-row justify-between'>
-                        <h1 className='text-4xl leading-10 font-bold'>Popular Search</h1>
+                <div className='mt-20 mx-4 md:mx-20'>
+                    <div className='flex flex-row justify-between border-b'>
+                        <h1 className='text-2xl md:text-4xl leading-10 font-bold'>Popular Search</h1>
                     </div>
-                    <hr className='mt-4' />
                 </div>
                 {/* Popular Searches */}
                 <div className='flex flex-row flex-wrap mt-9 gap-4 mx-4 md:mx-20'>

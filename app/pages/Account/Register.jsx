@@ -51,13 +51,13 @@ export const Register = () => {
 
     return (
         <>
-            <div className='mt-20 md:ml-0 ml-3 mr-6'>
+            <div className='mt-20 md:ml-0 ml-3 md:mr-6 w-full h-full'>
                 <h1 className="text-2xl font-extrabold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                     {loading ? "Processing" : "Sign Up"}
                 </h1>
                 <form onSubmit={onSignUp} className="space-y-4 md:space-y-6 mt-6 flex flex-col gap-3">
-                    <div className='flex flex-row gap-6'>
-                        <div>
+                    <div className='flex flex-col md:flex-row gap-6'>
+                        <div className='w-full md:w-1/2'>
                             <label for="firstname" className="block mb-2 text-base leading-5 text-black font-medium">First name *</label>
                             <input
                                 value={user.firstname}
@@ -65,13 +65,13 @@ export const Register = () => {
                                 type="Name"
                                 name="firstname"
                                 id="firstname"
-                                className="bg-gray-50 border p-2.5 w-full sm:w-[270px] py-3
-                                border-gray-300 text-gray-900 sm:text-sm rounded-full block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                className="bg-gray-50 border p-2.5 w-full py-3
+                                border-gray-300 text-gray-900 sm:text-sm rounded-full block"
                                 placeholder=""
                                 required=""
                             />
                         </div>
-                        <div>
+                        <div className='w-full md:w-1/2'>
                             <label for="lastname" className="block mb-2 text-base leading-5 text-black font-medium">Last name *</label>
                             <input
                                 value={user.lastname}
@@ -80,8 +80,8 @@ export const Register = () => {
                                 name="lastname"
                                 id="lastname"
                                 placeholder=""
-                                className="bg-gray-50 border p-2.5 w-full sm:w-[270px] py-3
-                                border-gray-300 text-gray-900 sm:text-sm rounded-full block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                className="bg-gray-50 border p-2.5 w-full py-3
+                                border-gray-300 text-gray-900 sm:text-sm rounded-full block"
                                 required=""
                             />
                         </div>
@@ -95,8 +95,7 @@ export const Register = () => {
                             name="Username"
                             id="Username"
                             className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-full
-                            block w-full p-2.5 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
-                            dark:focus:border-blue-500"
+                            block w-full p-2.5 py-3 "
                             placeholder=""
                             required=""
                         />
@@ -110,7 +109,7 @@ export const Register = () => {
                             name="email"
                             id="email"
                             className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-full
-                            block w-full p-2.5 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            block w-full p-2.5 py-3"
                             placeholder=""
                             required=""
                         />
@@ -125,7 +124,7 @@ export const Register = () => {
                             id="password"
                             placeholder=""
                             className="bg-gray-50 border border-gray-300 text-gray-900
-                            sm:text-sm rounded-full block w-full p-2.5 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            sm:text-sm rounded-full block w-full p-2.5 py-3"
                             required=""
                         />
                     </div>

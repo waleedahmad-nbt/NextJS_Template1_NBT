@@ -205,12 +205,6 @@ const Sidebar = () => {
             </section>
 
 
-            <div className='block md:hidden'>
-                <div className="fixed top-0 z-40 left-0 h-24 flex items-center m-auto w-10 mt-[15rem] bg-[#cccccc]
-                text-black hover:bg-black hover:text-white rounded-sm">
-                    <Drawer />
-                </div>
-            </div>
         </>
     )
 }

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { CiStar } from 'react-icons/ci';
+import { FaRegStar } from 'react-icons/fa';
 
 const WishlistModal = () => {
     const [modalOpen, setModalOpen] = useState(false);
@@ -15,8 +16,8 @@ const WishlistModal = () => {
 
     return (
         <>
-            <div className='p-3 w-10 rounded-full text-white bg-black text-xl '>
-                <CiStar onClick={toggleModal} />
+            <div className='text-xl'>
+                <FaRegStar onClick={toggleModal} />
             </div>
 
             {/* Main modal */}
@@ -24,8 +25,8 @@ const WishlistModal = () => {
                 <div
                     tabIndex="-1"
                     aria-hidden="true"
-                    className="fixed top-0 right-0 left-0 bg-black bg-opacity-50 overflow-y-auto overflow-x-hidden justify-center
-                     items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+                    className="fixed inset-0 bg-black bg-opacity-50 overflow-y-auto overflow-x-hidden justify-center
+                     items-center w-full  max-h-full"
                 >
                     <div className="relative z-40 p-4 w-full max-w-2xl max-h-full">
                         {/* Modal content */}

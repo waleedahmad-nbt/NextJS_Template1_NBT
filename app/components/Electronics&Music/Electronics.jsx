@@ -157,7 +157,7 @@ const Electronics = () => {
                         />
                         <div className="absolute inset-0 flex items-center justify-center">
                             <div className="w-full flex flex-row">
-                                <div className="flex flex-col font-sans w-[220px] m-10">
+                                <div className="flex flex-col w-[220px] m-10">
                                     <h3 className="text-3xl leading-10 font-bold text-black">Mulifuntianal</h3>
                                     <span className="text-2xl leading-10  font-bold text-black"> Home Bluetooth</span>
                                     <div className="text-xl font-semibold text-black font-sans mt-4 leading-8">
@@ -218,7 +218,7 @@ const Electronics = () => {
                         <div className="absolute inset-0 flex">
                             <div className="w-full flex flex-row">
                                 <div className="flex flex-col justify-between">
-                                    <div className="font-semibold m-3">
+                                    <div className="font-semibold mx-3">
                                         <span className='text-black text-lg font-bold '>Cameras& <br /> Photos</span>
                                     </div>
                                     <p className='font-semibold text-gray-500 m-3'>2 Items</p>
@@ -235,7 +235,7 @@ const Electronics = () => {
                         <div className="absolute inset-0 flex">
                             <div className="w-full flex flex-row">
                                 <div className="flex flex-col justify-between">
-                                    <div className="font-semibold m-3">
+                                    <div className="font-semibold mx-3">
                                         <span className='text-black text-lg font-bold '>Security & <br /> Protection </span>
                                     </div>
                                     <p className='font-semibold text-gray-500 m-3'>2 Items</p>

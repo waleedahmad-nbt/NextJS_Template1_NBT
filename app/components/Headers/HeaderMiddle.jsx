@@ -127,16 +127,16 @@ const HeaderMiddle = () => {
   return (
     <>
       <div className="xl:container xl:mx-auto">
-        <div className={`mb-4 mx-4 lg:mx-9 ${showNewHeader ? 'pointer-events-none' : ''}`}>
+        <div className={`mb-4  lg:mx-9 ${showNewHeader ? 'pointer-events-none' : ''}`}>
 
-          <div className="flex flex-row justify-between items-center  mx-6 sm:mx-0 p-4 md:p-0">
-            <div className="flex items-center mt-3">
+          <div className="flex flex-row justify-between items-center mx-2 px-2 sm:mx-0 py-2 md:p-0">
+            <div className="flex items-center justify-center mt-3">
               <Sidebar />
               <Link href='/'>
                 <Image
                   src={Logo}
                   alt="Logo Img"
-                  className="ml-2 md:ml-6 w-[130px] md:w-[175px]"
+                  className="ml-2 md:ml-6 w-[130px] sm:w-[175px]"
                 />
               </Link>
             </div>
@@ -204,7 +204,7 @@ const HeaderMiddle = () => {
               </div>
               {/* Search */}
               <div className="block md:hidden">
-                <div onClick={handleToggleHeader} className="block  lg:inline-block  align-middle text-black hover:text-gray-700">
+                <div onClick={handleToggleHeader} className="block mt-3 lg:inline-block  align-middle text-black hover:text-gray-700">
                   <Tooltip
                     title="Search" // Tooltip text
                     position="bottom"
@@ -219,7 +219,7 @@ const HeaderMiddle = () => {
                 </div>
               </div>
 
-              <div className="block lg:inline-block align-middle text-black hover:text-gray-700">
+              <div className="block lg:inline-block mt-3 sm:mt-0 align-middle text-black hover:text-gray-700">
                 <Tooltip
                   title="Cart" // Tooltip text
                   position="bottom"

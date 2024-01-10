@@ -82,7 +82,6 @@ const Blog = () => {
                             slidesPerView={2}
                             pagination={{ clickable: true }}
                             loop={true}
-                            loopfillgroupwithblank={true}
                             breakpoints={{
                                 640: {
                                     slidesPerView: 2,

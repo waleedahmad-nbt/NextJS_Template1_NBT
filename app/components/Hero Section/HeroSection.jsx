@@ -8,7 +8,7 @@ const HeroSection = () => {
     <>
       {/* Hero Section 1 */}
       <div className="xl:container xl:mx-auto">
-        <div className="relative max-w-full h-[400px] md:h-[510px] overflow-hidden mx-3 md:mx-6 lg:mx-16">
+        <div className="relative max-w-full h-[400px] md:h-[510px] overflow-hidden mx-3 md:mx-6 lg:mx-12">
           <img
             className="object-cover w-full h-full"
             src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/home-hero-banner.jpg"
@@ -28,20 +28,19 @@ const HeroSection = () => {
 
       {/* Hero Section 2 */}
       <div className="xl:container xl:mx-auto">
-        <div className='mx-4 md:mx-16 flex flex-col md:flex-row gap-4 mt-6 md:mt-10'>
-
-          <div className="relative flex rounded-lg h-full w-full group overflow-hidden">
+        <div className='mx-4 md:mx-12 flex flex-col md:flex-row gap-7 mt-6 md:mt-10'>
+          <div className="relative flex rounded-lg h-full md:h-[250px] w-full  group overflow-hidden">
             <img
-              className="w-full object-cover rounded-lg  transition-transform transform group-hover:scale-110 duration-700"
+              className="object-cover rounded-lg  transition-transform transform group-hover:scale-110 duration-700"
               src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/home-banner-01.jpg"
               alt="Background Image"
             />
-            <div className="absolute flex flex-col justify-between md:p-6">
-              <div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-black">New Deals at Best Prices</h3>
-                <p className="text-xl font-semibold text-black">From $40.00</p>
+            <div className="absolute flex flex-col justify-between space-y-8 xl:space-y-10 w-[250px] p-2 md:p-6">
+              <div className="">
+                <h3 className="text-2xl md:text-3xl font-bold text-black">New Deals at Best Prices</h3>
+                <span className="text-xl mt-2 font-semibold text-black">From $40.00</span>
               </div>
-              <div className="text-md underline">
+              <div className="text-md underline text-black">
                 <Link href="/pages/Shop">
                   <span className="button-text">Browse Deals</span>
                 </Link>
@@ -49,14 +48,14 @@ const HeroSection = () => {
             </div>
 
           </div>
-          
-          <div className="relative flex rounded-lg h-full w-full group overflow-hidden">
+
+          <div className="relative flex rounded-lg h-full md:h-[250px] w-full  group overflow-hidden">
             <img
-              className="w-full h-260px object-cover rounded-lg  transition-transform transform group-hover:scale-110 duration-700"
+              className="object-cover rounded-lg  transition-transform transform group-hover:scale-110 duration-700"
               src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/home-banner-02.jpg"
               alt="Background Image"
             />
-            <div className="absolute flex flex-col justify-between space-y-8 xl:space-y-10 w-[250px] p-6">
+            <div className="absolute flex flex-col justify-between space-y-8 xl:space-y-10 w-[250px] p-2 md:p-6">
               <div className="">
                 <h3 className="text-2xl md:text-3xl font-bold text-white">Colorful Redmi Note 6 Pro</h3>
                 <span className="text-xl mt-2 font-semibold text-white">From $40.00</span>
@@ -69,13 +68,13 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className="relative flex rounded-lg h-full w-full group overflow-hidden">
+          <div className="relative flex rounded-lg h-full md:h-[250px] w-full  group overflow-hidden">
             <img
-              className="w-full h-260px object-cover rounded-lg  transition-transform transform group-hover:scale-110 duration-700"
+              className="object-cover rounded-lg  transition-transform transform group-hover:scale-110 duration-700"
               src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/home-banner-03.jpg"
               alt="Background Image"
             />
-            <div className="absolute flex flex-col justify-between space-y-8 xl:space-y-10 w-[250px] p-6">
+            <div className="absolute flex flex-col justify-between space-y-8 xl:space-y-10 w-[250px] p-2 md:p-6">
               <div className="">
                 <h3 className="text-2xl md:text-3xl font-bold text-white">1000 mAh Power Bank</h3>
                 <span className="text-xl font-semibold text-white">From $40.00</span>

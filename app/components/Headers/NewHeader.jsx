@@ -130,24 +130,24 @@ const NewHeader = ({ handleCloseSection, isLargeScreen }) => {
 
                         <div className="md:w-1/2 w-full">
                             <form
-                                className="search-form popup-search-form p-1 rounded-3xl border-2 border-gray-300">
+                                className="p-1 rounded-3xl border-2 border-gray-300">
                                 <div className="flex items-center relative">
 
                                     <div className="flex items-center justify-center">
                                         <div className="relative group">
 
-                                            <div className="flex flex-row justify-center py-1 text-sm  font-medium text-gray-700 bg-white rounded-md"
+                                            <div className="flex flex-row justify-center items-center py-1 text-sm  text-gray-700 bg-white rounded-md"
                                                 onClick={toggleDropdown}>
-                                                <span className="mr-0 text-lg">{selectedCategory}</span>
+                                                <span className="text-sm sm:text-lg overflow-ellipsis">{selectedCategory}</span>
                                                 <RiArrowDropDownLine className='text-3xl border-r' />
                                             </div>
                                             <div
                                                 className={` ${isOpen ? '' : 'hidden'} absolute left-3 md:left-0 top-6 md:top-1 right-0 mt-2 rounded-2xl border border-black shadow-lg bg-white ring-1 ring-black p-2 w-[245px] h-[452px] overflow-auto`}>
                                                 <div className='flex items-center gap-2 rounded-3xl border-2 border-gray-400'>
                                                     <input onChange={handleSearchInput}
-                                                        value={searchTerm} type="search" className='py-2 rounded-3xl px-8 focus:outline-none w-full' />
-                                                    <div type='button' className='flex-shrink-0 px-4 py-1'>
-                                                        <IoIosSearch className='text-xl font-medium text-gray-600 hover:text-black transition duration-300' />
+                                                        value={searchTerm} type="search" className='py-2 rounded-3xl px-3 md:px-8 focus:outline-none w-full' />
+                                                    <div type='button' className='px-2 py-1'>
+                                                        <IoIosSearch className='text-xl font-medium text-gray-600 hover:text-black' />
                                                     </div>
                                                 </div>
                                                 {filteredCategories.map((category, index) => (
@@ -155,7 +155,7 @@ const NewHeader = ({ handleCloseSection, isLargeScreen }) => {
                                                         key={index}
                                                         onClick={() => handleCategoryClick(category)}
                                                         className="block font-semibold px-5 py-3 text-base text-gray-600  hover:bg-black
-                                                         hover:text-white active:bg-gray-100 duration-500 cursor-pointer text-ellipsisis rounded-md"
+                                                         hover:text-white active:bg-gray-100 duration-500 cursor-pointer overflow-ellipsis rounded-md"
                                                     >
                                                         {category}
                                                     </p>
@@ -168,7 +168,7 @@ const NewHeader = ({ handleCloseSection, isLargeScreen }) => {
                                     {!showCategoriesDropdown && (
                                         <input
                                             type="search"
-                                            className="search-field p-2 px-2  placeholder-gray-500 focus:outline-none w-1/2"
+                                            className="search-field p-2 px-2  placeholder-gray-500 focus:outline-none w-1/3 md:w-1/2"
                                             placeholder="Search products"
                                             value={inputValue}
                                             onChange={handleInputChange}

@@ -32,8 +32,8 @@ const Categories = () => {
     ];
     return (
         <>
-            <div className=''>
-                <div className="relative max-w-full h-[350px] md:h-[400px] my-16 overflow-hidden mx-3 md:mx-6 lg:mx-16">
+            <div className='xl:container xl:mx-auto'>
+                <div className="relative max-w-full h-[350px] md:h-[400px] my-16 overflow-hidden mx-3 md:mx-6 lg:mx-8">
                     <img
                         className="object-cover w-full h-full"
                         src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/page-collections-banner.jpg"
@@ -53,14 +53,13 @@ const Categories = () => {
 
                 <div className='grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 mx-2 md:mx-8  gap-2 md:gap-7 flex-wrap cursor-pointer'>
                     {slides.map((slide) => (
-                        <div key={slide.id} className='flex flex-col w-full items-center rounded-lg pb-5 bg-[#f2f2f2] group'>
+                        <div key={slide.id} className='flex flex-col w-full items-center rounded-xl pb-5 bg-[#f2f2f2] group'>
                             <Image
                                 src={slide.imageUrl}
                                 alt="Small Image"
-                                width={250}
-                                height={230}
-                                style={{ objectFit: 'cover' }}
-                                className='rounded-full scale-90 transition-transform transform-gpu group-hover:scale-100 duration-700 ease-in-out'
+                                width={270}
+                                height={250}
+                                className='rounded-full object-cover scale-90 transition-transform transform-gpu group-hover:scale-100 duration-700 ease-in-out'
                             />
                             <h5 className='font-bold pt-2'>
                                 <a href="#">{slide.text}</a>

@@ -6,7 +6,7 @@ const Music = () => {
             <div className="xl:container xl:mx-auto">
                 <div className='mt-20 mx-3 md:mx-20'>
                     <div className='flex flex-col md:flex-row justify-between border-b'>
-                        <h1 className='text-4xl leading-10 font-bold'>Music, Audio, Video</h1>
+                        <h1 className='text-2xl md:text-4xl leading-10 font-bold'>Music, Audio, Video</h1>
                         <p className='text-md underline cursor-pointer'>Go to Daily Deals Section</p>
                     </div>
 
@@ -204,7 +204,7 @@ const Music = () => {
                                 <div className="text-lg font-semibold m-3">
                                     <span className='text-black font-bold '>Robot Clean</span>
                                 </div>
-                                <p className='mt-8 font-semibold text-gray-500 m-3'>3 Items</p>
+                                <p className=' font-semibold text-gray-500 m-3'>3 Items</p>
                             </div>
                         </div>
                     </div>
@@ -219,7 +219,7 @@ const Music = () => {
                                 <div className="font-semibold m-3">
                                     <span className='text-black text-lg font-bold '>Smart Watches</span>
                                 </div>
-                                <p className='mt-8 font-semibold text-gray-500 m-3'>2 Items</p>
+                                <p className='font-semibold text-gray-500 m-3'>2 Items</p>
                             </div>
                         </div>
                     </div>
@@ -231,10 +231,10 @@ const Music = () => {
                         />
                         <div className="absolute inset-0 flex">
                             <div className="flex flex-col justify-between">
-                                <div className="font-semibold m-3">
+                                <div className="font-semibold mx-3">
                                     <span className='text-black text-lg font-bold '>Cameras& <br /> Photos</span>
                                 </div>
-                                <p className='font-semibold text-gray-500 m-3'>2 Items</p>
+                                <p className='font-semibold text-gray-500 mx-3'>2 Items</p>
                             </div>
                         </div>
                     </div>
@@ -246,7 +246,7 @@ const Music = () => {
                         />
                         <div className="absolute inset-0 flex">
                             <div className="flex flex-col justify-between">
-                                <div className="font-semibold m-3">
+                                <div className="font-semibold mx-3">
                                     <span className='text-black text-lg font-bold '>Security & <br /> Protection </span>
                                 </div>
                                 <p className='font-semibold text-gray-500 m-3'>2 Items</p>
@@ -261,10 +261,10 @@ const Music = () => {
                         />
                         <div className="absolute inset-0 flex">
                             <div className="flex flex-col justify-between ">
-                                <div className="font-semibold m-3">
+                                <div className="font-semibold mx-3 p-1">
                                     <span className='text-black text-lg font-bold '>Smart Watches</span>
                                 </div>
-                                <p className='mt-8 font-semibold text-gray-500 m-3'>2 Items</p>
+                                <p className='font-semibold text-gray-500 m-3'>2 Items</p>
 
                             </div>
                         </div>
@@ -277,7 +277,7 @@ const Music = () => {
                         />
                         <div className="absolute inset-0 flex">
                             <div className="flex flex-col justify-between">
-                                <div className="font-semibold m-3">
+                                <div className="font-semibold mx-3 p-1">
                                     <span className='text-black text-lg font-bold '>Smart Watches</span>
                                 </div>
                                 <p className='font-semibold text-gray-500 m-3'>2 Items</p>

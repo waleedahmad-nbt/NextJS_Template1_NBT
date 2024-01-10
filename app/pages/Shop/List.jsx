@@ -1,8 +1,10 @@
 'use client';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { FaRegEye, FaRegStar } from 'react-icons/fa'
 import { FaArrowRightArrowLeft } from 'react-icons/fa6'
 import { IoMdStarOutline } from 'react-icons/io'
+import WishlistModal from './WishlistModal';
 
 const List = () => {
 
@@ -167,7 +169,10 @@ const List = () => {
                                 >
                                     SELECT OPTIONS
                                 </a>
-                                <FaRegStar className='text-xl' />
+
+                                <Link href="">
+                                    <WishlistModal />
+                                </Link>
                                 <FaArrowRightArrowLeft className='text-xl' />
                                 <FaRegEye className='text-xl' />
                             </div>

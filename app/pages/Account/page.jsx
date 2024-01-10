@@ -4,8 +4,8 @@ import { Register } from './Register'
 
 const page = () => {
   return (
-    <div className='container mx-auto'>
-      <div className='flex lg:flex-row flex-col mt-24'>
+    <div className='xl:container xl:mx-auto'>
+      <div className='flex lg:flex-row flex-col gap-16 mx-1 sm:mx-3 mt-24'>
         <SignIn />
         <Register />
       </div>

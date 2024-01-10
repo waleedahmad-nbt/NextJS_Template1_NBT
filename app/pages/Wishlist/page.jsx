@@ -96,7 +96,7 @@ const page = () => {
                             type="text"
                             value={wishlistPath}
                             readOnly
-                            className="bg-white border p-2.5 w-[270px] py-3
+                            className="bg-white border p-2.5 w-full py-3
                                border-gray-300 text-gray-900 sm:text-sm rounded-full  block "
                             placeholder=""
                             required=""

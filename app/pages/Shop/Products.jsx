@@ -169,7 +169,7 @@ const Products = () => {
                                 <rect x="15.25" y="12.25" width="1.5" height="12.5" rx="0.75" transform="rotate(90 15.25 12.25)" fill="#000000"></rect>
                             </svg>
                         </div>
-                        <div className='cursor-pointer hidden lg:block' onClick={() => toggleLayout('two-column')}>
+                        <div className='cursor-pointer' onClick={() => toggleLayout('two-column')}>
                             <svg className='bg-[#F2F2F2] w-[36px] h-[36px] p-2 rounded-md text-lg' viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="6.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000"></rect>
                                 <rect x="10.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000"></rect>
@@ -190,7 +190,7 @@ const Products = () => {
                                 <rect x="14.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000"></rect>
                             </svg>
                         </div>
-                        <div className='cursor-pointer ' onClick={() => toggleLayout('five-column')}>
+                        <div className='cursor-pointer hidden lg:block' onClick={() => toggleLayout('five-column')}>
                             <svg className='bg-[#F2F2F2] w-[36px] h-[36px] p-2 rounded-md text-lg' viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="0.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000"></rect>
                                 <rect x="4.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000"></rect>
@@ -205,7 +205,7 @@ const Products = () => {
 
                 {renderLayout()}
 
-                <WishlistModal />
+                
             </div>
         </>
 

@@ -69,7 +69,7 @@ const Cart = ({ onClose }) => {
       <div ref={cartRef} className="fixed inset-0 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           {/* Slide-over container */}
-          <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+          <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full">
             <div className="pointer-events-auto w-screen max-w-md">
               <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                 {/* Slide-over header */}
@@ -78,9 +78,9 @@ const Cart = ({ onClose }) => {
                     <h2 className="text-2xl font-bold text-gray-900" id="slide-over-title">
                       Shopping cart
                     </h2>
-                    <div className="ml-3 flex h-7 items-center">
+                    <div className="flex h-7 items-center">
                       {/* Close button */}
-                      <button onClick={handleClose} type="button" className="relative -m-2 p-2 text-gray-800 hover:text-gray-500">
+                      <button onClick={handleClose} type="button" className="relative p-2 mr-2 text-gray-800 hover:text-gray-500">
                         <span className="absolute -inset-0.5"></span>
                         <span className="sr-only">Close panel</span>
                         <svg
