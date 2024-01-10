@@ -237,7 +237,7 @@ const NewHeader = ({ handleCloseSection, isLargeScreen }) => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-row text-center justify-center cursor-pointer mt-3">
+                    <div className="flex flex-row flex-wrap text-center justify-center cursor-pointer mt-3">
                         <h1 className="font-semibold text-gray-500 text-md ">Popular Searches:</h1>
                         <span className="underline hover:text-gray-500 cursor-pointer ml-2">Headphone</span>
                         <span className="underline text-gray-900 mx-3 hover:text-gray-500 cursor-pointer">Tablet</span>

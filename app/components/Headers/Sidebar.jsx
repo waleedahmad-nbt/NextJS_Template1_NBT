@@ -16,29 +16,28 @@ const Sidebar = () => {
         setDrawerOpen(!isDrawerOpen);
     };
 
-    const CloseDrawer=()=>{
+    const CloseDrawer = () => {
         setDrawerOpen(false);
     }
 
-    
-  const openSignInModal = () => {
-    setShowSignInModal(true);
-  };
 
-  const closeSignInModal = () => {
-    setShowSignInModal(false);
-  };
+    const openSignInModal = () => {
+        setShowSignInModal(true);
+    };
+
+    const closeSignInModal = () => {
+        setShowSignInModal(false);
+    };
 
 
     return (
         <>
             {/* Drawer init and show */}
             <IoMenu className="text-3xl block xl:hidden" onClick={toggleDrawer} />
-
             <div
                 id="drawer-navigation"
-                className={`fixed top-0 left-0 z-40 w-[370px] mb-32 h-screen p-4 overflow-y-auto transition-transform ${isDrawerOpen ? '' : '-translate-x-full'
-                    } bg-white dark:bg-gray-800`}
+                className={`fixed top-0 left-0 z-40  mb-32 h-screen p-4 overflow-y-auto transition-transform ${isDrawerOpen ? '' : '-translate-x-full'
+                    } bg-white dark:bg-white`}
                 tabIndex="-1"
                 aria-labelledby="drawer-navigation-label">
                 <button
@@ -63,7 +62,7 @@ const Sidebar = () => {
 
                         <li>
                             <Link href="/pages/Categories">
-                                <div className='flex space-x-40 items-center'>
+                                <div className='flex space-x-20 items-center'>
                                     <p className="flex items-center duration-300 ease-in-out text-gray-900 hover:text-[#999999]">
                                         <span className="flex-1 text-xl">Categories</span>
                                     </p>
@@ -131,10 +130,10 @@ const Sidebar = () => {
                 ></div>
             )}
             {showSignInModal && (
-        <div ref={modalRef} >
-          <SignInModal onClose={closeSignInModal} />
-        </div>
-      )}
+                <div ref={modalRef} >
+                    <SignInModal onClose={closeSignInModal} />
+                </div>
+            )}
         </>
     )
 }

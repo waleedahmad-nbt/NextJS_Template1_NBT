@@ -163,9 +163,9 @@ const List = () => {
 
 
 
-                            <div className='flex flex-row mb-3 items-center gap-10'>
+                            <div className='flex flex-row flex-wrap mb-3 items-center gap-10'>
                                 <a href='#'
-                                    className="bg-black mt-2 w-[180px] text-[#F1F1F1] px-2 text-center justify-center flex font-semibold py-3 rounded-full  duration-300 ease-in-out transform hover:scale-105"
+                                    className="bg-black mt-2 w-[180px] text-[#F1F1F1]  text-center justify-center flex font-semibold py-3 rounded-full  duration-300 ease-in-out transform hover:scale-105"
                                 >
                                     SELECT OPTIONS
                                 </a>

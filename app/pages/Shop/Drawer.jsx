@@ -37,7 +37,7 @@ const Drawer = () => {
             <div
                 id="drawer-navigation"
                 className={`fixed top-0 left-0 z-50 w-[280px] h-screen p-4 overflow-y-auto transition-transform ${isDrawerOpen ? '' : '-translate-x-full'
-                    } bg-white dark:bg-gray-800`}
+                    } bg-white`}
                 tabIndex="-1"
                 aria-labelledby="drawer-navigation-label">
                 <button

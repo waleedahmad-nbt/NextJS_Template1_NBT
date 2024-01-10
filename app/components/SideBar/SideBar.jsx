@@ -104,7 +104,7 @@ const SideBar = () => {
 
 
             {/* show on Small Screen */}
-            <div className="fixed backdrop block md:hidden bottom-0 left-0 z-30 w-full h-12 bg-white border-gray-200 dark:bg-gray-700 dark:border-gray-600">
+            <div className="fixed backdrop block md:hidden bottom-0 left-0 z-30 w-full h-12 bg-white border-gray-200">
                 <div className="grid h-full w-full grid-cols-5 mx-auto font-medium">
                     <button type="button" className="inline-flex flex-col text-black hover:text-gray-500 items-center justify-center px-5 border-gray-200 border-x ">
                         <Link href="/">
