@@ -115,7 +115,7 @@ const page = () => {
                         </div>
 
 
-                        <blockquote class="text-2xl my-8 font-bold text-center m-6  leading-9 text-gray-900 dark:text-white">
+                        <blockquote class="text-2xl my-8 font-bold text-center m-6  leading-9 text-gray-900">
                             <p>“I try as much as possible to give you a great basic product and what comes out, I feel, is really amazing.”</p>
                         </blockquote>
 

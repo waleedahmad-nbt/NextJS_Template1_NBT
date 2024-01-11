@@ -18,7 +18,7 @@ const Comment = () => {
                                 name="Name"
                                 id="Name"
                                 className="bg-transparent border p-2.5 py-3
-                                border-gray-300 text-gray-900 sm:text-sm rounded-full w-full block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                border-gray-300 text-gray-900 sm:text-sm rounded-full w-full block"
                                 placeholder="Name *"
                                 required=""
                             />
@@ -29,7 +29,7 @@ const Comment = () => {
                                 name="Email"
                                 id="Email"
                                 className="bg-transparent border p-2.5  py-3
-                                border-gray-300 text-gray-900 sm:text-sm rounded-full w-full block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                border-gray-300 text-gray-900 sm:text-sm rounded-full w-full block"
                                 placeholder="Email *"
                                 required=""
                             />
@@ -41,20 +41,18 @@ const Comment = () => {
                                 id="Website"
                                 className="bg-transparent border p-2.5  py-3
                                 border-gray-300 text-gray-900 sm:text-sm rounded-full w-full
-                                 block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                 block"
                                 placeholder="Website"
                             />
                         </div>
                     </div>
 
-                    <textarea id="message" rows="6" className="block p-2.5 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300
-                     dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                    <textarea id="message" rows="6" className="block p-2.5 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300"
                         placeholder="Comment"></textarea>
 
                     <div class="flex items-center mb-4 mt-6">
                         <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4  bg-transparent border-gray-300 rounded" />
-                        <label for="default-checkbox" className="ms-2 text-base font-medium text-black
-                         dark:text-gray-300">
+                        <label for="default-checkbox" className="ms-2 text-base font-medium text-black">
                             Save my name, email, and website in this browser for the next time I comment.
                         </label>
                     </div>

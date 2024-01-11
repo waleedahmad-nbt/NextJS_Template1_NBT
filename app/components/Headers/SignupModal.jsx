@@ -78,7 +78,7 @@ const SignupModal = () => {
                     />
                     <div className="bg-white p-6 mt-10 rounded-md ">
 
-                        <h3 className="text-4xl font-semibold mb-4 mt-6 text-gray-900 dark:text-white text-center">Sign Up</h3>
+                        <h3 className="text-4xl font-semibold mb-4 mt-6 text-gray-900  text-center">Sign Up</h3>
 
 
                         <form className="space-y-6 mt-7" action="#">
@@ -92,20 +92,20 @@ const SignupModal = () => {
                             <div className='flex flex-row gap-2 mb-4 items-center text-center'>
                                 <div>
                                     <input value={user.firstname}
-                                        onChange={(e) => setUser({ ...user, firstname: e.target.value })} type="first" name="Name" id="firstname" className="bg-transparent border p-2.5 w-[210px] py-3 border-gray-300 text-gray-900 sm:text-sm rounded-full  block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        onChange={(e) => setUser({ ...user, firstname: e.target.value })} type="first" name="Name" id="firstname" className="bg-transparent border p-2.5 w-[210px] py-3 border-gray-300 text-gray-900 sm:text-sm rounded-full  block"
                                         placeholder="First Name" required="" />
                                 </div>
                                 <div>
                                     <input value={user.lastname}
-                                        onChange={(e) => setUser({ ...user, lastname: e.target.value })} type="Name" name="Name" id="lastname" placeholder="Last Name" className="bg-transparent border p-2.5 w-[210px] py-3 border-gray-300 text-gray-900 sm:text-sm rounded-full  block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
+                                        onChange={(e) => setUser({ ...user, lastname: e.target.value })} type="Name" name="Name" id="lastname" placeholder="Last Name" className="bg-transparent border p-2.5 w-[210px] py-3 border-gray-300 text-gray-900 sm:text-sm rounded-full block" required="" />
                                 </div>
                             </div>
                             <input value={user.username}
-                                onChange={(e) => setUser({ ...user, username: e.target.value })} type="Username" name="Username" id="Username" className="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-[436px] h-[45px] p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                onChange={(e) => setUser({ ...user, username: e.target.value })} type="Username" name="Username" id="Username" className="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-[436px] h-[45px] p-2.5"
                                 placeholder="Your UserName or Email" required="This field is required" />
                             <div>
                                 <input value={user.email}
-                                    onChange={(e) => setUser({ ...user, email: e.target.value })} type="email" name="email" id="email" className="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-full block w-[436px] h-[45px] p-2.5 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    onChange={(e) => setUser({ ...user, email: e.target.value })} type="email" name="email" id="email" className="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-full block w-[436px] h-[45px] p-2.5 py-3"
                                     placeholder="" required="" />
                             </div>
 
@@ -118,8 +118,7 @@ const SignupModal = () => {
                                     value={user.password}
                                     onChange={(e) => setUser({ ...user, password: e.target.value })}
                                     className="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-full focus:ring-blue-500
-                                     focus:border-blue-500 block w-[436px] h-[45px] p-2.5 dark:bg-gray-600 dark:border-gray-500
-                                      dark:placeholder-gray-400 dark:text-white"
+                                     focus:border-blue-500 block w-[436px] h-[45px] p-2.5"
                                     required="This field is required"
                                 />
                                 {/* Eye Icon for Show/Hide Password */}
@@ -138,8 +137,8 @@ const SignupModal = () => {
                             <p className="text-red-600 text-[16px] mb-4">{error && error}</p>
 
                             <div className="flex items-center">
-                                <input id="link-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                <label for="link-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Yes, I agree with Privacy Policy and Terms of Use</label>
+                                <input id="link-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                                <label for="link-checkbox" className="ms-2 text-sm font-medium text-gray-900">Yes, I agree with Privacy Policy and Terms of Use</label>
                             </div>
 
 

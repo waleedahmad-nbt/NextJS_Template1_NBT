@@ -271,11 +271,11 @@ const Cart = ({ onClose }) => {
                       <p className='text-gray-500 text-md font-semibold'>Shipping</p>
                       <div className='flex flex-col gap-2'>
                         <p className='flex flex-row gap-2 items-center'>
-                          <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded-full focus:ring-black dark:focus:ring-black  " />
+                          <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded-full focus:ring-black" />
                           <p >  Free shipping </p>
                         </p>
                         <p className='flex flex-row gap-2 items-center'>
-                          <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded-full focus:ring-black dark:focus:ring-black  " />
+                          <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded-full focus:ring-black" />
                           <p> Flat rate: <span className='text-[#32BDe8]'> $10.00</span></p>
                         </p>
 

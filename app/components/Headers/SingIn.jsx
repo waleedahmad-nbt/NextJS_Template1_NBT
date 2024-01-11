@@ -92,7 +92,7 @@ const AllModals = ({ onClose }) => {
                         <div className="bg-white p-6 mt-8 rounded-md w-[500px]">
 
                             <form className="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" action="#">
-                                <h3 className="text-4xl font-semibold text-gray-900 dark:text-white text-center">Sign In</h3>
+                                <h3 className="text-4xl font-semibold text-gray-900  text-center">Sign In</h3>
                                 <div>
                                     <p className='text-gray-700 text-sm items-center text-center'>
                                         Don't have an account yet?
@@ -104,7 +104,9 @@ const AllModals = ({ onClose }) => {
                                 </div>
                                 <div>
                                     <input value={user.email}
-                                        onChange={(e) => setUser({ ...user, email: e.target.value })} type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                        onChange={(e) => setUser({ ...user, email: e.target.value })} type="email" name="email" id="email"
+                                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-full
+                                         focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5"
                                         placeholder="Your UserName or Email" required="This field is required"
                                     />
                                 </div>
@@ -116,7 +118,7 @@ const AllModals = ({ onClose }) => {
                                         placeholder="Password"
                                         value={user.password}
                                         onChange={(e) => setUser({ ...user, password: e.target.value })}
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-[400px]  p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5"
                                         required="This field is required"
                                     />
                                     {/* Eye Icon for Show/Hide Password */}
@@ -134,10 +136,10 @@ const AllModals = ({ onClose }) => {
                                 <div className="flex justify-between">
                                     <div className="flex items-start">
                                         <div className="flex items-center h-5">
-                                            <input id="remember" aria-describedby="remember" type="checkbox" className="bg-gray-50 border border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required="" />
+                                            <input id="remember" aria-describedby="remember" type="checkbox" className="bg-gray-50 border border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded" required="" />
                                         </div>
                                         <div className="text-sm ml-3">
-                                            <label for="remember" className="font-medium text-gray-900 dark:text-gray-300 cursor-pointer"> Stay signed in</label>
+                                            <label for="remember" className="font-medium text-gray-900 cursor-pointer"> Stay signed in</label>
                                         </div>
                                     </div>
                                     <p

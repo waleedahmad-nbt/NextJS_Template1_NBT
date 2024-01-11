@@ -37,14 +37,14 @@ const Sidebar = () => {
             <div
                 id="drawer-navigation"
                 className={`fixed top-0 left-0 z-40  mb-32 h-screen p-4 overflow-y-auto transition-transform ${isDrawerOpen ? '' : '-translate-x-full'
-                    } bg-white dark:bg-white`}
+                    } bg-white`}
                 tabIndex="-1"
                 aria-labelledby="drawer-navigation-label">
                 <button
                     type="button"
                     onClick={toggleDrawer}
                     aria-controls="drawer-navigation"
-                    className="text-black bg-transparent  rounded-lg text-sm p-1.5 absolute top-2.5 end-4 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    className="text-black bg-transparent  rounded-lg text-sm p-1.5 absolute top-2.5 end-4 inline-flex items-center"
                 >
                     <svg
                         aria-hidden="true"

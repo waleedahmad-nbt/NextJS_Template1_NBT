@@ -216,7 +216,7 @@ const Page = () => {
                                     id="default-checkbox"
                                     type="checkbox"
                                     value=""
-                                    className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded-full focus:ring-black dark:focus:ring-black"
+                                    className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded-full focus:ring-black"
                                 />
                                 <p>Free shipping</p>
                             </p>
@@ -225,7 +225,7 @@ const Page = () => {
                                     id="default-checkbox"
                                     type="checkbox"
                                     value=""
-                                    className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded-full focus:ring-black dark:focus:ring-black"
+                                    className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded-full focus:ring-black"
                                 />
                                 <p>Flat rate: <span className='text-[#32BDe8]'>$10.00</span></p>
                             </p>

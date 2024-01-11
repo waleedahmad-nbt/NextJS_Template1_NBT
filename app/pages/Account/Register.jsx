@@ -52,7 +52,7 @@ export const Register = () => {
     return (
         <>
             <div className='mt-20 md:ml-0 ml-3 md:mr-6 w-full h-full'>
-                <h1 className="text-2xl font-extrabold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                <h1 className="text-2xl font-extrabold leading-tight tracking-tight text-gray-900 md:text-2xl">
                     {loading ? "Processing" : "Sign Up"}
                 </h1>
                 <form onSubmit={onSignUp} className="space-y-4 md:space-y-6 mt-6 flex flex-col gap-3">

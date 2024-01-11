@@ -71,20 +71,23 @@ const Blog = () => {
     return (
         <>
             <div className='xl:container xl:mx-auto'>
-                <div className='mt-24 mx-4 sm:mx-16'>
+                <div className='mt-24 mx-2 md:mx-10'>
                     <div className='flex text-center justify-center'>
-                        <h1 className='text-4xl font-bold'>Our Blog Posts</h1>
+                        <h1 className='text-2xl md:text-4xl font-bold'>Our Blog Posts</h1>
                     </div>
 
-                    <div className='flex flex-row gap-4 mt-16'>
+                    <div className='flex flex-row mt-16'>
                         <Swiper
-                            spaceBetween={50}
-                            slidesPerView={2}
+                            spaceBetween={20}
+                            slidesPerView={3}
                             pagination={{ clickable: true }}
                             loop={true}
                             breakpoints={{
+                                300: {
+                                    slidesPerView: 1.5,
+                                },
                                 640: {
-                                    slidesPerView: 2,
+                                    slidesPerView: 2.5,
                                 },
                                 768: {
                                     slidesPerView: 2,

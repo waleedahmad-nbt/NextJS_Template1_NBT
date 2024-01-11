@@ -45,7 +45,7 @@ const Drawer = () => {
                     onClick={toggleDrawer}
                     aria-controls="drawer-navigation"
                     className="text-black bg-transparent rounded-lg text-sm p-5 absolute top-2.5 end-2.5 
-                    inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    inline-flex items-center"
                 >
                     <svg
                         aria-hidden="true"

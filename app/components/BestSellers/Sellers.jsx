@@ -143,7 +143,7 @@ const Sellers = () => {
   return (
     <>
     <div className='xl:container xl:mx-auto'>
-      <div className='mt-20 mx-6 md:mx-16'>
+      <div className='mt-20 mx-3 md:mx-16'>
         <div className='flex flex-col md:flex-row justify-between border-b'>
           <h1 className='text-2xl md:text-4xl font-bold'>Top 20 Best Seller</h1>
           <p className='text-md underline cursor-pointer'>Go to Daily Deals Section</p>
@@ -207,7 +207,7 @@ const Sellers = () => {
                   {/* Read more button */}
                   <Link
                     href='/pages/Shop'
-                    className='bg-[#F1F1F1] mt-2 text-black px-5 group-hover:bg-black group-hover:text-white flex text-center justify-center font-semibold py-3 rounded-full duration-300 ease-in-out transform hover:scale-105 opacity-0 group-hover:opacity-100 transition-opacity'
+                    className='bg-[#F1F1F1] mt-2 text-black w-full overflow-ellipsis group-hover:bg-black group-hover:text-white flex text-center justify-center font-semibold py-3 rounded-full duration-300 ease-in-out transform hover:scale-105 opacity-0 group-hover:opacity-100 transition-opacity'
                   >
                     Select Options
                   </Link>

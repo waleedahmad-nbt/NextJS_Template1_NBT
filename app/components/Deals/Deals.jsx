@@ -71,9 +71,9 @@ const Deals = () => {
     return (
         <>
             <div className='xl:container xl:mx-auto'>
-                <div className='mt-20 mx-9 md:mx-20'>
-                    <div className='flex flex-col md:flex-row gap-4 justify-between border-b'>
-                        <h1 className='text-4xl font-bold'>Today’s Best Deals</h1>
+                <div className='mt-20 mx-5 md:mx-20'>
+                    <div className='flex flex-col md:flex-row gap-2 justify-between border-b'>
+                        <h1 className='text-2xl md:text-4xl font-bold'>Today’s Best Deals</h1>
                         <p className='text-md mr-7 underline cursor-pointer'>View All</p>
                     </div>
                 </div>

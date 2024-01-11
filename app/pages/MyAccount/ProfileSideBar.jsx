@@ -41,7 +41,7 @@ const NavItem = ({ icon, label, onClick, isActive }) => {
     <li>
       <p
         className={`flex flex-row items-center text-center cursor-pointer p-6 h-12 transform text-[#9b9b9b] hover:text-[#000000] hover:translate-x-2 transition-transform duration-300 ease-in-out  
-      ${isActive ? 'text-[#000000] bg-gray-200 dark:bg-gray-600' : ' hover:text-[#000000]'}`}
+      ${isActive ? 'text-[#000000] bg-gray-200' : ' hover:text-[#000000]'}`}
         onClick={() => onClick(label)}
       >
         <span className={`inline-flex items-center justify-center h-14 w-28  scale-105 text-xl ${isActive ? 'text-[#000000]' : 'text-[#9b9b9b] hover:text-[#000000]'}`}>{icon}</span>

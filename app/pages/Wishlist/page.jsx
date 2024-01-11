@@ -27,7 +27,7 @@ const page = () => {
         <>
             <div className=''>
                 <div className='mt-20'>
-                    <h1 className="text-4xl font-bold text-center text-gray-900 dark:text-white">
+                    <h1 className="text-4xl font-bold text-center text-gray-900">
                         Wishlist
                     </h1>
                     <div className='flex flex-col space-y-6 mt-9 mx-8 md:mx-20'>

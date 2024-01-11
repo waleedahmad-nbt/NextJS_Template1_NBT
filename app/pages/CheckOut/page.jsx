@@ -111,13 +111,13 @@ const CheckOut = () => {
         <>
             <div className='container mx-auto'>
                 <div className='mt-20 mb-16'>
-                    <h1 className="text-4xl font-bold text-center text-gray-900 dark:text-white">
+                    <h1 className="text-4xl font-bold text-center text-gray-900 ">
                         Checkout
                     </h1>
                     <div className='flex lg:flex-row flex-col'>
 
                         <div className='mt-12 mx-6 md:mx-14 sm:w-full md:w-[650px] lg-[700px]'>
-                            <h1 className="text-2xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                            <h1 className="text-2xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
                                 Billing details
                             </h1>
                             <form className="space-y-10 flex flex-col " action="#">
@@ -126,13 +126,13 @@ const CheckOut = () => {
                                     <div className='w-full'>
                                         <label for="Name" className="block mb-2 text-base leading-5 text-black font-medium">First name *</label>
                                         <input type="Name" name="Name" id="Name" className="bg-gray-50 border p-2.5 w-full py-3.5
-                             border-gray-300 text-gray-900 sm:text-sm rounded-full  block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                             border-gray-300 text-gray-900 sm:text-sm rounded-full  block"
                                             placeholder="" required="" />
                                     </div>
                                     <div className='w-full'>
                                         <label for="Name" className="block mb-2 text-base leading-5 text-black font-medium">Last name *</label>
                                         <input type="Name" name="Name" id="Name" placeholder="" className="bg-gray-50 border p-2.5 w-full py-3.5
-                             border-gray-300 text-gray-900 sm:text-sm rounded-full  block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
+                             border-gray-300 text-gray-900 sm:text-sm rounded-full  block" required="" />
                                     </div>
                                 </div>
                                 {/* Company  */}
@@ -143,9 +143,7 @@ const CheckOut = () => {
                                         name="Username"
                                         id="Username"
                                         className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-full 
-                                    block w-full p-2.5 py-3 dark:bg-gray-700 dark:border-gray-600
-                                    dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
-                                    dark:focus:border-blue-500"
+                                    block w-full p-2.5 py-3"
                                         placeholder=""
                                         required=""
                                     />
@@ -161,8 +159,7 @@ const CheckOut = () => {
                                             value={inputValue}
                                             readOnly
                                             className='bg-gray-50 border border-gray-300 text-gray-900 text-md font-semibold rounded-full 
-                                        block w-full p-2.5 py-3 pr-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
-                                        dark:focus:border-blue-500'
+                                        block w-full p-2.5 py-3 pr-10'
                                         />
                                         <RiArrowDropDownLine className='text-3xl absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600' />
                                     </div>
@@ -197,18 +194,15 @@ const CheckOut = () => {
                                 <div>
                                     <label for="Username" className="block mb-2 text-base leading-5 text-black font-medium">Street address * </label>
                                     <input type="Username" name="Username" id="Username" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-full 
-                        block  w-full p-2.5 py-3 mb-6 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
-                         dark:focus:border-blue-500" placeholder="House number and street name" required="" />
+                        block  w-full p-2.5 py-3 mb-6" placeholder="House number and street name" required="" />
                                     <input type="Username" name="Username" id="Username" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-full 
-                        block w-full p-2.5 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
-                         dark:focus:border-blue-500" placeholder="Apartment,suite,unit,etc.(optional)" required="" />
+                        block w-full p-2.5 py-3 " placeholder="Apartment,suite,unit,etc.(optional)" required="" />
                                 </div>
                                 {/* town City */}
                                 <div>
                                     <label for="Name" className="block mb-2 text-base leading-5 text-black font-medium">Town / City *</label>
                                     <input type="Name" name="Name" id="Name" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-full 
-                        block w-full p-2.5 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
-                         dark:focus:border-blue-500"
+                                    block w-full p-2.5 py-3"
                                         placeholder="" required="" />
                                 </div>
                                 {/* State */}
@@ -220,7 +214,7 @@ const CheckOut = () => {
                                             type="text"
                                             name="City"
                                             id="City"
-                                            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-full block w-full p-2.5 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-full block w-full p-2.5 py-3"
                                             placeholder={selectedItem || 'Select an item'}
                                         />
                                     </div>
@@ -252,38 +246,37 @@ const CheckOut = () => {
                                 <div>
                                     <label for="Username" className="block mb-2 text-base leading-5 text-black font-medium">ZIP Code *</label>
                                     <input type="Username" name="Username" id="Username" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-full 
-                        block w-full p-2.5 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
-                         dark:focus:border-blue-500" placeholder="" required="" />
+                                    block w-full p-2.5 py-3" placeholder="" required="" />
                                 </div>
                                 {/* Phone & Email */}
                                 <div className='flex flex-col md:flex-row gap-6'>
                                     <div className='w-full'>
                                         <label for="Name" className="block mb-2 text-base leading-5 text-black font-medium">Phone *</label>
                                         <input type="Name" name="Name" id="Name" className="bg-gray-50 border p-2.5 w-full py-3.5
-                             border-gray-300 text-gray-900 sm:text-sm rounded-full  block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                             border-gray-300 text-gray-900 sm:text-sm rounded-full  block "
                                             placeholder="" required="" />
                                     </div>
                                     <div className='w-full'>
                                         <label for="Name" className="block mb-2 text-base leading-5 text-black font-medium">
                                             Email address *</label>
                                         <input type="Name" name="Name" id="Name" placeholder="" className="bg-gray-50 border p-2.5 w-full py-3.5
-                             border-gray-300 text-gray-900 sm:text-sm rounded-full  block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
+                             border-gray-300 text-gray-900 sm:text-sm rounded-full  block" required="" />
                                     </div>
                                 </div>
 
                                 <div className="flex items-start">
                                     <div className="flex items-center h-5">
-                                        <input id="remember" aria-describedby="remember" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="" />
+                                        <input id="remember" aria-describedby="remember" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300" required="" />
                                     </div>
                                     <div className="ml-3 text-sm">
-                                        <label for="remember" className="text-gray-500 dark:text-gray-300">Ship to a different address?</label>
+                                        <label for="remember" className="text-gray-500">Ship to a different address?</label>
                                     </div>
                                 </div>
                             </form>
                         </div>
 
                         <div className='mt-12 mx-4 md:mx-0 w-full md:w-[500px]'>
-                            <h1 className="text-xl mx-2 font-bold border-b text-gray-900 md:text-2xl dark:text-white">
+                            <h1 className="text-xl mx-2 font-bold border-b text-gray-900 md:text-2xl">
                                 Order summary
                             </h1>
                             {/* Product 1 */}
@@ -342,11 +335,11 @@ const CheckOut = () => {
                                     <p className='text-gray-500 text-md font-semibold'>Shipping</p>
                                     <div className='flex flex-col gap-1'>
                                         <p className='flex flex-row gap-2 items-center'>
-                                            <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded-full focus:ring-black dark:focus:ring-black  " />
+                                            <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded-full focus:ring-black" />
                                             <p >  Free shipping </p>
                                         </p>
                                         <p className='flex flex-row gap-2  mx-4 items-center'>
-                                            <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded-full focus:ring-black dark:focus:ring-black  " />
+                                            <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded-full focus:ring-black" />
                                             <p> Flat rate: <span className='text-[#32BDe8]'> $10.00</span></p>
                                         </p>
 
@@ -358,7 +351,7 @@ const CheckOut = () => {
                                 </div>
                             </div>
 
-                            <h1 className="text-2xl mx-4 font-semibold mt-6 text-start text-gray-900 dark:text-white">
+                            <h1 className="text-2xl mx-4 font-semibold mt-6 text-start text-gray-900">
                                 Payment information
                             </h1>
 

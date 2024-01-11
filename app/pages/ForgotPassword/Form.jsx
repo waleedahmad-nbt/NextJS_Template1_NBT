@@ -7,8 +7,8 @@ const Form = () => {
                 <div className="mt-7 bg-white w-[570px] m-auto h-[380px] p-4 border rounded-md shadow-lg">
                     <div className="p-4 ">
                         <div className="text-start">
-                            <h1 className="block text-2xl font-semibold text-gray-800 dark:text-white">Lost your password?</h1>
-                            <p className="mt-4 mb-4 text-base font-medium text-[#4B5563] dark:text-gray-400">
+                            <h1 className="block text-2xl font-semibold text-gray-800">Lost your password?</h1>
+                            <p className="mt-4 mb-4 text-base font-medium text-[#4B5563]">
                                 Please enter your username or email address. You will receive a link to create a new password via email.
 
                             </p>

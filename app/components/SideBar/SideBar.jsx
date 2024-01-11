@@ -51,7 +51,7 @@ const SideBar = () => {
         <>
             <div className=''>
                 {/* Show on large screen */}
-                <div className="fixed z-50 top-0 right-0 h-52 w-10 mt-[15rem] bg-white text-[#666666] flex flex-col items-center rounded-md shadow justify-around">
+                <div className="fixed z-50 top-0 right-0 h-52 w-10 mt-[8rem] md:mt-[15rem] bg-white text-[#666666] flex flex-col items-center rounded-md shadow justify-around">
 
                     <Tooltip
                         title="Preview Demos"

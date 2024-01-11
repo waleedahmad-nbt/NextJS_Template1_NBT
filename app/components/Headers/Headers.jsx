@@ -88,18 +88,18 @@ const Headers = () => {
                   {/* Language Dropdown menu */}
                   <div
                     id="dropdownUsers"
-                    className={`z-40 ${isLanguageDropdownOpen ? 'block' : 'hidden'} bg-white divide-y divide-gray-100 rounded-md shadow w-36 dark:bg-gray-700 dark:divide-gray-600 absolute right-0`}
+                    className={`z-40 ${isLanguageDropdownOpen ? 'block' : 'hidden'} bg-white divide-y divide-gray-100 rounded-md shadow w-36  absolute right-0`}
 
                   >
-                    <ul className="h-auto py-2 overflow-y-auto text-gray-700 dark:text-gray-200" aria-labelledby="dropdownUsersButton">
+                    <ul className="h-auto py-2 overflow-y-auto text-gray-700" aria-labelledby="dropdownUsersButton">
                       <li>
-                        <a href="#" className="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                        <a href="#" className="flex items-center px-4 py-2 hover:bg-gray-100">
                           <Image className="w-6 h-6 me-2 rounded-full" src={fr} alt="French flag" />
                           Français
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                        <a href="#" className="flex items-center px-4 py-2 hover:bg-gray-100">
                           <Image className="w-6 h-6 me-2 rounded-full" src={de} alt="German flag" />
                           Deutsch
                         </a>
@@ -142,17 +142,17 @@ const Headers = () => {
                   {/* Currency Dropdown menu */}
                   <div
                     id="dropdownHover"
-                    className={`z-40 ${isCurrencyDropdownOpen ? 'block' : 'hidden'} bg-white divide-y divide-gray-100 rounded-md shadow w-28 dark:bg-gray-700 absolute right-0`}
+                    className={`z-40 ${isCurrencyDropdownOpen ? 'block' : 'hidden'} bg-white divide-y divide-gray-100 rounded-md shadow w-28 absolute right-0`}
 
                   >
-                    <ul className="py-2 text-sm text-gray-700 text-center dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+                    <ul className="py-2 text-sm text-gray-700 text-center" aria-labelledby="dropdownHoverButton">
                       <li>
-                        <a href="#" className="block px-2 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                        <a href="#" className="block px-2 py-2 hover:bg-gray-100">
                           EUR
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="block px-2 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                        <a href="#" className="block px-2 py-2 hover:bg-gray-100">
                           GBP
                         </a>
                       </li>

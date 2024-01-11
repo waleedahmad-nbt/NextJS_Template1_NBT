@@ -10,7 +10,7 @@ const Comparison = () => {
 
                 <div className="relative overflow-x-auto mt-10">
                     <table className="w-full text-sm text-left rtl:text-right">
-                        <thead className="text-lg text-black uppercase bg-[#FBFBFB] dark:bg-gray-700 dark:text-gray-400">
+                        <thead className="text-lg text-black uppercase bg-[#FBFBFB]">
                             <tr>
                                 <th scope="col" className="px-3 py-3">
                                     Global Version Mi MIX4 Camera Face Recognition Fingerprint
@@ -33,16 +33,16 @@ const Comparison = () => {
                                     Global Version Redmi Note 9 Pro 6GB RAM 64GB ROM Smartphone Mobile Phone
                                 </th>
                                 <th scope="col" className="px-3 py-3">
-                                    <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5"></div>
+                                    <div class="h-2 bg-gray-200 rounded-full max-w-[480px] mb-2.5"></div>
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <tr className="odd:bg-white  even:bg-gray-50 border-b">
+                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                                     <img src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_30_1-600x600.jpg" alt="" className='h-[261px] w-[261px]' />
                                 </th>
-                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                                     <img src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_30_1-600x600.jpg" alt="" className='h-[261px] w-[261px]' />
                                 </th>
                                 <td className="px-6 py-4">
@@ -58,10 +58,10 @@ const Comparison = () => {
                                     <img src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_06_2-600x600.jpg" alt="" className='h-[261px] w-[261px]' />
                                 </td>
                                 <td className="px-6 py-4">
-                                    <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
+                                    <div class="h-2.5 bg-gray-200 rounded-full w-48 mb-4"></div>
                                 </td>
                             </tr>
-                            <tr className="odd:bg-white text-[#32BDE8] text-lg font-semibold odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                            <tr className="odd:bg-white text-[#32BDE8] text-lg font-semibold even:bg-gray-50 border-b">
                                 <td className=" px-6 py-4">
                                     $112.00
                                 </td>
@@ -81,10 +81,10 @@ const Comparison = () => {
                                     $150.00
                                 </td>
                                 <td className="px-6 py-4">
-                                    <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
+                                    <div class="h-2.5 bg-gray-200 rounded-full  w-48 mb-4"></div>
                                 </td>
                             </tr>
-                            <tr className="odd:bg-white text-[#666666] text-lg odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                            <tr className="odd:bg-white text-[#666666] text-lg  even:bg-gray-50">
                                 <td className=" px-6 py-4">
                                     For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent.
                                 </td>
@@ -104,10 +104,10 @@ const Comparison = () => {
                                     For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent.
                                 </td>
                                 <td className="px-6 py-4">
-                                    <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[440px] mb-2.5"></div>
+                                    <div class="h-2 bg-gray-200 rounded-full max-w-[440px] mb-2.5"></div>
                                 </td>
                             </tr>
-                            <tr className="odd:bg-white text-[#666666] text-lg odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                            <tr className="odd:bg-white text-[#666666] text-lg  even:bg-gray-50 ">
                                 <td className=" px-6 py-4">
                                     N/A
                                 </td>
@@ -127,7 +127,7 @@ const Comparison = () => {
                                     N/A
                                 </td>
                                 <td className="px-6 py-4">
-                                    <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[460px] mb-2.5"></div>
+                                    <div class="h-2 bg-gray-200 rounded-full max-w-[460px] mb-2.5"></div>
                                 </td>
                             </tr>
                             <tr className='text-[#666666] text-lg'>
@@ -150,10 +150,10 @@ const Comparison = () => {
                                     N/A
                                 </td>
                                 <td className="px-6 py-4">
-                                    <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[460px] mb-2.5"></div>
+                                    <div class="h-2 bg-gray-200 rounded-full  max-w-[460px] mb-2.5"></div>
                                 </td>
                             </tr>
-                            <tr className='odd:bg-white text-[#666666] text-lg odd:dark:bg-gray-900 even:bg-gray-50'>
+                            <tr className='odd:bg-white text-[#666666] text-lg even:bg-gray-50'>
                                 <td className="px-6 py-4">
                                     <div className='flex flex-row justify-between'>
                                         <h2 className='text-gray-600'>Color</h2>
@@ -191,11 +191,11 @@ const Comparison = () => {
                                     </div>
                                 </td>
                                 <td className="px-6 py-4">
-                                    <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px]"></div>
+                                    <div className="h-2 bg-gray-200 rounded-full max-w-[360px]"></div>
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                     <button href="#"
                                         className="bg-black mt-2 px-7 h-[40px] w-[261px] text-white rounded-full py-2 hover:scale-105 duration-300"
                                     >
@@ -238,7 +238,7 @@ const Comparison = () => {
                                     </button>
                                 </td>
                                 <td className="px-6 py-4">
-                                    <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px]"></div>
+                                    <div class="h-2 bg-gray-200 rounded-full max-w-[360px]"></div>
                                 </td>
                             </tr>
                             <tr>

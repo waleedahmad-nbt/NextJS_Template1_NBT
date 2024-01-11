@@ -30,14 +30,14 @@ const WishlistModal = () => {
                         {/* Modal content */}
                         <div className="relative bg-white shadow">
                             {/* Modal header */}
-                            <div className="flex items-center justify-between p-2 bg-black border-b  dark:border-gray-600">
+                            <div className="flex items-center justify-between p-2 bg-black border-b">
                                 <h3 className="text-md ml-3 font-semibold text-white">
                                     Wishlist (5)
                                 </h3>
                                 <button
                                     onClick={closeModal}
                                     type="button"
-                                    className="text-white bg-transparent hover:text-gray-200 rounded-lg text-xs w-8 h-8 inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                    className="text-white bg-transparent hover:text-gray-200 rounded-lg text-xs w-8 h-8 inline-flex justify-center items-center"
                                 >
                                     <svg
                                         className="w-3 h-3"

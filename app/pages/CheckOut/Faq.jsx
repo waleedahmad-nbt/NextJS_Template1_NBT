@@ -24,7 +24,7 @@ const FAQItem = ({ question, answer, isOpen, toggleOpen, isChecked, setChecked, 
                         type="radio"
                         value=""
                         name="faq-radio"
-                        className="w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 m-2"
+                        className="w-4 h-4 bg-gray-100 border-gray-300 m-2"
                         checked={isChecked}
                         onChange={() => { }}
                     />

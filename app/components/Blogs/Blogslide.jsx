@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 
 const BlogSlide = ({ imageUrl, category, title }) => (
     <div className='flex flex-col w-full h-auto cursor-pointer overflow-hidden'>
@@ -7,12 +6,12 @@ const BlogSlide = ({ imageUrl, category, title }) => (
         <img
           src={imageUrl}
           alt='Blog Post Image'
-          className='transition-transform transform object-cover 
+          className='transition-transform transform 
           hover:scale-105 duration-700 w-full h-full'
         />
       </div>
-      <h4 className='text-sm font-bold mt-4 text-gray-800 hover:text-gray-500'>{category}</h4>
-      <p className='text-xl font-bold mt-3 leading-7 text-ellipsis'>{title}</p>
+      <h4 className='text-xs mt-4 text-gray-800 hover:text-gray-500'>{category}</h4>
+      <p className='text-lg font-semibold mt-2 text-ellipsis'>{title}</p>
     </div>
   );
   

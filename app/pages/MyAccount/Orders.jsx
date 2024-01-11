@@ -5,7 +5,7 @@ const ProductTable = () => {
         <>
             <div className='hidden md:block'>
                 <div className="relative overflow-x-auto">
-                    <table className="w-full md:max-w-2xl mx-20 text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <table className="w-full md:max-w-2xl mx-20 text-sm text-left rtl:text-right text-gray-500">
                         <thead className="text-xs text-gray-700 uppercase">
                             <tr>
                                 <th scope="col" className="px-4 md:px-6 py-3">
@@ -101,7 +101,7 @@ const TableRow = ({ Order, Date, Status, Total, Actions }) => {
         <tr className="bg-[#F8F8F8] border-b mb-9">
             <th
                 scope="row"
-                className="px-4 md:px-6 py-4 font-medium text-black hover:text-gray-500 cursor-pointer duration-300 whitespace-nowrap dark:text-white"
+                className="px-4 md:px-6 py-4 font-medium text-black hover:text-gray-500 cursor-pointer duration-300 whitespace-nowrap"
             >
                 {Order}
             </th>

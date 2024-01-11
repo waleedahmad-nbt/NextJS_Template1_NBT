@@ -9,7 +9,7 @@ const Compare = () => {
 
                         <tbody className=''>
                             <tr class="border-r">
-                                <th scope="row" className="px-6 py-4 w-[271px] font-medium text-gray-900 whitespace-nowrap bg-[#F8F8F8] dark:text-white">
+                                <th scope="row" className="px-6 py-4 w-[271px] font-medium text-gray-900 whitespace-nowrap bg-[#F8F8F8]">
 
                                 </th>
                                 <td className="px-6 py-4 text-lg font-medium  border-r">
@@ -22,8 +22,8 @@ const Compare = () => {
                                     Cwxuan Sports Magnetic Bluetooth V4.1 Stereo Earphone with Microphone remove
                                 </td>
                             </tr>
-                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                <th scope="row" className="w-[271px] sm:w-[200px] text-base font-medium text-gray-900 whitespace-nowrap bg-[#F8F8F8] dark:text-white">
+                            <tr className="bg-white border-b ">
+                                <th scope="row" className="w-[271px] sm:w-[200px] text-base font-medium text-gray-900 whitespace-nowrap bg-[#F8F8F8]">
                                     Image
                                 </th>
                                 <td className="px-6 py-4  border-r">
@@ -36,7 +36,7 @@ const Compare = () => {
                                     <img src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_18_1-600x600.jpg" alt="" />
                                 </td>
                             </tr>
-                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <tr className="bg-white border-b ">
                                 <th scope="row" className=" w-[271px] font-medium text-gray-900 whitespace-nowrap bg-[#F8F8F8] ">
                                     Price
                                 </th>
@@ -50,8 +50,8 @@ const Compare = () => {
                                     $112.00
                                 </td>
                             </tr>
-                            <tr className="bg-white text-[#666666] border-b dark:bg-gray-800 dark:border-gray-700">
-                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-[#F8F8F8] dark:text-white">
+                            <tr className="bg-white text-[#666666] border-b ">
+                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-[#F8F8F8] ">
                                     Description
                                 </th>
                                 <td className="px-6 py-4 border-r">
@@ -64,8 +64,8 @@ const Compare = () => {
                                     $For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent.
                                 </td>
                             </tr>
-                            <tr className="bg-white text-[#666666] border-b dark:bg-gray-800 dark:border-gray-700">
-                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-[#F8F8F8] dark:text-white">
+                            <tr className="bg-white text-[#666666] border-b">
+                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-[#F8F8F8]">
                                     Weight
                                 </th>
                                 <td className="px-6 py-4 border-r">
@@ -78,8 +78,8 @@ const Compare = () => {
                                     N/A
                                 </td>
                             </tr>
-                            <tr className="bg-white text-[#666666] border-b dark:bg-gray-800 dark:border-gray-700">
-                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-[#F8F8F8] dark:text-white">
+                            <tr className="bg-white text-[#666666] border-b ">
+                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-[#F8F8F8] ">
                                     Dimensions
                                 </th>
                                 <td className="px-6 py-4 border-r">
@@ -92,8 +92,8 @@ const Compare = () => {
                                     N/A
                                 </td>
                             </tr>
-                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-[#F8F8F8] dark:text-white">
+                            <tr className="bg-white border-b">
+                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-[#F8F8F8] ">
                                     Additional information
                                 </th>
                                 <td className="px-6 py-4 border-r">
@@ -116,8 +116,8 @@ const Compare = () => {
                                 </td>
                             </tr>
 
-                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-[#F8F8F8] dark:text-white">
+                            <tr className="bg-white border-b">
+                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-[#F8F8F8]">
                                     Add to cart
                                 </th>
                                 <td className="px-6 py-4 border-r">

@@ -52,7 +52,7 @@ const SignIn = () => {
                 <div className="flex flex-col">
                     <div className="md:mt-0 xl:p-0">
                         <div className=" ">
-                            <h1 className="text-2xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                            <h1 className="text-2xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
 
                                 {loading ? "Processing" : "Sign In"}
                             </h1>
@@ -81,7 +81,7 @@ const SignIn = () => {
                                         id="password"
                                         placeholder=""
                                         className="bg-gray-50 border border-gray-300 text-gray-900 
-                                        sm:text-sm rounded-full block w-full p-2.5 py-3 dark:placeholder-gray-400"
+                                        sm:text-sm rounded-full block w-full p-2.5 py-3"
                                         required=""
                                     />
                                 </div>
@@ -89,14 +89,14 @@ const SignIn = () => {
                                 <div className="flex flex-col md:flex-row space-y-2 items-start md:items-center justify-between">
                                     <div className="flex items-start">
                                         <div className="flex items-center h-5">
-                                            <input id="remember" aria-describedby="remember" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="" />
+                                            <input id="remember" aria-describedby="remember" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300" required="" />
                                         </div>
                                         <div className="ml-3 text-sm">
-                                            <label for="remember" className="text-gray-500 dark:text-gray-300">Stay signed in</label>
+                                            <label for="remember" className="text-gray-500">Stay signed in</label>
                                         </div>
                                     </div>
                                     <Link href="/pages/ForgotPassword">
-                                        <p className="text-sm font-medium text-primary-600 hover:underline dark:text-gray0600">Forgot your password?</p>
+                                        <p className="text-sm font-medium text-primary-600 hover:underline">Forgot your password?</p>
                                     </Link>
                                 </div>
                                 <button type="submit" className="hover:scale-105 duration-300 focus:ring-4

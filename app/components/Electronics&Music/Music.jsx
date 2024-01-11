@@ -162,7 +162,7 @@ const Music = () => {
             <div className='block lg:hidden'>
                 {/* Left side */}
                 <div className='grid grid-cols-1 h-[250px] mt-4 mx-4 sm:mx-10'>
-                    <div className="relative col-span-1 flex rounded-lg w-full h-full group overflow-hidden">
+                    <div className="relative flex rounded-lg w-full h-full group overflow-hidden">
                         <img
                             className="w-full h-full object-cover rounded-lg  transition-transform transform group-hover:scale-110 duration-700"
                             src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/shop-banner-02.jpg"
@@ -170,10 +170,10 @@ const Music = () => {
                         />
                         <div className="absolute inset-0 flex items-center justify-center">
                             <div className="w-full flex flex-row">
-                                <div className="flex flex-col font-sans m-6">
+                                <div className="flex flex-col m-6">
                                     <h3 className="text-2xl font-bold text-black">Sony Headphone</h3>
                                     <span className="text-xl  font-bold text-black"> at Best Prices</span>
-                                    <div className="text-xl font-semibold text-black font-sans mt-2 leading-8">
+                                    <div className="text-xl font-semibold text-black mt-2 leading-8">
                                         <span className='text-gray-800'>Just Price</span>
                                         <span className='text-red-600 text-xl font-bold'>$129.00</span>
                                     </div>
@@ -192,7 +192,7 @@ const Music = () => {
                     </div>
                 </div>
                 {/* Right Side */}
-                <div className='grid grid-cols-2 sm:grid-cols-2 gap-4 mt-2 p-3 mx-3 sm:mx-8'>
+                <div className='grid grid-cols-2 sm:grid-cols-2 gap-4 mt-2 p-3 mx-2 sm:mx-8'>
                     <div className="relative flex rounded-lg w-full h-full sm:h-[280px] group overflow-hidden">
                         <img
                             className="w-full h-260px object-cover rounded-lg transition-transform transform group-hover:scale-110 duration-700"
@@ -201,8 +201,8 @@ const Music = () => {
                         />
                         <div className="absolute inset-0 flex">
                             <div className="flex flex-col justify-between">
-                                <div className="text-lg font-semibold m-3">
-                                    <span className='text-black font-bold '>Robot Clean</span>
+                                <div className="text-lg font-semibold mx-3">
+                                    <span className='text-black text-base font-semibold '>Robot Clean</span>
                                 </div>
                                 <p className=' font-semibold text-gray-500 m-3'>3 Items</p>
                             </div>
@@ -216,8 +216,8 @@ const Music = () => {
                         />
                         <div className="absolute inset-0 flex">
                             <div className="flex flex-col justify-between">
-                                <div className="font-semibold m-3">
-                                    <span className='text-black text-lg font-bold '>Smart Watches</span>
+                                <div className="font-semibold mx-3">
+                                    <span className='text-black text-base font-semibold '>Smart Watches</span>
                                 </div>
                                 <p className='font-semibold text-gray-500 m-3'>2 Items</p>
                             </div>
@@ -232,7 +232,7 @@ const Music = () => {
                         <div className="absolute inset-0 flex">
                             <div className="flex flex-col justify-between">
                                 <div className="font-semibold mx-3">
-                                    <span className='text-black text-lg font-bold '>Cameras& <br /> Photos</span>
+                                    <span className='text-black text-base font-semibold '>Cameras& <br /> Photos</span>
                                 </div>
                                 <p className='font-semibold text-gray-500 mx-3'>2 Items</p>
                             </div>
@@ -247,7 +247,7 @@ const Music = () => {
                         <div className="absolute inset-0 flex">
                             <div className="flex flex-col justify-between">
                                 <div className="font-semibold mx-3">
-                                    <span className='text-black text-lg font-bold '>Security & <br /> Protection </span>
+                                    <span className='text-black text-base font-semibold '>Security & <br /> Protection </span>
                                 </div>
                                 <p className='font-semibold text-gray-500 m-3'>2 Items</p>
                             </div>
@@ -261,8 +261,8 @@ const Music = () => {
                         />
                         <div className="absolute inset-0 flex">
                             <div className="flex flex-col justify-between ">
-                                <div className="font-semibold mx-3 p-1">
-                                    <span className='text-black text-lg font-bold '>Smart Watches</span>
+                                <div className="font-semibold mx-3">
+                                    <span className='text-black text-base font-semibold '>Smart Watches</span>
                                 </div>
                                 <p className='font-semibold text-gray-500 m-3'>2 Items</p>
 
@@ -277,8 +277,8 @@ const Music = () => {
                         />
                         <div className="absolute inset-0 flex">
                             <div className="flex flex-col justify-between">
-                                <div className="font-semibold mx-3 p-1">
-                                    <span className='text-black text-lg font-bold '>Smart Watches</span>
+                                <div className="font-semibold mx-3">
+                                    <span className='text-black text-base font-semibold '>Smart Watches</span>
                                 </div>
                                 <p className='font-semibold text-gray-500 m-3'>2 Items</p>
 
