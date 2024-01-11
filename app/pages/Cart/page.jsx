@@ -5,9 +5,30 @@ import { GoPencil } from 'react-icons/go';
 import { RiCouponLine } from "react-icons/ri";
 import { LiaShippingFastSolid } from "react-icons/lia";
 import EmptyCart from './EmptyCart';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeFromCart } from '@/app/lib/redux/slices/cartSlice';
 
 const Page = () => {
     const [clientTime, setClientTime] = useState(null);
+    const dispatch = useDispatch();
+
+    const CartItems = useSelector((state) => state.cart.items);
+    const cartQuantity = CartItems ? CartItems.length : 0;
+
+    const counter = useSelector((state) => state.cart.value);
+
+
+    const handleIncrement = () => {
+        dispatch(increment());
+    }
+    const handleDecrement = () => {
+        dispatch(decrement());
+    }
+
+
+    const handleRemoveFromCart = (item) => {
+        dispatch(removeFromCart(item));
+    };
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -25,11 +46,9 @@ const Page = () => {
                 ' ' +
                 amPm;
 
-            // Update clientTime state
             setClientTime(formattedTime);
         }, 1000);
 
-        // Cleanup interval on component unmount
         return () => clearInterval(intervalId);
     }, []);
 
@@ -48,145 +67,73 @@ const Page = () => {
                     </div>
                 </div>
 
-                <div className="p-4 border-b mx-20 mt-16 lg:block hidden">
-                    <div className="container mx-auto flex justify-between items-center">
-                        <p className="text-black text-lg">
-                            Product
-                        </p>
-                        <div className="space-x-20">
-                            <a href="#" className="text-black">Price</a>
-                            <a href="#" className="text-black">Quantity</a>
-                            <a href="#" className="text-black ml-10">SubTotal</a>
-                        </div>
-                    </div>
-                </div>
 
-                <div className='flex flex-col md:flex-row justify-between mx-4 md:mx-0'>
-                    {/* Left */}
-                    <div className='flex mx-2 md:mx-10'>
-                        <img
-                            src="https://minimog.thememove.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_02_3-110x110.jpg"
-                            alt=""
-                            className='md:w-[110px] md:h-[110px] h-[75px] w-[75px] mx-1 md:mx-0 items-center mt-4'
-                        />
-                        {/*  */}
-                        <div className='flex flex-col mt-5 gap-1'>
-                            <a href='#' className='text-md font-semibold hover:text-gray-500'>
-                                ZY418 Ultra-thin Sport MP3 MP4 Music Player Ultra-thin Sport MP3 MP4 Music Player
-                            </a>
-                            <p className='text-base font-medium'>Color: Sage Green</p>
-                            <p>Size: GTS 2 Mini</p>
-                            <p className='md:mt-3 mt-1 text-gray-800 hover:text-gray-500 cursor-pointer'>Remove</p>
+                {cartQuantity === 0 ? (
+                    <EmptyCart />
+                ) : (
+                    <div>
+                        <div className="p-4 border-b mx-20 mt-16 lg:block hidden">
+                            <div className="container mx-auto flex justify-between items-center">
+                                <p className="text-black text-lg">
+                                    Product
+                                </p>
+                                <div className="space-x-20">
+                                    <a href="#" className="text-black">Price</a>
+                                    <a href="#" className="text-black">Quantity</a>
+                                    <a href="#" className="text-black ml-10">SubTotal</a>
+                                </div>
+                            </div>
                         </div>
-                        {/*  */}
+                        {
+                            CartItems.map((item) => {
+                                const { id, imageSrc, title, originalPrice } = item;
+                                return (
+                                    <>
+                                        <div key={id} className='flex flex-col md:flex-row justify-between mx-4 md:mx-0'>
+                                            {/* Left */}
+                                            <div className='flex mx-2 md:mx-10'>
+                                                <img
+                                                    src={imageSrc}
+                                                    alt=""
+                                                    className='md:w-[110px] md:h-[110px] h-[75px] w-[75px] mx-1 md:mx-0 items-center mt-4'
+                                                />
+                                                {/*  */}
+                                                <div className='flex flex-col mt-5 gap-1'>
+                                                    <a href='#' className='text-md font-semibold hover:text-gray-500'>
+                                                        {title}
+                                                    </a>
+                                                    <p className='text-base font-medium'>Color: Sage Green</p>
+                                                    <p>Size: GTS 2 Mini</p>
+                                                    <p onClick={() => handleRemoveFromCart(item)} className='md:mt-3 mt-1 text-gray-800 hover:text-gray-500 cursor-pointer'>Remove</p>
+                                                </div>
+                                                {/*  */}
+                                            </div>
+                                            {/* Right */}
+                                            <div className='md:flex items-center mr-24 gap-9 ml-24 md:ml-0'>
+                                                <p className='text-[#32BDe8] my-2 md:my-10 hidden md:block'>{originalPrice}</p>
+                                                <div className="flex justify-center w-[100px] md:w-[120px] h-8 md:h-12 text-center items-center border rounded-3xl
+                                                 mt-2 md:mt-2 space-x-2">
+                                                    <FaMinus onClick={handleIncrement} className='font-light' />
+                                                    <p class="h-full w-[50px] flex justify-center items-center">
+                                                        {counter}
+                                                    </p>
+                                                    <FaPlus onClick={handleDecrement} className='font-light' />
+                                                </div>
+                                                <div className='flex items-center gap-4'>
+                                                    <p className='block md:hidden text-base text-gray-500 font-semibold'>Subtotal:</p>
+                                                    <p className='text-[#32BDe8] my-2 md:my-9'>
+                                                        $129.99
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </>
+                                )
+                            })
+                        }
                     </div>
-                    {/* Right */}
-                    <div className='md:flex items-center mr-24 gap-9 ml-24 md:ml-0'>
-                        <p className='text-[#32BDe8] my-2 md:my-10 hidden md:block'>$129.99</p>
-                        <div className="flex justify-center w-[100px] md:w-[120px] h-8 md:h-12 text-center items-center border rounded-3xl
-                     mt-2 md:mt-2 space-x-2">
-                            <FaMinus className='font-light' />
-                            <input
-                                className="mx-2 border text-center w-8 h-6 md:h-8 outline-none border-none"
-                                type="text"
-                                value="1"
-                            />
-                            <FaPlus className='font-light' />
-                        </div>
-                        <div className='flex items-center gap-4'>
-                            <p className='block md:hidden text-base text-gray-500 font-semibold'>Subtotal:</p>
-                            <p className='text-[#32BDe8] my-2 md:my-9'>
-                                $129.99
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <hr className='border-b mx-4 md:mx-20 mt-2 md:mt-6' />
+                )}
 
-                <div className='flex flex-col md:flex-row justify-between mx-4 md:mx-0'>
-                    {/* Left */}
-                    <div className='flex mx-2 md:mx-10'>
-                        <img
-                            src="https://minimog.thememove.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_02_3-110x110.jpg"
-                            alt=""
-                            className='md:w-[110px] md:h-[110px] h-[75px] w-[75px] mx-1 md:mx-0 items-center mt-4'
-                        />
-                        {/*  */}
-                        <div className='flex flex-col mt-5 gap-1'>
-                            <a href='#' className='text-md font-semibold hover:text-gray-500'>
-                                ZY418 Ultra-thin Sport MP3 MP4 Music Player Ultra-thin Sport MP3 MP4 Music Player
-                            </a>
-                            <p className='text-base font-medium'>Color: Sage Green</p>
-                            <p>Size: GTS 2 Mini</p>
-                            <p className='md:mt-3 mt-1 text-gray-800 hover:text-gray-500 cursor-pointer'>Remove</p>
-                        </div>
-                        {/*  */}
-                    </div>
-                    {/* Right */}
-                    <div className='md:flex items-center mr-24 gap-9 ml-24 md:ml-0'>
-                        <p className='text-[#32BDe8] my-2 md:my-10 hidden md:block'>$129.99</p>
-                        <div className="flex justify-center w-[100px] md:w-[120px] h-8 md:h-12 text-center items-center border rounded-3xl
-                     mt-2 md:mt-2 space-x-2">
-                            <FaMinus className='font-light' />
-                            <input
-                                className="mx-2 border text-center w-8 h-6 md:h-8 outline-none border-none"
-                                type="text"
-                                value="1"
-                            />
-                            <FaPlus className='font-light' />
-                        </div>
-                        <div className='flex items-center gap-4'>
-                            <p className='block md:hidden text-base text-gray-500 font-semibold'>Subtotal:</p>
-                            <p className='text-[#32BDe8] my-2 md:my-9'>
-                                $129.99
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-                <hr className='border-b mx-4 md:mx-20 mt-2 md:mt-6' />
-
-                <div className='flex flex-col md:flex-row justify-between mx-4 md:mx-0'>
-                    {/* Left */}
-                    <div className='flex mx-2 md:mx-10'>
-                        <img
-                            src="https://minimog.thememove.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_02_3-110x110.jpg"
-                            alt=""
-                            className='md:w-[110px] md:h-[110px] h-[75px] w-[75px] mx-1 md:mx-0 items-center mt-4'
-                        />
-                        {/*  */}
-                        <div className='flex flex-col mt-5 gap-1'>
-                            <a href='#' className='text-md font-semibold hover:text-gray-500'>
-                                ZY418 Ultra-thin Sport MP3 MP4 Music Player Ultra-thin Sport MP3 MP4 Music Player
-                            </a>
-                            <p className='text-base font-medium'>Color: Sage Green</p>
-                            <p>Size: GTS 2 Mini</p>
-                            <p className='md:mt-3 mt-1 text-gray-800 hover:text-gray-500 cursor-pointer'>Remove</p>
-                        </div>
-                        {/*  */}
-                    </div>
-                    {/* Right */}
-                    <div className='md:flex items-center mr-24 gap-9 ml-24 md:ml-0'>
-                        <p className='text-[#32BDe8] my-2 md:my-10 hidden md:block'>$129.99</p>
-                        <div className="flex justify-center w-[100px] md:w-[120px] h-8 md:h-12 text-center items-center border rounded-3xl
-                     mt-2 md:mt-2 space-x-2">
-                            <FaMinus className='font-light' />
-                            <input
-                                className="mx-2 border text-center w-8 h-6 md:h-8 outline-none border-none"
-                                type="text"
-                                value="1"
-                            />
-                            <FaPlus className='font-light' />
-                        </div>
-                        <div className='flex items-center gap-4'>
-                            <p className='block md:hidden text-base text-gray-500 font-semibold'>Subtotal:</p>
-                            <p className='text-[#32BDe8] my-2 md:my-9'>
-                                $129.99
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
 
                 <hr className='border-b mx-4 md:mx-20 mt-2 md:mt-6' />
                 <div className='w-full md:w-[400px] h-[350px] bg-[#FFFFFF] shadow-2xl flex flex-col ml-auto p-9 z-50 m-14 rounded-md'>
@@ -241,7 +188,6 @@ const Page = () => {
                 </div>
 
 
-                <EmptyCart />
             </div>
         </>
     );

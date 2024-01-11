@@ -1,118 +1,28 @@
 'use client';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { FaRegEye } from 'react-icons/fa';
+import { FaRegEye, FaRegStar } from 'react-icons/fa';
 import { IoMdStarOutline } from 'react-icons/io';
 import WishlistModal from './WishlistModal';
+import { HiOutlineArrowsRightLeft } from 'react-icons/hi2';
+import { Tooltip } from 'react-tippy';
+import 'react-tippy/dist/tippy.css';
+import { products } from '@/app/data';
+import { addToFavorites } from '@/app/lib/redux/slices/cartSlice';
+import { useDispatch } from 'react-redux';
 
 const List = () => {
 
     const [hoveredProduct, setHoveredProduct] = useState(null);
+    const dispatch=useDispatch();
 
-    const products = [
-        {
-            id: 1,
-            imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/03/product_gear_speaker_1_1-655x655.jpg',
-            hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/03/product_gear_speaker_1_2-450x450.jpg',
-            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
-            rating: 5,
-            originalPrice: 139.00,
-            discountedPrice: 129.00,
-        },
-        {
-            id: 2,
-            imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_32_1-655x655.jpg',
-            hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_32_3-450x450.jpg',
-
-            category: 'Bluetooth Speakers',
-            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
-            rating: 5,
-            originalPrice: 139.00,
-            discountedPrice: 129.00,
-        },
-        {
-            id: 3,
-            imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_31_1-655x655.jpg',
-            hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_31_2-655x655.jpg',
-
-            title: 'UMIDIGI Power 3 6150mAh 6.53 Inch FHD+ 4GB Global Version Helio P60 64GB ROM Quad Camera Android 10 Face ID Smartphone',
-            rating: 5,
-            discountedPrice: 219.90,
-        }, {
-            id: 4,
-            imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_30_1-655x655.jpg',
-            hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_30_2-655x655.jpg',
-
-            category: 'Bluetooth Speakers',
-            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
-            rating: 5,
-            originalPrice: 139.00,
-            discountedPrice: 129.00,
-        },
-        {
-            id: 5,
-            imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_29_1-655x655.jpg',
-            hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_29_2-655x655.jpg',
-            category: 'Bluetooth Speakers',
-            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
-            rating: 5,
-            originalPrice: 139.00,
-            discountedPrice: 129.00,
-        },
-        {
-            id: 6,
-            imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_29_1-655x655.jpg',
-            hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_29_2-655x655.jpg',
-            category: 'Bluetooth Speakers',
-            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
-            rating: 5,
-            originalPrice: 139.00,
-            discountedPrice: 129.00,
-        },
-        {
-            id: 7,
-            imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_27_1-655x655.jpg',
-            hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_27_2-655x655.jpg',
-            category: 'Bluetooth Speakers',
-            title: 'DIDSeth Pan Tilt Security Light Camera Full HD 1080P Wireless Wi-Fi IP Camera Home Dome Surveillance Cameras',
-            rating: 5,
-            originalPrice: 49.00,
-            discountedPrice: 48.00,
-        }, {
-            id: 8,
-            imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_26_3-655x655.jpg',
-            hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_26_1-655x655.jpg',
-            category: 'Bluetooth Speakers',
-            title: 'VIOMI V2 Pro LDS Sensor 2 In 1 Sweeping Mopping Robot Wet And Dry Vacuum Cleaner 2100Pa Strong Suction Self-Charging',
-            rating: 5,
-            originalPrice: 139.00,
-            discountedPrice: 129.00,
-        }, {
-            id: 9,
-            imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_25_1-655x655.jpg',
-            hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_25_2-655x655.jpg',
-            category: 'Bluetooth Speakers',
-            title: 'Teclast F7 Plus 14.1 Inch Notebook Intel N4100 8GB RAM 256GB SSD – Platinum 8GB+256GB',
-            rating: 5,
-            originalPrice: 139.00,
-            discountedPrice: 129.00,
-        },
-        {
-            id: 10,
-            imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_24_3-655x655.jpg',
-            hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_24_1-655x655.jpg',
-            category: 'Bluetooth Speakers',
-            title: 'Xiaomi Mi Watch Lite GPS Bluetooth 5.1 Smart Watch Sports Fitness Heart Rate Monitor 1.4 Inch TFTLCD Screen 5 ATM Waterproof Mi Band',
-            rating: 5,
-            originalPrice: 139.00,
-            discountedPrice: 129.00,
-        },
-    ];
+    const handleAddToFavorites = (product) => {
+        dispatch(addToFavorites(product));
+    };
 
     return (
         <>
             <div>
-                <Link href="/pages/Details">
                     {products.map((product) => (
                         <div
                             onMouseEnter={() => setHoveredProduct(product.id)}
@@ -125,8 +35,6 @@ const List = () => {
                                 className="w-[270px] h-[270px]  transition-all duration-1000 ease-in-out hover:scale-105"
                                 alt=""
                             />
-
-
                             < div className='flex flex-col gap-3 mt-2 justify-center m-3 md:ml-16 w-full'>
 
                                 <div className='flex flex-row'>
@@ -167,19 +75,58 @@ const List = () => {
                                         SELECT OPTIONS
                                     </a>
 
-                                    <Link href="">
-                                        <WishlistModal />
-                                    </Link>
-                                    <FaRegEye className='text-xl' />
+                                    <Tooltip
+                                        title="Add to Wishlist"
+                                        position="top"
+                                        trigger="mouseenter"
+                                        animation="scale"
+                                        arrow={true}
+                                    >
+                                        {/* <WishlistModal /> */}
+                                        <div onClick={() => handleAddToFavorites(product)}
+                                            className="text-black duration-500 p-3 flex text-center justify-center h-[45px] w-[45px] text-xl hover:bg-black hover:text-white bg-[#F2F2F2] rounded-full"
+                                        >
+                                            <FaRegStar />
+                                        </div>
+                                    </Tooltip>
+
+
+                                    <Tooltip
+                                        title="Compare"
+                                        position="top"
+                                        trigger="mouseenter"
+                                        animation="scale"
+                                        arrow={true}
+                                    >
+                                        <div
+                                            className="text-black duration-500 p-3 flex text-center justify-center h-[45px] w-[45px] text-xl hover:bg-black hover:text-white bg-[#F2F2F2] rounded-full"
+                                        >
+                                            <HiOutlineArrowsRightLeft />
+                                        </div>
+                                    </Tooltip>
+
+
+                                    <Tooltip
+                                        title="Quick View"
+                                        position="top"
+                                        trigger="mouseenter"
+                                        animation="scale"
+                                        arrow={true}
+                                    >
+                                        <div
+                                            className="text-black duration-500 p-3 flex text-center justify-center h-[45px] w-[45px] text-xl hover:bg-black hover:text-white bg-[#F2F2F2] rounded-full"
+                                        >
+                                            <FaRegEye />
+                                        </div>
+                                    </Tooltip>
                                 </div>
 
 
                             </div>
-                        </div>
+                        </div >
 
                     ))}
-                </Link>
-            </div>
+            </div >
 
         </>
     )

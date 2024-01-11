@@ -14,6 +14,7 @@ import 'react-tippy/dist/tippy.css';
 import AllModals from "./SingIn";
 import { GoSearch } from "react-icons/go";
 import { FaRegStar } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
 
 
 const HeaderMiddle = () => {
@@ -25,6 +26,12 @@ const HeaderMiddle = () => {
   const [isSectionVisible, setIsSectionVisible] = useState(true);
   const [isHeaderOpen, setIsHeaderOpen] = useState(false);
   const [isLargeScreen, setIsLargeScreen] = useState(typeof window !== 'undefined' && window.innerWidth >= 400);
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.cart.favorites);
+  const cartItems = useSelector((state) => state.cart.items);
+
+  const favQuantity = favorites ? favorites.length : 0;
+  const cartQuantity = cartItems ? cartItems.length : 0;
 
 
   const handleToggleHeader = () => {
@@ -183,7 +190,7 @@ const HeaderMiddle = () => {
                 />
               </Tooltip>
               <div className="hidden md:block">
-                <div className="flex items-center  text-black hover:text-gray-700">
+                <div className="flex items-center text-black hover:text-gray-700">
                   <Link href="/pages/Wishlist">
                     <Tooltip
                       title="Wishlist" // Tooltip text
@@ -195,13 +202,14 @@ const HeaderMiddle = () => {
                       <p className="relative flex">
                         <FaRegStar className="cursor-pointer hover:text-gray-500 w-5 h-5" />
                         <span className="absolute right-2 left-4 -top-2 rounded-full bg-[#e02b2b] w-5 h-5  p-0 m-0 text-white text-sm text-center">
-                          5
+                          {favQuantity >= 1 ? favQuantity : 0}
                         </span>
                       </p>
                     </Tooltip>
                   </Link>
                 </div>
               </div>
+
               {/* Search */}
               <div className="block md:hidden">
                 <div onClick={handleToggleHeader} className="block mt-3 lg:inline-block  align-middle text-black hover:text-gray-700">
@@ -235,7 +243,7 @@ const HeaderMiddle = () => {
                   >
                     <IoBagOutline className="cursor-pointer hover:text-gray-500 w-6 h-6 fill-current" />
                     <span className="absolute right-2 left-4 -top-2 rounded-full bg-[#e02b2b] w-5 h-5  p-0 m-0 text-white text-sm text-center">
-                      5
+                      {cartQuantity >= 1 ? cartQuantity : 0}
                     </span>
                   </p>
                 </Tooltip>

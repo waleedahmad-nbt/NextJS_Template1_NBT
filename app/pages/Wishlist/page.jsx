@@ -1,9 +1,20 @@
 'use client';
+import {  removeFromFavorites } from '@/app/lib/redux/slices/cartSlice';
 import React, { useEffect, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 const page = () => {
     const [wishlistPath, setWishlistPath] = useState('');
     const inputRef = useRef(null);
+    const dispatch = useDispatch();
+
+    const favourites = useSelector((state) => state.cart.favorites);
+    const favQuantity = favourites ? favourites.length : 0;
+
+
+    const handleRemoveFromFavorites = (item) => {
+        dispatch(removeFromFavorites(item));
+    };
 
     useEffect(() => {
         const currentPath = window.location.pathname;
@@ -30,63 +41,43 @@ const page = () => {
                     <h1 className="text-4xl font-bold text-center text-gray-900">
                         Wishlist
                     </h1>
-                    <div className='flex flex-col space-y-6 mt-9 mx-8 md:mx-20'>
-                        <div className='flex flex-row  items-center border-b'>
-                            <p className='text-lg hover:text-red-500 cursor-pointer'>X</p>
-                            <img src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_18_1-600x600.jpg" className='w-[80px] h-[80px]' alt="" />
-                            <div className='flex flex-col'>
-                                <p className='text-lg font-medium'>Cwxuan Sports Magnetic Bluetooth V4.1 Stereo Earphone with Microphone</p>
-                                <p className='text-[#32BDE8] text-base'>$15.90</p>
-                                <p className='text-base font-medium'>December 18, 2023</p>
 
-                            </div>
-                            <button
-                                type="submit"
-                                className="w-[200px] h-[50px] px-4 hover:scale-105 duration-300 focus:ring-4 focus:outline-none
-                                 bg-black text-white font-medium rounded-full text-lg text-center ml-auto"
-                            >
-                                <span className="hidden md:inline">Select Options</span>
-                                <span className="md:hidden">Select</span>
-                            </button>
-                        </div>
-                        <div className='flex flex-row  items-center border-b'>
-                            <p className='text-lg hover:text-red-500 cursor-pointer'>X</p>
-                            <img src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_18_1-600x600.jpg" className='w-[80px] h-[80px]' alt="" />
-                            <div className='flex flex-col'>
-                                <p className='text-lg font-medium'>Cwxuan Sports Magnetic Bluetooth V4.1 Stereo Earphone with Microphone</p>
-                                <p className='text-[#32BDE8] text-base'>$15.90</p>
-                                <p className='text-base font-medium'>December 18, 2023</p>
+                    {favQuantity === 0 ? (
+                        <h1 className="flex items-end justify-center text-center font-semibold">
+                            There are no products on the Wishlist!
+                        </h1>
+                    ) : (
+                        <div className='flex flex-col space-y-6 mt-9 mx-8 md:mx-20'>
+                            {favourites.map((item) => {
+                                const { id, imageSrc, title, originalPrice, discountedPrice } = item;
+                                return (
+                                    <div key={id} className='flex flex-row  items-center border-b'>
+                                        <p
+                                            onClick={() => handleRemoveFromFavorites(item)}
+                                            className='text-lg hover:text-red-500 cursor-pointer'>X</p>
+                                        <img src={imageSrc} className='w-[80px] h-[80px]' alt="" />
+                                        <div className='flex flex-col'>
+                                            <p className='text-lg font-medium'>{title}</p>
+                                            <p className='text-[#32BDE8] text-base'>{originalPrice}
+                                                <span className='text-[#32BDE8] text-base'>{discountedPrice}</span>
+                                            </p>
+                                            <p className='text-base font-medium'>December 18, 2023</p>
 
-                            </div>
-                            <button
-                                type="submit"
-                                className="w-[200px] h-[50px] px-4 hover:scale-105 duration-300 focus:ring-4 focus:outline-none
+                                        </div>
+                                        <button
+                                            type="submit"
+                                            className="w-[200px] h-[50px] px-4 hover:scale-105 duration-300 focus:ring-4 focus:outline-none
                                  bg-black text-white font-medium rounded-full text-lg text-center ml-auto"
-                            >
-                                <span className="hidden md:inline">Select Options</span>
-                                <span className="md:hidden">Select</span>
-                            </button>
+                                        >
+                                            <span className="hidden md:inline">Select Options</span>
+                                            <span className="md:hidden">Select</span>
+                                        </button>
+                                    </div>
+                                )
+                            })}
 
                         </div>
-                        <div className='flex flex-row  items-center border-b'>
-                            <p className='text-lg hover:text-red-500 cursor-pointer'>X</p>
-                            <img src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_18_1-600x600.jpg" className='w-[80px] h-[80px]' alt="" />
-                            <div className='flex flex-col'>
-                                <p className='text-lg font-medium'>Cwxuan Sports Magnetic Bluetooth V4.1 Stereo Earphone with Microphone</p>
-                                <p className='text-[#32BDE8] text-base'>$15.90</p>
-                                <p className='text-base font-medium'>December 18, 2023</p>
-
-                            </div>
-                            <button
-                                type="submit"
-                                className="w-[200px] h-[50px] px-4 hover:scale-105 duration-300 focus:ring-4 focus:outline-none
-                                 bg-black text-white font-medium rounded-full text-lg text-center ml-auto"
-                            >
-                                <span className="hidden md:inline">Select Options</span>
-                                <span className="md:hidden">Select</span>
-                            </button>
-                        </div>
-                    </div>
+                    )}
 
 
                     <div className='flex flex-row mx-4 md:mx-20 mt-20 gap-5 items-center' onClick={handleCopyClick}>
@@ -96,10 +87,8 @@ const page = () => {
                             type="text"
                             value={wishlistPath}
                             readOnly
-                            className="bg-white border p-2.5 w-full py-3
-                               border-gray-300 text-gray-900 sm:text-sm rounded-full  block "
-                            placeholder=""
-                            required=""
+                            className="bg-white border p-2.5 py-3
+                               border-gray-300 text-gray-900 sm:text-sm rounded-full block"
                         />
                         <button
                             type="button"

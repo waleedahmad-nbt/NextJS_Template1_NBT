@@ -15,7 +15,7 @@ const WishlistModal = () => {
 
     return (
         <>
-            <div className='text-xl'>
+            <div className='text-black p-3 flex text-center justify-center h-[45px] w-[45px] text-xl hover:bg-black hover:text-white bg-[#F2F2F2] rounded-full'>
                 <FaRegStar onClick={toggleModal} />
             </div>
 
@@ -87,13 +87,13 @@ const WishlistModal = () => {
 
                                     </div>
                                     <button
-                                type="submit"
-                                className="w-full py-2 hover:scale-105 duration-300 focus:ring-4 focus:outline-none
+                                        type="submit"
+                                        className="w-full py-2 hover:scale-105 duration-300 focus:ring-4 focus:outline-none
                                  bg-black text-white font-medium rounded-full text-lg text-center ml-auto"
-                            >
-                                <span className="hidden md:inline">Select Options</span>
-                                <span className="md:hidden">Select</span>
-                            </button>
+                                    >
+                                        <span className="hidden md:inline">Select Options</span>
+                                        <span className="md:hidden">Select</span>
+                                    </button>
                                 </div>
                                 <div className='flex flex-row mx-2 lg:m-6 items-center border-b-2 pb-3 border-dotted'>
                                     <p className='text-md hover:text-red-500 cursor-pointer'>X</p>
@@ -105,13 +105,13 @@ const WishlistModal = () => {
 
                                     </div>
                                     <button
-                                type="submit"
-                                className="w-full py-2 hover:scale-105 duration-300 focus:ring-4 focus:outline-none
+                                        type="submit"
+                                        className="w-full py-2 hover:scale-105 duration-300 focus:ring-4 focus:outline-none
                                  bg-black text-white font-medium rounded-full text-lg text-center ml-auto"
-                            >
-                                <span className="hidden md:inline">Select Options</span>
-                                <span className="md:hidden">Select</span>
-                            </button>
+                                    >
+                                        <span className="hidden md:inline">Select Options</span>
+                                        <span className="md:hidden">Select</span>
+                                    </button>
                                 </div>
                                 <div className='flex flex-row mx-2 lg:m-6 items-center border-b-2 pb-3 border-dotted'>
                                     <p className='text-md hover:text-red-500 cursor-pointer'>X</p>

@@ -1,11 +1,14 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
-import WishlistModal from './WishlistModal';
 import List from './List';
 import TwoColumn from './TwoColumn';
 import ThreeColumn from './ThreeColumn';
 import FourColumn from './FourColumn';
 import FiveColumn from './FiveColumn';
+import { RxColumns } from 'react-icons/rx';
+import { FaBars, FaGripLinesVertical } from 'react-icons/fa';
+import { Tooltip } from 'react-tippy';
+import 'react-tippy/dist/tippy.css';
 
 const Products = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -162,50 +165,80 @@ const Products = () => {
                             )}
                         </div>
 
-                        <div className='cursor-pointer' onClick={() => toggleLayout('one-column')}>
-                            <svg className='bg-[#F2F2F2] w-[36px] h-[36px] p-2 rounded-md text-lg' viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="15.25" y="4.25" width="1.5" height="12.5" rx="0.75" transform="rotate(90 15.25 4.25)" fill="#000000"></rect>
-                                <rect x="15.25" y="8.25" width="1.5" height="12.5" rx="0.75" transform="rotate(90 15.25 8.25)" fill="#000000"></rect>
-                                <rect x="15.25" y="12.25" width="1.5" height="12.5" rx="0.75" transform="rotate(90 15.25 12.25)" fill="#000000"></rect>
-                            </svg>
-                        </div>
-                        <div className='cursor-pointer' onClick={() => toggleLayout('two-column')}>
-                            <svg className='bg-[#F2F2F2] w-[36px] h-[36px] p-2 rounded-md text-lg' viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="6.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000"></rect>
-                                <rect x="10.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000"></rect>
-                            </svg>
-                        </div>
-                        <div className='cursor-pointer hidden lg:block ' onClick={() => toggleLayout('three-column')} >
-                            <svg className='bg-[#F2F2F2] w-[36px] h-[36px] p-2 rounded-md text-lg' viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="4.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000"></rect>
-                                <rect x="8.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000"></rect>
-                                <rect x="12.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000"></rect>
-                            </svg>
-                        </div>
-                        <div className='cursor-pointer hidden lg:block' onClick={() => toggleLayout('four-column')}>
-                            <svg className='bg-[#F2F2F2] w-[36px] h-[36px] p-2 rounded-md text-lg' viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="2.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000"></rect>
-                                <rect x="6.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000"></rect>
-                                <rect x="10.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000"></rect>
-                                <rect x="14.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000"></rect>
-                            </svg>
-                        </div>
-                        <div className='cursor-pointer hidden lg:block' onClick={() => toggleLayout('five-column')}>
-                            <svg className='bg-[#F2F2F2] w-[36px] h-[36px] p-2 rounded-md text-lg' viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000"></rect>
-                                <rect x="4.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000"></rect>
-                                <rect x="8.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000"></rect>
-                                <rect x="12.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000"></rect>
-                                <rect x="16.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000"></rect>
-                            </svg>
-                        </div>
+                        <Tooltip
+                            title="list"
+                            position="top"
+                            trigger="mouseenter"
+                            animation="scale"
+                            arrow={true}
+                        >
+                            <div
+                                className='cursor-pointer bg-[#F2F2F2] w-[36px] h-[36px] p-2 rounded-md text-lg hover:text-white hover:bg-black text-black flex items-center justify-center'
+                                onClick={() => toggleLayout('one-column')}
+                            >
+                                <FaBars />
+                            </div>
+                        </Tooltip>
+
+                        <Tooltip
+                            title="2 Columns"
+                            position="top"
+                            trigger="mouseenter"
+                            animation="scale"
+                            arrow={true}
+                        >
+                            <div className='cursor-pointer bg-[#F2F2F2] w-[36px] h-[36px] p-2 rounded-md
+                         text-base hover:text-white hover:bg-black text-black
+                         flex items-center justify-center' onClick={() => toggleLayout('two-column')}>
+                                <FaGripLinesVertical />
+                            </div>
+                        </Tooltip>
+
+                        <Tooltip
+                            title="3 Columns"
+                            position="top"
+                            trigger="mouseenter"
+                            animation="scale"
+                            arrow={true}
+                        >
+                            <div className='cursor-pointer bg-[#F2F2F2] w-[36px] h-[36px] p-2.5 rounded-md text-base m-auto
+                         hover:text-white hover:bg-black text-black flex items-center justify-center' onClick={() => toggleLayout('three-column')} >
+                                <FaBars style={{ transform: 'rotate(90deg)' }} />
+                            </div>
+                        </Tooltip>
+                        <Tooltip
+                            title="4 Columns"
+                            position="top"
+                            trigger="mouseenter"
+                            animation="scale"
+                            arrow={true}
+                        >
+                            <div className='cursor-pointer hidden lg:block bg-[#F2F2F2] w-[36px] h-[36px] p-2 rounded-md text-lg hover:text-white hover:bg-black text-black
+                        flex items-center justify-center' onClick={() => toggleLayout('four-column')}>
+                                <RxColumns className='' />
+                            </div>
+                        </Tooltip>
+                        <Tooltip
+                            title="5 Columns"
+                            position="top"
+                            trigger="mouseenter"
+                            animation="scale"
+                            arrow={true}
+                        >
+                            <div className='cursor-pointer hidden lg:block bg-[#F2F2F2] w-[36px] h-[36px] p-2 rounded-md text-lg hover:text-white hover:bg-black text-black
+                        flex items-center justify-center' onClick={() => toggleLayout('five-column')}>
+                                <RxColumns className='' />
+                            </div>
+                        </Tooltip>
+
+
 
                     </div>
                 </div>
 
                 {renderLayout()}
 
-                
+
             </div>
         </>
 

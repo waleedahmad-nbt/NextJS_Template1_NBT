@@ -11,24 +11,31 @@ import RelatedProducts from './Related products';
 import RecentlyViewed from './RecentlyViewed';
 import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart, removeFromCart } from '@/app/lib/redux/slices/cartSlice';
-import WishlistModal from './WishlistModal';
+import { addToCart, addToFavorites, decrement, increment } from '@/app/lib/redux/slices/cartSlice';
 
 const Details = () => {
-
 
     const [selectedThumbnailIndex, setSelectedThumbnailIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
     const dispatch = useDispatch();
-    const CartItems = useSelector(state => state.cart.items);
+    const counter = useSelector((state) => state.cart.value);
+
+
+    const handleIncrement = () => {
+        dispatch(increment());
+    }
+    const handleDecrement = () => {
+        dispatch(decrement());
+    }
 
     const handleAddToCart = (item) => {
         dispatch(addToCart(item));
     }
 
-    const handleRemoveFromCart = (item) => {
-        dispatch(removeFromCart(item));
-    }
+    const handleAddToFavorites = (product) => {
+        dispatch(addToFavorites(product));
+    };
+
 
     const handleMouseEnter = () => {
         setIsHovered(true);
@@ -78,7 +85,7 @@ const Details = () => {
     };
     return (
         <>
-            <div className='xl:container xl:mx-auto px-4 md:px-4 lg:px-8 xl:px-20'>
+            <div className='xl:container xl:mx-auto px-4 md:px-4 lg:px-10 xl:px-12'>
                 <div className='flex flex-col md:flex-row mt-10'>
                     <div className='flex flex-col items-center w-2/12'>
                         <div className='hidden md:block'>
@@ -125,12 +132,15 @@ const Details = () => {
                     </div>
 
                     {/* Content */}
-                    < div className='flex flex-col mt-6 md:w-1/3 lg:w-2/5 mx-auto md:mx-0' >
+                    < div className='flex flex-col mt-6 md:w-1/3 lg:w-1/2 mx-auto md:mx-0' >
                         <div className='flex flex-row '>
-                            <h3 className="font-bold text-xl md:text-2xl  leading-8 hover:text-gray-500 text-start duration-700 ease-in-out text-black">
+                            <h3 className="font-bold text-xl md:text-2xl  leading-8 text-start duration-700 ease-in-out text-black">
                                 <a href="#">Xiaomi Mi Watch Lite GPS Bluetooth 5.1 Smart Watch Sports Fitness Heart Rate Monitor 1.4 Inch TFTLCD Screen 5 ATM Waterproof Mi Band</a>
                             </h3>
-                                <WishlistModal/>
+                            {/* <WishlistModal /> */}
+                            <div onClick={() => handleAddToFavorites(product)} className=' px-3 text-xl mt-24 bg-white border-2 w-12 h-12 flex items-center rounded-full text-black hover:text-white hover:bg-black duration-700 transform-gpu'>
+                                <FaRegStar />
+                            </div>
                         </div>
 
                         <div className='flex flex-row my-2 px-3 justify-between mt-6 font-thin'>
@@ -167,18 +177,19 @@ const Details = () => {
                         <p className='mt-4 font-semibld text-lg'>Quantity</p>
                         <div className='flex flex-row gap-3 md:gap-8 items-center'>
                             <div className="flex w-[150px] mt-4 max-w-[150px] h-max bg-[#F1F1F1] px-5 py-3 justify-between rounded-3xl items-center overflow-hidden">
-                                <button className="h-full px-1"><FaMinus /></button>
+                                <button onClick={handleDecrement} className="h-full px-1"><FaMinus /></button>
                                 <p className="h-full w-[50px] flex justify-center items-center">
-                                    2
+                                    {counter}
                                 </p>
-                                <button className="h-full px-1">
+                                <button onClick={handleIncrement} className="h-full px-1">
                                     <FaPlus />
                                 </button>
                             </div>
-                            <button className='w-full text-md text-black font-semibold h-12 mt-3 bg-[#F1F1F1] rounded-full hover:bg-black
+                            <button onClick={() => handleAddToCart(item)} className='w-full text-md text-black font-semibold h-12 mt-3 bg-[#F1F1F1] rounded-full hover:bg-black
                          hover:text-white duration-500 transform hover:scale-110 lg:mr-3'>
                                 Add To Cart
                             </button>
+
                         </div>
 
                         <button className='w-full text-lg mt-3 text-white font-semibold h-12  bg-black rounded-full
@@ -233,13 +244,7 @@ const Details = () => {
                 </div>
             </div>
 
-            {CartItems.map((item) => (
-                <li key={item.id}>
-                    {item.name} - Quantity: {item.quantity}
-                    <button onClick={() => handleAddToCart(item)}>Add One</button>
-                    <button onClick={() => handleRemoveFromCart(item)}>Remove One</button>
-                </li>
-            ))}
+
         </>
     );
 };

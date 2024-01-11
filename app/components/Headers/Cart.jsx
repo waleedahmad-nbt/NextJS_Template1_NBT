@@ -1,18 +1,31 @@
+import { decrement, increment } from '@/app/lib/redux/slices/cartSlice';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 import { FaMinus, FaPlus } from 'react-icons/fa';
 import { GoPencil } from 'react-icons/go';
 import { LiaShippingFastSolid } from 'react-icons/lia';
 import { RiCouponLine } from 'react-icons/ri';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Cart = ({ onClose }) => {
   const [isOpen, setIsOpen] = useState(true);
   const cartRef = useRef(null);
 
+  const dispatch = useDispatch();
+  const counter = useSelector((state) => state.cart.value);
+
+
+  const handleIncrement = () => {
+    dispatch(increment());
+  }
+  const handleDecrement = () => {
+    dispatch(decrement());
+  }
+
 
   const handleClose = () => {
     setIsOpen(false);
-    onClose(); 
+    onClose();
   };
 
   const handleBackdropClick = (e) => {
@@ -117,125 +130,25 @@ const Cart = ({ onClose }) => {
                               Black</p>
                             <p>$15.90</p>
                             <div className='flex items-center gap-4'>
-                            <div className="flex w-[100px] mt-4 h-max bg-[#F1F1F1] px-1 py-2 justify-between rounded-3xl items-center overflow-hidden">
-                              <button
-                                className=" h-full px-1"
+                              <div className="flex w-[100px] mt-4 h-max bg-[#F1F1F1] px-1 py-2 justify-between rounded-3xl items-center overflow-hidden">
+                                <button
+                                  onClick={handleDecrement}
+                                  className=" h-full px-1"
 
-                              >
-                                <FaMinus />
-                              </button>
-                              <p class="h-full w-[50px] flex justify-center items-center">
-                                2
-                              </p>
-                              <button
-                                className=" h-full px-1"
-                              >
-                                <FaPlus />
-                              </button>
-                            </div>
-                            <a href='#' className='text-sm hover:text-gray-500 duration-300 underline mt-2'>remove</a>
-                            </div>
-                          </div>
-                        </li>
-                        <li className="flex py-6 gap-3">
-                          <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                            <img
-                              src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_23_5-450x450.jpg"
-                              alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
-                              className="h-full w-full object-cover object-center"
-                            />
-                          </div>
-                          <div className='flex flex-col'>
-                            <p className='text-sm font-bold'>Cwxuan Sports Magnetic Bluetooth V4.1 Stereo Earphone with Microphone</p>
-                            <p>Color:
-                              Black</p>
-                            <p>$15.90</p>
-                            <div className='flex items-center gap-4'>
-                            <div className="flex w-[100px] mt-4 h-max bg-[#F1F1F1] px-1 py-2 justify-between rounded-3xl items-center overflow-hidden">
-                              <button
-                                className=" h-full px-1"
-
-                              >
-                                <FaMinus />
-                              </button>
-                              <p class="h-full w-[50px] flex justify-center items-center">
-                                2
-                              </p>
-                              <button
-                                className=" h-full px-1"
-                              >
-                                <FaPlus />
-                              </button>
-                            </div>
-                            <a href='#' className='text-sm hover:text-gray-500 duration-300 underline mt-2'>remove</a>
-                            </div>
-                          </div>
-                        </li>
-                        <li className="flex py-6 gap-3">
-                          <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                            <img
-                              src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_02_1-1-450x450.jpg"
-                              alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
-                              className="h-full w-full object-cover object-center"
-                            />
-                          </div>
-                          <div className='flex flex-col'>
-                            <p className='text-sm font-bold'>Cwxuan Sports Magnetic Bluetooth V4.1 Stereo Earphone with Microphone</p>
-                            <p>Color:
-                              Black</p>
-                            <p>$15.90</p>
-                            <div className='flex items-center gap-4'>
-                            <div className="flex w-[100px] mt-4 h-max bg-[#F1F1F1] px-1 py-2 justify-between rounded-3xl items-center overflow-hidden">
-                              <button
-                                className=" h-full px-1"
-
-                              >
-                                <FaMinus />
-                              </button>
-                              <p class="h-full w-[50px] flex justify-center items-center">
-                                2
-                              </p>
-                              <button
-                                className=" h-full px-1"
-                              >
-                                <FaPlus />
-                              </button>
-                            </div>
-                            <a href='#' className='text-sm hover:text-gray-500 duration-300 underline mt-2'>remove</a>
-                            </div>
-                          </div>
-                        </li>
-                        <li className="flex py-6 gap-3">
-                          <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                            <img
-                              src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg"
-                              alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
-                              className="h-full w-full object-cover object-center"
-                            />
-                          </div>
-                          <div className='flex flex-col'>
-                            <p className='text-sm font-bold'>Cwxuan Sports Magnetic Bluetooth V4.1 Stereo Earphone with Microphone</p>
-                            <p>Color:
-                              Black</p>
-                            <p>$15.90</p>
-                            <div className='flex items-center gap-4'>
-                            <div className="flex w-[100px] mt-4 h-max bg-[#F1F1F1] px-1 py-2 justify-between rounded-3xl items-center overflow-hidden">
-                              <button
-                                className=" h-full px-1"
-
-                              >
-                                <FaMinus />
-                              </button>
-                              <p class="h-full w-[50px] flex justify-center items-center">
-                                2
-                              </p>
-                              <button
-                                className=" h-full px-1"
-                              >
-                                <FaPlus />
-                              </button>
-                            </div>
-                            <a href='#' className='text-sm hover:text-gray-500 duration-300 underline mt-2'>remove</a>
+                                >
+                                  <FaMinus />
+                                </button>
+                                <p class="h-full w-[50px] flex justify-center items-center">
+                                  {counter}
+                                </p>
+                                <button
+                                  onClick={handleIncrement}
+                                  className=" h-full px-1"
+                                >
+                                  <FaPlus />
+                                </button>
+                              </div>
+                              <a href='#' className='text-sm hover:text-gray-500 duration-300 underline mt-2'>remove</a>
                             </div>
                           </div>
                         </li>
@@ -288,18 +201,19 @@ const Cart = ({ onClose }) => {
                     <div className='flex flex-col items-center text-center gap-2'>
                       <button type="submit" className="w-[360px] hover:scale-105 duration-300 focus:ring-4 focus:outline-none bg-black text-white font-medium rounded-full text-lg px-5 py-2 text-center items-center ml-7">PLACE ORDER</button>
                       <Link href="/pages/Cart">
-                      <p className='underline'>View Cart</p>
+                        <p className='underline'>View Cart</p>
                       </Link>
                     </div>
                   </div>
 
                 </div>
+
               </div>
             </div>
           </div>
         </div>
       </div>
-      
+
     </>
   );
 };

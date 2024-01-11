@@ -8,7 +8,7 @@ const page = () => {
     return (
         <>
             <div className='xl:container xl:mx-auto'>
-                <div className='mt-20 mx-3'>
+                <div className='mt-20 mx-10'>
                     <h1 className="text-4xl font-bold text-center text-gray-900">
                         Shop
                     </h1>
