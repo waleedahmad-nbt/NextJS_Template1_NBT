@@ -20,6 +20,10 @@ const Headers = () => {
     setCurrencyDropdownOpen((prev) => !prev);
   };
 
+  const handleCurrencyDropdownLeave = () => {
+    setCurrencyDropdownOpen(false);
+  };
+
   return (
     <>
       <header className="lg:mb-0 mb-2">
@@ -110,7 +114,7 @@ const Headers = () => {
 
                 <div className="relative z-50"
                   onMouseOver={handleToggleCurrencyDropdown}
-                  onMouseOut={handleToggleCurrencyDropdown}
+                  onMouseOut={handleCurrencyDropdownLeave}
                 >
                   {/* Currency Dropdown button */}
                   <button

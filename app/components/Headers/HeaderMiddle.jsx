@@ -268,7 +268,7 @@ const HeaderMiddle = () => {
       {/* Mobile Menu */}
       {showCart && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 z-50 flex items-start justify-center transition-opacity duration-300">
-          <div ref={modalRef} className="bg-white p-6 rounded-lg w-full">
+          <div ref={modalRef} className=" rounded-lg w-full">
             <Cart onClose={closeCart} />
           </div>
         </div>

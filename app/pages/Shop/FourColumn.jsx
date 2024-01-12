@@ -4,10 +4,47 @@ import { CiStar } from 'react-icons/ci';
 import { FaEye } from 'react-icons/fa';
 import { HiMiniArrowsRightLeft } from 'react-icons/hi2';
 import { products } from '@/app/data';
+import { useDispatch, useSelector } from 'react-redux';
+import { Tooltip } from 'react-tippy';
+import 'react-tippy/dist/tippy.css';
+import { FaArrowRightArrowLeft } from 'react-icons/fa6';
+import { IoBagOutline } from 'react-icons/io5';
+import { addToCart, addToFavorites } from '@/app/lib/redux/slices/cartSlice';
+import Link from 'next/link';
+import WishlistModal from './WishlistModal';
 
 const FourColumn = () => {
 
     const [hoveredProduct, setHoveredProduct] = useState(null);
+    const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
+    const dispatch = useDispatch();
+
+    const favorites = useSelector((state) => state.cart.favorites);
+
+    const handleAddToFavorites = (product) => {
+        dispatch(addToFavorites(product));
+    };
+
+    const handleAddToCart = (item) => {
+        dispatch(addToCart(item));
+    };
+
+
+    const toggleWishlistModal = () => {
+        setWishlistModalOpen(!wishlistModalOpen);
+    };
+
+
+    const handleToggleWishlist = (product) => {
+        const isFavorite = favorites.some((item) => item.id === product.id);
+
+        if (isFavorite) {
+            toggleWishlistModal();
+        } else {
+            handleAddToFavorites(product);
+        }
+    };
+
 
     return (
         <>
@@ -15,76 +52,110 @@ const FourColumn = () => {
             <div className={`grid grid-cols-2 lg:grid-cols-4`}>
                 {products.map(product => (
                     <>
-                        <div key={product.id}
+                        <div
+                            key={product.id}
+                            className='relative cursor-pointer h-[450px] w-full mt-6 p-1 md:p-3 gap-5 overflow-hidden 
+                border border-transparent hover:border-black rounded-lg'
                             onMouseEnter={() => setHoveredProduct(product.id)}
                             onMouseLeave={() => setHoveredProduct(null)}
-                            className='relative cursor-pointer  h-[460px] w-full mt-6 p-3 rounded-lg group'>
-
-                            {/* Image container */}
-                            <div className='relative w-full h-[216px] p-3 overflow-hidden transition-transform group-hover:transform duration-700 ease-in-out group-hover:scale-105'>
+                        >
+                            <div className='relative w-full h-[216px] p-2 overflow-hidden transition-transform duration-700 ease-in-out'>
                                 <img
                                     src={hoveredProduct === product.id ? product.hoverImage : product.imageSrc}
-                                    className='w-full h-full object-cover'
+                                    className='w-full h-full object-cover transition-all duration-1000 ease-in-out hover:scale-105'
                                     alt="img"
                                 />
 
-                                {/* Icons on the right side */}
-                                <div className='absolute top-0 right-0 flex flex-col items-center p-2 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity'>
-                                    <div className='p-3 bg-white rounded-full text-black text-xl star-icon'>
-                                        <CiStar />
-                                    </div>
-                                    <div className='p-3 bg-white rounded-full text-black text-xl'>
-                                        <HiMiniArrowsRightLeft />
-                                    </div>
-                                    <div className='p-3 bg-white rounded-full text-black text-xl'><FaEye /></div>
+                                {hoveredProduct === product.id && (
+                                    <div className='absolute top-0 right-0 flex flex-col items-center p-2 space-y-2'>
+                                        <Tooltip
+                                            title={favorites.some((item) => item.id === product.id) ? "Browse Wishlist" : "Add to Wishlist"}
+                                            position="left"
+                                            trigger="mouseenter"
+                                            animation="scale"
+                                            arrow={true}
+                                        >
+                                            <div onClick={() => handleToggleWishlist(product)}
+                                              className={`p-3 bg-${favorites.some((item) => item.id === product.id) ? 'black' : 'white'} rounded-full text-${favorites.some((item) => item.id === product.id) ? 'white' : 'black'} hover:text-white hover:bg-black duration-300 ease-in-out text-xl`}>
+                                                <CiStar />
+                                            </div>
+                                        </Tooltip>
 
-                                </div>
-
+                                        <Tooltip
+                                            title="Compare"
+                                            position="left"
+                                            trigger="mouseenter"
+                                            animation="scale"
+                                            arrow={true}
+                                        >
+                                            <div className='p-3 bg-white rounded-full text-black hover:text-white hover:bg-black duration-300 ease-in-out text-xl'>
+                                                <FaArrowRightArrowLeft />
+                                            </div>
+                                        </Tooltip>
+                                        <Tooltip
+                                            title="Cart"
+                                            position="left"
+                                            trigger="mouseenter"
+                                            animation="scale"
+                                            arrow={true}
+                                        >
+                                            <div onClick={() => handleAddToCart(product)} className='p-3 bg-white rounded-full text-black hover:text-white hover:bg-black duration-300 ease-in-out text-xl'>
+                                                <IoBagOutline />
+                                            </div>
+                                        </Tooltip>
+                                    </div>
+                                )}
 
                             </div>
 
-                            {/* Content */}
-                            < div className='flex flex-col gap-2 mt-2' >
-                                <h6 className='text-gray-500 text-xs font-medium hover:text-gray-800 duration-500 tracking-tight uppercase'>
-                                    <a href="https://minimog.thememove.com/supergear/product-category/tv-audio/bluetooth-speakers/">
-                                        {product.category}
-                                    </a>
-                                </h6>
-                                <h3 className="text-ellipsis font-semibold leading-6 text-black">
-                                    <a href="#">{product.title}</a>
-                                </h3>
+                            <div className='flex flex-col gap-2 mt-2'>
+                                <h2 className='text-gray-500 text-xs font-medium hover:text-gray-800 duration-500 tracking-tight uppercase'>
+                                    <p>{product.category}</p>
+                                </h2>
+                                <Link key={product.id} href={`/pages/Details?id=${product.id}`} passHref>
+                                    <h3 className='text-ellipsis font-semibold leading-6 text-black'>
+                                        <p>{product.title}</p>
+                                    </h3>
+                                </Link>
 
                                 <div className='flex flex-row my-2 font-thin'>
                                     {Array.from({ length: product.rating }).map((_, index) => (
                                         <CiStar key={index} />
                                     ))}
                                 </div>
-
-                                <div className="flex flex-row gap-2">
-                                    <del aria-hidden="true">
-                                        <bdi className="text-gray-500 font-semibold text-md"><span>$</span>{product.originalPrice}</bdi>
+                                <div className='flex flex-row gap-2'>
+                                    <del aria-hidden='true'>
+                                        <bdi className='text-gray-500 font-semibold text-md'>
+                                            <span>$</span>
+                                            {product.originalPrice}
+                                        </bdi>
                                     </del>
                                     <bdi className='text-red-500 font-semibold'>
-                                        <span>$</span>{product.discountedPrice}
+                                        <span>$</span>
+                                        {product.discountedPrice}
                                     </bdi>
                                 </div>
+                                {hoveredProduct === product.id && (
+                                    <Link
+                                        href='/pages/Details'>
+                                        <p
+                                            className='bg-[#F1F1F1] mt-2 text-black w-full overflow-ellipsis hover:bg-black hover:text-white flex text-center justify-center font-semibold py-3 rounded-full duration-300 ease-in-out transform hover:scale-105 transition-opacity'
+                                        >
+                                            Select Options
+                                        </p>
+                                    </Link>
 
-                                {/* Read more button */}
-                                <a
-                                    className="bg-[#F1F1F1] mt-4 text-black w-full group-hover:bg-black group-hover:text-white flex text-center justify-center font-semibold py-3 rounded-full  duration-300 ease-in-out transform hover:scale-105 opacity-0 group-hover:opacity-100 transition-opacity"
-                                >
-                                    Select Options
-                                </a>
-
+                                )}
                             </div>
-
-                            {/* Border on hover */}
-                            <div div className='absolute inset-0 border border-transparent group-hover:border-black rounded-lg' ></div>
-                        </div >
+                        </div>
                     </>
                 ))}
             </div>
-
+            <WishlistModal
+                modalOpen={wishlistModalOpen}
+                closeModal={toggleWishlistModal}
+                products={favorites}
+            />
         </>
     )
 }

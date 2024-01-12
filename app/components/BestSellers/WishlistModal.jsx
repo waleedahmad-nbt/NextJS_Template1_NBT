@@ -87,13 +87,14 @@ const WishlistModal = ({ modalOpen, closeModal, products }) => {
                                                             <p className='text-xs font-semibold'>December 18, 2023</p>
 
                                                         </div>
-                                                        <Link href="/pages/Details"
+                                                        <button
+                                                            type="submit"
                                                             className="w-full py-2 hover:scale-105 duration-300 focus:ring-4 focus:outline-none
-                                                                bg-black text-white font-medium rounded-full text-lg text-center ml-auto"
+                                                    bg-black text-white font-medium rounded-full text-lg text-center ml-auto"
                                                         >
                                                             <span className="hidden md:inline">Select Options</span>
                                                             <span className="md:hidden">Select</span>
-                                                        </Link>
+                                                        </button>
                                                     </div>
                                                 )
                                             })

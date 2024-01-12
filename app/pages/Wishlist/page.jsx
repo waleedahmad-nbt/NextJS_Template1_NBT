@@ -43,7 +43,7 @@ const page = () => {
                     </h1>
 
                     {favQuantity === 0 ? (
-                        <h1 className="flex items-end justify-center text-center font-semibold">
+                        <h1 className="flex items-end justify-center text-center mt-20 text-lg text-gray-500 font-medium">
                             There are no products on the Wishlist!
                         </h1>
                     ) : (

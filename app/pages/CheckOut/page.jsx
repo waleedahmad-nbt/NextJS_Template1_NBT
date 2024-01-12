@@ -5,6 +5,7 @@ import { IoIosSearch } from 'react-icons/io';
 import { LiaShippingFastSolid } from 'react-icons/lia';
 import { RiArrowDropDownLine, RiCouponLine } from 'react-icons/ri';
 import FAQPage from './Faq';
+import { useSelector } from 'react-redux';
 
 const CheckOut = () => {
     const [inputValue, setInputValue] = useState('United States (US) Minor Outlying Islands');
@@ -14,6 +15,23 @@ const CheckOut = () => {
     const [isOpenCity, setisOpenCity] = useState(false);
     const [selectedItem, setSelectedItem] = useState('');
     const items = ['Item 1', 'Item 2', 'Item 3'];
+    const [selectedShippingOption, setSelectedShippingOption] = useState('free');
+
+
+    const CartItems = useSelector((state) => state.cart.items);
+    const cartQuantity = CartItems ? CartItems.length : 0;
+
+
+    const calculateSubtotal = () => {
+        return CartItems.reduce((acc, item) => {
+            return acc + item.originalPrice * item.quantity;
+        }, 0);
+    };
+    const calculateTotal = () => {
+        const subtotal = calculateSubtotal();
+        const shippingRate = selectedShippingOption === 'flat' ? 10 : 0;
+        return subtotal + shippingRate;
+    };
 
     const handleItemClick = (item) => {
         setSelectedItem(item);
@@ -280,36 +298,32 @@ const CheckOut = () => {
                                 Order summary
                             </h1>
                             {/* Product 1 */}
-                            <div className='flex flex-row items-center mt-4 mx-2'>
-                                <img src="https://minimog.thememove.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_02_3-80x80.jpg" alt=""
-                                    className='w-[60px] h-[60px]'
-                                />
-                                <div className='flex flex-col'>
-                                    <p className='text-base font-semibold text-black text-ellipsis'>Amazfit GTS 2 Mini Sports Smartwatch GPS Bluetooth 5.0 Female Cycle Tracking Smart Watch For Android iOS Phone - GTS 2 Mini SPAIN <span> x10</span></p>
-                                    <p className='text-sm font-normal text-gray-800'>Color:
-                                        Sage Green</p>
-                                    <p className='text-sm font-normal text-gray-800'>Size:
-                                        GTS 2 Mini</p>
-                                </div>
-                                <p className='text-[#32BDE8] text-base'>$1,299.90</p>
-                            </div>
-                            <hr className='mt-2' />
-                            {/* Product 2 */}
-                            <div className='flex flex-row items-center mt-4 mx-2'>
-                                <img src="https://minimog.thememove.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_02_3-80x80.jpg" alt=""
-                                    className='w-[60px] h-[60px]'
-                                />
-                                <div className='flex flex-col'>
-                                    <p className='text-base font-semibold text-black text-ellipsis'>Amazfit GTS 2 Mini Sports Smartwatch GPS Bluetooth 5.0 Female Cycle Tracking Smart Watch For Android iOS Phone - GTS 2 Mini SPAIN <span> x10</span></p>
-                                    <p className='text-sm font-normal text-gray-800'>Color:
-                                        Sage Green</p>
-                                    <p className='text-sm font-normal text-gray-800'>Size:
-                                        GTS 2 Mini</p>
-                                </div>
-                                <p className='text-[#32BDE8] text-base'>$1,299.90</p>
-                            </div>
+                            {
+                                CartItems.map((item) => {
+                                    const { id, imageSrc, title, originalPrice, quantity } = item;
+                                    const itemSubtotal = originalPrice * quantity;
+                                    return (
+                                        <>
+                                            <div key={id} className='flex flex-row items-center mt-4 mx-2'>
+                                                <img src={imageSrc} alt=""
+                                                    className='w-[60px] h-[60px]'
+                                                />
+                                                <div className='flex flex-col'>
+                                                    <p className='text-base font-semibold text-black'>{title}<span className='text-gray-600 ml-3 text-lg'> <span className='text-lg'>x</span>{quantity}</span></p>
+                                                    <p className='text-sm font-normal text-gray-800'>Color:
+                                                        Sage Green</p>
+                                                    <p className='text-sm font-normal text-gray-800'>Size:
+                                                        GTS 2 Mini</p>
+                                                </div>
+                                                <p className='text-[#32BDE8] text-base'>${itemSubtotal.toFixed(2)}</p>
+                                            </div>
+                                            <hr className='mt-2' />
+                                        </>
 
-                            <hr className='mt-3' />
+                                    )
+                                })
+                            }
+
                             <div className='flex flex-col ml-auto mt-6 rounded-md'>
                                 <div className='flex flex-row gap-2 h-[60px] mx-auto'>
                                     <div className='flex flex-col w-[100px] md:w-[150px]  items-center hover:text-gray-500 text-black text-md cursor-pointer border-r mb-2'>
@@ -328,26 +342,42 @@ const CheckOut = () => {
                                 <hr />
                                 <div className='flex flex-row  mx-4 justify-between h-[60px] items-center'>
                                     <p className='text-gray-500 text-md font-semibold'>Subtotal</p>
-                                    <p className='text-[#32BDe8]'>$1,527.39</p>
+                                    <p className='text-[#32BDe8] text-lg'>${calculateSubtotal().toFixed(2)}</p>
                                 </div>
                                 <hr />
                                 <div className='flex flex-row justify-between mx-4 items-center h-[77px] border-b'>
                                     <p className='text-gray-500 text-md font-semibold'>Shipping</p>
                                     <div className='flex flex-col gap-1'>
                                         <p className='flex flex-row gap-2 items-center'>
-                                            <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded-full focus:ring-black" />
-                                            <p >  Free shipping </p>
+                                            <input
+                                                type="radio"
+                                                id="freeShipping"
+                                                name="shippingOption"
+                                                value="free"
+                                                checked={selectedShippingOption === 'free'}
+                                                onChange={() => setSelectedShippingOption('free')}
+                                                className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded-full focus:ring-black"
+                                            />
+                                            <p> Free shipping </p>
                                         </p>
                                         <p className='flex flex-row gap-2  mx-4 items-center'>
-                                            <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded-full focus:ring-black" />
-                                            <p> Flat rate: <span className='text-[#32BDe8]'> $10.00</span></p>
+                                            <input
+                                                type="radio"
+                                                id="flatRateShipping"
+                                                name="shippingOption"
+                                                value="flat"
+                                                checked={selectedShippingOption === 'flat'}
+                                                onChange={() => setSelectedShippingOption('flat')}
+                                                className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded-full focus:ring-black"
+                                            />
+                                            <p> Flat rate: <span className='text-[#32BDe8] text-base'> $10.00</span></p>
                                         </p>
 
                                     </div>
                                 </div>
                                 <div className='flex flex-row justify-between mx-4 h-[50px] items-center'>
                                     <p className='text-gray-800 text-md font-semibold'>Total</p>
-                                    <p className='text-[#32BDe8]'>$1,527.39</p>
+                                    <p className='text-[#32BDe8] text-2xl font-semibold'>${calculateTotal().toFixed(2)}</p>
                                 </div>
                             </div>
 
