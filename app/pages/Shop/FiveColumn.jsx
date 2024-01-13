@@ -4,8 +4,6 @@ import { addToCart, addToFavorites, removeFromFavorites } from '@/app/lib/redux/
 import Link from 'next/link';
 import { useState } from 'react';
 import { CiStar } from 'react-icons/ci';
-import { FaEye } from 'react-icons/fa';
-import { HiMiniArrowsRightLeft } from 'react-icons/hi2';
 import { useDispatch, useSelector } from 'react-redux';
 import { Tooltip } from 'react-tippy';
 import 'react-tippy/dist/tippy.css';
@@ -55,7 +53,7 @@ const FiveColumn = () => {
                         <div
                             key={product.id}
                             className='relative cursor-pointer h-[450px] w-full mt-6 p-1 md:p-3 gap-5 overflow-hidden 
-                border border-transparent hover:border-black rounded-lg'
+                            border border-transparent hover:border-black rounded-lg'
                             onMouseEnter={() => setHoveredProduct(product.id)}
                             onMouseLeave={() => setHoveredProduct(null)}
                         >
@@ -112,7 +110,7 @@ const FiveColumn = () => {
                                 <h2 className='text-gray-500 text-xs font-medium hover:text-gray-800 duration-500 tracking-tight uppercase'>
                                     <p>{product.category}</p>
                                 </h2>
-                                <Link key={product.id} href={`/pages/Details?id=${product.id}`} passHref>
+                                <Link href="/product/[id]" as={`/product/${product.id}`} passHref>
                                     <h3 className='text-ellipsis font-semibold leading-6 text-black'>
                                         <p>{product.title}</p>
                                     </h3>

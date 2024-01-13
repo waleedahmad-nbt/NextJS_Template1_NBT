@@ -1,6 +1,21 @@
-import React from 'react'
+'use client';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 const page = () => {
+
+    const CartItems = useSelector((state) => state.cart.items);
+
+    const calculateSubtotal = () => {
+        return CartItems.reduce((acc, item) => {
+            return acc + item.originalPrice * item.quantity;
+        }, 0);
+    };
+    const calculateTotal = () => {
+        return calculateSubtotal();
+    };
+
+
     return (
         <>
             <div className='container mx-auto'>
@@ -11,58 +26,39 @@ const page = () => {
                     </h1>
                 </div>
 
-                <div className='grid grid-cols-1 lg:grid-cols-2 justify-between p-14'>
+                <div className='grid grid-cols-1 lg:grid-cols-2 justify-between gap-10 p-4 md:p-12'>
 
 
-                    <div class="relative overflow-x-auto">
-                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
-                            <thead class="text-xs text-gray-900 uppercase ">
-                                <tr>
-                                    <th scope="col" class="px-10 py-3">
-                                        Product name
-                                    </th>
-                                    <th scope="col" class="px-10 py-3">
-                                        Color
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="bg-white ">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900  dark:text-white">
-                                        Apple MacBook Pro 17"
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        Silver
-                                    </td>
-                                  
-                                </tr>
-                                <tr class="bg-white ">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900">
-                                        Microsoft Surface Pro
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        White
-                                    </td>
-                                   
-                                </tr>
-                                <tr class="bg-white ">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900">
-                                        Magic Mouse 2
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        Black
-                                    </td>
-                                   
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div className="relative overflow-x-auto">
+                        <ul className="space-y-4">
+                            <li className="space-x-10">
+                                <span className="text-lg font-medium text-[#666666]">Order number:</span>
+                                <span className="text-lg font-semibold text-[#666666]">1232</span>
+                            </li>
+
+                            <li className="space-x-24">
+                                <span className="text-lg font-medium text-[#666666]">Date:</span>
+                                <span className="text-lg font-semibold text-[#666666]">January 13, 2024</span>
+                            </li>
+
+
+                            <li className="space-x-24">
+                                <span className="text-lg font-medium text-[#666666]">Total:</span>
+                                <span className="text-lg font-medium text-[#32BDE8]"><span className=""><bdi><span className="woocommerce-Price-currencySymbol">$</span>879.85</bdi></span></span>
+                            </li>
+
+                            <li className="space-x-4">
+                                <span className="text-lg font-medium text-[#666666]">Payment method:</span>
+                                <span className="text-lg font-semibold text-[#666666]">Direct bank transfer</span>
+                            </li>
+                        </ul>
                     </div>
 
 
                     <div>
 
 
-                        <div class="relative shadow-md sm:rounded-lg">
+                        <div class="relative sm:rounded-lg">
                             <table class="w-full text-sm text-left rtl:text-right text-gray-500 border">
                                 <thead class="text-base text-black uppercase border">
                                     <tr>
@@ -74,26 +70,29 @@ const page = () => {
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                                        <th scope="row" class="border px-6 py-4 font-medium text-gray-900 text-lg dark:text-white">
-                                            Amazfit GTS 2 Mini Sports Smartwatch GPS Bluetooth 5.0 Female Cycle Tracking Smart Watch For Android iOS Phone - GTS 2 Mini SPAIN × 5
-                                            <ul className='p-4'>
-                                                <li className='list-disc text-[#666666] font-semibold'>Color:
-                                                    <p className='font-medium'>Sage Green</p>
-                                                </li>
-                                                <li className='list-disc text-[#666666] font-semibold'>Size:
-                                                    <p className='font-medium'>GTS 2 Mini</p>
-                                                </li>
-                                            </ul>
-                                        </th>
-                                        <td class="px-6 py-4 text-[#32BDE8] text-base font-semibold">
-                                            $649.95
-                                        </td>
-                                    </tr>
+                                {CartItems.map((item) => {
+                                    const { id, title, originalPrice, quantity } = item;
+                                    const itemSubtotal = originalPrice * quantity;
+                                    <tbody key={id}>
+                                        <tr class="border-b">
+                                            <th scope="row" class="border px-6 py-4 font-medium text-gray-900 text-lg dark:text-white">
+                                                {title}
+                                                <ul className='p-4'>
+                                                    <li className='list-disc text-[#666666] font-semibold'>Color:
+                                                        <p className='font-medium'>Sage Green</p>
+                                                    </li>
+                                                    <li className='list-disc text-[#666666] font-semibold'>Size:
+                                                        <p className='font-medium'>GTS 2 Mini</p>
+                                                    </li>
+                                                </ul>
+                                            </th>
+                                            <td class="px-6 py-4 text-[#32BDE8] text-base font-semibold">
+                                                {itemSubtotal}
+                                            </td>
+                                        </tr>
 
-                                    <tr class="bg-[#FCFCFC] border-b">
-                                        <th scope="row" class="border px-6 py-4 font-medium text-gray-900 text-lg ">
+                                        {/* <tr className=" border-b">
+                                        <th scope="row" className="border px-6 py-4 font-medium text-gray-900 text-lg ">
                                             Amazfit GTS 2 Mini Sports Smartwatch GPS Bluetooth 5.0 Female Cycle Tracking Smart Watch For Android iOS Phone - GTS 2 Mini SPAIN × 5
                                             <ul className='p-4'>
                                                 <li className='list-disc text-[#666666] font-semibold'>Color:
@@ -104,43 +103,52 @@ const page = () => {
                                                 </li>
                                             </ul>
                                         </th>
-                                        <td class="px-6 py-4 text-[#32BDE8] text-base font-semibold">
+                                        <td className="px-6 py-4 text-[#32BDE8] text-base font-semibold">
                                             $649.95
                                         </td>
-                                    </tr>
-                                    <tr class="bg-[#FCFCFC] border-b">
-                                        <th scope="row" class="border px-6 py-4 font-semibold text-[#000] text-lg ">
-                                            Subtotal:
-                                        </th>
-                                        <td class="px-6 py-4 text-[#32BDE8] text-base font-semibold">
-                                            $649.95
-                                        </td>
-                                    </tr>
-                                    <tr class="bg-[#FCFCFC] border-b">
-                                        <th scope="row" class="border px-6 py-4 font-semibold text-[#000] text-lg ">
-                                            Shipping:
-                                        </th>
-                                        <td class="px-6 py-4 text-[#32BDE8] text-base font-semibold">
-                                            $10.00<span className='text-[#666666] text-base'> via Flat rate</span>
-                                        </td>
-                                    </tr>
-                                    <tr class="bg-[#FCFCFC] border-b">
-                                        <th scope="row" class="border px-6 py-4 font-semibold text-[#000] text-lg ">
-                                            Payment method:
-                                        </th>
-                                        <td class="px-6 py-4 text-[#666666] text-lg font-semibold">
-                                            Direct bank transfer
-                                        </td>
-                                    </tr>
-                                    <tr class="bg-[#FCFCFC] border-b">
-                                        <th scope="row" class="border px-6 py-4 font-semibold text-[#000] text-lg ">
-                                            Total:
-                                        </th>
-                                        <td class="px-6 py-4 text-[#32BDE8] text-base font-semibold">
-                                            $674.85
-                                        </td>
-                                    </tr>
-                                </tbody>
+                                    </tr> */}
+                                        <tr className=" border-b">
+                                            <th scope="row" className="border px-6 py-4 font-semibold text-[#000] text-lg ">
+                                                Subtotal:
+                                            </th>
+                                            <td className="px-6 py-4 text-[#32BDE8] text-base font-semibold">
+                                                ${itemSubtotal.toFixed(2)}
+                                            </td>
+                                        </tr>
+                                        <tr className=" border-b">
+                                            <th scope="row" className="border px-6 py-4 font-semibold text-[#000] text-lg ">
+                                                Shipping:
+                                            </th>
+                                            <td className="px-6 py-4 text-[#32BDE8] bg-[#FCFCFC] text-base font-semibold">
+                                                $10.00<span className='text-[#666666] text-base'> via Flat rate</span>
+                                            </td>
+                                        </tr>
+                                        <tr className="border-b">
+                                            <th scope="row" className="border px-6 py-4 font-semibold text-[#000] text-lg ">
+                                                Payment method:
+                                            </th>
+                                            <td className="px-6 py-4 text-[#666666] text-lg font-semibold">
+                                                Direct bank transfer
+                                            </td>
+                                        </tr>
+                                        <tr className="border-b">
+                                            <th scope="row" className="border px-6 py-4 font-semibold text-[#000] text-lg ">
+                                                Total:
+                                            </th>
+                                            <td className="px-6 py-4 text-[#32BDE8] bg-[#FCFCFC] text-base font-semibold">
+                                                ${calculateTotal().toFixed(2)}
+                                            </td>
+                                        </tr>
+                                        <tr className="border-b">
+                                            <th scope="row" className="border px-6 py-4 font-semibold text-[#000] text-lg ">
+                                                Note:
+                                            </th>
+                                            <td className="px-6 py-4 text-[#32BDE8] bg-[#FCFCFC] text-base font-semibold">
+                                                Hello World!
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                })}
                             </table>
                         </div>
 

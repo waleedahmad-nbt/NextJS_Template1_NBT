@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaMinus, FaPlus, FaRegEye, FaRegQuestionCircle, FaRegStar } from 'react-icons/fa';
 import { FaArrowRightArrowLeft } from 'react-icons/fa6';
 import { IoShareSocialOutline } from 'react-icons/io5';
@@ -13,12 +13,19 @@ import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, addToFavorites, decrement, increment } from '@/app/lib/redux/slices/cartSlice';
 
+
 const Details = () => {
 
     const [selectedThumbnailIndex, setSelectedThumbnailIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
     const dispatch = useDispatch();
     const counter = useSelector((state) => state.cart.value);
+    const productDetails = useSelector((state) => state.cart.selectedProduct);
+
+
+    const handleAddToCart = () => {
+        dispatch(addToCart(productDetails));
+    };
 
 
     const handleIncrement = () => {
@@ -28,9 +35,6 @@ const Details = () => {
         dispatch(decrement());
     }
 
-    const handleAddToCart = (item) => {
-        dispatch(addToCart(item));
-    }
 
     const handleAddToFavorites = (product) => {
         dispatch(addToFavorites(product));

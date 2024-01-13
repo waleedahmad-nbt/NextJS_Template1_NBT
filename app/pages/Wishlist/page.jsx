@@ -1,5 +1,5 @@
 'use client';
-import {  removeFromFavorites } from '@/app/lib/redux/slices/cartSlice';
+import { removeFromFavorites } from '@/app/lib/redux/slices/cartSlice';
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -36,7 +36,7 @@ const page = () => {
 
     return (
         <>
-            <div className=''>
+            <div className='xl:container xl:mx-auto'>
                 <div className='mt-20'>
                     <h1 className="text-4xl font-bold text-center text-gray-900">
                         Wishlist

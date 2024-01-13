@@ -5,6 +5,7 @@ const cartSlice = createSlice({
     initialState: {
         items: [],
         favorites: [],
+        selectedProduct: null,
     },
     reducers: {
         increment: (state, action) => {
@@ -44,13 +45,15 @@ const cartSlice = createSlice({
                 state.favorites.push(product);
             }
         },
-
         removeFromFavorites: (state, action) => {
             state.favorites = state.favorites.filter(item => item.id !== action.payload.id);
+        },
+        setProductDetails: (state, action) => {
+            state.selectedProduct = action.payload;
         },
     }
 })
 
-export const { addToCart, removeFromCart, increment, decrement, addToFavorites, removeFromFavorites } = cartSlice.actions;
+export const { addToCart, removeFromCart, increment, decrement, addToFavorites, removeFromFavorites, setProductDetails } = cartSlice.actions;
 
 export const cartReducer = cartSlice.reducer;

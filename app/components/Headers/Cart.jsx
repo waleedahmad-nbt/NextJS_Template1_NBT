@@ -252,7 +252,7 @@ const Cart = ({ onClose }) => {
                           </div>
                           <div className='flex flex-col items-center text-center gap-2'>
                             <Link href="/pages/CheckOut">
-                              <button type="submit" className="w-[360px] hover:scale-105 duration-300 bg-black text-white font-medium rounded-full text-lg px-5 py-2 text-center items-center ml-7">PLACE ORDER</button>
+                              <button type="submit" className="w-[360px] hover:scale-105 duration-300 bg-black text-white font-medium rounded-full text-lg px-5 py-2 text-center items-center ml-7">CHECKOUT</button>
                             </Link>
                             <Link href="/pages/Cart">
                               <p className='underline'>View Cart</p>
