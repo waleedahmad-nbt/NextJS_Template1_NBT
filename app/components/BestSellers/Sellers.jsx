@@ -1,35 +1,34 @@
 'use client';
 import React, { useState } from 'react';
 import { CiStar } from 'react-icons/ci';
-import { FaEye, FaStar } from 'react-icons/fa';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { FaArrowRightArrowLeft } from 'react-icons/fa6';
 import Link from 'next/link';
-import { addToCart, addToFavorites, removeFromFavorites } from '@/app/lib/redux/slices/cartSlice';
+import { addToCart, addToFavorites, removeFromFavorites, setProductDetails } from '@/app/lib/redux/slices/cartSlice';
 import { IoBagOutline } from 'react-icons/io5';
 import { useDispatch, useSelector } from 'react-redux';
 import { Tooltip } from 'react-tippy';
 import 'react-tippy/dist/tippy.css';
 import WishlistModal from './WishlistModal';
+import { useRouter } from 'next/navigation';
 
 const Sellers = () => {
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
 
   const dispatch = useDispatch();
+  const router=useRouter();
   const favorites = useSelector((state) => state.cart.favorites);
 
   const handleAddToFavorites = (product) => {
     dispatch(addToFavorites(product));
   };
 
-
   const toggleWishlistModal = () => {
     setWishlistModalOpen(!wishlistModalOpen);
   };
-
 
   const handleToggleWishlist = (product) => {
     const isFavorite = favorites.some((item) => item.id === product.id);
@@ -41,10 +40,14 @@ const Sellers = () => {
     }
   };
 
-
   const handleAddToCart = (item) => {
     dispatch(addToCart(item));
   };
+
+  const handleProductClick = (product) => {
+    dispatch(setProductDetails(product));
+    router.push(`/pages/Details?id=${product.id}`);
+  }
 
   const SliderData = [
     {
@@ -174,6 +177,7 @@ const Sellers = () => {
                 border border-transparent hover:border-black rounded-lg'
                 onMouseEnter={() => setHoveredProduct(product.id)}
                 onMouseLeave={() => setHoveredProduct(null)}
+                onClick={() => handleProductClick(product)}
               >
                 <div className='relative w-full h-[216px] p-2 overflow-hidden transition-transform duration-700 ease-in-out'>
                   <img

@@ -236,8 +236,6 @@ const HeaderMiddle = () => {
                   arrow={true}
                 >
                   <p
-                    href="#"
-                    role="button"
                     className="relative flex"
                     onClick={handleCartIconClick}
                   >
