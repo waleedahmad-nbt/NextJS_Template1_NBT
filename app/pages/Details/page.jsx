@@ -175,6 +175,7 @@ const Details = () => {
                                         </div>
                                         <div class="w-12 h-12 rounded-full border-2 overflow-hidden bg-[#757575] hover:scale-110 transform-gpu transition-transform duration-300">
                                         </div>
+                                        {/* {selectedProduct.color} */}
                                     </div>
                                 </div>
 

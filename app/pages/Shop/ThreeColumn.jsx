@@ -8,15 +8,17 @@ import { Tooltip } from 'react-tippy';
 import 'react-tippy/dist/tippy.css';
 import { FaArrowRightArrowLeft } from 'react-icons/fa6';
 import { IoBagOutline } from 'react-icons/io5';
-import { addToCart, addToFavorites } from '@/app/lib/redux/slices/cartSlice';
+import { addToCart, addToFavorites, setProductDetails } from '@/app/lib/redux/slices/cartSlice';
 import Link from 'next/link';
 import WishlistModal from './WishlistModal';
+import { useRouter } from 'next/navigation';
 
 const ThreeColumn = () => {
 
     const [hoveredProduct, setHoveredProduct] = useState(null);
     const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
     const dispatch = useDispatch();
+    const router=useRouter();
 
     const favorites = useSelector((state) => state.cart.favorites);
 
@@ -24,8 +26,9 @@ const ThreeColumn = () => {
         dispatch(addToFavorites(product));
     };
 
-    const handleAddToCart = (item) => {
-        dispatch(addToCart(item));
+    const handleAddToCart = (event,product) => {
+        event.stopPropagation();
+        dispatch(addToCart(product));
     };
 
 
@@ -34,7 +37,8 @@ const ThreeColumn = () => {
     };
 
 
-    const handleToggleWishlist = (product) => {
+    const handleToggleWishlist = (event,product) => {
+        event.stopPropagation();
         const isFavorite = favorites.some((item) => item.id === product.id);
 
         if (isFavorite) {
@@ -43,6 +47,11 @@ const ThreeColumn = () => {
             handleAddToFavorites(product);
         }
     };
+
+    const handleProductClick = (product) => {
+        dispatch(setProductDetails(product));
+        router.push(`/pages/Details?id=${product.id}`);
+    }
 
 
 
@@ -57,6 +66,7 @@ const ThreeColumn = () => {
                             border border-transparent hover:border-black rounded-lg'
                             onMouseEnter={() => setHoveredProduct(product.id)}
                             onMouseLeave={() => setHoveredProduct(null)}
+                            onClick={()=>handleProductClick(product)}
                         >
                             <div className='relative w-full h-[216px] p-2 overflow-hidden transition-transform duration-700 ease-in-out'>
                                 <img
@@ -74,7 +84,7 @@ const ThreeColumn = () => {
                                             animation="scale"
                                             arrow={true}
                                         >
-                                            <div onClick={() => handleToggleWishlist(product)}
+                                            <div onClick={(event) => handleToggleWishlist(event,product)}
                                                 className={`p-3 bg-${favorites.some((item) => item.id === product.id) ? 'black' : 'white'} rounded-full text-${favorites.some((item) => item.id === product.id) ? 'white' : 'black'} hover:text-white hover:bg-black duration-300 ease-in-out text-xl`}>
                                                 <CiStar />
                                             </div>
@@ -98,7 +108,7 @@ const ThreeColumn = () => {
                                             animation="scale"
                                             arrow={true}
                                         >
-                                            <div onClick={() => handleAddToCart(product)} className='p-3 bg-white rounded-full text-black hover:text-white hover:bg-black duration-300 ease-in-out text-xl'>
+                                            <div onClick={(event) => handleAddToCart(event,product)} className='p-3 bg-white rounded-full text-black hover:text-white hover:bg-black duration-300 ease-in-out text-xl'>
                                                 <IoBagOutline />
                                             </div>
                                         </Tooltip>

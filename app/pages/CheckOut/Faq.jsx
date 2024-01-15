@@ -3,6 +3,7 @@ import { MdOutlinePayments } from 'react-icons/md';
 import initAOS from '../../../utils/aos';
 import { GiNotebook } from "react-icons/gi";
 import { PiHandCoins } from "react-icons/pi";
+import Order from '../Order/page';
 
 const FAQItem = ({ question, answer, isOpen, toggleOpen, isChecked, setChecked, icon: Icon }) => {
     useEffect(() => {
@@ -41,9 +42,10 @@ const FAQItem = ({ question, answer, isOpen, toggleOpen, isChecked, setChecked, 
     );
 };
 
-const FAQPage = () => {
+const FAQPage = ({ onFAQOptionChange }) => {
     const [openIndex, setOpenIndex] = useState(null);
     const [checkedIndex, setCheckedIndex] = useState(null);
+    const [selectedFAQ, setSelectedFAQ] = useState(null);
 
     const faqData = [
         {
@@ -55,19 +57,18 @@ const FAQPage = () => {
         {
             question: 'Check Payments',
             answer: 'Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode',
-            icon: GiNotebook ,
+            icon: GiNotebook,
         },
         {
             question: 'Cash on Delivery',
             answer: 'Pay with cash upon delivery.',
-            icon: PiHandCoins ,
+            icon: PiHandCoins,
         },
     ];
 
     const toggleOpen = (index) => {
         setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
     };
-
     return (
         <div className="container mx-auto mt-8 p-4">
             {faqData.map((item, index) => (
@@ -80,8 +81,10 @@ const FAQPage = () => {
                     isChecked={index === checkedIndex}
                     setChecked={() => setCheckedIndex(index)}
                     icon={item.icon}
+                    onClick={() => handleFAQOptionClick(option)}
                 />
             ))}
+            {selectedFAQ && <Order selectedFAQ={selectedFAQ} />}
         </div>
     );
 };

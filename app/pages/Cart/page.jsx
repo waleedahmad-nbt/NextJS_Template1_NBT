@@ -6,12 +6,14 @@ import { RiCouponLine } from "react-icons/ri";
 import { LiaShippingFastSolid } from "react-icons/lia";
 import EmptyCart from './EmptyCart';
 import { useDispatch, useSelector } from 'react-redux';
-import { decrement, increment, removeFromCart } from '@/app/lib/redux/slices/cartSlice';
+import { decrement, increment, removeExpiredItems, removeFromCart } from '@/app/lib/redux/slices/cartSlice';
+import Link from 'next/link';
 
 const Page = () => {
-    const [clientTime, setClientTime] = useState(null);
     const dispatch = useDispatch();
     const [selectedShippingOption, setSelectedShippingOption] = useState('free');
+    const [remainingTime, setRemainingTime] = useState(null);
+    const [expirationTime, setExpirationTime] = useState(new Date(new Date().getTime() + 1000 * 60 * 2));
 
     const CartItems = useSelector((state) => state.cart.items);
     const cartQuantity = CartItems ? CartItems.length : 0;
@@ -42,25 +44,23 @@ const Page = () => {
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            const currentTime = new Date();
-            const hours = currentTime.getHours() % 12 || 12;
-            const amPm = currentTime.getHours() >= 12 ? 'PM' : 'AM';
-            const formattedTime =
-                hours +
-                ':' +
-                (currentTime.getMinutes() < 10 ? '0' : '') +
-                currentTime.getMinutes() +
-                ':' +
-                (currentTime.getSeconds() < 10 ? '0' : '') +
-                currentTime.getSeconds() +
-                ' ' +
-                amPm;
+            dispatch(removeExpiredItems(new Date()));
 
-            setClientTime(formattedTime);
+            const currentTime = new Date();
+            const timeDifference = expirationTime - currentTime;
+
+            if (timeDifference <= 0) {
+                clearInterval(intervalId);
+            } else {
+                const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+                setRemainingTime(`${minutes}m ${seconds}s`);
+            }
         }, 1000);
 
         return () => clearInterval(intervalId);
-    }, []);
+    }, [dispatch, expirationTime]);
+
 
     return (
         <>
@@ -75,8 +75,8 @@ const Page = () => {
                                     <h1 className='text-center text-4xl font-bold'>Cart</h1>
                                     <p className='text-lg font-semibold invisible md:visible'>
                                         🔥 These products are limited, checkout within{' '}
-                                        {clientTime !== null && (
-                                            <span className='text-red-600'>{clientTime}</span>
+                                        {remainingTime !== null && (
+                                            <span className='text-red-600'>{remainingTime}</span>
                                         )}
                                     </p>
                                 </div>
@@ -141,7 +141,6 @@ const Page = () => {
                             }
                         </div>
 
-
                         <div className='w-full md:w-[400px] h-[350px] bg-[#FFFFFF] shadow-2xl flex flex-col ml-auto p-9 z-50 m-14 rounded-md'>
                             <div className='flex flex-row gap-2 h-[60px] border-b mx-auto'>
                                 <div className='flex flex-col w-[70px] sm:w-[100px] items-center border-r mb-2'>
@@ -194,9 +193,11 @@ const Page = () => {
                                 <p>Total</p>
                                 <p className='text-[#32BDe8]'>${calculateTotal().toFixed(2)}</p>
                             </div>
-                            <button className='w-full flex items-center text-center justify-center text-lg text-white font-semibold h-10 mt-1 bg-black rounded-full duration-500 transform hover:scale-110 scale-105'>
-                                CHECKOUT
-                            </button>
+                            <Link href="/pages/CheckOut">
+                                <button className='w-full flex items-center text-center justify-center text-lg text-white font-semibold h-10 mt-1 bg-black rounded-full duration-500 transform hover:scale-110 scale-105'>
+                                    CHECKOUT
+                                </button>
+                            </Link>
                         </div>
                     </>
                 )}

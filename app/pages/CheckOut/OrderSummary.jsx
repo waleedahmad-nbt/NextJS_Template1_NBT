@@ -4,6 +4,9 @@ import { GoPencil } from 'react-icons/go';
 import { LiaShippingFastSolid } from 'react-icons/lia';
 import { RiCouponLine } from 'react-icons/ri';
 import { useSelector } from 'react-redux';
+import SellerNote from './SellerNote';
+import Shipping from './Shipping';
+import Coupen from './Coupen';
 
 const OrderSummary = () => {
     const [selectedShippingOption, setSelectedShippingOption] = useState('free');
@@ -108,7 +111,9 @@ const OrderSummary = () => {
                                 name="shippingOption"
                                 value="free"
                                 checked={selectedShippingOption === 'free'}
-                                onChange={() => setSelectedShippingOption('free')}
+                                onChange={() => {
+                                    setSelectedShippingOption('free');
+                                }}
                                 className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded-full focus:ring-black"
                             />
                             <p> Free shipping </p>
@@ -120,7 +125,9 @@ const OrderSummary = () => {
                                 name="shippingOption"
                                 value="flat"
                                 checked={selectedShippingOption === 'flat'}
-                                onChange={() => setSelectedShippingOption('flat')}
+                                onChange={() => {
+                                    setSelectedShippingOption('flat');
+                                }}
                                 className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded-full focus:ring-black"
                             />
                             <p> Flat rate: <span className='text-[#32BDe8] text-base'> $10.00</span></p>
@@ -139,7 +146,6 @@ const OrderSummary = () => {
             </h1>
 
 
-
             {isNoteModalOpen && <SellerNote onClose={closeNoteModal} />}
             {isShippingModalOpen && <Shipping onClose={closeShippingModal} />}
             {isCoupenModalOpen && <Coupen onClose={closeCoupenModal} />}
@@ -147,4 +153,4 @@ const OrderSummary = () => {
     )
 }
 
-export default OrderSummary
+export default OrderSummary;

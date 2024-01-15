@@ -8,14 +8,17 @@ import { HiOutlineArrowsRightLeft } from 'react-icons/hi2';
 import { Tooltip } from 'react-tippy';
 import 'react-tippy/dist/tippy.css';
 import { products } from '@/app/data';
-import { addToFavorites } from '@/app/lib/redux/slices/cartSlice';
+import { addToFavorites, setProductDetails } from '@/app/lib/redux/slices/cartSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { useRouter } from 'next/navigation';
 
 const List = () => {
 
     const [hoveredProduct, setHoveredProduct] = useState(null);
     const dispatch = useDispatch();
+    const router = useRouter();
     const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
+
 
     const favorites = useSelector((state) => state.cart.favorites);
 
@@ -27,8 +30,8 @@ const List = () => {
         setWishlistModalOpen(!wishlistModalOpen);
     };
 
-
-    const handleToggleWishlist = (product) => {
+    const handleToggleWishlist = (event,product) => {
+        event.stopPropagation();
         const isFavorite = favorites.some((item) => item.id === product.id);
 
         if (isFavorite) {
@@ -38,6 +41,11 @@ const List = () => {
         }
     };
 
+    const handleProductClick = (product) => {
+        dispatch(setProductDetails(product));
+        router.push(`/pages/Details?id=${product.id}`);
+    }
+
     return (
         <>
             <div>
@@ -46,6 +54,7 @@ const List = () => {
                         onMouseEnter={() => setHoveredProduct(product.id)}
                         onMouseLeave={() => setHoveredProduct(null)}
                         key={product.id}
+                        onClick={() => handleProductClick(product)}
                         className={`flex sm:flex-row flex-col items-center mb-8 -z-10`}>
 
                         <img
@@ -100,8 +109,7 @@ const List = () => {
                                     animation="scale"
                                     arrow={true}
                                 >
-                                    {/* <WishlistModal /> */}
-                                    <div onClick={() => handleToggleWishlist(product)}
+                                    <div onClick={(event) => handleToggleWishlist(event,product)}
                                         className={`p-3 bg-${favorites.some((item) => item.id === product.id) ? 'black' : 'white'} rounded-full text-${favorites.some((item) => item.id === product.id) ? 'white' : 'black'} hover:text-white hover:bg-black duration-300 ease-in-out text-xl`}>
                                         <FaRegStar />
                                     </div>

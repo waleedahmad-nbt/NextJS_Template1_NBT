@@ -5,7 +5,7 @@ const cartSlice = createSlice({
     initialState: {
         items: [],
         favorites: [],
-        selectedProduct: null,
+        selectedProductDetails: null,
     },
     reducers: {
         increment: (state, action) => {
@@ -51,9 +51,20 @@ const cartSlice = createSlice({
         setProductDetails: (state, action) => {
             state.selectedProduct = action.payload;
         },
+        removeExpiredItems: (state, action) => {
+            const currentTime = action.payload;
+            const expirationTime = 1000 * 60 * 2;
+
+            state.items = state.items.filter((item) => {
+                return (
+                    !item.removedAt ||
+                    currentTime - new Date(item.removedAt) < expirationTime
+                );
+            });
+        },
     }
 })
 
-export const { addToCart, removeFromCart, increment, decrement, addToFavorites, removeFromFavorites, setProductDetails } = cartSlice.actions;
+export const { addToCart, removeFromCart, increment, decrement, addToFavorites, removeFromFavorites, setProductDetails, removeExpiredItems } = cartSlice.actions;
 
 export const cartReducer = cartSlice.reducer;

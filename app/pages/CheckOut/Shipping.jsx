@@ -8,9 +8,6 @@ import { RxCross2 } from 'react-icons/rx';
 const Shipping = ({ onClose }) => {
     const [inputValue, setInputValue] = useState('Punjab');
     const [CountriesValue, setCountriesValue] = useState('Punjab');
-    const [isOpenCity, setisOpenCity] = useState(false);
-    const [selectedItem, setSelectedItem] = useState('');
-    const items = ['Item 1', 'Item 2', 'Item 3'];
     const [searchTerm, setSearchTerm] = useState('');
     const [searchCountry, setSearchCountry] = useState('');
     const [isOpen, setIsOpen] = useState(false);

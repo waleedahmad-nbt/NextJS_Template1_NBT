@@ -21,8 +21,9 @@ const FiveColumn = () => {
 
     const favorites = useSelector((state) => state.cart.favorites);
 
-    const handleAddToCart = (item) => {
-        dispatch(addToCart(item));
+    const handleAddToCart = (event, product) => {
+        event.stopPropagation();
+        dispatch(addToCart(product));
     };
 
     const handleAddToFavorites = (product) => {
@@ -35,7 +36,8 @@ const FiveColumn = () => {
     };
 
 
-    const handleToggleWishlist = (product) => {
+    const handleToggleWishlist = (event, product) => {
+        event.stopPropagation();
         const isFavorite = favorites.some((item) => item.id === product.id);
 
         if (isFavorite) {
@@ -80,7 +82,7 @@ const FiveColumn = () => {
                                         animation="scale"
                                         arrow={true}
                                     >
-                                        <div onClick={() => handleToggleWishlist(product)}
+                                        <div onClick={(event) => handleToggleWishlist(event, product)}
                                             className={`p-3 bg-${favorites.some((item) => item.id === product.id) ? 'black' : 'white'} rounded-full text-${favorites.some((item) => item.id === product.id) ? 'white' : 'black'} hover:text-white hover:bg-black duration-300 ease-in-out text-xl`}>
                                             <CiStar />
                                         </div>
@@ -104,7 +106,7 @@ const FiveColumn = () => {
                                         animation="scale"
                                         arrow={true}
                                     >
-                                        <div onClick={() => handleAddToCart(product)} className='p-3 bg-white rounded-full text-black hover:text-white hover:bg-black duration-300 ease-in-out text-xl'>
+                                        <div onClick={(event) => handleAddToCart(event, product)} className='p-3 bg-white rounded-full text-black hover:text-white hover:bg-black duration-300 ease-in-out text-xl'>
                                             <IoBagOutline />
                                         </div>
                                     </Tooltip>

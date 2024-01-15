@@ -10,6 +10,7 @@ export const products = [
         rating: 5,
         originalPrice: 139.00,
         discountedPrice: 129.00,
+        color:'black',
     },
     {
         id: 2,
@@ -23,6 +24,7 @@ export const products = [
         rating: 5,
         originalPrice: 139.00,
         discountedPrice: 129.00,
+        color:'black',
     },
     {
         id: 3,
@@ -35,6 +37,7 @@ export const products = [
         rating: 5,
         originalPrice: 145.00,
         discountedPrice: 219.90,
+        color:'red',
     },
     {
         id: 4,
@@ -48,6 +51,7 @@ export const products = [
         rating: 5,
         originalPrice: 139.00,
         discountedPrice: 129.00,
+        color:'red',
     },
     {
         id: 5,
@@ -61,6 +65,7 @@ export const products = [
         rating: 5,
         originalPrice: 139.00,
         discountedPrice: 129.00,
+        color:'black',
     },
     {
         id: 6,

@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { FaArrowRightArrowLeft } from 'react-icons/fa6';
 import Link from 'next/link';
-import { addToCart, addToFavorites, removeFromFavorites, setProductDetails } from '@/app/lib/redux/slices/cartSlice';
+import { addToCart, addToFavorites, setProductDetails } from '@/app/lib/redux/slices/cartSlice';
 import { IoBagOutline } from 'react-icons/io5';
 import { useDispatch, useSelector } from 'react-redux';
 import { Tooltip } from 'react-tippy';
@@ -19,7 +19,7 @@ const Sellers = () => {
   const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
 
   const dispatch = useDispatch();
-  const router=useRouter();
+  const router = useRouter();
   const favorites = useSelector((state) => state.cart.favorites);
 
   const handleAddToFavorites = (product) => {
@@ -30,7 +30,8 @@ const Sellers = () => {
     setWishlistModalOpen(!wishlistModalOpen);
   };
 
-  const handleToggleWishlist = (product) => {
+  const handleToggleWishlist = (event, product) => {
+    event.stopPropagation();
     const isFavorite = favorites.some((item) => item.id === product.id);
 
     if (isFavorite) {
@@ -40,8 +41,9 @@ const Sellers = () => {
     }
   };
 
-  const handleAddToCart = (item) => {
-    dispatch(addToCart(item));
+  const handleAddToCart = (event, product) => {
+    event.stopPropagation();
+    dispatch(addToCart(product));
   };
 
   const handleProductClick = (product) => {
@@ -129,7 +131,6 @@ const Sellers = () => {
     },
   ];
 
-
   const settings = {
     infinite: true,
     speed: 500,
@@ -195,7 +196,7 @@ const Sellers = () => {
                         animation="scale"
                         arrow={true}
                       >
-                        <div onClick={() => handleToggleWishlist(product)}
+                        <div onClick={(event) => handleToggleWishlist(event,product)}
                           className={`heart-icon p-3 bg-${favorites.some((item) => item.id === product.id) ? 'black' : 'white'} rounded-full text-${favorites.some((item) => item.id === product.id) ? 'white' : 'black'} hover:text-white hover:bg-black duration-300 ease-in-out text-xl`}>
                           <CiStar />
                         </div>
@@ -219,7 +220,7 @@ const Sellers = () => {
                         animation="scale"
                         arrow={true}
                       >
-                        <div onClick={() => handleAddToCart(product)} className='p-3 bg-white rounded-full text-black hover:text-white hover:bg-black duration-300 ease-in-out text-xl'>
+                        <div onClick={(event) => handleAddToCart(event,product)} className='p-3 bg-white rounded-full text-black hover:text-white hover:bg-black duration-300 ease-in-out text-xl'>
                           <IoBagOutline />
                         </div>
                       </Tooltip>
