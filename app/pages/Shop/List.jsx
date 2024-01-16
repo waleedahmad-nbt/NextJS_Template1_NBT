@@ -12,6 +12,7 @@ import { addToFavorites, setProductDetails } from '@/app/lib/redux/slices/cartSl
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/navigation';
 
+
 const List = () => {
 
     const [hoveredProduct, setHoveredProduct] = useState(null);

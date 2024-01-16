@@ -14,7 +14,6 @@ const OrderSummary = () => {
     const [isShippingModalOpen, setIsopenShippingModal] = useState(false);
     const [isCoupenModalOpen, setIsopenCoupenModal] = useState(false);
 
-
     const CartItems = useSelector((state) => state.cart.items);
 
     const calculateSubtotal = () => {

@@ -1,13 +1,16 @@
-import { removeFromFavorites } from '@/app/lib/redux/slices/cartSlice';
+'use client';
+import { removeFromFavorites,setProductDetails } from '@/app/lib/redux/slices/cartSlice';
 import Link from 'next/link';
 import React, { useRef, useState } from 'react';
 import { CiStar } from 'react-icons/ci';
 import { FaRegStar } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
+import { useRouter } from "next/navigation";
 
 const WishlistModal = ({ modalOpen, closeModal, products }) => {
     const dispatch = useDispatch();
     const modalref = useRef();
+    const router=useRouter();
 
     const favourites = useSelector((state) => state.cart.favorites);
     const favQuantity = favourites ? favourites.length : 0;
@@ -22,6 +25,11 @@ const WishlistModal = ({ modalOpen, closeModal, products }) => {
             closeModal();
         }
     };
+
+  const handleProductClick = (product) => {
+    dispatch(setProductDetails(product));
+    router.push(`/pages/Details?id=${product.id}`);
+  };
 
 
     return (
@@ -82,18 +90,18 @@ const WishlistModal = ({ modalOpen, closeModal, products }) => {
                                                         <p onClick={() => handleRemoveFromFavorites(item)} className='text-md hover:text-red-500 cursor-pointer'>X</p>
                                                         <img src={imageSrc} className='w-[80px] h-[80px]' alt="" />
                                                         <div className='flex flex-col'>
-                                                            <p className='text-sm font-medium'>{title}</p>
+                                                            <p onClick={()=>handleProductClick(product)} className='text-sm font-medium cursor-pointer'>{title}</p>
                                                             <p className='text-[#32BDE8] text-sm'>{originalPrice}</p>
                                                             <p className='text-xs font-semibold'>December 18, 2023</p>
 
                                                         </div>
-                                                        <Link href="/pages/Details"
-                                                            className="w-full py-2 hover:scale-105 duration-300 focus:ring-4 focus:outline-none
-                                                                bg-black text-white font-medium rounded-full text-lg text-center ml-auto"
-                                                        >
+                                                        <div onClick={()=>handleProductClick(product)}
+                                                        className="w-full py-2 hover:scale-105 duration-300 focus:ring-4 focus:outline-none
+                                                        bg-black text-white cursor-pointer font-medium rounded-full text-lg text-center ml-auto">
                                                             <span className="hidden md:inline">Select Options</span>
                                                             <span className="md:hidden">Select</span>
-                                                        </Link>
+                                                        </div>
+                                                           
                                                     </div>
                                                 )
                                             })

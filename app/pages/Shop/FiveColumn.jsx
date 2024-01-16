@@ -1,6 +1,5 @@
 'use client';
 import { products } from '@/app/data';
-import { addToCart, addToFavorites, removeFromFavorites, setProductDetails } from '@/app/lib/redux/slices/cartSlice';
 import Link from 'next/link';
 import { useState } from 'react';
 import { CiStar } from 'react-icons/ci';
@@ -11,6 +10,7 @@ import { FaArrowRightArrowLeft } from 'react-icons/fa6';
 import { IoBagOutline } from 'react-icons/io5';
 import WishlistModal from './WishlistModal';
 import { useRouter } from 'next/navigation';
+import { addToCart, addToFavorites, decrement, increment,setProductDetails,setRemoveItemTimeout } from '@/app/lib/redux/slices/cartSlice';
 
 
 const FiveColumn = () => {
@@ -18,6 +18,7 @@ const FiveColumn = () => {
     const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
     const dispatch = useDispatch();
     const router = useRouter();
+    const timer = useSelector((state) => state.timer);
 
     const favorites = useSelector((state) => state.cart.favorites);
 
@@ -25,6 +26,7 @@ const FiveColumn = () => {
         event.stopPropagation();
         dispatch(addToCart(product));
     };
+
 
     const handleAddToFavorites = (product) => {
         dispatch(addToFavorites(product));

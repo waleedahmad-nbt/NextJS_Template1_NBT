@@ -1,12 +1,15 @@
 'use client';
-import { removeFromFavorites } from '@/app/lib/redux/slices/cartSlice';
+import { removeFromFavorites,setProductDetails } from '@/app/lib/redux/slices/cartSlice';
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useRouter } from "next/navigation";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.js";
 
 const page = () => {
     const [wishlistPath, setWishlistPath] = useState('');
     const inputRef = useRef(null);
     const dispatch = useDispatch();
+    const router=useRouter();
 
     const favourites = useSelector((state) => state.cart.favorites);
     const favQuantity = favourites ? favourites.length : 0;
@@ -33,9 +36,15 @@ const page = () => {
                 console.error('Unable to copy to clipboard', error);
             });
     };
+    
+  const handleProductClick = (item) => {
+    dispatch(setProductDetails(item));
+    router.push(`/pages/Details?id=${item.id}`);
+  };
 
     return (
         <>
+        <Breadcrumbs />
             <div className='xl:container xl:mx-auto'>
                 <div className='mt-20'>
                     <h1 className="text-4xl font-bold text-center text-gray-900">
@@ -57,17 +66,15 @@ const page = () => {
                                             className='text-lg hover:text-red-500 cursor-pointer'>X</p>
                                         <img src={imageSrc} className='w-[80px] h-[80px]' alt="" />
                                         <div className='flex flex-col'>
-                                            <p className='text-lg font-medium'>{title}</p>
-                                            <p className='text-[#32BDE8] text-base'>{originalPrice}
-                                                <span className='text-[#32BDE8] text-base'>{discountedPrice}</span>
-                                            </p>
+                                            <p onClick={()=>handleProductClick(item)} className='text-lg cursor-pointer font-medium'>{title}</p>
+                                                <span className='text-[#32BDE8] text-base'>${discountedPrice}</span>
                                             <p className='text-base font-medium'>December 18, 2023</p>
 
                                         </div>
-                                        <button
+                                        <button onClick={()=>handleProductClick(item)}
                                             type="submit"
-                                            className="w-[200px] h-[50px] px-4 hover:scale-105 duration-300 focus:ring-4 focus:outline-none
-                                 bg-black text-white font-medium rounded-full text-lg text-center ml-auto"
+                                            className="w-[200px] h-[50px] cursor-pointer px-4 hover:scale-105 duration-300 focus:ring-4 focus:outline-none
+                                            bg-black text-white font-medium rounded-full text-lg text-center ml-auto"
                                         >
                                             <span className="hidden md:inline">Select Options</span>
                                             <span className="md:hidden">Select</span>
