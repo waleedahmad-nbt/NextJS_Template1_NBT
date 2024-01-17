@@ -1,113 +1,83 @@
-'use client';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/swiper-bundle.css';
-import BlogSlide from './Blogslide';
+"use client";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import "swiper/swiper-bundle.css";
+import BlogSlide from "./Blogslide";
+import { slides } from "@/app/data";
+import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { setBlogDetails } from "@/app/lib/redux/slices/cartSlice";
+
 const Blog = () => {
+  const router = useRouter();
+  const dispatch = useDispatch();
 
-    const slides = [
-        {
-            id: 1,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/blog_geart_01-427x250.jpg',
-            category: 'TECHNOLOGY',
-            title: 'Setup your Surround sound speaker',
-        },
-        {
-            id: 2,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/blog_geart_02-427x250.jpg',
-            category: 'LIFE STYLE',
-            title: 'Hook up a receiver for you Home Theater',
-        }, {
-            id: 3,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/blog_geart_03-427x250.jpg',
-            category: 'TECHNOLOGY',
-            title: 'Top most Comfortable Headphones',
-        },
-        {
-            id: 4,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/blog_gear_04-427x250.jpg',
-            category: 'TECHNOLOGY',
-            title: 'CUBOT X20 PRO: iPhone 11 rear camera design will be available for sale',
-        }, {
-            id: 5,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/blog_gear_05-427x250.jpg',
-            category: 'TECHNOLOGY',
-            title: 'CUBOT X20 PRO: iPhone 11 rear camera design will be available for sale on SuperGear'
-        }, {
-            id: 6,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/blog_gear_06-427x250.jpg',
-            category: 'TECHNOLOGY',
-            title: 'Get Teclast T30 tablet at an unexpected price at SuperGear',
-        },
-        {
-            id: 7,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/blog_gear_07-427x250.jpg',
-            category: 'TECHNOLOGY',
-            title: 'Amazfit GTR Titanium Edition and Austrian Zircon Version will Officially go on Exclusive Global Sale',
-        }, {
-            id: 8,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/blog_gear_08-427x250.jpg',
-            category: 'TECHNOLOGY',
-            title: 'Don’t miss out! Xiaomi Mi Note 10 exclusive global launch hit',
-        }, {
-            id: 9,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/blog_gear_10-427x250.jpg',
-            category: 'TECHNOLOGY',
-            title: 'Do you want a stylish smartphone with a pop-up camera for budget price? Take the Elephone PX (2019)',
-        },
-        {
-            id: 10,
-            imageUrl: ' https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/home-hero-banner-427x250.jpg',
-            category: 'TECHNOLOGY',
-            title: 'DJI Mavic Mini: the ultra-light consumer drone for beginner sale',
-        },
-    ];
+  const handleProductClick = (blog) => {
+    dispatch(setBlogDetails(blog));
+    router.push(`/pages/Blogs?id=${blog.id}`);
+  };
 
+  return (
+    <>
+      <div className="xl:container xl:mx-auto">
+        <div className="mt-24 mx-2 md:mx-10">
+          <div className="flex text-center justify-center">
+            <h1 className="text-2xl md:text-4xl font-bold">Our Blog Posts</h1>
+          </div>
 
-
-    return (
-        <>
-            <div className='xl:container xl:mx-auto'>
-                <div className='mt-24 mx-2 md:mx-10'>
-                    <div className='flex text-center justify-center'>
-                        <h1 className='text-2xl md:text-4xl font-bold'>Our Blog Posts</h1>
+          <div className="flex flex-row mt-16">
+            <Swiper
+              spaceBetween={20}
+              slidesPerView={3}
+              pagination={{ clickable: true }}
+              loop={true}
+              breakpoints={{
+                300: {
+                  slidesPerView: 1.5,
+                },
+                640: {
+                  slidesPerView: 2.5,
+                },
+                768: {
+                  slidesPerView: 2,
+                },
+                1024: {
+                  slidesPerView: 3,
+                },
+              }}
+            >
+              {slides.map((slide) => (
+                <SwiperSlide key={slide.id}>
+                  <div
+                    onClick={() => handleProductClick(slide)}
+                    className="flex flex-col w-full h-auto cursor-pointer overflow-hidden"
+                  >
+                    <div className="w-full h-full">
+                      <img
+                        src={slide.imageUrl}
+                        alt="Blog Post Image"
+                        className="transition-transform transform 
+                        hover:scale-105 duration-700 w-full h-full"
+                      />
                     </div>
+                    <h4 className="text-xs mt-4 text-gray-800 hover:text-gray-500">
+                      {slide.category}
+                    </h4>
+                    <p className="text-lg font-semibold mt-2 text-ellipsis">
+                      {slide.title}
+                    </p>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
-                    <div className='flex flex-row mt-16'>
-                        <Swiper
-                            spaceBetween={20}
-                            slidesPerView={3}
-                            pagination={{ clickable: true }}
-                            loop={true}
-                            breakpoints={{
-                                300: {
-                                    slidesPerView: 1.5,
-                                },
-                                640: {
-                                    slidesPerView: 2.5,
-                                },
-                                768: {
-                                    slidesPerView: 2,
-                                },
-                                1024: {
-                                    slidesPerView: 3,
-                                },
-                            }}
-                        >
-                            {slides.map((slide) => (
-                                <SwiperSlide key={slide.id}>
-                                    <BlogSlide {...slide} />
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-                    </div>
-                </div>
-            </div>
-        </>
-    )
-}
-
-export default Blog
+export default Blog;

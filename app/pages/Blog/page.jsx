@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { BiMessageRoundedDots } from "react-icons/bi";
+import BreadcrumbsBlog from './BreadcrumbsBlog';
 
 const page = () => {
 
@@ -65,6 +66,7 @@ const page = () => {
 
     return (
         <>
+        <BreadcrumbsBlog/>
             <div className='xl:container xl:mx-auto'>
                 <div className='mx-2 lg:mx-12 mt-20'>
                     <h1 className="text-4xl font-bold text-center text-gray-900">

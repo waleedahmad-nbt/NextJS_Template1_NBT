@@ -54,6 +54,9 @@ const cartSlice = createSlice({
     setProductDetails: (state, action) => {
       state.selectedProduct = action.payload;
     },
+    setBlogDetails: (state, action) => {
+      state.selectedBlog = action.payload;
+    },
   },
 });
 
@@ -76,6 +79,7 @@ export const {
   addToFavorites,
   removeFromFavorites,
   setProductDetails,
+  setBlogDetails
 } = cartSlice.actions;
 
 export const cartReducer = cartSlice.reducer;

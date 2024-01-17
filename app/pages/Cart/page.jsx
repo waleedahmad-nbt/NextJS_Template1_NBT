@@ -15,6 +15,7 @@ import {
 } from "@/app/lib/redux/slices/cartSlice";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import BreadcrumbsCart from "./BreadcrumbsCart";
 
 const Page = () => {
   const dispatch = useDispatch();
@@ -54,6 +55,7 @@ const Page = () => {
 
   return (
     <>
+    <BreadcrumbsCart/>
       <div className="xl:container xl:mx-auto">
         {cartQuantity === 0 ? (
           <EmptyCart />

@@ -3,7 +3,7 @@
 const Music = () => {
     return (
         <>
-            <div className="xl:container xl:mx-auto">
+            <div className="container mx-auto">
                 <div className='mt-20 mx-3 md:mx-20'>
                     <div className='flex flex-col md:flex-row justify-between border-b'>
                         <h1 className='text-2xl md:text-4xl leading-10 font-bold'>Music, Audio, Video</h1>
@@ -15,7 +15,7 @@ const Music = () => {
                 <div className='hidden lg:block'>
                     <div className='flex flex-row mt-10 mx-10 cursor-pointer '>
 
-                        <div className='w-3/4'>
+                        <div className='w-[50%]'>
                             {/* Left Side */}
                             <div className="relative col-span-1 flex rounded-lg h-full group overflow-hidden">
                                 <img

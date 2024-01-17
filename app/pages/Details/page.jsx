@@ -23,13 +23,10 @@ import {
   decrement,
   increment,
 } from "@/app/lib/redux/slices/cartSlice";
-import { setTimer, resetTimer } from "@/app/lib/redux/slices/timerSlice";
 import Link from "next/link";
 import { getThumbnails } from "@/app/data";
-import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.js";
-
+import BreadCrumbs from "@/app/components/BreadCrumb/BreadCrumbs";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 
 const Details = () => {
@@ -93,10 +90,23 @@ const Details = () => {
   };
 
   const swiperRef = useRef(null);
+  const isDetailsPage = selectedProduct != null;
+
+  const breadCrumbs = [
+    { name: "Home", url: "/" },
+    ...(isDetailsPage
+      ? [
+          {
+            name: `${selectedProduct?.title?.substring(0, 100)} ...`,
+            url: `/pages/${selectedProduct?._id}`,
+          },
+        ]
+      : []),
+  ];
 
   return (
     <>
-      <Breadcrumbs />
+      <BreadCrumbs breadCrumbs={breadCrumbs} />
       <div className="xl:container xl:mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between  mt-10">
           {selectedProduct && (
