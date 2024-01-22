@@ -94,11 +94,9 @@ const page = () => {
             <div className="w-[100%] lg:w-[75%] h-full">
               <div className="flex flex-col text-center items-center gap-3">
                 <p className="text-sm hover:bg-[#e02b2b] font-semibold hover:text-white text-black p-1 duration-300">
-                  {/* LIFE STYLE */}
                   {selectedBlog.category}
                 </p>
                 <p className="text-4xl font-semibold">
-                  {/* Hook up a receiver for your home theaterbhgfghfhgfhghg */}
                   {selectedBlog.title}
                 </p>
                 <div className="text-sm font-semibold">
@@ -110,55 +108,32 @@ const page = () => {
                   February 24, 2022
                 </div>
 
-                <div className="mt-10 border">
                   <img src={selectedBlog.imageUrl} className="w-full" alt="" />
-                </div>
               </div>
 
               <div className="mt-7">
                 <p className=" font-semibold text-xl text-[#2b2b2b]">
-                  {/* Officially available for pre-order in the U.S. today on the
-                  Valentino Beauty site, the opulent multi-piece collection
-                  draws inspiration from Valentino's storied 61-year history,
-                  imbuing each luxe piece with the "uniqueness, extravaganza,
-                  and experimentation" that defines its haute couture
-                  collections.{" "} */}
+                 
                   {selectedBlog.description1}
                 </p>
               </div>
 
               <div className="text-md mb-7  text-start text-[#666666] font-medium">
                 <p className="my-6">
-                  {/* But don't let those couture connotations fool you. Rest
-                  assured, there's nothing stuffy, exclusive, or conventional
-                  about this cosmetic lineup. */}
+                 
                   {selectedBlog.description2}
                 </p>
                 <p>
-                  {/* Designed under the discerning eye of Pierpaolo Piccioli,
-                  Maison Valentino's Creative Director, and developed in
-                  partnership with L'Oreal Paris, each of the versatile,
-                  multi-finish products is designed to "speak to the freedom of
-                  expression and individuality that lies at the core of the
-                  brand," states the press release. As such, you can expect a
-                  wide array of products and shades that work across all
-                  genders, ages, and cultures, each one intended to evoke
-                  freedom, creativity, and the signature modern glamour that
-                  Valentino does oh so well. */}
+                 
                   {selectedBlog.description3}
                 </p>
               </div>
 
               <div className="mt-12 flex flex-col gap-8">
                 <h2 className="text-2xl ">
-                  {/* The Inspiration Behind Valentino Beauty */}
                   {selectedBlog.headingPrimary}
                 </h2>
                 <p className="text-[#666666]">
-                  {/* To celebrate this expressive and inclusive initiative,
-                  Piccioli even ventured behind the camera, shooting 16 models
-                  from varied backgrounds, all united by the Rosso Valentino
-                  lipstick, forming what he describes as "a Valentino chorus." */}
                   {selectedBlog.headingDescription}
                 </p>
                 <img
@@ -167,30 +142,18 @@ const page = () => {
                   alt=""
                 />
                 <p className="text-md font-medium text-[#666666]">
-                  {/* "Beauty is a complexity resolved through love. Beauty is
-                  democratic. I look at the identity of each individual, the
-                  uniqueness that encloses diversity and inclusivity," he adds.
-                  "Beauty is about grace. Grace is something that you cannot
-                  describe; it is a perception. Beauty is something that gives
-                  me emotion. It is a connection." */}
                   {selectedBlog.headingDescription2}
                 </p>
               </div>
 
               <blockquote class="text-2xl my-8 font-bold text-center m-6  leading-9 text-gray-900">
                 <p>
-                  {/* “I try as much as possible to give you a great basic product
-                  and what comes out, I feel, is really amazing.” */}
                   {selectedBlog.blockquote}
                 </p>
               </blockquote>
 
               <p className="text-base text-[#666666]">
-                {/* Excited? So are we. Ahead, check out the ten products our
-                editors will most certainly be adding to cart today, along with
-                some additional details about how to shop each one.The Valentino
-                Beauty collection is now available for pre-order through the
-                Valentino site, with delivery expected by early July. */}
+               
                 {selectedBlog.headingDescription3}
               </p>
 
