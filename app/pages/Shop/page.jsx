@@ -29,12 +29,7 @@ const page = () => {
 
             <div className="w-full">
               <Products className="md:mx-6" />
-              <a
-                className="bg-black mt-2 w-[153px] text-[#F1F1F1] px-5 m-auto flex text-center justify-center  font-semibold py-3
-                rounded-full  duration-300 ease-in-out transform hover:scale-105"
-              >
-                LOAD MORE
-              </a>
+             
             </div>
           </div>
         </div>

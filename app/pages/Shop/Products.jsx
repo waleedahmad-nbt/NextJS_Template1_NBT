@@ -14,13 +14,20 @@ const Products = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const dropdownRef = useRef(null);
     const [selectedLayout, setSelectedLayout] = useState('five-column');
-
+    const [totalProducts, setTotalProducts] = useState(33);
+    const [visibleProducts, setVisibleProducts] = useState(12);
+  
     const toggleLayout = (layout) => {
         setSelectedLayout(layout);
     };
 
-
-
+      const loadMoreProducts = () => {
+        setVisibleProducts((prevVisibleProducts) => {
+          const newVisibleProducts = prevVisibleProducts + 12;
+          return Math.min(newVisibleProducts, totalProducts);
+        });
+      };
+      
     const toggleDropdown = () => {
         setDropdownOpen((prev) => !prev);
     };
@@ -39,23 +46,23 @@ const Products = () => {
     }, []);
 
     const renderGridLayout = () => {
-        return <div><List /></div>
+        return <div><List totalProducts={totalProducts} visibleProducts={visibleProducts} loadMoreProducts={loadMoreProducts} /></div>
     };
 
     const renderTwoColumnLayout = () => {
-        return <div><TwoColumn /></div>;
+        return <div><TwoColumn totalProducts={totalProducts} visibleProducts={visibleProducts} loadMoreProducts={loadMoreProducts} /></div>;
     };
 
     const renderThreeColumnLayout = () => {
-        return <div><ThreeColumn /></div>;
+        return <div><ThreeColumn totalProducts={totalProducts} visibleProducts={visibleProducts} loadMoreProducts={loadMoreProducts} /></div>;
     };
 
     const renderFourColumnLayout = () => {
-        return <div><FourColumn /></div>;
+        return <div><FourColumn totalProducts={totalProducts} visibleProducts={visibleProducts} loadMoreProducts={loadMoreProducts} /></div>;
     };
 
     const renderFiveColumnLayout = () => {
-        return <div><FiveColumn /></div>;
+        return <div><FiveColumn  totalProducts={totalProducts} visibleProducts={visibleProducts} loadMoreProducts={loadMoreProducts}  /></div>;
     };
 
 
@@ -82,7 +89,7 @@ const Products = () => {
             <div className=' flex flex-col'>
                 <div className="flex flex-col md:flex-row md:justify-between justify-start items-start md:items-center">
                     <h3 className="text-gray-500 font-medium text-base">
-                        Showing 12 of 33 results
+                        Showing {visibleProducts} of {totalProducts} results
                     </h3>
                     <div className='flex flex-row gap-2 items-center'>
                         <div className="relative" ref={dropdownRef}>

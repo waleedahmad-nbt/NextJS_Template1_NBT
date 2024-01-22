@@ -13,18 +13,14 @@ import { useRouter } from "next/navigation";
 import {
   addToCart,
   addToFavorites,
-  decrement,
-  increment,
   setProductDetails,
-  setRemoveItemTimeout,
 } from "@/app/lib/redux/slices/cartSlice";
 
-const FiveColumn = () => {
+const FiveColumn = ({ totalProducts, visibleProducts, loadMoreProducts }) => {
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
   const dispatch = useDispatch();
   const router = useRouter();
-  const timer = useSelector((state) => state.timer);
 
   const favorites = useSelector((state) => state.cart.favorites);
 
@@ -57,10 +53,11 @@ const FiveColumn = () => {
     router.push(`/pages/Details?id=${product.id}`);
   };
 
+
   return (
     <>
       <div className={`grid grid-cols-2 lg:grid-cols-5`}>
-        {products.map((product) => (
+        {products.slice(0, visibleProducts).map((product)  => (
           <div
             key={product.id}
             className="relative cursor-pointer h-[450px] w-full mt-6 p-1 md:p-3 gap-5 overflow-hidden 
@@ -174,6 +171,16 @@ const FiveColumn = () => {
           </div>
         ))}
       </div>
+      {visibleProducts < totalProducts && (
+        <button
+          onClick={loadMoreProducts}
+          className="bg-black mt-2 w-[153px] text-[#F1F1F1] px-5 m-auto flex text-center justify-center font-semibold py-3
+        rounded-full  duration-300 ease-in-out transform hover:scale-105"
+        >
+          LOAD MORE
+        </button>
+      )}
+
 
       <WishlistModal
         modalOpen={wishlistModalOpen}
