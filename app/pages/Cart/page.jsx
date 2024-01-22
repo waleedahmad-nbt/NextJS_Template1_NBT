@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   decrement,
   increment,
-  removeExpiredItems,
   removeFromCart,
   setProductDetails,
 } from "@/app/lib/redux/slices/cartSlice";

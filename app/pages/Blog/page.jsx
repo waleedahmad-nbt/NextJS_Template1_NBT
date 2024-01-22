@@ -2,67 +2,20 @@
 import React from 'react';
 import { BiMessageRoundedDots } from "react-icons/bi";
 import BreadcrumbsBlog from './BreadcrumbsBlog';
+import { slides } from '@/app/data';
+import { useRouter } from 'next/navigation';
+import { useDispatch } from 'react-redux';
+import { setBlogDetails } from '@/app/lib/redux/slices/cartSlice';
 
 const page = () => {
-
-    const slides = [
-        {
-            id: 1,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/blog_geart_01-427x250.jpg',
-            category: 'TECHNOLOGY',
-            title: 'Setup your Surround sound speaker',
-        },
-        {
-            id: 2,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/blog_geart_02-427x250.jpg',
-            category: 'LIFE STYLE',
-            title: 'Hook up a receiver for you Home Theater',
-        }, {
-            id: 3,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/blog_geart_03-427x250.jpg',
-            category: 'TECHNOLOGY',
-            title: 'TOp most Comfortable Headphones',
-        },
-        {
-            id: 4,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/blog_gear_04-427x250.jpg',
-            category: 'TECHNOLOGY',
-            title: 'CUBOT X20 PRO: iPhone 11 rear camera design will be available for sale',
-        }, {
-            id: 5,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/blog_gear_05-427x250.jpg',
-            category: 'TECHNOLOGY',
-            title: 'CUBOT X20 PRO: iPhone 11 rear camera design will be available for sale on SuperGear'
-        }, {
-            id: 6,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/blog_gear_06-427x250.jpg',
-            category: 'TECHNOLOGY',
-            title: 'Get Teclast T30 tablet at an unexpected price at SuperGear',
-        },
-        {
-            id: 7,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/blog_gear_07-427x250.jpg',
-            category: 'TECHNOLOGY',
-            title: 'Amazfit GTR Titanium Edition and Austrian Zircon Version will Officially go on Exclusive Global Sale',
-        }, {
-            id: 8,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/blog_gear_08-427x250.jpg',
-            category: 'TECHNOLOGY',
-            title: 'Don’t miss out! Xiaomi Mi Note 10 exclusive global launch hit',
-        }, {
-            id: 9,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/blog_gear_10-427x250.jpg',
-            category: 'TECHNOLOGY',
-            title: 'Do you want a stylish smartphone with a pop-up camera for budget price? Take the Elephone PX (2019)',
-        },
-        {
-            id: 10,
-            imageUrl: ' https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/home-hero-banner-427x250.jpg',
-            category: 'TECHNOLOGY',
-            title: 'DJI Mavic Mini: the ultra-light consumer drone for beginner sale',
-        },
-    ];
-
+    const router = useRouter();
+    const dispatch = useDispatch();
+  
+    const handleProductClick = (blog) => {
+      dispatch(setBlogDetails(blog));
+      router.push(`/pages/Blogs?id=${blog.id}`);
+    };
+   
 
     return (
         <>
@@ -75,7 +28,7 @@ const page = () => {
                     <div className='flex lg:flex-row flex-col gap-6 mt-16'>
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 w-full md:w-full lg:w-[80%] px-2 md:px-0'>
                             {slides.map((slide) => (
-                                <div key={slide.id} className='flex flex-col mb-2 cursor-pointer'>
+                                <div key={slide.id} onClick={()=>handleProductClick(slide)} className='flex flex-col mb-2 cursor-pointer'>
                                     <img
                                         src={slide.imageUrl}
                                         alt='Blog Post Image'

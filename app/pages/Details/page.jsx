@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import {
   FaMinus,
   FaPlus,
@@ -32,7 +32,6 @@ import "swiper/css";
 const Details = () => {
   const [isHovered, setIsHovered] = useState(false);
   const dispatch = useDispatch();
-  const timer = useSelector((state) => state.timer);
   const [selectedThumbnailIndex, setSelectedThumbnailIndex] = useState(0);
 
   const selectedProduct = useSelector((state) => state.cart.selectedProduct);
@@ -97,8 +96,12 @@ const Details = () => {
     ...(isDetailsPage
       ? [
           {
+            name: `${selectedProduct?.category}`,
+            url: `/products/${selectedProduct?.category}`,
+          },
+          {
             name: `${selectedProduct?.title?.substring(0, 100)} ...`,
-            url: `/pages/${selectedProduct?._id}`,
+            url: `/products/${selectedProduct?._id}`,
           },
         ]
       : []),

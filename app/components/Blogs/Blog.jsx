@@ -5,7 +5,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/swiper-bundle.css";
-import BlogSlide from "./Blogslide";
 import { slides } from "@/app/data";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";

@@ -3,7 +3,7 @@ import { removeFromFavorites,setProductDetails } from '@/app/lib/redux/slices/ca
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from "next/navigation";
-import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.js";
+import WishlistBreadcrumb from './WishlistBreadcrumb';
 
 const page = () => {
     const [wishlistPath, setWishlistPath] = useState('');
@@ -44,7 +44,7 @@ const page = () => {
 
     return (
         <>
-        <Breadcrumbs />
+        <WishlistBreadcrumb />
             <div className='xl:container xl:mx-auto'>
                 <div className='mt-20'>
                     <h1 className="text-4xl font-bold text-center text-gray-900">
