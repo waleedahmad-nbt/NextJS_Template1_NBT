@@ -1,6 +1,7 @@
 export const products = [
     {
         id: 1,
+        Categories:"TV & Audio",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/03/product_gear_speaker_1_1-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/03/product_gear_speaker_1_2-450x450.jpg',
         thumbnail1: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/03/product_gear_speaker_1_4-655x655.jpg',
@@ -16,6 +17,7 @@ export const products = [
     },
     {
         id: 2,
+        Categories:"Consumer Electronics",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_32_1-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_32_3-450x450.jpg',
         thumbnail1:"https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_32_1-655x655.jpg",
@@ -30,6 +32,7 @@ export const products = [
     },
     {
         id: 3,
+        Categories:"Computers, Tablets",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_31_1-150x150.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_31_2-150x150.jpg',
         thumbnail1: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_31_1-655x655.jpg",
@@ -45,6 +48,7 @@ export const products = [
     },
     {
         id: 4,
+        Categories:"Cell Phone",
         imageSrc:'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_30_1-655x655.jpg',
         hoverImage:'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_30_2-655x655.jpg',
         thumbnail1:"https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_30_1-655x655.jpg",
@@ -56,10 +60,11 @@ export const products = [
         rating: 5,
         originalPrice: 200.00,
         discountedPrice: 210.00,
-        color:'red',
+        colors: ['red', 'Dark Grey', 'Grass Green'],
     },
     {
         id: 5,
+        Categories:"TV & Audio",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_29_1-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_29_2-655x655.jpg',
         thumbnail1: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_29_2-655x655.jpg",
@@ -71,10 +76,10 @@ export const products = [
         rating: 5,
         originalPrice: 50.00,
         discountedPrice: 45.00,
-        color:'black',
     },
     {
         id: 6,
+        Categories:"TV & Audio",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_28_1-150x150.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_28_2-150x150.jpg',
         thumbnail1: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_28_1-655x655.jpg",
@@ -88,6 +93,7 @@ export const products = [
     },
     {
         id: 7,
+        Categories:"Consumer Electronics",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_27_1-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_27_2-655x655.jpg',
         thumbnail1: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_27_1-655x655.jpg",
@@ -96,11 +102,12 @@ export const products = [
         category: 'SECURITY & PROTECTION',
         title: 'DIDSeth Pan Tilt Security Light Camera Full HD 1080P Wireless Wi-Fi IP Camera Home Dome Surveillance Cameras',
         rating: 5,
-        originalPrice: 49.00,
-        discountedPrice: 48.00,
+        originalPrice: 48.50,
+        discountedPrice: 45.00,
     },
     {
         id: 8,
+        Categories:"Consumer Electronics",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_26_3-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_26_1-655x655.jpg',
         thumbnail1: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_26_3-655x655.jpg",
@@ -115,6 +122,7 @@ export const products = [
     },
     {
         id: 9,
+        Categories:"Computers, Tablets",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_25_1-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_25_2-655x655.jpg',
         thumbnail1: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_25_1-655x655.jpg",
@@ -129,6 +137,7 @@ export const products = [
     },
     {
         id: 10,
+        Categories:"Smart Electronics",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_24_3-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_24_1-655x655.jpg',
         thumbnail1: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_24_3-655x655.jpg",
@@ -138,11 +147,12 @@ export const products = [
         category: 'SMART HEALTH WATCH',
         title: 'Xiaomi Mi Watch Lite GPS Bluetooth 5.1 Smart Watch Sports Fitness Heart Rate Monitor 1.4 Inch TFTLCD Screen 5 ATM Waterproof Mi Band',
         rating: 5,
-        originalPrice: 85.00,
-        discountedPrice: 79.00,
+        originalPrice: 129.99,
+        discountedPrice: 129.99,
     },
     {
         id: 11,
+        Categories:"Power Tools",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_09_1-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_09_2-655x655.jpg',
         thumbnail1: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_09_1-655x655.jpg',
@@ -158,6 +168,7 @@ export const products = [
     },
     {
         id: 12,
+        Categories:"Cell Phone",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_06_2-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_06_1-655x655.jpg',
         thumbnail1: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_06_2-655x655.jpg',
@@ -175,6 +186,7 @@ export const products = [
     },
     {
         id: 13,
+        Categories:"Cell Phone",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_21_1-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_21_2-655x655.jpg',
         thumbnail1:"https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_21_1-655x655.jpg",
@@ -190,6 +202,7 @@ export const products = [
     },
     {
         id: 14,
+        Categories:"Headphones",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_18_1-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_18_2-655x655.jpg',
         thumbnail1: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_18_1-655x655.jpg',
@@ -207,6 +220,7 @@ export const products = [
     },
     {
         id: 15,
+        Categories:"Power Tools",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_08_1-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_08_2-655x655.jpg',
         thumbnail1:"https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_08_1-655x655.jpg",
@@ -222,6 +236,7 @@ export const products = [
     },
     {
         id: 16,
+        Categories:"TV Box",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_14_2-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_14_3-655x655.jpg',
         thumbnail1: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_14_2-655x655.jpg',
@@ -236,14 +251,15 @@ export const products = [
     },
     {
         id: 17,
-        imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_24_3-655x655.jpg',
-        hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_24_1-655x655.jpg',
-        thumbnail1: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_24_3-655x655.jpg",
-        thumbnail2: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_24_1-655x655.jpg",
-        thumbnail3: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_24_2-655x655.jpg",
-        thumbnail4:"https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_24_4-655x655.jpg",
+        Categories:"Smart Electronics",
+        imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_02_3-655x655.jpg',
+        hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_02_1-1-655x655.jpg',
+        thumbnail1: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_02_3-655x655.jpg",
+        thumbnail2: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_02_1-1-655x655.jpg",
+        thumbnail3: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_02_2-1-655x655.jpg",
+        thumbnail4:"https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_02_4-655x655.jpg",
         category: 'Smart Health Watch',
-        title: 'Xiaomi Mi Watch Lite GPS Bluetooth 5.1 Smart Watch Sports Fitness Heart Rate Monitor 1.4 Inch TFTLCD Screen 5 ATM Waterproof Mi Band',
+        title: 'Amazfit GTS 2 Mini Sports Smartwatch GPS Bluetooth 5.0 Female Cycle Tracking Smart Watch For Android IOS Phone – GTS 2 Mini SPAIN',
         rating: 5,
         originalPrice: 79.99,
         discountedPrice: 79.99,
@@ -252,6 +268,7 @@ export const products = [
    
     {
         id: 18,
+        Categories:"Computers, Tablets",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_04_1-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_04_2-655x655.jpg',
         thumbnail1: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_04_1-655x655.jpg',
@@ -267,6 +284,7 @@ export const products = [
     },
     {
         id: 19,
+        Categories:"TV & Audio",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_22_2-655x655.jpeg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_22_5.jpeg',
         thumbnail1: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_22_2-655x655.jpeg',
@@ -278,12 +296,13 @@ export const products = [
         category: 'BLUETOOTH SPEAKERS',
         title: 'Divoom Tivoo Portable Bluetooth Speaker Smart Clock Alarm Pixel Art DIY By App LED Light Sign In Decoration Unique Gift',
         rating: 3,
-        originalPrice: 70.00,
+        originalPrice: 75.83,
         discountedPrice: 75.83,
         color:'black',
     },
     {
         id: 20,
+        Categories:"Headphones",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_12_1-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_12_2-655x655.jpg',
         thumbnail1:"https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_12_1-655x655.jpg",
@@ -299,6 +318,7 @@ export const products = [
     },
     {
         id: 21,
+        Categories:"TV Box",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_14_2-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_14_3-655x655.jpg',
         thumbnail1: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_14_2-655x655.jpg',
@@ -313,6 +333,7 @@ export const products = [
     },
     {
         id: 22,
+        Categories:"Computers, Tablets",
         imageSrc:'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_13_2-655x655.jpg',
         hoverImage:'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_13_3-655x655.jpg',
         thumbnail1:"https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_13_2-655x655.jpg",
@@ -328,6 +349,7 @@ export const products = [
     },
     {
         id: 23,
+        Categories:"TV Box",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_20_2-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_20_1-655x655.jpg',
         thumbnail1:"https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_20_2-655x655.jpg",
@@ -343,6 +365,7 @@ export const products = [
     },
     {
         id: 24,
+        Categories:"Cell Phone",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_03_1-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_03_2-655x655.jpg',
         thumbnail1: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_03_1-655x655.jpg",
@@ -358,6 +381,7 @@ export const products = [
     },
     {
         id: 25,
+        Categories:"TV & Audio",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_17_1-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_17_4-655x655.jpg',
         thumbnail1: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_17_1-655x655.jpg',
@@ -373,6 +397,7 @@ export const products = [
     },
     {
         id: 26,
+        Categories:"TV & Audio",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_11_1-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_11_3-655x655.jpg',
         thumbnail1: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_11_1-655x655.jpg",
@@ -388,21 +413,7 @@ export const products = [
     },
     {
         id: 27,
-        imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_08_1-655x655.jpg',
-        hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_08_2-655x655.jpg',
-        thumbnail1:"https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_08_1-655x655.jpg",
-        thumbnail2: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_08_2-655x655.jpg",
-        thumbnail3: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_08_3-655x655.jpeg",
-        thumbnail4:"https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_08_4-655x655.jpeg",
-        category: 'Power Tools',
-        title: 'GSR 120-Li Hand Drill 12V Lithium Drill Household Power Tool Screwdriver With One Battery – GSR120-LI 1Battery',
-        rating: 5,
-        originalPrice: 141.99,
-        discountedPrice:141.99,
-        color:'White',
-    },
-    {
-        id: 28,
+        Categories:"Headphones",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_05_5-655x655.jpeg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_05_1-655x655.jpg',
         thumbnail1:"https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_05_5-655x655.jpeg",
@@ -418,7 +429,8 @@ export const products = [
         color:'White',
     },
     {
-        id: 29,
+        id: 28,
+        Categories:"Headphones",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_19_1-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_19_3-655x655.jpg',
         thumbnail1: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_19_1-655x655.jpg",
@@ -436,7 +448,8 @@ export const products = [
         color:'red',
     },
     {
-        id: 30,
+        id: 29,
+        Categories:"Consumer Electronics",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_07_1-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_07_3-655x655.jpg',
         thumbnail1: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_07_1-655x655.jpg',
@@ -452,7 +465,8 @@ export const products = [
         color:'White',
     },
     {
-        id: 31,
+        id: 30,
+        Categories:"Consumer Electronics",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_16_3-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_16_1-655x655.jpg',
         thumbnail1:"https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_16_3-655x655.jpg",
@@ -467,7 +481,8 @@ export const products = [
         color:'White',
     },
     {
-        id: 32,
+        id: 31,
+        Categories:"Consumer Electronics",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_01_1-655x655.jpeg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_01_2-655x655.jpg',
         thumbnail1: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_01_1-655x655.jpeg",
@@ -485,7 +500,8 @@ export const products = [
         color:'red',
     },
     {
-        id: 33,
+        id: 32,
+        Categories:"Consumer Electronics",
         imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_10_1-655x655.jpg',
         hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_10_2-655x655.jpg',
         thumbnail1: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_10_1-655x655.jpg",
@@ -497,6 +513,23 @@ export const products = [
         rating: 5,
         originalPrice: 219.90,
         discountedPrice: 219.90,
+        color:'red',
+    },
+    {
+        id: 33,
+        Categories:"Smart Electronics",
+        imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_23_1-655x655.jpg',
+        hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_23_5-655x655.jpg',
+        thumbnail1: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_23_1-655x655.jpg",
+        thumbnail2: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_23_5-655x655.jpg",
+        thumbnail3: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_23_3-655x655.jpg",
+        thumbnail4:"https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_23_4-655x655.jpg",
+        thumbnail5:"https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_23_2-655x655.jpg",
+        category: 'Smart Health Watch',
+        title: 'Fitness M3 Color Screen Smart Sport Bracelet Activity Running Tracker Heart Rate For Children Men Women Watch For IOS Android',
+        rating: 5,
+        originalPrice: 14.90,
+        discountedPrice: 14.90,
         color:'red',
     },
    

@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaRegEye, FaRegStar } from "react-icons/fa";
 import { IoMdStarOutline } from "react-icons/io";
 import WishlistModal from "./WishlistModal";
@@ -20,7 +20,7 @@ const List = ({ totalProducts, visibleProducts, loadMoreProducts }) => {
   const dispatch = useDispatch();
   const router = useRouter();
   const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
-
+  const [filteredProducts, setFilteredProducts] = useState(products);
   const favorites = useSelector((state) => state.cart.favorites);
 
   const handleAddToFavorites = (product) => {
@@ -47,10 +47,24 @@ const List = ({ totalProducts, visibleProducts, loadMoreProducts }) => {
     router.push(`/pages/Details?id=${product.id}`);
   };
 
+  
+  useEffect(() => {
+    if (selectedCategory) {
+      const filtered = products.filter(
+        (product) => {
+          return product.Categories === selectedCategory
+        }
+      );
+      setFilteredProducts(filtered);
+    } else {
+      setFilteredProducts(products);
+    }
+  }, [selectedCategory]);
+
   return (
     <>
       <div>
-        {products.slice(0, visibleProducts).map((product) => (
+        {filteredProducts.slice(0, visibleProducts).map((product) => (
           <div
             onMouseEnter={() => setHoveredProduct(product.id)}
             onMouseLeave={() => setHoveredProduct(null)}

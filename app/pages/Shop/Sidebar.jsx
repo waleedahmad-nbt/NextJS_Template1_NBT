@@ -2,10 +2,13 @@
 import React, { useEffect, useState } from "react";
 import { MinusSmIcon, PlusSmIcon } from "@heroicons/react/solid";
 import initAOS from "../../../utils/aos";
-import Drawer from "./Drawer";
-import Link from "next/link";
+import { products } from "@/app/data";
 
-const Sidebar = () => {
+const Sidebar = ({
+  setSelectedCategory,
+  setSelectedPriceRange,
+  setSelectedColor,
+}) => {
   const [toggleStates, setToggleStates] = useState({
     categories: true,
     colors: false,
@@ -13,6 +16,8 @@ const Sidebar = () => {
     types: false,
     price: false,
   });
+
+  const [uniqueCategories, setUniqueCategories] = useState([]);
 
   const toggleDiv = (section) => {
     setToggleStates((prevStates) => ({
@@ -22,8 +27,24 @@ const Sidebar = () => {
   };
 
   useEffect(() => {
+    setUniqueCategories(
+      Array.from(new Set(products.map((product) => product.Categories)))
+    );
     initAOS();
   }, []);
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const handlePriceClick = (price) => {
+    setSelectedPriceRange(price);
+  };
+
+  const handleColorClick = (color) => {
+    console.log("color Clicked:", color);
+    setSelectedColor(color);
+  };
 
   return (
     <>
@@ -58,46 +79,16 @@ const Sidebar = () => {
                     data-aos-easing="ease-in-sine"
                     className="text-md font-medium"
                   >
-                    <Link href="/pages/CellPhone">
-                      <li className="text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter">
-                        Cell Phone
+                    {uniqueCategories.map((category) => (
+                      <li
+                        key={category}
+                        onClick={() => handleCategoryClick(category)}
+                        className={`hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300
+                      ease-in-out font-inter`}
+                      >
+                        {category}
                       </li>
-                    </Link>
-                    <Link href="/pages/Compute&Tablet">
-                      <li className="text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter">
-                        Computers, Tablets
-                      </li>
-                    </Link>
-                    <Link href="/pages/Electronics">
-                      <li className="text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter">
-                        Consumer Electronics
-                      </li>
-                    </Link>
-                    <Link href="/pages/Headphones">
-                      <li className="text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter">
-                        Headphones
-                      </li>
-                    </Link>
-                    <Link href="/pages/PowerTools">
-                      <li className="text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter">
-                        Power Tools
-                      </li>
-                    </Link>
-                    <Link href="/pages/SmartWatch">
-                      <li className="text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter">
-                        Smart Watches
-                      </li>
-                    </Link>
-                    <Link href="/pages/TV&Audio">
-                      <li className="text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter">
-                        TV & Audio
-                      </li>
-                    </Link>
-                    <Link href="/pages/TVBox">
-                      <li className="text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter">
-                        TV Box
-                      </li>
-                    </Link>
+                    ))}
                   </ul>
                 )}
               </div>
@@ -127,21 +118,24 @@ const Sidebar = () => {
                     data-aos-easing="ease-in-sine"
                     className="flex flex-row flex-wrap gap-2"
                   >
-                    <div class="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#ade9b7] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div class="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#db32bf] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div class="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#C1C1C1] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div class="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#DD3333] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div class="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#b1e2ef] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div class="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#EEEE22] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div class="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#1e73be] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div class="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#c09e9d] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div class="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#ffed8a] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div class="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#77ba39] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div class="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#D1D1D1] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div class="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#db8632] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div class="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#ffffff] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div class="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#7d9391] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div class="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#000000] hover:scale-110 transform-gpu transition-transform duration-300"></div>
+                    <div
+                      onClick={() => handleColorClick()}
+                      className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#ade9b7] hover:scale-110 transform-gpu transition-transform duration-300"
+                    ></div>
+                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#db32bf] hover:scale-110 transform-gpu transition-transform duration-300"></div>
+                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#C1C1C1] hover:scale-110 transform-gpu transition-transform duration-300"></div>
+                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#DD3333] hover:scale-110 transform-gpu transition-transform duration-300"></div>
+                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#b1e2ef] hover:scale-110 transform-gpu transition-transform duration-300"></div>
+                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#EEEE22] hover:scale-110 transform-gpu transition-transform duration-300"></div>
+                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#1e73be] hover:scale-110 transform-gpu transition-transform duration-300"></div>
+                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#c09e9d] hover:scale-110 transform-gpu transition-transform duration-300"></div>
+                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#ffed8a] hover:scale-110 transform-gpu transition-transform duration-300"></div>
+                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#77ba39] hover:scale-110 transform-gpu transition-transform duration-300"></div>
+                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#D1D1D1] hover:scale-110 transform-gpu transition-transform duration-300"></div>
+                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#db8632] hover:scale-110 transform-gpu transition-transform duration-300"></div>
+                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#ffffff] hover:scale-110 transform-gpu transition-transform duration-300"></div>
+                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#7d9391] hover:scale-110 transform-gpu transition-transform duration-300"></div>
+                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#000000] hover:scale-110 transform-gpu transition-transform duration-300"></div>
                   </div>
                 )}
               </div>
@@ -244,83 +238,61 @@ const Sidebar = () => {
                     data-aos-easing="ease-in-sine"
                     className="text-md font-medium"
                   >
-                    <li className="text-[#666666] cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter">
+                    <li
+                      onClick={() => handlePriceClick(null)}
+                      className="text-[#666666] cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter"
+                    >
                       All
                     </li>
-                    <li className="text-[#32BDE8]  cursor-pointer mb-4 duration-300 ease-in-out font-inter">
-                      <a href="" className="">
-                        <span className="">
-                          <bdi>
-                            <span className="">$</span>0.00
-                          </bdi>
-                        </span>{" "}
+                    <li
+                      onClick={() => handlePriceClick([0, 140])}
+                      className="text-[#32BDE8]  cursor-pointer mb-4 duration-300 ease-in-out font-inter"
+                    >
+                      <p className="space-x-2">
+                        <span className="">$</span>0.00
                         <span className="text-black">–</span>{" "}
-                        <span className="">
-                          <bdi>
-                            <span className="">$</span>140.00
-                          </bdi>
-                        </span>
-                      </a>
+                        <span assName="">$</span>140.00
+                      </p>
                     </li>
-                    <li className="text-[#32BDE8]  cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter">
-                      <a href="" className="">
-                        <span className="">
-                          <bdi>
-                            <span className="">$</span>140.00
-                          </bdi>
-                        </span>{" "}
+                    <li
+                      onClick={() => handlePriceClick([140, 280])}
+                      className="text-[#32BDE8]  cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter"
+                    >
+                      <p className="space-x-2">
+                        <span className="">$</span>140.00
                         <span className="text-black">–</span>{" "}
-                        <span className="">
-                          <bdi>
-                            <span className="">$</span>280.00
-                          </bdi>
-                        </span>
-                      </a>
+                        <span className="">$</span>280.00
+                      </p>
                     </li>
-                    <li className="text-[#32BDE8]  cursor-pointer  mb-4 duration-300 ease-in-out font-inter">
-                      <a href="" className="">
-                        <span className="">
-                          <bdi>
-                            <span className="">$</span>280.00
-                          </bdi>
-                        </span>{" "}
+                    <li
+                      onClick={() => handlePriceClick([280, 420])}
+                      className="text-[#32BDE8]  cursor-pointer  mb-4 duration-300 ease-in-out font-inter"
+                    >
+                      <p className="space-x-2">
+                        <span className="">$</span>280.00
                         <span className="text-black">–</span>{" "}
-                        <span className="">
-                          <bdi>
-                            <span className="">$</span>420.00
-                          </bdi>
-                        </span>
-                      </a>
+                        <span className="">$</span>420.00
+                      </p>
                     </li>
-                    <li className="text-[#32BDE8]  cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter">
-                      <a href="" className="">
-                        <span className="">
-                          <bdi>
-                            <span className="">$</span>420.00
-                          </bdi>
-                        </span>{" "}
+                    <li
+                      onClick={() => handlePriceClick([420, 560])}
+                      className="text-[#32BDE8]  cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter"
+                    >
+                      <p className="space-x-2">
+                        <span className="">$</span>420.00
                         <span className="text-black">–</span>{" "}
-                        <span className="">
-                          <bdi>
-                            <span className="">$</span>560.00
-                          </bdi>
-                        </span>
-                      </a>
+                        <span className="">$</span>560.00
+                      </p>
                     </li>
-                    <li className="text-[#32BDE8]  cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter">
-                      <a href="" className="">
-                        <span className="">
-                          <bdi>
-                            <span className="">$</span>560.00
-                          </bdi>
-                        </span>{" "}
+                    <li
+                      onClick={() => handlePriceClick([560, 700])}
+                      className="text-[#32BDE8]  cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter"
+                    >
+                      <p className="space-x-2">
+                        <span className="">$</span>560.00
                         <span className="text-black">–</span>{" "}
-                        <span className="">
-                          <bdi>
-                            <span className="">$</span>700.00
-                          </bdi>
-                        </span>
-                      </a>
+                        <span className="">$</span>700.00
+                      </p>
                     </li>
                   </ul>
                 )}

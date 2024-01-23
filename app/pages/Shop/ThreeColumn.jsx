@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CiStar } from "react-icons/ci";
 import { FaEye } from "react-icons/fa";
 import { products } from "@/app/data";
@@ -22,8 +22,7 @@ const ThreeColumn = ({ totalProducts, visibleProducts, loadMoreProducts }) => {
   const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
   const dispatch = useDispatch();
   const router = useRouter();
-  const timer = useSelector((state) => state.timer);
-
+  const [filteredProducts, setFilteredProducts] = useState(products);
   const favorites = useSelector((state) => state.cart.favorites);
 
   const handleAddToFavorites = (product) => {
@@ -55,10 +54,24 @@ const ThreeColumn = ({ totalProducts, visibleProducts, loadMoreProducts }) => {
     router.push(`/pages/Details?id=${product.id}`);
   };
 
+   
+  useEffect(() => {
+    if (selectedCategory) {
+      const filtered = products.filter(
+        (product) => {
+          return product.Categories === selectedCategory
+        }
+      );
+      setFilteredProducts(filtered);
+    } else {
+      setFilteredProducts(products);
+    }
+  }, [selectedCategory]);
+
   return (
     <>
       <div className={`grid grid-cols-2 lg:grid-cols-3`}>
-        {products.slice(0, visibleProducts).map((product) => (
+        {filteredProducts.slice(0, visibleProducts).map((product) => (
           <>
             <div
               key={product.id}

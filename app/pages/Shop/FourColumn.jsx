@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CiStar } from "react-icons/ci";
 import { products } from "@/app/data";
 import { useDispatch, useSelector } from "react-redux";
@@ -22,9 +22,9 @@ import {
 const FourColumn = ({ totalProducts, visibleProducts, loadMoreProducts }) => {
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
+  const [filteredProducts, setFilteredProducts] = useState(products);
   const dispatch = useDispatch();
   const router = useRouter();
-  const timer = useSelector((state) => state.timer);
 
   const favorites = useSelector((state) => state.cart.favorites);
 
@@ -56,10 +56,23 @@ const FourColumn = ({ totalProducts, visibleProducts, loadMoreProducts }) => {
     router.push(`/pages/Details?id=${product.id}`);
   };
 
+  useEffect(() => {
+    if (selectedCategory) {
+      const filtered = products.filter(
+        (product) => {
+          return product.Categories === selectedCategory
+        }
+      );
+      setFilteredProducts(filtered);
+    } else {
+      setFilteredProducts(products);
+    }
+  }, [selectedCategory]);
+
   return (
     <>
       <div className={`grid grid-cols-2 lg:grid-cols-4`}>
-        {products.slice(0, visibleProducts).map((product) => (
+        {filteredProducts.slice(0, visibleProducts).map((product) => (
           <>
             <div
               key={product.id}

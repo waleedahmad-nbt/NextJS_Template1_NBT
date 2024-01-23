@@ -1,7 +1,7 @@
 "use client";
 import { products } from "@/app/data";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CiStar } from "react-icons/ci";
 import { useDispatch, useSelector } from "react-redux";
 import { Tooltip } from "react-tippy";
@@ -16,9 +16,17 @@ import {
   setProductDetails,
 } from "@/app/lib/redux/slices/cartSlice";
 
-const FiveColumn = ({ totalProducts, visibleProducts, loadMoreProducts }) => {
+const FiveColumn = ({
+  totalProducts,
+  visibleProducts,
+  loadMoreProducts,
+  selectedCategory,
+  selectedPriceRange,
+  selectedColor,
+}) => {
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
+  const [filteredProducts, setFilteredProducts] = useState(products);
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -53,15 +61,50 @@ const FiveColumn = ({ totalProducts, visibleProducts, loadMoreProducts }) => {
     router.push(`/pages/Details?id=${product.id}`);
   };
 
+  useEffect(() => {
+    if (selectedCategory) {
+      const filtered = products.filter((product) => {
+        return product.Categories === selectedCategory;
+      });
+      setFilteredProducts(filtered);
+    } else {
+      setFilteredProducts(products);
+    }
+  }, [selectedCategory]);
+
+  useEffect(() => {
+    let filtered = products;
+
+    if (selectedPriceRange) {
+      filtered = filtered.filter(
+        (product) =>
+          product.originalPrice >= selectedPriceRange[0] &&
+          product.originalPrice <= selectedPriceRange[1]
+      );
+    }
+
+    setFilteredProducts(filtered);
+  }, [selectedPriceRange]);
+
+  useEffect(() => {
+    let filtered = products;
+
+    if (selectedColor) {
+      filtered = filtered.filter((product) => {
+        return product.color === selectedColor;
+      });
+    }
+    setFilteredProducts(filtered);
+  }, [selectedColor]);
 
   return (
     <>
       <div className={`grid grid-cols-2 lg:grid-cols-5`}>
-        {products.slice(0, visibleProducts).map((product)  => (
+        {filteredProducts.slice(0, visibleProducts).map((product) => (
           <div
             key={product.id}
             className="relative cursor-pointer h-[450px] w-full mt-6 p-1 md:p-3 gap-5 overflow-hidden 
-                        border border-transparent hover:border-black rounded-lg"
+            border border-transparent hover:border-black rounded-lg"
             onMouseEnter={() => setHoveredProduct(product.id)}
             onMouseLeave={() => setHoveredProduct(null)}
             onClick={() => handleProductClick(product)}
@@ -180,7 +223,6 @@ const FiveColumn = ({ totalProducts, visibleProducts, loadMoreProducts }) => {
           LOAD MORE
         </button>
       )}
-
 
       <WishlistModal
         modalOpen={wishlistModalOpen}

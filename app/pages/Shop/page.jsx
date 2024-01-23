@@ -3,8 +3,13 @@ import Sidebar from "./Sidebar";
 import Products from "./Products";
 import Drawer from "./Drawer";
 import BreadcrumbsShop from "./BreadcrumbsShop";
+import { useState } from "react";
 
 const page = () => {
+  
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedPriceRange,setSelectedPriceRange]=useState(null);
+  const [selectedColor,setSelectedColor]=useState(null);
 
   return (
     <>
@@ -15,7 +20,7 @@ const page = () => {
 
           <div className="flex flex-row gap-4">
             <div className="w-[250px] hidden lg:block h-full">
-              <Sidebar />
+              <Sidebar setSelectedCategory={setSelectedCategory} setSelectedPriceRange={setSelectedPriceRange} setSelectedColor={setSelectedColor}/>
             </div>
 
             <div className="block lg:hidden">
@@ -28,8 +33,7 @@ const page = () => {
             </div>
 
             <div className="w-full">
-              <Products className="md:mx-6" />
-             
+              <Products selectedCategory={selectedCategory} selectedPriceRange={selectedPriceRange} selectedColor={selectedColor} className="md:mx-6" />
             </div>
           </div>
         </div>
