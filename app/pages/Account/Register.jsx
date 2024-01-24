@@ -23,11 +23,9 @@ export const Register = () => {
         try {
             setLoading(true);
             const response = await axios.post("/api/users/register", user);
-            console.log("Signup success", response.data);
             router.push("/page/MyAccount");
         }
         catch (error) {
-            console.log("Signup Failed", error.message);
             toast.error(error.message);
         }
         finally {
@@ -51,7 +49,7 @@ export const Register = () => {
 
     return (
         <>
-            <div className='mt-20 md:ml-0 ml-3 md:mr-6 w-full h-full'>
+            <div className='mt-20  md:mr-6 w-full h-full'>
                 <h1 className="text-2xl font-extrabold leading-tight tracking-tight text-gray-900 md:text-2xl">
                     {loading ? "Processing" : "Sign Up"}
                 </h1>

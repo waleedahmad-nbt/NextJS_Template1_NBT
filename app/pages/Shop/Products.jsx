@@ -10,7 +10,7 @@ import { FaBars, FaGripLinesVertical } from "react-icons/fa";
 import { Tooltip } from "react-tippy";
 import "react-tippy/dist/tippy.css";
 
-const Products = ({ selectedCategory,selectedPriceRange }) => {
+const Products = ({ selectedCategory,selectedPriceRange,selectedColor,selectedSize,selectedType }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const [selectedLayout, setSelectedLayout] = useState("five-column");
@@ -55,6 +55,9 @@ const Products = ({ selectedCategory,selectedPriceRange }) => {
           loadMoreProducts={loadMoreProducts}
           selectedCategory={selectedCategory}
           selectedPriceRange={selectedPriceRange}
+          selectedColor={selectedColor}
+          selectedSize={selectedSize}
+          selectedType={selectedType}
         />
       </div>
     );
@@ -69,6 +72,9 @@ const Products = ({ selectedCategory,selectedPriceRange }) => {
           loadMoreProducts={loadMoreProducts}
           selectedCategory={selectedCategory}
           selectedPriceRange={selectedPriceRange}
+          selectedColor={selectedColor}
+          selectedSize={selectedSize}
+          selectedType={selectedType}
         />
       </div>
     );
@@ -83,6 +89,9 @@ const Products = ({ selectedCategory,selectedPriceRange }) => {
           loadMoreProducts={loadMoreProducts}
           selectedCategory={selectedCategory}
           selectedPriceRange={selectedPriceRange}
+          selectedColor={selectedColor}
+          selectedSize={selectedSize}
+          selectedType={selectedType}
         />
       </div>
     );
@@ -97,6 +106,9 @@ const Products = ({ selectedCategory,selectedPriceRange }) => {
           loadMoreProducts={loadMoreProducts}
           selectedCategory={selectedCategory}
           selectedPriceRange={selectedPriceRange}
+          selectedColor={selectedColor}
+          selectedSize={selectedSize}
+          selectedType={selectedType}
         />
       </div>
     );
@@ -111,6 +123,9 @@ const Products = ({ selectedCategory,selectedPriceRange }) => {
           loadMoreProducts={loadMoreProducts}
           selectedCategory={selectedCategory}
           selectedPriceRange={selectedPriceRange}
+          selectedColor={selectedColor}
+          selectedSize={selectedSize}
+          selectedType={selectedType}
         />
       </div>
     );

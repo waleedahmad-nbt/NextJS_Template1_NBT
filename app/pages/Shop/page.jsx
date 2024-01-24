@@ -6,34 +6,40 @@ import BreadcrumbsShop from "./BreadcrumbsShop";
 import { useState } from "react";
 
 const page = () => {
-  
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const [selectedPriceRange,setSelectedPriceRange]=useState(null);
-  const [selectedColor,setSelectedColor]=useState(null);
+  const [selectedPriceRange, setSelectedPriceRange] = useState(null);
+  const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedSize,setSelectedSize]=useState(null);
+  const [selectedType,setSelectedType]=useState(null);
 
   return (
     <>
       <BreadcrumbsShop />
       <div className="xl:container xl:mx-auto">
-        <div className="mt-20 mx-10">
+        <div className="mt-20 mx-1 lg:mx-10">
           <h1 className="text-4xl font-bold text-center text-gray-900">Shop</h1>
 
-          <div className="flex flex-row gap-4">
+          <div className="flex flex-row gap-0 sm:gap-4">
             <div className="w-[250px] hidden lg:block h-full">
-              <Sidebar setSelectedCategory={setSelectedCategory} setSelectedPriceRange={setSelectedPriceRange} setSelectedColor={setSelectedColor}/>
+              <Sidebar
+                setSelectedCategory={setSelectedCategory}
+                setSelectedPriceRange={setSelectedPriceRange}
+                setSelectedColor={setSelectedColor}
+                setSelectedSize={setSelectedSize}
+                setSelectedType={setSelectedType}
+              />
             </div>
 
-            <div className="block lg:hidden">
-              <div
-                className="fixed inset-0 top-0 z-40 left-0 h-24 flex items-center -mx-3 m-auto w-10 mt-[11rem] bg-[#EEEEEE]
-                 text-black hover:bg-black hover:text-white rounded-sm"
-              >
-                <Drawer />
-              </div>
-            </div>
 
             <div className="w-full">
-              <Products selectedCategory={selectedCategory} selectedPriceRange={selectedPriceRange} selectedColor={selectedColor} className="md:mx-6" />
+              <Products
+                selectedCategory={selectedCategory}
+                selectedPriceRange={selectedPriceRange}
+                selectedColor={selectedColor}
+                selectedSize={selectedSize}
+                selectedType={selectedType}
+                className="md:mx-6"
+              />
             </div>
           </div>
         </div>

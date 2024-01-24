@@ -10,11 +10,16 @@ import { Tooltip } from 'react-tippy';
 import 'react-tippy/dist/tippy.css';
 import Link from 'next/link';
 import NewHeader from '../Headers/NewHeader';
+import { useSelector } from 'react-redux';
 
 const SideBar = () => {
     const [isHeaderOpen, setIsHeaderOpen] = useState(false);
     const [isLargeScreen, setIsLargeScreen] = useState(typeof window !== 'undefined' && window.innerWidth >= 400);
-
+    const favorites = useSelector((state) => state.cart.favorites);
+    const cartItems = useSelector((state) => state.cart.items);
+  
+    const favQuantity = favorites ? favorites.length : 0;
+    const cartQuantity = cartItems ? cartItems.length : 0;
     const handleToggleHeader = () => {
         setIsHeaderOpen(!isHeaderOpen);
     };
@@ -26,20 +31,16 @@ const SideBar = () => {
     useEffect(() => {
         const handleResize = () => {
             setIsLargeScreen(typeof window !== 'undefined' && window.innerWidth >= 1024);
-            // Close the header on large screens
             if (typeof window !== 'undefined' && window.innerWidth >= 1024) {
                 handleCloseHeader();
             }
         };
 
-        // Check if window is defined before adding the event listener
         if (typeof window !== 'undefined') {
             window.addEventListener('resize', handleResize);
         }
 
-        // Cleanup event listener on component unmount
         return () => {
-            // Check if window is defined before removing the event listener
             if (typeof window !== 'undefined') {
                 window.removeEventListener('resize', handleResize);
             }
@@ -124,7 +125,7 @@ const SideBar = () => {
                             <p class="relative flex">
                                 <CiStar className="cursor-pointer text-2xl w-6 h-6 fill-current" />
                                 <span class="absolute -right-1 -top-1 rounded-full bg-red-700 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">
-                                    0
+                                {favQuantity >= 1 ? favQuantity : 0}
                                 </span>
                             </p>
                         </Link>
@@ -135,7 +136,7 @@ const SideBar = () => {
                             <p class="relative flex">
                                 <MdOutlineShoppingBag className="cursor-pointer text-2xl  w-6 h-6 fill-current" />
                                 <span class="absolute -right-1 -top-1 rounded-full bg-red-700 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">
-                                    0
+                                {cartQuantity >= 1 ? cartQuantity : 0}
                                 </span>
                             </p>
                         </Link>

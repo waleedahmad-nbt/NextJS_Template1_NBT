@@ -92,7 +92,6 @@ const CheckOut = () => {
     }
 
     setErrors(newErrors);
-    console.log(newErrors);
 
     return Object.keys(newErrors).length === 0;
   };
@@ -104,7 +103,6 @@ const CheckOut = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const isFormValid = validateForm();
-    console.log("Is form valid?", isFormValid);
     if (isFormValid) {
       router.push("/pages/Order");
     }
@@ -629,14 +627,14 @@ const CheckOut = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="mt-12 mx-4 md:mx-0 w-full md:w-[500px]">
+                  <div className="mt-12 md:mx-0 w-full md:w-[500px]">
                     <OrderSummary />
 
                     <FAQPage />
                     <button
                       type="submit"
                       className="hover:scale-105 duration-300 bg-black
-                                                text-white font-medium rounded-full text-lg w-full py-2 text-center items-center"
+                      text-white font-medium rounded-full text-lg w-full py-2 text-center items-center"
                     >
                       PLACE ORDER
                     </button>

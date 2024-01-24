@@ -11,7 +11,6 @@ import axios from 'axios';
 const AllModals = ({ onClose }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
-    const [password, setPassword] = useState('');
     const [isSignUpModalOpen, setSignUpModalOpen] = useState(false);
     const [isForgotPasswordModalOpen, setForgotPasswordModalOpen] = useState(false);
     const router = useRouter();
@@ -50,12 +49,10 @@ const AllModals = ({ onClose }) => {
         try {
             setLoading(true);
             const response = await axios.post("/api/users/login", user);
-            console.log("Login Success", response.data);
             toast.success("Login Success");
             router.push("/pages/MyAccount");
         }
         catch (error) {
-            console.log("Login Failed", error.message);
             toast.error(error.message);
         }
         finally {
@@ -80,14 +77,14 @@ const AllModals = ({ onClose }) => {
                 className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center"
             >
                 {isForgotPasswordModalOpen ? (
-                    <ForgotPassword onBackToLogin={() => openModal('signIn')} />
+                    <ForgotPassword onClose={onClose} onBackToLogin={() => openModal('signIn')} />
                 ) : isSignUpModalOpen ? (
-                    <SignupModal />
+                    <SignupModal onClose={onClose}/>
                 ) : (
                     <div className='relative'>
                         <RxCross2
                             onClick={handleClose}
-                            className="absolute mb-[380px] ml-[470px] shadow-xl duration-500 ease-in-out hover:bg-black hover:text-white z-50 cursor-pointer w-10 h-10 font-light rounded-full p-2 text-lg text-black bg-white"
+                            className="absolute mb-[360px] ml-[480px] shadow-xl duration-500 ease-in-out hover:bg-black hover:text-white z-50 cursor-pointer w-10 h-10 font-light rounded-full p-2 text-lg text-black bg-white"
                         />
                         <div className="bg-white p-6 mt-8 rounded-md w-[500px]">
 

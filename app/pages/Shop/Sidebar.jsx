@@ -3,11 +3,15 @@ import React, { useEffect, useState } from "react";
 import { MinusSmIcon, PlusSmIcon } from "@heroicons/react/solid";
 import initAOS from "../../../utils/aos";
 import { products } from "@/app/data";
+import { Tooltip } from "react-tippy";
+import "react-tippy/dist/tippy.css";
 
 const Sidebar = ({
   setSelectedCategory,
   setSelectedPriceRange,
   setSelectedColor,
+  setSelectedSize,
+  setSelectedType,
 }) => {
   const [toggleStates, setToggleStates] = useState({
     categories: true,
@@ -42,8 +46,14 @@ const Sidebar = ({
   };
 
   const handleColorClick = (color) => {
-    console.log("color Clicked:", color);
     setSelectedColor(color);
+  };
+
+  const handleSizeClick = (size) => {
+    setSelectedSize(size);
+  };
+  const handleTypesClick = (types) => {
+    setSelectedType(types);
   };
 
   return (
@@ -118,24 +128,210 @@ const Sidebar = ({
                     data-aos-easing="ease-in-sine"
                     className="flex flex-row flex-wrap gap-2"
                   >
-                    <div
-                      onClick={() => handleColorClick()}
-                      className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#ade9b7] hover:scale-110 transform-gpu transition-transform duration-300"
-                    ></div>
-                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#db32bf] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#C1C1C1] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#DD3333] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#b1e2ef] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#EEEE22] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#1e73be] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#c09e9d] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#ffed8a] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#77ba39] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#D1D1D1] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#db8632] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#ffffff] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#7d9391] hover:scale-110 transform-gpu transition-transform duration-300"></div>
-                    <div className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#000000] hover:scale-110 transform-gpu transition-transform duration-300"></div>
+                    <Tooltip
+                      title="Grass Green"
+                      position="top"
+                      trigger="mouseenter"
+                      animation="scale"
+                      arrow={true}
+                    >
+                      <div
+                        onClick={() => handleColorClick("Grass Green")}
+                        className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#ade9b7] hover:scale-110 transform-gpu transition-transform duration-300"
+                      ></div>
+                    </Tooltip>
+                    <Tooltip
+                      title="Pink"
+                      position="top"
+                      trigger="mouseenter"
+                      animation="scale"
+                      arrow={true}
+                    >
+                      <div
+                        onClick={() => handleColorClick("Pink")}
+                        className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#db32bf] hover:scale-110 transform-gpu transition-transform duration-300"
+                      ></div>
+                    </Tooltip>
+                    <Tooltip
+                      title="Platinum"
+                      position="top"
+                      trigger="mouseenter"
+                      animation="scale"
+                      arrow={true}
+                    >
+                      <div
+                        onClick={() => handleColorClick("Platinum")}
+                        className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#C1C1C1] hover:scale-110 transform-gpu transition-transform duration-300"
+                      ></div>
+                    </Tooltip>
+                    <Tooltip
+                      title="Red"
+                      position="top"
+                      trigger="mouseenter"
+                      animation="scale"
+                      arrow={true}
+                    >
+                      <div
+                        onClick={() => handleColorClick("Red")}
+                        className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#DD3333] hover:scale-110 transform-gpu transition-transform duration-300"
+                      ></div>
+                    </Tooltip>
+                    <Tooltip
+                      title="Sky Blue"
+                      position="top"
+                      trigger="mouseenter"
+                      animation="scale"
+                      arrow={true}
+                    >
+                      <div
+                        onClick={() => handleColorClick("Sky Blue")}
+                        className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#b1e2ef] hover:scale-110 transform-gpu transition-transform duration-300"
+                      ></div>
+                    </Tooltip>
+                    <Tooltip
+                      title="Yellow"
+                      position="top"
+                      trigger="mouseenter"
+                      animation="scale"
+                      arrow={true}
+                    >
+                      <div
+                        onClick={() => handleColorClick("Yellow")}
+                        className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#EEEE22] hover:scale-110 transform-gpu transition-transform duration-300"
+                      ></div>
+                    </Tooltip>
+                    <Tooltip
+                      title="Blue"
+                      position="top"
+                      trigger="mouseenter"
+                      animation="scale"
+                      arrow={true}
+                    >
+                      <div
+                        onClick={() => handleColorClick("Blue")}
+                        className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#1e73be] hover:scale-110 transform-gpu transition-transform duration-300"
+                      ></div>
+                    </Tooltip>
+                    <Tooltip
+                      title="Rose Gold"
+                      position="top"
+                      trigger="mouseenter"
+                      animation="scale"
+                      arrow={true}
+                    >
+                      <div
+                        onClick={() => handleColorClick("Rose Gold")}
+                        className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#c09e9d] hover:scale-110 transform-gpu transition-transform duration-300"
+                      ></div>
+                    </Tooltip>
+                    <Tooltip
+                      title="Gold"
+                      position="top"
+                      trigger="mouseenter"
+                      animation="scale"
+                      arrow={true}
+                    >
+                      <div
+                        onClick={() => handleColorClick("Gold")}
+                        className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#ffed8a] hover:scale-110 transform-gpu transition-transform duration-300"
+                      ></div>
+                    </Tooltip>
+                    <Tooltip
+                      title="Green"
+                      position="top"
+                      trigger="mouseenter"
+                      animation="scale"
+                      arrow={true}
+                    >
+                      <div
+                        onClick={() => handleColorClick("Green")}
+                        className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#77ba39] hover:scale-110 transform-gpu transition-transform duration-300"
+                      ></div>
+                    </Tooltip>
+                    <Tooltip
+                      title="Gray"
+                      position="top"
+                      trigger="mouseenter"
+                      animation="scale"
+                      arrow={true}
+                    >
+                      <div
+                        onClick={() => handleColorClick("Gray")}
+                        className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#D1D1D1] hover:scale-110 transform-gpu transition-transform duration-300"
+                      ></div>
+                    </Tooltip>
+                    <Tooltip
+                      title="Orange"
+                      position="top"
+                      trigger="mouseenter"
+                      animation="scale"
+                      arrow={true}
+                    >
+                      <div
+                        onClick={() => handleColorClick("Orange")}
+                        className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#db8632] hover:scale-110 transform-gpu transition-transform duration-300"
+                      ></div>
+                    </Tooltip>
+                    <Tooltip
+                      title="Flamingo Pink"
+                      position="top"
+                      trigger="mouseenter"
+                      animation="scale"
+                      arrow={true}
+                    >
+                      <div
+                        onClick={() => handleColorClick("Flamingo Pink")}
+                        className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#e8d4d5] hover:scale-110 transform-gpu transition-transform duration-300"
+                      ></div>
+                    </Tooltip>
+                    <Tooltip
+                      title="White"
+                      position="top"
+                      trigger="mouseenter"
+                      animation="scale"
+                      arrow={true}
+                    >
+                      <div
+                        onClick={() => handleColorClick("White")}
+                        className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#ffffff] hover:scale-110 transform-gpu transition-transform duration-300"
+                      ></div>
+                    </Tooltip>
+                    <Tooltip
+                      title="Stage Green"
+                      position="top"
+                      trigger="mouseenter"
+                      animation="scale"
+                      arrow={true}
+                    >
+                      <div
+                        onClick={() => handleColorClick("Stage Green")}
+                        className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#7d9391] hover:scale-110 transform-gpu transition-transform duration-300"
+                      ></div>
+                    </Tooltip>
+                    <Tooltip
+                      title="Black"
+                      position="top"
+                      trigger="mouseenter"
+                      animation="scale"
+                      arrow={true}
+                    >
+                      <div
+                        onClick={() => handleColorClick("Black")}
+                        className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#000000] hover:scale-110 transform-gpu transition-transform duration-300"
+                      ></div>
+                    </Tooltip>
+                    <Tooltip
+                      title="Dark Gray"
+                      position="top"
+                      trigger="mouseenter"
+                      animation="scale"
+                      arrow={true}
+                    >
+                      <div
+                        onClick={() => handleColorClick("Dark Gray")}
+                        className="w-[32px] h-[32px] rounded-full border-2 overflow-hidden bg-[#757575] hover:scale-110 transform-gpu transition-transform duration-300"
+                      ></div>
+                    </Tooltip>
                   </div>
                 )}
               </div>
@@ -164,14 +360,23 @@ const Sidebar = ({
                     data-aos-easing="ease-in-sine"
                     className="flex flex-wrap gap-3"
                   >
-                    <p className="px-4 py-2 bg-transparent text-black text-lg border rounded-lg hover:bg-black hover:text-white duration-300 ease-in-out">
+                    <p
+                       onClick={() => handleSizeClick("10 Inch")}
+                      className="px-4 py-2 bg-transparent text-black text-lg border rounded-lg hover:bg-black hover:text-white duration-300 ease-in-out"
+                    >
                       10 inch
                     </p>
-                    <p className="px-4 py-2 bg-transparent text-black text-lg border rounded-lg hover:bg-black hover:text-white duration-300 ease-in-out">
+                    <p
+                       onClick={() => handleSizeClick("13.5 Inch")}
+                      className="px-4 py-2 bg-transparent text-black text-lg border rounded-lg hover:bg-black hover:text-white duration-300 ease-in-out"
+                    >
                       13.5 inch
                     </p>
-                    <p className="px-4 py-2 bg-transparent text-black text-lg border rounded-lg hover:bg-black hover:text-white duration-300 ease-in-out">
-                      13.5 inch
+                    <p
+                      onClick={() => handleSizeClick("GTS 2 Mini")}
+                      className="px-4 py-2 bg-transparent text-black text-lg border rounded-lg hover:bg-black hover:text-white duration-300 ease-in-out"
+                    >
+                      GTS 2 Mini
                     </p>
                   </div>
                 )}
@@ -201,13 +406,22 @@ const Sidebar = ({
                     data-aos-easing="ease-in-sine"
                     className="flex flex-wrap gap-3"
                   >
-                    <p className="px-4 py-2 bg-transparent text-black text-lg border rounded-lg hover:bg-black hover:text-white duration-300 ease-in-out">
+                    <p
+                      onClick={() => handleTypesClick("EU Plug")}
+                      className="px-4 py-2 bg-transparent text-black text-lg border rounded-lg hover:bg-black  hover:text-white duration-300 ease-in-out"
+                    >
                       EU Plug
                     </p>
-                    <p className="px-4 py-2 bg-transparent text-black text-lg border rounded-lg hover:bg-black hover:text-white duration-300 ease-in-out">
+                    <p
+                      onClick={() => handleTypesClick("UK Plug")}
+                      className="px-4 py-2 bg-transparent text-black text-lg border rounded-lg hover:bg-black hover:text-white duration-300 ease-in-out"
+                    >
                       UK Plug
                     </p>
-                    <p className="px-4 py-2 bg-transparent text-black text-lg border rounded-lg hover:bg-black hover:text-white duration-300 ease-in-out">
+                    <p
+                      onClick={() => handleTypesClick("US Plug")}
+                      className="px-4 py-2 bg-transparent text-black text-lg border rounded-lg hover:bg-black hover:text-white duration-300 ease-in-out"
+                    >
                       US Plug
                     </p>
                   </div>

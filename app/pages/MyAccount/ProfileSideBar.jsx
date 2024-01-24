@@ -9,7 +9,6 @@ const ProfileSideBar = ({ onItemClick }) => {
 
 
   const handleItemClick = (item) => {
-    console.log(`Item clicked: ${item}`);
     setActiveItem(item);
 
     if (typeof onItemClick === 'function') {

@@ -1,5 +1,4 @@
 const { createSlice } = require("@reduxjs/toolkit");
-import storage from "redux-persist/lib/storage";
 
 const cartSlice = createSlice({
   name: "cart",
@@ -54,30 +53,6 @@ const cartSlice = createSlice({
     setProductDetails: (state, action) => {
       state.selectedProduct = action.payload;
     },
-    setComputersTabletsDetails: (state, action) => {
-      state.selectedComputer = action.payload;
-    },
-    setTvAudioDetails: (state, action) => {
-      state.selectedAudio = action.payload;
-    },
-    setWatchDetails: (state, action) => {
-      state.selectedWatch = action.payload;
-    },
-    setHeadphonesDetails: (state, action) => {
-      state.selectedHeadphones = action.payload;
-    },
-    setPowerToolsDetails: (state, action) => {
-      state.selectedPowerTools = action.payload;
-    },
-    setTvBoxDetails: (state, action) => {
-      state.selectedTvBox = action.payload;
-    },
-    setCellPhoneDetails: (state, action) => {
-      state.selectedCellPhone = action.payload;
-    },
-    setElectronicsDetails: (state, action) => {
-      state.selectedElectronics = action.payload;
-    },
     setBlogDetails: (state, action) => {
       state.selectedBlog = action.payload;
     },
@@ -100,7 +75,9 @@ export const {
   setPowerToolsDetails,
   setTvBoxDetails,
   setCellPhoneDetails,
-  setElectronicsDetails
+  setElectronicsDetails,
 } = cartSlice.actions;
+
+export const selectSearch = (state) => state.search;
 
 export const cartReducer = cartSlice.reducer;

@@ -59,7 +59,7 @@ const OrderSummary = () => {
                     const itemSubtotal = originalPrice * quantity;
                     return (
                         <>
-                            <div key={id} className='flex flex-row items-center mt-4 mx-2'>
+                            <div key={id} className='flex flex-row items-center mt-4'>
                                 <img src={imageSrc} alt=""
                                     className='w-[60px] h-[60px]'
                                 />

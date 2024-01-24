@@ -23,6 +23,8 @@ const FiveColumn = ({
   selectedCategory,
   selectedPriceRange,
   selectedColor,
+  selectedSize,
+  selectedType
 }) => {
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
@@ -58,7 +60,7 @@ const FiveColumn = ({
 
   const handleProductClick = (product) => {
     dispatch(setProductDetails(product));
-    router.push(`/pages/Details?id=${product.id}`);
+    router.push(`/pages/Details?${product.title}`);
   };
 
   useEffect(() => {
@@ -90,13 +92,40 @@ const FiveColumn = ({
     let filtered = products;
 
     if (selectedColor) {
-      filtered = filtered.filter((product) => {
-        return product.color === selectedColor;
-      });
+      filtered = filtered.filter((product) =>
+      product.colors && product.colors.includes(selectedColor)
+      );
+    }
+    
+    if (selectedSize) {
+      filtered = filtered.filter((product) =>
+      product.size && product.size.includes(selectedSize)
+      );
+    }
+    
+    if (selectedType) {
+      filtered = filtered.filter((product) =>
+      product.types && product.types.includes(selectedType)
+      );
+    }
+
+
+    setFilteredProducts(filtered);
+  }, [selectedColor,selectedSize,selectedType]);
+
+
+  useEffect(() => {
+    let filtered = products;
+    
+    if (selectedType) {
+      filtered = filtered.filter((product) =>
+      product.types && product.types.includes(selectedType)
+      );
     }
     setFilteredProducts(filtered);
-  }, [selectedColor]);
+  }, [selectedType]);
 
+  
   return (
     <>
       <div className={`grid grid-cols-2 lg:grid-cols-5`}>

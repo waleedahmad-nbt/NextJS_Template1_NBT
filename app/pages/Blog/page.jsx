@@ -13,7 +13,7 @@ const page = () => {
   
     const handleProductClick = (blog) => {
       dispatch(setBlogDetails(blog));
-      router.push(`/pages/Blogs?id=${blog.id}`);
+      router.push(`/pages/Blogs?${blog.title}`);
     };
    
 

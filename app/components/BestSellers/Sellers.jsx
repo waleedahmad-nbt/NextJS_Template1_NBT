@@ -10,9 +10,7 @@ import {
   addToCart,
   addToFavorites,
   setProductDetails,
-  setRemoveItemTimeout,
 } from "@/app/lib/redux/slices/cartSlice";
-import { setTimer, resetTimer } from "@/app/lib/redux/slices/timerSlice";
 import { IoBagOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { Tooltip } from "react-tippy";

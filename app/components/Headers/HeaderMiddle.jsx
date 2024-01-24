@@ -1,38 +1,37 @@
 import Image from "next/image";
 import Logo from "../../../public/images/Logo.png";
-import { IoPerson, IoBagOutline, IoMenu, IoPersonOutline } from "react-icons/io5";
-import { CiStar } from "react-icons/ci";
-import { IoIosSearch } from "react-icons/io";
+import {
+  IoBagOutline,
+  IoPersonOutline,
+} from "react-icons/io5";
 import React, { useEffect, useRef, useState } from "react";
 import NewHeader from "./NewHeader";
-import { RiArrowDropDownLine } from "react-icons/ri";
 import Link from "next/link";
 import Cart from "./Cart";
 import Sidebar from "./Sidebar";
-import { Tooltip } from 'react-tippy';
-import 'react-tippy/dist/tippy.css';
+import { Tooltip } from "react-tippy";
+import "react-tippy/dist/tippy.css";
 import AllModals from "./SingIn";
 import { GoSearch } from "react-icons/go";
 import { FaRegStar } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 
-
 const HeaderMiddle = () => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
   const [showNewHeader, setShowNewHeader] = useState(false);
   const modalRef = useRef(null);
   const [showCart, setShowCart] = useState(false);
   const [showSignInModal, setShowSignInModal] = useState(false);
   const [isSectionVisible, setIsSectionVisible] = useState(true);
   const [isHeaderOpen, setIsHeaderOpen] = useState(false);
-  const [isLargeScreen, setIsLargeScreen] = useState(typeof window !== 'undefined' && window.innerWidth >= 400);
-  const dispatch = useDispatch();
+  const [isLargeScreen, setIsLargeScreen] = useState(
+    typeof window !== "undefined" && window.innerWidth >= 400
+  );
   const favorites = useSelector((state) => state.cart.favorites);
   const cartItems = useSelector((state) => state.cart.items);
 
   const favQuantity = favorites ? favorites.length : 0;
   const cartQuantity = cartItems ? cartItems.length : 0;
-
 
   const handleToggleHeader = () => {
     setIsHeaderOpen(!isHeaderOpen);
@@ -44,18 +43,20 @@ const HeaderMiddle = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsLargeScreen(typeof window !== 'undefined' && window.innerWidth >= 1024);
-      if (typeof window !== 'undefined' && window.innerWidth >= 1024) {
+      setIsLargeScreen(
+        typeof window !== "undefined" && window.innerWidth >= 1024
+      );
+      if (typeof window !== "undefined" && window.innerWidth >= 1024) {
         handleCloseHeader();
       }
     };
 
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', handleResize);
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", handleResize);
     }
     return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', handleResize);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", handleResize);
       }
     };
   }, []);
@@ -89,7 +90,6 @@ const HeaderMiddle = () => {
   };
 
   const handleCloseSection = () => {
-    console.log('Closing NewHeader section');
     setIsSectionVisible(false);
   };
 
@@ -113,11 +113,11 @@ const HeaderMiddle = () => {
     };
   }, [modalRef, showNewHeader]);
 
-
   useEffect(() => {
     if (showNewHeader) {
       document.documentElement.style.overflow = "hidden";
-      document.documentElement.style.cursor = "crosshair";
+      document.documentElement.style.cursor =
+        "url('https://minimog-4437.kxcdn.com/supergear/wp-content/themes/minimog/assets/images/cursor/light-close.png'), auto";
     } else {
       document.documentElement.style.overflow = "auto";
       document.documentElement.style.cursor = "default";
@@ -129,17 +129,18 @@ const HeaderMiddle = () => {
     };
   }, [showNewHeader]);
 
-
-
   return (
     <>
       <div className="xl:container xl:mx-auto">
-        <div className={`mb-4  lg:mx-9 ${showNewHeader ? 'pointer-events-none' : ''}`}>
-
+        <div
+          className={`mb-4 mx-3 lg:mx-9 ${
+            showNewHeader ? "pointer-events-none" : ""
+          }`}
+        >
           <div className="flex flex-row justify-between items-center mx-2 px-2 sm:mx-0 py-2 md:p-0">
             <div className="flex items-center justify-center mt-3">
               <Sidebar />
-              <Link href='/'>
+              <Link href="/">
                 <Image
                   src={Logo}
                   alt="Logo Img"
@@ -150,10 +151,28 @@ const HeaderMiddle = () => {
             <div className="mt-3 w-[36%] lg:w-[40%] rounded-3xl border-2 border-[#D2D2D2] hidden md:block">
               <form>
                 <div className="flex">
-                  <button onClick={handleCategoryClick} id="dropdown-button" data-dropdown-toggle="dropdown"
-                    className="flex-shrink-0 z-10 inline-flex items-center py-2 px-2 md:px-4 text-base font-medium border-r text-center text-black" type="button">All Categories
-                    <svg className="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                  <button
+                    onClick={handleCategoryClick}
+                    id="dropdown-button"
+                    data-dropdown-toggle="dropdown"
+                    className="flex-shrink-0 z-10 inline-flex items-center py-2 px-2 md:px-4 text-base font-medium border-r text-center text-black"
+                    type="button"
+                  >
+                    All Categories
+                    <svg
+                      className="w-2.5 h-2.5 ms-2.5"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 10 6"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m1 1 4 4 4-4"
+                      />
                     </svg>
                   </button>
                   <div className="relative w-full">
@@ -167,9 +186,25 @@ const HeaderMiddle = () => {
                       placeholder="Search Products"
                     />
 
-                    <button onClick={handleCategoryClick} type="submit" className="absolute bg-white rounded-full top-0 end-0 p-2.5 text-sm font-medium border-none h-full text-black">
-                      <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    <button
+                      onClick={handleCategoryClick}
+                      type="submit"
+                      className="absolute bg-white rounded-full top-0 end-0 p-2.5 text-sm font-medium border-none h-full text-black"
+                    >
+                      <svg
+                        className="w-4 h-4"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                        />
                       </svg>
                     </button>
                   </div>
@@ -212,7 +247,10 @@ const HeaderMiddle = () => {
 
               {/* Search */}
               <div className="block md:hidden">
-                <div onClick={handleToggleHeader} className="block mt-3 lg:inline-block  align-middle text-black hover:text-gray-700">
+                <div
+                  onClick={handleToggleHeader}
+                  className="block mt-3 lg:inline-block  align-middle text-black hover:text-gray-700"
+                >
                   <Tooltip
                     title="Search" // Tooltip text
                     position="bottom"
@@ -235,10 +273,7 @@ const HeaderMiddle = () => {
                   animation="scale"
                   arrow={true}
                 >
-                  <p
-                    className="relative flex"
-                    onClick={handleCartIconClick}
-                  >
+                  <p className="relative flex" onClick={handleCartIconClick}>
                     <IoBagOutline className="cursor-pointer hover:text-gray-500 w-6 h-6 fill-current" />
                     <span className="absolute right-2 left-4 -top-2 rounded-full bg-[#e02b2b] w-5 h-5  p-0 m-0 text-white text-sm text-center">
                       {cartQuantity >= 1 ? cartQuantity : 0}
@@ -246,12 +281,8 @@ const HeaderMiddle = () => {
                   </p>
                 </Tooltip>
               </div>
-
-
             </div>
-
           </div>
-
         </div>
       </div>
 
@@ -273,7 +304,7 @@ const HeaderMiddle = () => {
       )}
       {/* Sign In Modal */}
       {showSignInModal && (
-        <div ref={modalRef} >
+        <div ref={modalRef}>
           <AllModals onClose={closeSignInModal} />
         </div>
       )}

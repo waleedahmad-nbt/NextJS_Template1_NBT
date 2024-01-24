@@ -13,7 +13,7 @@ export const products = [
         rating: 3,
         originalPrice: 139.00,
         discountedPrice: 129.00,
-        color:'black',
+        colors:'Black',
     },
     {
         id: 2,
@@ -28,7 +28,7 @@ export const products = [
         rating: 5,
         originalPrice: 579.99,
         discountedPrice: 579.99,
-        color:'black',
+        colors:'Black',
     },
     {
         id: 3,
@@ -44,7 +44,8 @@ export const products = [
         rating: 5,
         originalPrice: 307.60,
         discountedPrice: 289.95,
-        color:'red',
+        colors:'Red',
+        types:['EU Plug','UK Plug','US Plug']
     },
     {
         id: 4,
@@ -60,7 +61,7 @@ export const products = [
         rating: 5,
         originalPrice: 200.00,
         discountedPrice: 210.00,
-        colors: ['red', 'Dark Grey', 'Grass Green'],
+        colors: ['Red', 'Dark Grey', 'Grass Green'],
     },
     {
         id: 5,
@@ -104,6 +105,7 @@ export const products = [
         rating: 5,
         originalPrice: 48.50,
         discountedPrice: 45.00,
+        colors:"White"
     },
     {
         id: 8,
@@ -119,6 +121,7 @@ export const products = [
         rating: 5,
         originalPrice: 600.00,
         discountedPrice: 575.00,
+        colors:"Black"
     },
     {
         id: 9,
@@ -134,6 +137,7 @@ export const products = [
         rating: 5,
         originalPrice: 700.90,
         discountedPrice: 696.90,
+        colors:"Platinum"
     },
     {
         id: 10,
@@ -149,6 +153,7 @@ export const products = [
         rating: 5,
         originalPrice: 129.99,
         discountedPrice: 129.99,
+        colors:"White"
     },
     {
         id: 11,
@@ -164,7 +169,7 @@ export const products = [
         rating: 3,
         originalPrice: 21.99,
         discountedPrice:21.99,
-        color:'black',
+        colors:['Gray'],
     },
     {
         id: 12,
@@ -182,7 +187,7 @@ export const products = [
         rating: 3,
         originalPrice: 112.00,
         discountedPrice:112.00,
-        color:'black',
+        colors:['Blue',"Gold","White","Black"],
     },
     {
         id: 13,
@@ -198,7 +203,7 @@ export const products = [
         rating: 5,
         originalPrice: 151.89,
         discountedPrice:151.89,
-        color:'White',
+        colors:'White',
     },
     {
         id: 14,
@@ -216,7 +221,7 @@ export const products = [
         rating: 3,
         originalPrice: 15.90,
         discountedPrice:15.90,
-        color:'black',
+        colors:'Red',
     },
     {
         id: 15,
@@ -232,7 +237,7 @@ export const products = [
         rating: 5,
         originalPrice: 141.99,
         discountedPrice:141.99,
-        color:'White',
+        colors:'Blue',
     },
     {
         id: 16,
@@ -247,7 +252,8 @@ export const products = [
         rating: 3,
         originalPrice: 21.99,
         discountedPrice:21.99,
-        color:'black',
+        colors:'Black',
+        types:['EU Plug','UK Plug','US Plug']
     },
     {
         id: 17,
@@ -263,7 +269,8 @@ export const products = [
         rating: 5,
         originalPrice: 79.99,
         discountedPrice: 79.99,
-        color:'red',
+        colors:['Stage Green','Flamingo Pink',"Black"],
+        size:"GTS 2 Mini"
     },
    
     {
@@ -280,7 +287,7 @@ export const products = [
         rating: 3,
         originalPrice: 472.90,
         discountedPrice: 450.00,
-        color:'black',
+        colors:'Black',
     },
     {
         id: 19,
@@ -298,7 +305,7 @@ export const products = [
         rating: 3,
         originalPrice: 75.83,
         discountedPrice: 75.83,
-        color:'black',
+        colors:['Red','Green','White'],
     },
     {
         id: 20,
@@ -314,22 +321,24 @@ export const products = [
         rating: 5,
         originalPrice: 30.84,
         discountedPrice: 30.84,
-        color:'White',
+        colors:'Dark Gray',
     },
     {
         id: 21,
         Categories:"TV Box",
-        imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_14_2-655x655.jpg',
-        hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_14_3-655x655.jpg',
-        thumbnail1: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_14_2-655x655.jpg',
-        thumbnail2: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_14_3-655x655.jpg",
-        thumbnail3: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_14_1-655x655.jpg",
+        imageSrc: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_15_1-655x655.jpg',
+        hoverImage: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_15_2-655x655.jpg',
+        thumbnail1: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_15_1-655x655.jpg',
+        thumbnail2: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_15_2-655x655.jpg",
+        thumbnail3: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_15_3-655x655.jpg",
+        thumbnail4: "https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_supergear_15_4-655x655.jpg",
         category: 'Tv Box',
-        title: 'Global Version Mi TV Stick Android TV 9.0 Smart 2K HDR 1GB RAM 8GB ROM Bluetooth 4.2 Mini TV Dongle',
+        title: 'MECOOL KH3 Android 10.0 Smart 4K 60fps TV Box – Black 2GB RAM + 16GB ROM',
         rating: 3,
         originalPrice: 21.99,
         discountedPrice:21.99,
-        color:'black',
+        colors:'Black',
+        types:['EU Plug','UK Plug','US Plug']
     },
     {
         id: 22,
@@ -345,7 +354,8 @@ export const products = [
         rating: 5,
         originalPrice: 25.00,
         discountedPrice: 24.00,
-        color:'red',
+        colors:'White',
+        size:['10 Inch','13.5 Inch']
     },
     {
         id: 23,
@@ -361,7 +371,8 @@ export const products = [
         rating: 5,
         originalPrice: 78.79,
         discountedPrice:78.79,
-        color:'White',
+        colors:'Black',
+        types:['EU Plug','UK Plug','US Plug']
     },
     {
         id: 24,
@@ -377,7 +388,7 @@ export const products = [
         rating: 5,
         originalPrice: 280.90,
         discountedPrice: 280.90,
-        color:'red',
+        colors:['Gray','Green','White'],
     },
     {
         id: 25,
@@ -393,7 +404,7 @@ export const products = [
         rating: 3,
         originalPrice: 42.74,
         discountedPrice: 42.74,
-        color:'black',
+        colors:'Sky Blue',
     },
     {
         id: 26,
@@ -409,7 +420,7 @@ export const products = [
         rating: 5,
         originalPrice: 49.99,
         discountedPrice: 49.99,
-        color:'red',
+        colors:'Black',
     },
     {
         id: 27,
@@ -426,7 +437,7 @@ export const products = [
         rating: 5,
         originalPrice: 21.91,
         discountedPrice:21.91,
-        color:'White',
+        colors:['White','Black','Flamingo Pink'],
     },
     {
         id: 28,
@@ -445,7 +456,7 @@ export const products = [
         rating: 5,
         originalPrice: 79.99,
         discountedPrice: 79.99,
-        color:'red',
+        colors:['Red','White'],
     },
     {
         id: 29,
@@ -462,7 +473,7 @@ export const products = [
         rating: 3,
         originalPrice: 48.50,
         discountedPrice:48.50,
-        color:'White',
+        colors:'White',
     },
     {
         id: 30,
@@ -478,7 +489,7 @@ export const products = [
         rating: 5,
         originalPrice: 151.89,
         discountedPrice:151.89,
-        color:'White',
+        colors:['Rose Gold','Black','White'],
     },
     {
         id: 31,
@@ -497,7 +508,7 @@ export const products = [
         rating: 5,
         originalPrice: 280.90,
         discountedPrice: 280.90,
-        color:'red',
+        colors:'White',
     },
     {
         id: 32,
@@ -513,7 +524,7 @@ export const products = [
         rating: 5,
         originalPrice: 219.90,
         discountedPrice: 219.90,
-        color:'red',
+        colors:['Blue',"Gold","Orange","Black"],
     },
     {
         id: 33,
@@ -530,7 +541,7 @@ export const products = [
         rating: 5,
         originalPrice: 14.90,
         discountedPrice: 14.90,
-        color:'red',
+        colors:['Pink','Yellow','Blue','Orange','Black'],
     },
    
 ];

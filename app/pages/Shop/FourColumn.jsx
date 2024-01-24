@@ -18,8 +18,16 @@ import {
   setProductDetails,
 } from "@/app/lib/redux/slices/cartSlice";
 
-
-const FourColumn = ({ totalProducts, visibleProducts, loadMoreProducts }) => {
+const FourColumn = ({
+  totalProducts,
+  visibleProducts,
+  loadMoreProducts,
+  selectedCategory,
+  selectedPriceRange,
+  selectedColor,
+  selectedSize,
+  selectedType,
+}) => {
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
   const [filteredProducts, setFilteredProducts] = useState(products);
@@ -53,21 +61,68 @@ const FourColumn = ({ totalProducts, visibleProducts, loadMoreProducts }) => {
 
   const handleProductClick = (product) => {
     dispatch(setProductDetails(product));
-    router.push(`/pages/Details?id=${product.id}`);
+    router.push(`/pages/Details?${product.title}`);
   };
 
   useEffect(() => {
     if (selectedCategory) {
-      const filtered = products.filter(
-        (product) => {
-          return product.Categories === selectedCategory
-        }
-      );
+      const filtered = products.filter((product) => {
+        return product.Categories === selectedCategory;
+      });
       setFilteredProducts(filtered);
     } else {
       setFilteredProducts(products);
     }
   }, [selectedCategory]);
+
+  useEffect(() => {
+    let filtered = products;
+
+    if (selectedPriceRange) {
+      filtered = filtered.filter(
+        (product) =>
+          product.originalPrice >= selectedPriceRange[0] &&
+          product.originalPrice <= selectedPriceRange[1]
+      );
+    }
+
+    setFilteredProducts(filtered);
+  }, [selectedPriceRange]);
+
+  useEffect(() => {
+    let filtered = products;
+
+    if (selectedColor) {
+      filtered = filtered.filter(
+        (product) => product.colors && product.colors.includes(selectedColor)
+      );
+    }
+
+    if (selectedSize) {
+      filtered = filtered.filter(
+        (product) => product.size && product.size.includes(selectedSize)
+      );
+    }
+
+    if (selectedType) {
+      filtered = filtered.filter(
+        (product) => product.types && product.types.includes(selectedType)
+      );
+    }
+
+    setFilteredProducts(filtered);
+  }, [selectedColor, selectedSize, selectedType]);
+
+  useEffect(() => {
+    let filtered = products;
+
+    if (selectedType) {
+      filtered = filtered.filter(
+        (product) => product.types && product.types.includes(selectedType)
+      );
+    }
+    setFilteredProducts(filtered);
+  }, [selectedType]);
 
   return (
     <>

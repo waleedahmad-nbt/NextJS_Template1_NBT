@@ -70,7 +70,7 @@ const Page = () => {
                   </p>
                 </div>
               </div>
-              <div className="p-4 border-b mx-20 mt-16 lg:block hidden">
+              <div className="p-4 border-b mx-4 md:mx-20 mt-16 lg:block hidden">
                 <div className="container mx-auto flex justify-between items-center">
                   <p className="text-black text-lg">Product</p>
                   <div className="space-x-20">
@@ -127,7 +127,7 @@ const Page = () => {
                         </p>
                         <div
                           className="flex justify-center w-[100px] md:w-[120px] h-8 md:h-12 text-center items-center border rounded-3xl
-                          mt-2 md:mt-2 space-x-2"
+                          mt-2 md:mt-2 space-x-2 p-2"
                         >
                           <FaMinus
                             onClick={() => handleDecrement(id)}
