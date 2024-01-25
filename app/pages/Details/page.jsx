@@ -35,11 +35,14 @@ const Details = () => {
   const [selectedThumbnailIndex, setSelectedThumbnailIndex] = useState(0);
 
   const selectedProduct = useSelector((state) => state.cart.selectedProduct);
-  const counter = useSelector(
-    (state) =>
-      state.cart.items.find((item) => item.id === selectedProduct.id)
+  
+  const counter = useSelector((state) => {
+    const selectedProductId = selectedProduct?.id;
+    return (
+      state.cart.items.find((item) => item.id === selectedProductId)
         ?.quantity || 0
-  );
+    );
+  });
 
   const handleIncrement = () => {
     dispatch(increment({ itemId: selectedProduct.id }));

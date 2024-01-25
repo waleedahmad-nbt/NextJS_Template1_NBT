@@ -17,34 +17,19 @@ import { Tooltip } from "react-tippy";
 import "react-tippy/dist/tippy.css";
 import WishlistModal from "./WishlistModal";
 import { useRouter } from "next/navigation";
-import { products } from '@/app/data';
+import { products } from "@/app/data";
+import { FaRegEye } from "react-icons/fa";
+import DetailsModal from "../DetailsModal/page";
 
 const Sellers = () => {
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
+  const [DetailsModalOpen, setDetailsModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const dispatch = useDispatch();
   const router = useRouter();
   const favorites = useSelector((state) => state.cart.favorites);
-
-  const timer = useSelector((state) => state.timer);
-
-// const handleAddToCart = (event, product) => {
-//   event.stopPropagation();
-
-//   dispatch(addToCart(product));
-
-//   dispatch(
-//     setRemoveItemTimeout(product.id, 1 * 60 * 1000)
-//   );
-// };
-
-
-  const handleAddToCart = (event, product) => {
-    event.stopPropagation();
-    dispatch(addToCart(product));
-  }
-
 
   const handleAddToFavorites = (product) => {
     dispatch(addToFavorites(product));
@@ -65,13 +50,20 @@ const Sellers = () => {
     }
   };
 
+  const toggleDetailsModal = () => {
+    setDetailsModalOpen(!DetailsModalOpen);
+  };
+
+  const handleToggleDetail = (event, product) => {
+    event.stopPropagation();
+    dispatch(setProductDetails(product));
+    toggleDetailsModal();
+  };
 
   const handleProductClick = (product) => {
     dispatch(setProductDetails(product));
-    router.push(`/pages/Details?id=${product.id}`);
+    router.push(`/pages/Details?${product.title}`);
   };
-
-
 
   const settings = {
     infinite: true,
@@ -167,7 +159,6 @@ const Sellers = () => {
                           <CiStar />
                         </div>
                       </Tooltip>
-
                       <Tooltip
                         title="Compare"
                         position="left"
@@ -180,17 +171,19 @@ const Sellers = () => {
                         </div>
                       </Tooltip>
                       <Tooltip
-                        title="Cart"
+                        title="Quick View"
                         position="left"
                         trigger="mouseenter"
                         animation="scale"
                         arrow={true}
                       >
                         <div
-                          onClick={(event) => handleAddToCart(event, product)}
+                          onClick={(event) =>
+                            handleToggleDetail(event, product)
+                          }
                           className="p-3 bg-white rounded-full text-black hover:text-white hover:bg-black duration-300 ease-in-out text-xl"
                         >
-                          <IoBagOutline />
+                          <FaRegEye />
                         </div>
                       </Tooltip>
                     </div>
@@ -246,6 +239,11 @@ const Sellers = () => {
         modalOpen={wishlistModalOpen}
         closeModal={toggleWishlistModal}
         products={favorites}
+      />
+      <DetailsModal
+        modalOpen={DetailsModalOpen}
+        closeModal={toggleDetailsModal}
+        selectedProduct={selectedProduct}
       />
     </>
   );

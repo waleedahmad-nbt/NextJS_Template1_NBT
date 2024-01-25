@@ -14,6 +14,7 @@ import {
 } from "@/app/lib/redux/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
+import DetailsModal from "@/app/components/DetailsModal/page";
 
 const List = ({
   totalProducts,
@@ -29,7 +30,10 @@ const List = ({
   const dispatch = useDispatch();
   const router = useRouter();
   const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
+  const [DetailsModalOpen, setDetailsModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const [filteredProducts, setFilteredProducts] = useState(products);
+
   const favorites = useSelector((state) => state.cart.favorites);
 
   const handleAddToFavorites = (product) => {
@@ -49,6 +53,16 @@ const List = ({
     } else {
       handleAddToFavorites(product);
     }
+  };
+
+  const toggleDetailsModal = () => {
+    setDetailsModalOpen(!DetailsModalOpen);
+  };
+
+  const handleToggleDetail = (event, product) => {
+    event.stopPropagation();
+    dispatch(setProductDetails(product));
+    toggleDetailsModal();
   };
 
   const handleProductClick = (product) => {
@@ -206,7 +220,7 @@ const List = ({
                   animation="scale"
                   arrow={true}
                 >
-                  <div className="text-black duration-500 p-3 flex text-center justify-center h-[45px] w-[45px] text-xl hover:bg-black hover:text-white bg-[#F2F2F2] rounded-full">
+                  <div className="text-black duration-500 p-3 flex text-center justify-center h-[45px] w-[45px] text-xl hover:bg-black hover:text-white rounded-full">
                     <HiOutlineArrowsRightLeft />
                   </div>
                 </Tooltip>
@@ -218,7 +232,10 @@ const List = ({
                   animation="scale"
                   arrow={true}
                 >
-                  <div className="text-black duration-500 p-3 flex text-center justify-center h-[45px] w-[45px] text-xl hover:bg-black hover:text-white bg-[#F2F2F2] rounded-full">
+                  <div
+                    onClick={(event) => handleToggleDetail(event, product)}
+                    className="p-3 bg-white rounded-full text-black hover:text-white hover:bg-black duration-300 ease-in-out text-xl"
+                  >
                     <FaRegEye />
                   </div>
                 </Tooltip>
@@ -242,6 +259,11 @@ const List = ({
         modalOpen={wishlistModalOpen}
         closeModal={toggleWishlistModal}
         products={favorites}
+      />
+       <DetailsModal
+        modalOpen={DetailsModalOpen}
+        closeModal={toggleDetailsModal}
+        selectedProduct={selectedProduct}
       />
     </>
   );

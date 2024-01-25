@@ -6,7 +6,7 @@ import { products } from "@/app/data";
 import { useDispatch, useSelector } from "react-redux";
 import { Tooltip } from "react-tippy";
 import "react-tippy/dist/tippy.css";
-import { FaArrowRightArrowLeft } from "react-icons/fa6";
+import { FaArrowRightArrowLeft, FaRegEye } from "react-icons/fa6";
 import { IoBagOutline } from "react-icons/io5";
 import Link from "next/link";
 import WishlistModal from "./WishlistModal";
@@ -16,6 +16,7 @@ import {
   addToFavorites,
   setProductDetails,
 } from "@/app/lib/redux/slices/cartSlice";
+import DetailsModal from "@/app/components/DetailsModal/page";
 
 const ThreeColumn = ({
   totalProducts,
@@ -29,19 +30,19 @@ const ThreeColumn = ({
 }) => {
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
+  const [DetailsModalOpen, setDetailsModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [filteredProducts, setFilteredProducts] = useState(products);
+
   const dispatch = useDispatch();
   const router = useRouter();
-  const [filteredProducts, setFilteredProducts] = useState(products);
+
   const favorites = useSelector((state) => state.cart.favorites);
 
   const handleAddToFavorites = (product) => {
     dispatch(addToFavorites(product));
   };
 
-  const handleAddToCart = (event, product) => {
-    event.stopPropagation();
-    dispatch(addToCart(product));
-  };
 
   const toggleWishlistModal = () => {
     setWishlistModalOpen(!wishlistModalOpen);
@@ -56,6 +57,16 @@ const ThreeColumn = ({
     } else {
       handleAddToFavorites(product);
     }
+  };
+
+  const toggleDetailsModal = () => {
+    setDetailsModalOpen(!DetailsModalOpen);
+  };
+
+  const handleToggleDetail = (event, product) => {
+    event.stopPropagation();
+    dispatch(setProductDetails(product));
+    toggleDetailsModal();
   };
 
   const handleProductClick = (product) => {
@@ -190,17 +201,17 @@ const ThreeColumn = ({
                       </div>
                     </Tooltip>
                     <Tooltip
-                      title="Cart"
+                      title="Quick View"
                       position="left"
                       trigger="mouseenter"
                       animation="scale"
                       arrow={true}
                     >
                       <div
-                        onClick={(event) => handleAddToCart(event, product)}
+                        onClick={(event) => handleToggleDetail(event, product)}
                         className="p-3 bg-white rounded-full text-black hover:text-white hover:bg-black duration-300 ease-in-out text-xl"
                       >
-                        <IoBagOutline />
+                        <FaRegEye />
                       </div>
                     </Tooltip>
                   </div>
@@ -265,6 +276,11 @@ const ThreeColumn = ({
         modalOpen={wishlistModalOpen}
         closeModal={toggleWishlistModal}
         products={favorites}
+      />
+       <DetailsModal
+        modalOpen={DetailsModalOpen}
+        closeModal={toggleDetailsModal}
+        selectedProduct={selectedProduct}
       />
     </>
   );
