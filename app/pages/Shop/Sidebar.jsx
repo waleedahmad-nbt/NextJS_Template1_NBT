@@ -94,7 +94,7 @@ const Sidebar = ({
                         key={category}
                         onClick={() => handleCategoryClick(category)}
                         className={`hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300
-                      ease-in-out font-inter`}
+                      ease-in-out`}
                       >
                         {category}
                       </li>
@@ -454,13 +454,13 @@ const Sidebar = ({
                   >
                     <li
                       onClick={() => handlePriceClick(null)}
-                      className="text-[#666666] cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter"
+                      className="text-[#666666] cursor-pointer hover:underline mb-4 duration-300 ease-in-out"
                     >
                       All
                     </li>
                     <li
                       onClick={() => handlePriceClick([0, 140])}
-                      className="text-[#32BDE8]  cursor-pointer mb-4 duration-300 ease-in-out font-inter"
+                      className="text-[#32BDE8]  cursor-pointer mb-4 duration-300 ease-in-out"
                     >
                       <p className="space-x-2">
                         <span className="">$</span>0.00
@@ -470,7 +470,7 @@ const Sidebar = ({
                     </li>
                     <li
                       onClick={() => handlePriceClick([140, 280])}
-                      className="text-[#32BDE8]  cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter"
+                      className="text-[#32BDE8]  cursor-pointer hover:underline mb-4 duration-300 ease-in-out"
                     >
                       <p className="space-x-2">
                         <span className="">$</span>140.00
@@ -480,7 +480,7 @@ const Sidebar = ({
                     </li>
                     <li
                       onClick={() => handlePriceClick([280, 420])}
-                      className="text-[#32BDE8]  cursor-pointer  mb-4 duration-300 ease-in-out font-inter"
+                      className="text-[#32BDE8]  cursor-pointer  mb-4 duration-300 ease-in-out"
                     >
                       <p className="space-x-2">
                         <span className="">$</span>280.00
@@ -490,7 +490,7 @@ const Sidebar = ({
                     </li>
                     <li
                       onClick={() => handlePriceClick([420, 560])}
-                      className="text-[#32BDE8]  cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter"
+                      className="text-[#32BDE8]  cursor-pointer hover:underline mb-4 duration-300 ease-in-out"
                     >
                       <p className="space-x-2">
                         <span className="">$</span>420.00
@@ -500,7 +500,7 @@ const Sidebar = ({
                     </li>
                     <li
                       onClick={() => handlePriceClick([560, 700])}
-                      className="text-[#32BDE8]  cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter"
+                      className="text-[#32BDE8]  cursor-pointer hover:underline mb-4 duration-300 ease-in-out"
                     >
                       <p className="space-x-2">
                         <span className="">$</span>560.00

@@ -3,13 +3,7 @@
 @tailwind utilities;
 
 @import 'react-tippy/dist/tippy.css';
-@import './fonts.css';
 
-
-
-body {
-  font-family: GeneralSans;
-}
 
 
 /* styles/globals.css */
@@ -144,17 +138,12 @@ body {
   border-color: black;
 }
 
-.family {
-  font-family: 'Supreme', sans-serif;
-}
-
 .faq-item {
   overflow: hidden;
 }
 
 .faq-item.open .faq-content {
   max-height: 200px;
-  /* Set an appropriate value based on your content */
 }
 
 .faq-content {

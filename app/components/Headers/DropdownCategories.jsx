@@ -115,7 +115,7 @@ const DropdownCategories = () => {
                   />
                   <div className="absolute flex items-center justify-center">
                     <div className="w-full flex flex-row">
-                      <div className="flex flex-col font-sans m-6 mt-12 w-[336px] items-start">
+                      <div className="flex flex-col  m-6 mt-12 w-[336px] items-start">
                         <h3 className="text-5xl leading-snug font-semibold text-black">Xiaomi Pad 5</h3>
                         <h4 className="text-lg leading-6 font-medium mr-4 text-start text-[#000]">The new tech gift you are
                           wishing for right here.</h4>

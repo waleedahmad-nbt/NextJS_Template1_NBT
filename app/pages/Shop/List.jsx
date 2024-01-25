@@ -175,7 +175,7 @@ const List = ({
                 </p>
               </h6>
 
-              <h3 className="font-bold text-xl font-sans leading-8 hover:text-gray-500 text-start duration-700 ease-in-out text-black">
+              <h3 className="font-bold text-xl leading-8 hover:text-gray-500 text-start duration-700 ease-in-out text-black">
                 <p>{product.title}</p>
               </h3>
 

@@ -83,14 +83,14 @@ const Drawer = () => {
                                     </div>
                                     {toggleStates.categories && (
                                         <ul data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-sine" className='text-md font-medium'>
-                                            <li className='text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter'>Cell Phone</li>
-                                            <li className='text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter'>Computers, Tablets</li>
-                                            <li className='text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter'>Consumer Electronics</li>
-                                            <li className='text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter'>Headphones</li>
-                                            <li className='text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter'>Power Tools</li>
-                                            <li className='text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter'>Smart Electronics</li>
-                                            <li className='text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter'>TV & Audio</li>
-                                            <li className='text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter'>TV Box</li>
+                                            <li className='text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out'>Cell Phone</li>
+                                            <li className='text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out'>Computers, Tablets</li>
+                                            <li className='text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out'>Consumer Electronics</li>
+                                            <li className='text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out'>Headphones</li>
+                                            <li className='text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out'>Power Tools</li>
+                                            <li className='text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out'>Smart Electronics</li>
+                                            <li className='text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out'>TV & Audio</li>
+                                            <li className='text-[#666666] hover:text-gray-900 cursor-pointer hover:underline mb-4 duration-300 ease-in-out'>TV Box</li>
                                         </ul>
                                     )}
                                 </div>
@@ -212,20 +212,20 @@ const Drawer = () => {
                                     </div>
                                     {toggleStates.price && (
                                         <ul data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-sine" className='text-md font-medium'>
-                                            <li className='text-[#666666] cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter'>All</li>
-                                            <li className='text-[#32BDE8]  cursor-pointer mb-4 duration-300 ease-in-out font-inter'>
+                                            <li className='text-[#666666] cursor-pointer hover:underline mb-4 duration-300 ease-in-out '>All</li>
+                                            <li className='text-[#32BDE8]  cursor-pointer mb-4 duration-300 ease-in-out '>
                                                 <a href="" className=""><span className=""><bdi><span className="">$</span>0.00</bdi></span> <span className="text-black">–</span> <span className=""><bdi><span className="">$</span>140.00</bdi></span></a>
                                             </li>
-                                            <li className='text-[#32BDE8]  cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter'>
+                                            <li className='text-[#32BDE8]  cursor-pointer hover:underline mb-4 duration-300 ease-in-out '>
                                                 <a href="" className=""><span className=""><bdi><span className="">$</span>140.00</bdi></span> <span className="text-black">–</span> <span className=""><bdi><span className="">$</span>280.00</bdi></span></a>
                                             </li>
-                                            <li className='text-[#32BDE8]  cursor-pointer  mb-4 duration-300 ease-in-out font-inter'>
+                                            <li className='text-[#32BDE8]  cursor-pointer  mb-4 duration-300 ease-in-out '>
                                                 <a href="" className=""><span className=""><bdi><span className="">$</span>280.00</bdi></span> <span className="text-black">–</span> <span className=""><bdi><span className="">$</span>420.00</bdi></span></a>
                                             </li>
-                                            <li className='text-[#32BDE8]  cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter'>
+                                            <li className='text-[#32BDE8]  cursor-pointer hover:underline mb-4 duration-300 ease-in-out '>
                                                 <a href="" className=""><span className=""><bdi><span className="">$</span>420.00</bdi></span> <span className="text-black">–</span> <span className=""><bdi><span className="">$</span>560.00</bdi></span></a>
                                             </li>
-                                            <li className='text-[#32BDE8]  cursor-pointer hover:underline mb-4 duration-300 ease-in-out font-inter'>
+                                            <li className='text-[#32BDE8]  cursor-pointer hover:underline mb-4 duration-300 ease-in-out '>
                                                 <a href="" className=""><span className=""><bdi><span className="">$</span>560.00</bdi></span> <span className="text-black">–</span> <span className=""><bdi><span className="">$</span>700.00</bdi></span></a>
                                             </li>
                                         </ul>

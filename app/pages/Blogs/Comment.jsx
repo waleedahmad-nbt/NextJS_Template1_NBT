@@ -4,7 +4,7 @@ const Comment = () => {
     return (
         <>
             <div className='mt-20 items-center'>
-                <div className='flex flex-col text-center justify-center font-inter gap-3'>
+                <div className='flex flex-col text-center justify-center gap-3'>
                     <h1 className='text-3xl font-bold'>Leave a Comment</h1>
                     <p className='text-base text-[#666666] font-medium'>Your email address will not be published. Required fields are marked *</p>
                 </div>

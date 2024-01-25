@@ -32,7 +32,7 @@ const ForgotPassword = ({ onClose }) => {
           <div className="mt-7 bg-white w-[500px] h-[363px] rounded-lg shadow-lg">
             <div className="p-4 sm:p-7">
               <div className="text-center">
-                <h1 className="text-4xl font-bold font-serif mb-4 mt-6 text-gray-900">
+                <h1 className="text-4xl font-bold mb-4 mt-6 text-gray-900">
                   Lost your password?
                 </h1>
                 <p className="mt-2 text-sm text-gray-800 leading-6">
