@@ -72,8 +72,6 @@ const Deals = () => {
     }
   };
 
-
-
   return (
     <>
       <div className="xl:container xl:mx-auto">
@@ -103,9 +101,7 @@ const Deals = () => {
                       src={thumb.imageUrl}
                       alt=""
                       className={`w-[58px] object-contain h-[58px] rounded-md scale-105 border hover:border-gray-700 hover:scale-95 duration-700 ${
-                        index === selectedThumbnailIndex
-                          ? "active-thumbnail-image"
-                          : ""
+                        index === selectedThumbnailIndex ? "border-black" : ""
                       }`}
                     />
                   </div>
@@ -143,7 +139,6 @@ const Deals = () => {
                   </button>
                 </div>
               </div>
-
             </div>
             {/* Content */}
             <div className="w-full md:w-1/2 flex flex-col mx-2 gap-3 mt-2 py-4">

@@ -73,7 +73,7 @@ const Footer = () => {
                   className='w-[45px] h-[50px]'
                 />
                 <div className='flex flex-col text-center ml-2 gap-2 mt-5'>
-                  <h2 className='text-base leading-6 text-start text-[#000000] font-bold'>High Quality Selection</h2>
+                  <h2 className='text-base leading-6 text-start text-[#000000] font-semibold'>High Quality Selection</h2>
                   <p className='text-sm text-[#666] leading-5 text-start font-medium hidden md:block'>
                     Total Product Quality Control For Peace Of Mind
                   </p>
@@ -89,7 +89,7 @@ const Footer = () => {
                   alt=""
                 />
                 <div className='flex flex-col ml-2 gap-2 mt-5'>
-                  <h2 className='text-base leading-6 text-[#000000] font-bold'>Affordable Prices</h2>
+                  <h2 className='text-base leading-6 text-[#000000] font-semibold'>Affordable Prices</h2>
                   <p className='text-sm text-[#666] leading-5 font-medium hidden md:block'>Factory Direct Prices For Maximum Savings</p>
                 </div>
               </div>
@@ -103,7 +103,7 @@ const Footer = () => {
                   alt=""
                 />
                 <div className='flex flex-col ml-2 gap-2 mt-5'>
-                  <h2 className='text-base leading-6 text-[#000000] font-bold'>Express Shipping</h2>
+                  <h2 className='text-base leading-6 text-[#000000] font-semibold'>Express Shipping</h2>
                   <p className='text-sm text-[#666] leading-5 font-medium hidden md:block'>Fast, Reliable Delivery From Global Warehouses</p>
                 </div>
               </div>
@@ -114,7 +114,7 @@ const Footer = () => {
               <div className='flex flex-col md:flex-row items-center'>
                 <img src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/footer-image-box-04.png" alt="" />
                 <div className='flex flex-col ml-2 gap-2 mt-5'>
-                  <h2 className='text-base leading-6 text-[#000000] font-bold'>Worry Free</h2>
+                  <h2 className='text-base leading-6 text-[#000000] font-semibold'>Worry Free</h2>
                   <p className='text-sm text-[#666] leading-5 font-medium hidden md:block'>
                     Instant Access To Professional Support
                   </p>
@@ -189,33 +189,33 @@ const Footer = () => {
           <div className='grid  md:grid-cols-2 lg:grid-cols-4 p-6 md:p-14 gap-4'>
 
             <div className='flex flex-col gap-4'>
-              <h1 className='fast font-bold'>FIND IT FAST</h1>
-              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300 font-medium'>Top Searches</p>
-              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>About Us</p>
-              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Privacy Policy</p>
-              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Terms and Conditions</p>
-              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Testimonials</p>
+              <h1 className='text-sm font-bold'>FIND IT FAST</h1>
+              <p className='text-base leading-7 font-medium text-[#666] cursor-pointer hover:text-black duration-300'>Top Searches</p>
+              <p className='text-base leading-7 font-medium text-[#666] cursor-pointer hover:text-black duration-300'>About Us</p>
+              <p className='text-base leading-7 font-medium text-[#666] cursor-pointer hover:text-black duration-300'>Privacy Policy</p>
+              <p className='text-base leading-7 font-medium text-[#666] cursor-pointer hover:text-black duration-300'>Terms and Conditions</p>
+              <p className='text-base leading-7 font-medium text-[#666] cursor-pointer hover:text-black duration-300'>Testimonials</p>
             </div>
 
             <div className='flex flex-col gap-4'>
-              <h1 className='fast font-bold'>CUSTOMER CARE</h1>
-              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>My Account</p>
-              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Track Order</p>
-              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Shop</p>
-              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Wishlist</p>
-              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Returns/Exchange</p>
+              <h1 className='text-sm font-bold'>CUSTOMER CARE</h1>
+              <p className='text-base leading-7 font-medium text-[#666] cursor-pointer hover:text-black duration-300'>My Account</p>
+              <p className='text-base leading-7 font-medium text-[#666] cursor-pointer hover:text-black duration-300'>Track Order</p>
+              <p className='text-base leading-7 font-medium text-[#666] cursor-pointer hover:text-black duration-300'>Shop</p>
+              <p className='text-base leading-7 font-medium text-[#666] cursor-pointer hover:text-black duration-300'>Wishlist</p>
+              <p className='text-base leading-7 font-medium text-[#666] cursor-pointer hover:text-black duration-300'>Returns/Exchange</p>
             </div>
             <div className='flex flex-col gap-4'>
-              <h1 className='fast font-bold'>OTHER BUSINESS</h1>
-              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Partnership Programs</p>
-              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Associate Program</p>
-              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Wholesale Socks</p>
-              <p className='text-base leading-6 text-[#666] cursor-pointer hover:text-black duration-300'>Wholesale Funny Socks</p>
+              <h1 className='text-sm font-bold'>OTHER BUSINESS</h1>
+              <p className='text-base leading-7 font-medium text-[#666] cursor-pointer hover:text-black duration-300'>Partnership Programs</p>
+              <p className='text-base leading-7 font-medium text-[#666] cursor-pointer hover:text-black duration-300'>Associate Program</p>
+              <p className='text-base leading-7 font-medium text-[#666] cursor-pointer hover:text-black duration-300'>Wholesale Socks</p>
+              <p className='text-base leading-7 font-medium text-[#666] cursor-pointer hover:text-black duration-300'>Wholesale Funny Socks</p>
             </div>
 
             <div className='flex flex-col gap-4'>
               <div>
-                <h1 className='fast font-bold'>NEWSLETTER</h1>
+                <h1 className='text-sm font-bold'>NEWSLETTER</h1>
               </div>
 
               <div className='flex items-center rounded-3xl w-full md:w-[250px] border-2 border-black'>

@@ -53,7 +53,7 @@ const Search = () => {
             {/* Discount */}
 
             <div className='xl:container xl:mx-auto'>
-                <div className='mx-4 lg:mx-20 mt-8 h-52 relative overflow-hidden'>
+                <div className='mx-4 lg:mx-20 mt-8 h-52 md:h-36 relative overflow-hidden'>
                     <div className="flex flex-row justify-between w-full h-full text-center bg-[#f5f5f5] rounded-2xl relative z-10">
                         <div className='relative flex'>
                             <img src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/home-callout-shape-left.png" alt="Left Image" className="" />
@@ -61,7 +61,7 @@ const Search = () => {
                         <div className='relative flex md:p-0 pt-10'>
                             <img src="https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/home-callout-shape-right.png" alt="Right Image" className="" />
                         </div>
-                        <div className="absolute mx-auto w-full my-8 lg:my-16">
+                        <div className="absolute mx-auto w-full my-8 lg:my-8">
                             <div className='flex flex-col md:flex-row text-center justify-center gap-1'>
                                 <h2 className="text-3xl font-bold mt-2">Sony Headphone</h2>
                                 <a href="#" className="w-[270px] h-[55px] mx-auto md:mx-0 text-red-600 border-red-600 border-2 flex items-center justify-center rounded-full text-2xl

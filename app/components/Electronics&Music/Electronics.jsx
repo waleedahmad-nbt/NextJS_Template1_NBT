@@ -45,7 +45,7 @@ const Electronics = () => {
                             </div>
                         </div>
                         {/* Right Side */}
-                        <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 mx-5'>
+                        <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 ml-4'>
 
                             <div className="relative flex rounded-lg h-full group overflow-hidden">
                                 <img
@@ -55,8 +55,8 @@ const Electronics = () => {
                                 />
                                 <div className="absolute inset-0 flex">
                                     <div className="flex flex-col justify-between">
-                                        <div className="text-lg font-semibold m-3">
-                                            <span className='text-black font-bold '>Robot Clean</span>
+                                        <div className="text-lg leading-6 font-semibold m-3">
+                                            <span className='text-black font-bold'>Robot Clean</span>
                                         </div>
                                         <p className='font-semibold text-gray-500 m-3'>3 Items</p>
                                     </div>

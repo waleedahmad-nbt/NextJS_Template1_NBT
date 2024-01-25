@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'react-tippy/dist/tippy.css';
+@import "react-tippy/dist/tippy.css";
 
-
+body {
+  font-family: "Manrope";
+}
 
 /* styles/globals.css */
 @keyframes underlineAnimation {
@@ -28,7 +30,6 @@
   animation: underlineAnimation 2s ease-in-out forwards;
 }
 
-
 .bg-banner1,
 .bg-banner,
 .bg-banner3 {
@@ -51,17 +52,17 @@
 }
 
 .bg-banner1 {
-  background: url('https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/home-banner-01.jpg');
+  background: url("https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/home-banner-01.jpg");
   height: 260px;
 }
 
 .bg-banner {
-  background: url('https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/home-banner-02.jpg');
+  background: url("https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/home-banner-02.jpg");
   height: 260px;
 }
 
 .bg-banner3 {
-  background: url('https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/home-banner-03.jpg');
+  background: url("https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/home-banner-03.jpg");
   height: 260px;
 }
 
@@ -122,11 +123,6 @@
 
 .shadow {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.fast {
-  font-size: 14px;
-  font-weight: 600;
 }
 
 .dropdown-menu {
@@ -234,8 +230,6 @@
   border-radius: 4px;
 }
 
-
-
 /* Add this CSS to your styles */
 .dropdown-menu {
   max-height: 0;
@@ -247,7 +241,6 @@
   max-height: 660px;
   /* Adjust the max-height as needed */
 }
-
 
 .custom-Scroll::-webkit-scrollbar {
   width: 6px;
@@ -265,11 +258,9 @@
   width: 12px;
 }
 
-
 .active-thumbnail-image {
   border: 1px solid rgb(173, 170, 170) !important;
 }
-
 
 .loader {
   position: fixed;
@@ -302,7 +293,7 @@ thead th {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: #FBFBFB;
+  background-color: #fbfbfb;
   z-index: 2;
 }
 
@@ -310,6 +301,6 @@ th[scope="row"] {
   position: -webkit-sticky;
   position: sticky;
   left: 0;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   z-index: 1;
 }

@@ -22,20 +22,18 @@ const SwiperComponent = () => {
   const [swiper, setSwiper] = useState(null);
 
   const slides = [
-    { id: 1, imageUrl: Laptop, text: 'Laptop' },
-    { id: 2, imageUrl: Headphones, text: 'Headphones' },
-    { id: 3, imageUrl: games, text: 'games' },
-    { id: 4, imageUrl: power, text: 'Power Tools' },
-    { id: 5, imageUrl: Robot, text: 'Robot' },
-    { id: 6, imageUrl: Sport, text: 'Sport Watches' },
-    { id: 7, imageUrl: Watch, text: 'Watches' },
-    { id: 8, imageUrl: Watch, text: 'Watches' },
-    { id: 9, imageUrl: Watch, text: 'Watches' },
-    { id: 10, imageUrl: Sport, text: 'Sport Watches' },
-    { id: 11, imageUrl: power, text: 'Power Tools' },
-    { id: 12, imageUrl: Headphones, text: 'Headphones' },
-    { id: 13, imageUrl: Headphones, text: 'Headphones' },
-    { id: 14, imageUrl: Headphones, text: 'Headphones' },
+    { id: 1, imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/cat-computers-laptop-100x100.jpg', text: 'Laptop' },
+    { id: 2, imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/cat-cell-phone-100x100.jpg', text: 'Cell Phone' },
+    { id: 3, imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/cat-game-video-100x100.jpg', text: 'Games & Video' },
+    { id: 4, imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/cat-tv-box-100x100.jpg', text:'Tv Box' },
+    { id: 5, imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/cat-robot-clean-100x100.jpg', text: 'Robot Clean' },
+    { id: 6, imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/cat-spot-watches-100x100.jpg', text: 'Sport Watches' },
+    { id: 7, imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/cat-tablets-100x100.jpg', text: 'Tablets' },
+    { id: 8, imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/cat-power-tools-100x100.jpg', text: 'Power Tools' },
+    { id: 9, imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/cat-smart-watches-100x100.jpg', text: 'Smart Watches' },
+    { id: 10, imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/cat-headphones-100x100.jpg', text: 'Headphones' },
+    { id: 11, imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/cat-tv-audio-100x100.jpg', text: 'Tv & Audio' },
+    { id: 12, imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/cat-cameras-audio-100x100.jpg', text: 'Cameras' },
   ];
 
 
@@ -63,7 +61,7 @@ const SwiperComponent = () => {
             <div className='w-full'>
               <Swiper
                 onSwiper={(swiper) => setSwiper(swiper)}
-                spaceBetween={10}
+                spaceBetween={0}
                 slidesPerView={7}
                 pagination={{ clickable: true }}
                 loop={true}
@@ -82,21 +80,19 @@ const SwiperComponent = () => {
                     slidesPerView: 4,
                   },
                   1024: {
-                    slidesPerView: 7,
+                    slidesPerView: 6,
                   },
                 }}
               >
                 {slides.map((slide) => (
                   <SwiperSlide key={slide.id}>
-                    <div className="flex flex-row items-center justify-center m-auto group overflow-hidden">
-                      <Image
+                    <div className="flex flex-row space-x-4 items-center m-2 justify-center group overflow-hidden">
+                      <img
                         src={slide.imageUrl}
                         alt={`Slide ${slide.id}`}
-                        width={120}
-                        height={120}
-                        className="w-12 h-12 object-cover m-2 bg-gray-400 rounded-full transition-transform transform group-hover:scale-105 duration-700"
+                        className="w-[44px] h-[44px] object-cover border p-1 bg-[#f2f4f3] rounded-full transition-transform transform group-hover:scale-105 duration-700"
                       />
-                      <p className="text-sm font-semibold">{slide.text}</p>
+                      <p className="text-base leading-6 font-semibold">{slide.text}</p>
                     </div>
                   </SwiperSlide>
                 ))}

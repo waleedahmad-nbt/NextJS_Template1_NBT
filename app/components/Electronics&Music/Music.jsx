@@ -48,7 +48,7 @@ const Music = () => {
 
 
                         {/* Right Side */}
-                        <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 mx-5'>
+                        <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 ml-4'>
                             {/* <div className="flex flex-wrap border"> */}
                             <div className="relative flex rounded-lg h-full group overflow-hidden ">
                                 <img

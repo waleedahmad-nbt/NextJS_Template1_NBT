@@ -34,16 +34,16 @@ const Headers = () => {
               <div className="hidden lg:block">
                 <div className="flex flex-row items-center gap-5">
                   <a href="https://www.instagram.com/">
-                    <div className="flex flex-row gap-1 cursor-pointer hover:text-gray-500 transition-all duration-100">
-                      <FaInstagram className="text-base m-auto" />
-                      <p className="text-base">100k Followers</p>
+                    <div className="flex flex-row gap-1 cursor-pointer hover:text-gray-500 duration-300 ease-in-out">
+                      <FaInstagram className="m-auto" />
+                      <p className="text-[15px] leading-5" style={{ fontWeight: 500 }}>100k Followers</p>
                     </div>
                   </a>
 
                   <a href="https://www.facebook.com/">
-                    <div className="flex flex-row gap-1 text-base cursor-pointer hover:text-gray-500 transition-all duration-100">
-                      <FaFacebook className=" m-auto" />
-                      <p className="">300k Followers</p>
+                    <div className="flex flex-row gap-1 cursor-pointer hover:text-gray-500  duration-300 ease-in-out">
+                      <FaFacebook className="m-auto" />
+                      <p className="text-[16px]" style={{ fontWeight: 500 }}>300k Followers</p>
                     </div>
                   </a>
                 </div>
@@ -54,7 +54,7 @@ const Headers = () => {
                   Hot
                 </span>
 
-                <p>✌🏼 Free Express Shipping on orders $200!</p>
+                <p className="text-[15px] leading-7">✌🏼 Free Express Shipping on orders $200!</p>
               </div>
 
               <div className="flex items-center relative">
