@@ -15,6 +15,8 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import DetailsModal from "@/app/components/DetailsModal/page";
+import CompareProduct from "@/app/components/Compare/page";
+import { FaArrowRightArrowLeft } from "react-icons/fa6";
 
 const List = ({
   totalProducts,
@@ -31,6 +33,7 @@ const List = ({
   const router = useRouter();
   const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
   const [DetailsModalOpen, setDetailsModalOpen] = useState(false);
+  const [CompareModalOpen, setCompareModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [filteredProducts, setFilteredProducts] = useState(products);
 
@@ -68,6 +71,15 @@ const List = ({
   const handleProductClick = (product) => {
     dispatch(setProductDetails(product));
     router.push(`/pages/Details?${product.title}`);
+  };
+  const toggleCompareModal = () => {
+    setCompareModalOpen(!CompareModalOpen);
+  };
+
+  const handleCompareModal = (event, product) => {
+    event.stopPropagation();
+    dispatch(setProductDetails(product));
+    toggleCompareModal();
   };
 
   useEffect(() => {
@@ -158,13 +170,13 @@ const List = ({
               </div>
 
               <h6 className="text-gray-500 text-xs font-medium hover:text-gray-800 duration-500 tracking-tight uppercase">
-                <a href="https://minimog.thememove.com/supergear/product-category/tv-audio/bluetooth-speakers/">
+                <p href="https://minimog.thememove.com/supergear/product-category/tv-audio/bluetooth-speakers/">
                   {product.category}
-                </a>
+                </p>
               </h6>
 
               <h3 className="font-bold text-xl font-sans leading-8 hover:text-gray-500 text-start duration-700 ease-in-out text-black">
-                <a href="#">{product.title}</a>
+                <p>{product.title}</p>
               </h3>
 
               <div>
@@ -179,12 +191,11 @@ const List = ({
               </p>
 
               <div className="flex flex-row flex-wrap mb-3 items-center gap-10">
-                <a
-                  href="#"
+                <p
                   className="bg-black mt-2 w-[180px] text-[#F1F1F1]  text-center justify-center flex font-semibold py-3 rounded-full  duration-300 ease-in-out transform hover:scale-105"
                 >
                   SELECT OPTIONS
-                </a>
+                </p>
 
                 <Tooltip
                   title={
@@ -214,16 +225,19 @@ const List = ({
                 </Tooltip>
 
                 <Tooltip
-                  title="Compare"
-                  position="top"
-                  trigger="mouseenter"
-                  animation="scale"
-                  arrow={true}
-                >
-                  <div className="text-black duration-500 p-3 flex text-center justify-center h-[45px] w-[45px] text-xl hover:bg-black hover:text-white rounded-full">
-                    <HiOutlineArrowsRightLeft />
-                  </div>
-                </Tooltip>
+                    title="Compare"
+                    position="top"
+                    trigger="mouseenter"
+                    animation="scale"
+                    arrow={true}
+                  >
+                    <div
+                      onClick={(event) => handleCompareModal(event, product)}
+                      className="p-3 bg-white rounded-full text-black hover:text-white hover:bg-black duration-300 ease-in-out text-xl"
+                    >
+                      <FaArrowRightArrowLeft />
+                    </div>
+                  </Tooltip>
 
                 <Tooltip
                   title="Quick View"
@@ -263,6 +277,11 @@ const List = ({
        <DetailsModal
         modalOpen={DetailsModalOpen}
         closeModal={toggleDetailsModal}
+        selectedProduct={selectedProduct}
+      />
+       <CompareProduct
+        modalOpen={CompareModalOpen}
+        closeModal={toggleCompareModal}
         selectedProduct={selectedProduct}
       />
     </>

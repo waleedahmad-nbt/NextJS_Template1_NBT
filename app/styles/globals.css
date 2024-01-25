@@ -301,4 +301,26 @@ body {
   }
 }
 
+.relative {
+  position: relative;
+}
 
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+thead th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #FBFBFB;
+  z-index: 2;
+}
+
+th[scope="row"] {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  background-color: #F8F8F8;
+  z-index: 1;
+}

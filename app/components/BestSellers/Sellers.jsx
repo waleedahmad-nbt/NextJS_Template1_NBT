@@ -7,11 +7,9 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import Link from "next/link";
 import {
-  addToCart,
   addToFavorites,
   setProductDetails,
 } from "@/app/lib/redux/slices/cartSlice";
-import { IoBagOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { Tooltip } from "react-tippy";
 import "react-tippy/dist/tippy.css";
@@ -20,11 +18,13 @@ import { useRouter } from "next/navigation";
 import { products } from "@/app/data";
 import { FaRegEye } from "react-icons/fa";
 import DetailsModal from "../DetailsModal/page";
+import CompareProduct from "../Compare/page";
 
 const Sellers = () => {
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
   const [DetailsModalOpen, setDetailsModalOpen] = useState(false);
+  const [CompareModalOpen, setCompareModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const dispatch = useDispatch();
@@ -58,6 +58,15 @@ const Sellers = () => {
     event.stopPropagation();
     dispatch(setProductDetails(product));
     toggleDetailsModal();
+  };
+  const toggleCompareModal = () => {
+    setCompareModalOpen(!CompareModalOpen);
+  };
+
+  const handleCompareModal = (event, product) => {
+    event.stopPropagation();
+    dispatch(setProductDetails(product));
+    toggleCompareModal();
   };
 
   const handleProductClick = (product) => {
@@ -166,7 +175,9 @@ const Sellers = () => {
                         animation="scale"
                         arrow={true}
                       >
-                        <div className="p-3 bg-white rounded-full text-black hover:text-white hover:bg-black duration-300 ease-in-out text-xl">
+                        <div  onClick={(event) =>
+                            handleCompareModal(event, product)
+                          } className="p-3 bg-white rounded-full text-black hover:text-white hover:bg-black duration-300 ease-in-out text-xl">
                           <FaArrowRightArrowLeft />
                         </div>
                       </Tooltip>
@@ -243,6 +254,11 @@ const Sellers = () => {
       <DetailsModal
         modalOpen={DetailsModalOpen}
         closeModal={toggleDetailsModal}
+        selectedProduct={selectedProduct}
+      />
+      <CompareProduct
+        modalOpen={CompareModalOpen}
+        closeModal={toggleCompareModal}
         selectedProduct={selectedProduct}
       />
     </>

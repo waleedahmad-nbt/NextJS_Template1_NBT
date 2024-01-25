@@ -15,7 +15,7 @@ const Music = () => {
                 <div className='hidden lg:block'>
                     <div className='flex flex-row mt-10 mx-10 cursor-pointer '>
 
-                        <div className='w-[50%]'>
+                        <div className='w-[65%]'>
                             {/* Left Side */}
                             <div className="relative col-span-1 flex rounded-lg h-full group overflow-hidden">
                                 <img

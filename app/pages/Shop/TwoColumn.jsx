@@ -16,6 +16,7 @@ import {
   setProductDetails,
 } from "@/app/lib/redux/slices/cartSlice";
 import DetailsModal from "@/app/components/DetailsModal/page";
+import CompareProduct from "@/app/components/Compare/page";
 
 const TwoColumn = ({
   totalProducts,
@@ -32,6 +33,7 @@ const TwoColumn = ({
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [DetailsModalOpen, setDetailsModalOpen] = useState(false);
+  const [CompareModalOpen, setCompareModalOpen] = useState(false);
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -65,6 +67,16 @@ const TwoColumn = ({
     dispatch(setProductDetails(product));
     toggleDetailsModal();
   };
+  const toggleCompareModal = () => {
+    setCompareModalOpen(!CompareModalOpen);
+  };
+
+  const handleCompareModal = (event, product) => {
+    event.stopPropagation();
+    dispatch(setProductDetails(product));
+    toggleCompareModal();
+  };
+
   const handleProductClick = (product) => {
     dispatch(setProductDetails(product));
     router.push(`/pages/Details?${product.title}`);
@@ -191,7 +203,10 @@ const TwoColumn = ({
                       animation="scale"
                       arrow={true}
                     >
-                      <div className="p-3 bg-white rounded-full text-black hover:text-white hover:bg-black duration-300 ease-in-out text-xl">
+                      <div
+                        onClick={(event) => handleCompareModal(event, product)}
+                        className="p-3 bg-white rounded-full text-black hover:text-white hover:bg-black duration-300 ease-in-out text-xl"
+                      >
                         <FaArrowRightArrowLeft />
                       </div>
                     </Tooltip>
@@ -272,9 +287,14 @@ const TwoColumn = ({
         closeModal={toggleWishlistModal}
         products={favorites}
       />
-       <DetailsModal
+      <DetailsModal
         modalOpen={DetailsModalOpen}
         closeModal={toggleDetailsModal}
+        selectedProduct={selectedProduct}
+      />
+      <CompareProduct
+        modalOpen={CompareModalOpen}
+        closeModal={toggleCompareModal}
         selectedProduct={selectedProduct}
       />
     </>

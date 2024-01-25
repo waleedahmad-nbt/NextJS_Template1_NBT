@@ -17,6 +17,7 @@ import {
   setProductDetails,
 } from "@/app/lib/redux/slices/cartSlice";
 import DetailsModal from "@/app/components/DetailsModal/page";
+import CompareProduct from "@/app/components/Compare/page";
 
 const ThreeColumn = ({
   totalProducts,
@@ -31,6 +32,7 @@ const ThreeColumn = ({
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
   const [DetailsModalOpen, setDetailsModalOpen] = useState(false);
+  const [CompareModalOpen, setCompareModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [filteredProducts, setFilteredProducts] = useState(products);
 
@@ -42,7 +44,6 @@ const ThreeColumn = ({
   const handleAddToFavorites = (product) => {
     dispatch(addToFavorites(product));
   };
-
 
   const toggleWishlistModal = () => {
     setWishlistModalOpen(!wishlistModalOpen);
@@ -67,6 +68,15 @@ const ThreeColumn = ({
     event.stopPropagation();
     dispatch(setProductDetails(product));
     toggleDetailsModal();
+  };
+  const toggleCompareModal = () => {
+    setCompareModalOpen(!CompareModalOpen);
+  };
+
+  const handleCompareModal = (event, product) => {
+    event.stopPropagation();
+    dispatch(setProductDetails(product));
+    toggleCompareModal();
   };
 
   const handleProductClick = (product) => {
@@ -188,7 +198,6 @@ const ThreeColumn = ({
                         <CiStar />
                       </div>
                     </Tooltip>
-
                     <Tooltip
                       title="Compare"
                       position="left"
@@ -196,10 +205,14 @@ const ThreeColumn = ({
                       animation="scale"
                       arrow={true}
                     >
-                      <div className="p-3 bg-white rounded-full text-black hover:text-white hover:bg-black duration-300 ease-in-out text-xl">
+                      <div
+                        onClick={(event) => handleCompareModal(event, product)}
+                        className="p-3 bg-white rounded-full text-black hover:text-white hover:bg-black duration-300 ease-in-out text-xl"
+                      >
                         <FaArrowRightArrowLeft />
                       </div>
                     </Tooltip>
+
                     <Tooltip
                       title="Quick View"
                       position="left"
@@ -277,9 +290,14 @@ const ThreeColumn = ({
         closeModal={toggleWishlistModal}
         products={favorites}
       />
-       <DetailsModal
+      <DetailsModal
         modalOpen={DetailsModalOpen}
         closeModal={toggleDetailsModal}
+        selectedProduct={selectedProduct}
+      />
+      <CompareProduct
+        modalOpen={CompareModalOpen}
+        closeModal={toggleCompareModal}
         selectedProduct={selectedProduct}
       />
     </>

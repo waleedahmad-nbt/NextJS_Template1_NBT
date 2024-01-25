@@ -14,6 +14,7 @@ export const products = [
         originalPrice: 139.00,
         discountedPrice: 129.00,
         colors:'Black',
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 2,
@@ -29,6 +30,7 @@ export const products = [
         originalPrice: 579.99,
         discountedPrice: 579.99,
         colors:'Black',
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 3,
@@ -45,7 +47,8 @@ export const products = [
         originalPrice: 307.60,
         discountedPrice: 289.95,
         colors:'Red',
-        types:['EU Plug','UK Plug','US Plug']
+        types:['EU Plug','UK Plug','US Plug'],
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 4,
@@ -62,6 +65,7 @@ export const products = [
         originalPrice: 200.00,
         discountedPrice: 210.00,
         colors: ['Red', 'Dark Grey', 'Grass Green'],
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 5,
@@ -77,6 +81,7 @@ export const products = [
         rating: 5,
         originalPrice: 50.00,
         discountedPrice: 45.00,
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 6,
@@ -91,6 +96,7 @@ export const products = [
         rating: 5,
         originalPrice: 100.00,
         discountedPrice: 77.08,
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 7,
@@ -105,7 +111,8 @@ export const products = [
         rating: 5,
         originalPrice: 48.50,
         discountedPrice: 45.00,
-        colors:"White"
+        colors:"White",
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 8,
@@ -121,7 +128,8 @@ export const products = [
         rating: 5,
         originalPrice: 600.00,
         discountedPrice: 575.00,
-        colors:"Black"
+        colors:"Black",
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 9,
@@ -137,7 +145,8 @@ export const products = [
         rating: 5,
         originalPrice: 700.90,
         discountedPrice: 696.90,
-        colors:"Platinum"
+        colors:"Platinum",
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 10,
@@ -153,7 +162,8 @@ export const products = [
         rating: 5,
         originalPrice: 129.99,
         discountedPrice: 129.99,
-        colors:"White"
+        colors:"White",
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 11,
@@ -170,6 +180,7 @@ export const products = [
         originalPrice: 21.99,
         discountedPrice:21.99,
         colors:['Gray'],
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 12,
@@ -188,6 +199,7 @@ export const products = [
         originalPrice: 112.00,
         discountedPrice:112.00,
         colors:['Blue',"Gold","White","Black"],
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 13,
@@ -204,6 +216,7 @@ export const products = [
         originalPrice: 151.89,
         discountedPrice:151.89,
         colors:'White',
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 14,
@@ -222,6 +235,7 @@ export const products = [
         originalPrice: 15.90,
         discountedPrice:15.90,
         colors:'Red',
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 15,
@@ -238,6 +252,7 @@ export const products = [
         originalPrice: 141.99,
         discountedPrice:141.99,
         colors:'Blue',
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 16,
@@ -253,7 +268,8 @@ export const products = [
         originalPrice: 21.99,
         discountedPrice:21.99,
         colors:'Black',
-        types:['EU Plug','UK Plug','US Plug']
+        types:['EU Plug','UK Plug','US Plug'],
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 17,
@@ -270,7 +286,8 @@ export const products = [
         originalPrice: 79.99,
         discountedPrice: 79.99,
         colors:['Stage Green','Flamingo Pink',"Black"],
-        size:"GTS 2 Mini"
+        size:"GTS 2 Mini",
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
    
     {
@@ -288,6 +305,7 @@ export const products = [
         originalPrice: 472.90,
         discountedPrice: 450.00,
         colors:'Black',
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 19,
@@ -306,6 +324,7 @@ export const products = [
         originalPrice: 75.83,
         discountedPrice: 75.83,
         colors:['Red','Green','White'],
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 20,
@@ -322,6 +341,7 @@ export const products = [
         originalPrice: 30.84,
         discountedPrice: 30.84,
         colors:'Dark Gray',
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 21,
@@ -338,7 +358,8 @@ export const products = [
         originalPrice: 21.99,
         discountedPrice:21.99,
         colors:'Black',
-        types:['EU Plug','UK Plug','US Plug']
+        types:['EU Plug','UK Plug','US Plug'],
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 22,
@@ -355,7 +376,8 @@ export const products = [
         originalPrice: 25.00,
         discountedPrice: 24.00,
         colors:'White',
-        size:['10 Inch','13.5 Inch']
+        size:['10 Inch','13.5 Inch'],
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 23,
@@ -372,7 +394,8 @@ export const products = [
         originalPrice: 78.79,
         discountedPrice:78.79,
         colors:'Black',
-        types:['EU Plug','UK Plug','US Plug']
+        types:['EU Plug','UK Plug','US Plug'],
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 24,
@@ -389,6 +412,7 @@ export const products = [
         originalPrice: 280.90,
         discountedPrice: 280.90,
         colors:['Gray','Green','White'],
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 25,
@@ -405,6 +429,7 @@ export const products = [
         originalPrice: 42.74,
         discountedPrice: 42.74,
         colors:'Sky Blue',
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 26,
@@ -421,6 +446,7 @@ export const products = [
         originalPrice: 49.99,
         discountedPrice: 49.99,
         colors:'Black',
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 27,
@@ -438,6 +464,7 @@ export const products = [
         originalPrice: 21.91,
         discountedPrice:21.91,
         colors:['White','Black','Flamingo Pink'],
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 28,
@@ -457,6 +484,7 @@ export const products = [
         originalPrice: 79.99,
         discountedPrice: 79.99,
         colors:['Red','White'],
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 29,
@@ -474,6 +502,7 @@ export const products = [
         originalPrice: 48.50,
         discountedPrice:48.50,
         colors:'White',
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 30,
@@ -489,7 +518,8 @@ export const products = [
         rating: 5,
         originalPrice: 151.89,
         discountedPrice:151.89,
-        colors:['Rose Gold','Black','White'],
+        colors:['Rose Gold', 'Black', 'White'],
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 31,
@@ -509,6 +539,7 @@ export const products = [
         originalPrice: 280.90,
         discountedPrice: 280.90,
         colors:'White',
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 32,
@@ -524,7 +555,8 @@ export const products = [
         rating: 5,
         originalPrice: 219.90,
         discountedPrice: 219.90,
-        colors:['Blue',"Gold","Orange","Black"],
+        colors:['Blue', "Gold", "Orange", "Black"],
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
     {
         id: 33,
@@ -541,7 +573,8 @@ export const products = [
         rating: 5,
         originalPrice: 14.90,
         discountedPrice: 14.90,
-        colors:['Pink','Yellow','Blue','Orange','Black'],
+        colors:['Pink', 'Yellow', 'Blue', 'Orange', 'Black'],
+        discription:" For Alexa It can be used not only in the United States, but also all countries which people speak English with American accent."
     },
    
 ];

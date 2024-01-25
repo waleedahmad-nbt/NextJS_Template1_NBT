@@ -15,7 +15,7 @@ const Electronics = () => {
                 {/* On Large Screen */}
                 <div className='hidden lg:block'>
                     <div className='flex flex-row mt-10 mx-10 cursor-pointer '>
-                        <div className='w-[50%]'>
+                        <div className='w-[65%]'>
                             <div className="relative flex rounded-lg h-full group overflow-hidden">
                                 <img
                                     className="w-full h-full object-cover rounded-lg transition-transform transform group-hover:scale-110 duration-700"
