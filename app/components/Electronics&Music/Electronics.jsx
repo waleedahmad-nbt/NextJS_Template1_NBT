@@ -7,10 +7,11 @@ const Electronics = () => {
         <>
             <div className='container mx-auto'>
                 <div className='mt-20 mx-4 md:mx-20'>
-                    <div className='flex flex-col md:flex-row justify-between border-b'>
+                    <div className='flex flex-col md:flex-row justify-between items-center'>
                         <h1 className='text-2xl md:text-4xl leading-10 font-bold'>Consumer Electronics</h1>
-                        <p className='text-md mr-7 underline cursor-pointer'>Go to Daily Deals Section</p>
+                        <p className='text-md mr-7 cursor-pointer link-underline-s'>Go to Daily Deals Section</p>
                     </div>
+                    <div className='border-b'></div>
                 </div>
                 {/* On Large Screen */}
                 <div className='hidden lg:block'>

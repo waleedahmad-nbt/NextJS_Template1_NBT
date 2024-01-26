@@ -195,7 +195,7 @@ const Details = () => {
               {/* Content */}
               <div className="flex flex-col mt-6 md:w-[33%] lg:w-[40%]">
                 <div className="flex flex-row ">
-                  <h3 className="font-bold text-2xl md:text-3xl tracking-wid leading-10 text-start duration-700 ease-in-out text-black">
+                  <h3 className="font-extrabold text-2xl md:text-3xl tracking-wid leading-10 text-start duration-700 ease-in-out text-black">
                     <a href="#">{selectedProduct.title}</a>
                   </h3>
                   <div

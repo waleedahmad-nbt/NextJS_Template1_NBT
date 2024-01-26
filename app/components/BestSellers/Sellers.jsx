@@ -103,14 +103,15 @@ const Sellers = () => {
     <>
       <div className="xl:container xl:mx-auto">
         <div className="mt-20 mx-3 md:mx-16">
-          <div className="flex flex-col md:flex-row justify-between border-b">
+          <div className="flex flex-col md:flex-row justify-between items-center">
             <h1 className="text-2xl md:text-4xl font-bold">
               Top 20 Best Seller
             </h1>
-            <p className="text-md underline cursor-pointer">
+            <p className="text-md link-underline-s cursor-pointer">
               Go to Daily Deals Section
             </p>
           </div>
+          <div className="border-b"></div>
 
           <Slider {...settings}>
             {products.map((product) => (
@@ -200,7 +201,7 @@ const Sellers = () => {
                 </div>
 
                 <div className="flex flex-col gap-2 mt-2">
-                  <h2 className="text-gray-500 text-xs font-medium hover:text-gray-800 duration-500 tracking-tight uppercase">
+                  <h2 className="text-gray-400 text-sm cursor-pointer font-medium hover:text-black duration-500 tracking-tight uppercase">
                     <p>{product.category}</p>
                   </h2>
                   <Link
@@ -208,7 +209,7 @@ const Sellers = () => {
                     href={`/pages/Details?id=${product.id}`}
                     passHref
                   >
-                    <h3 className="text-ellipsis font-semibold leading-6 text-black">
+                    <h3 className="text-ellipsis font-bold leading-6 text-black">
                       <p>{product.title}</p>
                     </h3>
                   </Link>
@@ -231,11 +232,9 @@ const Sellers = () => {
                     </bdi>
                   </div>
                   {hoveredProduct === product.id && (
-                    <Link href="/pages/Details">
                       <p className="bg-[#F1F1F1] mt-2 text-black w-full overflow-ellipsis hover:bg-black hover:text-white flex text-center justify-center font-semibold py-3 rounded-full duration-300 ease-in-out transform hover:scale-105 transition-opacity">
                         Select Options
                       </p>
-                    </Link>
                   )}
                 </div>
               </div>

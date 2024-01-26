@@ -21,13 +21,30 @@ body {
   }
 }
 
-.underline-hover-left-to-right:hover {
-  background-image: linear-gradient(transparent, transparent),
-    linear-gradient(white, white);
-  background-repeat: no-repeat, repeat-x;
-  background-size: 0% 2px, 100% 2px;
-  background-position: 0% 100%, 100% 100%;
-  animation: underlineAnimation 2s ease-in-out forwards;
+.link-underline {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+  background-size: 0 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .5s ease-in-out;
+}
+.link-underline-s{
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#252525, #252525);
+  background-size: 0 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .5s ease-in-out;
+}
+.link-underline-s:hover {
+  background-size: 100% 1px;
+  background-position: 0 100%
+}
+
+.link-underline:hover {
+  background-size: 100% 2px;
+  background-position: 0 100%
 }
 
 .bg-banner1,

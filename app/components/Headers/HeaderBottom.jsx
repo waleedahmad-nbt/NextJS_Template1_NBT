@@ -9,22 +9,22 @@ const HeaderBottom = () => {
                 <div className="">
                     <div className="flex justify-evenly ">
                         <div className="flex gap-20 font-bold text-white">
-                            <DropdownButton className=" underline-hover-left-to-right cursor-pointer" />
-                            <HomeSection className=" underline-hover-left-to-right cursor-pointer" />
+                            <DropdownButton className=" link-underline  cursor-pointer" />
+                            <HomeSection className="link-underline  cursor-pointer" />
                             <Link href="/pages/Shop">
-                                <p className="underline-hover-left-to-right cursor-pointer text-sm">SHOP</p>
+                                <p className="link-underline  cursor-pointer text-sm">SHOP</p>
                             </Link>
                             <Link href="/pages/Cart">
-                                <p className="underline-hover-left-to-right cursor-pointer text-sm">CART</p>
+                                <p className="link-underline  cursor-pointer text-sm">CART</p>
                             </Link>
                             <Link href="/pages/CheckOut">
-                                <p className="underline-hover-left-to-right cursor-pointer text-sm">CHECKOUT</p>
+                                <p className="link-underline  cursor-pointer text-sm">CHECKOUT</p>
                             </Link>
                             <Link href="/pages/Account">
-                                <p className="underline-hover-left-to-right cursor-pointer text-sm">MY ACCOUNT</p>
+                                <p className="link-underline  cursor-pointer text-sm">MY ACCOUNT</p>
                             </Link>
                             <Link href="/pages/Blog">
-                                <p className="underline-hover-left-to-right cursor-pointer text-sm">BLOG</p>
+                                <p className="link-underline  cursor-pointer text-sm">BLOG</p>
                             </Link>
                         </div>
                     </div>

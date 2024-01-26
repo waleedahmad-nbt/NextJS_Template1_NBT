@@ -7,10 +7,10 @@ const BreadCrumbs = ({ breadCrumbs }) => {
     <>
       <section className="py-5 sm:py-7">
         <div className="container max-w-screen-xl mx-auto px-4">
-          <ol className="inline-flex flex-wrap text-black space-x-1 md:space-x-3 items-center">
+          <ol className="inline-flex flex-wrap text-black text-md space-x-1 md:space-x-3 items-center">
             {breadCrumbs?.map((breadCrumb, index) => (
               <li className="inline-flex items-center">
-                <Link href={breadCrumb.url} className="text-black">
+                <Link href={breadCrumb.url} className="text-black capitalize lowercase">
                   {breadCrumb.name}
                 </Link>
                 {breadCrumbs?.length - 1 !== index && (

@@ -36,12 +36,16 @@ const DetailsModal = ({ modalOpen, closeModal }) => {
 
   const counter = useSelector((state) => {
     const selectedProductId = selectedProduct?.id;
-    return (
-      state.cart.items.find((item) => item.id === selectedProductId)
-        ?.quantity || 0
-    );
+  
+    if (selectedProductId) {
+      return (
+        state.cart.items.find((item) => item.id === selectedProductId)?.quantity || 0
+      );
+    }
+  
+    return 0;
   });
-
+  
   const handleIncrement = () => {
     dispatch(increment({ itemId: selectedProduct.id }));
   };
@@ -50,8 +54,12 @@ const DetailsModal = ({ modalOpen, closeModal }) => {
     dispatch(decrement({ itemId: selectedProduct.id }));
   };
 
-  const handleAddToCart = () => {
-    dispatch(addToCart(selectedProduct));
+  
+  const handleAddToCart = (product) => {
+    const isInCart = counter > 0;
+    if (!isInCart) {
+      dispatch(addToCart(product));
+    }
   };
 
   const handleAddToFavorites = (product) => {

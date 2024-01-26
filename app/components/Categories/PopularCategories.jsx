@@ -33,12 +33,13 @@ const PopularCategories = () => {
   return (
     <div className="xl:container xl:mx-auto">
       <div className="mt-20 mx-4 md:mx-12">
-        <div className="flex flex-col md:flex-row border-b justify-between">
+        <div className="flex flex-col md:flex-row border-b justify-between items-center">
           <h1 className="text-4xl leading-10 font-bold">Popular categories</h1>
-          <p className="text-lg underline cursor-pointer">
+          <p className="text-lg link-underline-s cursor-pointer">
             View all Categories
           </p>
         </div>
+        <div className="border-b"></div>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 xl:grid-cols-6 gap-4 mt-6 mx-4 md:mx-10">
         {slides.map((slide) => (

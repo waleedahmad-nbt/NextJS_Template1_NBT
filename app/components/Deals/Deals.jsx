@@ -82,12 +82,13 @@ const Deals = () => {
     <>
       <div className="xl:container xl:mx-auto">
         <div className="mt-20 mx-5 md:mx-20">
-          <div className="flex flex-col md:flex-row gap-2 justify-between border-b">
+          <div className="flex flex-col md:flex-row gap-2 justify-between items-center">
             <h1 className="text-2xl md:text-4xl font-bold">
               Today’s Best Deals
             </h1>
-            <p className="text-md mr-7 underline cursor-pointer">View All</p>
+            <p className="text-md mr-7 cursor-pointer link-underline-s">View All</p>
           </div>
+          <div className="border-b"></div>
         </div>
 
         <div className="flex lg:flex-row flex-col  mt-3 mx-2 md:mx-10">
