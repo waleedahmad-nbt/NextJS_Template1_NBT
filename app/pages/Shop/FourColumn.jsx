@@ -78,7 +78,6 @@ const FourColumn = ({
     toggleCompareModal();
   };
 
-
   const handleProductClick = (product) => {
     dispatch(setProductDetails(product));
     router.push(`/pages/Details?${product.title}`);

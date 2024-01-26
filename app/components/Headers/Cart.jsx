@@ -50,7 +50,7 @@ const Cart = ({ onClose }) => {
   const handleBackdropClick = (e) => {
     if (cartRef.current && !cartRef.current.contains(e.target)) {
       setIsOpen(false);
-      onClose(); // Notify the parent component that the cart is closed
+      onClose();
     }
   };
 
@@ -76,7 +76,7 @@ const Cart = ({ onClose }) => {
     const handleBackdropClick = (e) => {
       if (cartRef.current && !cartRef.current.contains(e.target)) {
         setIsOpen(false);
-        onClose(); // Notify the parent component that the cart is closed
+        onClose();
       }
     };
 

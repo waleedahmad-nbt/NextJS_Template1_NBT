@@ -35,7 +35,7 @@ const Details = () => {
   const [selectedThumbnailIndex, setSelectedThumbnailIndex] = useState(0);
 
   const selectedProduct = useSelector((state) => state.cart.selectedProduct);
-  
+
   const counter = useSelector((state) => {
     const selectedProductId = selectedProduct?.id;
     return (
@@ -52,8 +52,11 @@ const Details = () => {
     dispatch(decrement({ itemId: selectedProduct.id }));
   };
 
-  const handleAddToCart = () => {
-    dispatch(addToCart(selectedProduct));
+  const handleAddToCart = (product) => {
+    const isInCart = counter > 0;
+    if (!isInCart) {
+      dispatch(addToCart(product));
+    }
   };
 
   const handleAddToFavorites = (product) => {
@@ -254,7 +257,7 @@ const Details = () => {
                   <button
                     onClick={() => handleAddToCart(selectedProduct)}
                     className="w-full text-md text-black font-semibold h-12 mt-3 bg-[#F1F1F1] rounded-full hover:bg-black
-                                    hover:text-white duration-500 transform hover:scale-110 lg:mr-3"
+                    hover:text-white duration-500 transform hover:scale-110 lg:mr-3"
                   >
                     Add To Cart
                   </button>
@@ -262,7 +265,7 @@ const Details = () => {
                 <Link href="/pages/CheckOut">
                   <button
                     className="w-full text-lg mt-3 text-white font-semibold h-12  bg-black rounded-full
-                                duration-500 transform hover:scale-105"
+                    duration-500 transform hover:scale-105"
                   >
                     Buy Now
                   </button>

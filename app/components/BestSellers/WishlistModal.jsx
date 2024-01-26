@@ -23,7 +23,6 @@ const WishlistModal = ({ modalOpen, closeModal, products }) => {
         }
     };
 
-
     return (
         <>
             {modalOpen && (
@@ -34,7 +33,7 @@ const WishlistModal = ({ modalOpen, closeModal, products }) => {
                     className="fixed inset-0 z-50 flex items-center justify-center  bg-black bg-opacity-50"
                 >
                     <div ref={modalref}
-                        className="relative z-40 p-4 w-full md:w-[530px]"
+                        className="relative z-40 p-4 w-full md:w-[580px]"
                         onClick={(event) => event.stopPropagation()} >
                         {/* Modal content */}
                         <div className="relative bg-white shadow">
@@ -82,15 +81,15 @@ const WishlistModal = ({ modalOpen, closeModal, products }) => {
                                                         <p onClick={() => handleRemoveFromFavorites(item)} className='text-md hover:text-red-500 cursor-pointer'>X</p>
                                                         <img src={imageSrc} className='w-[80px] h-[80px]' alt="" />
                                                         <div className='flex flex-col'>
-                                                            <p className='text-sm font-medium'>{title}</p>
-                                                            <p className='text-[#32BDE8] text-sm'>{originalPrice}</p>
-                                                            <p className='text-xs font-semibold'>December 18, 2023</p>
+                                                            <p className='text-base leading-7 cursor-pointer hover:text-gray-500 ease-in-out duration-300 font-medium'>{title}</p>
+                                                            <p className='text-[#32BDE8] text-sm'>${originalPrice}</p>
+                                                            <p className='text-ssm font-medium'>December 18, 2023</p>
 
                                                         </div>
                                                         <button
                                                             type="submit"
-                                                            className="w-full py-2 hover:scale-105 duration-300 focus:ring-4 focus:outline-none
-                                                    bg-black text-white font-medium rounded-full text-lg text-center ml-auto"
+                                                            className="w-full text-sm py-2 hover:scale-105 duration-300 focus:ring-4 focus:outline-none
+                                                    bg-black text-white font-medium rounded-full text-center ml-auto"
                                                         >
                                                             <span className="hidden md:inline">Select Options</span>
                                                             <span className="md:hidden">Select</span>

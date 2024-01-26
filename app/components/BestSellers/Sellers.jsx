@@ -41,13 +41,8 @@ const Sellers = () => {
 
   const handleToggleWishlist = (event, product) => {
     event.stopPropagation();
-    const isFavorite = favorites.some((item) => item.id === product.id);
-
-    if (isFavorite) {
-      toggleWishlistModal();
-    } else {
-      handleAddToFavorites(product);
-    }
+    toggleWishlistModal();
+    handleAddToFavorites(product);
   };
 
   const toggleDetailsModal = () => {
@@ -175,9 +170,12 @@ const Sellers = () => {
                         animation="scale"
                         arrow={true}
                       >
-                        <div  onClick={(event) =>
+                        <div
+                          onClick={(event) =>
                             handleCompareModal(event, product)
-                          } className="p-3 bg-white rounded-full text-black hover:text-white hover:bg-black duration-300 ease-in-out text-xl">
+                          }
+                          className="p-3 bg-white rounded-full text-black hover:text-white hover:bg-black duration-300 ease-in-out text-xl"
+                        >
                           <FaArrowRightArrowLeft />
                         </div>
                       </Tooltip>

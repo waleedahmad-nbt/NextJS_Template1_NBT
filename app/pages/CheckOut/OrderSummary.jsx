@@ -4,9 +4,9 @@ import { GoPencil } from 'react-icons/go';
 import { LiaShippingFastSolid } from 'react-icons/lia';
 import { RiCouponLine } from 'react-icons/ri';
 import { useSelector } from 'react-redux';
-import SellerNote from './SellerNote';
-import Shipping from './Shipping';
-import Coupen from './Coupen';
+import SellerNote from '../../components/checkoutModal/SellerNote';
+import Shipping from '../../components/checkoutModal/Shipping';
+import Coupen from '../../components/checkoutModal/Coupen';
 
 const OrderSummary = () => {
     const [selectedShippingOption, setSelectedShippingOption] = useState('free');

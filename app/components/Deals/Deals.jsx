@@ -1,11 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 import { IoMdStar } from "react-icons/io";
 import DealSlider from "./DealSlider";
 import { setProductDetails } from "@/app/lib/redux/slices/cartSlice";
 import { useDispatch } from "react-redux";
 import { getThumbnails } from "@/app/data";
+import initAOS from "@/utils/aos";
 
 const Deals = () => {
   const [selectedThumbnailIndex, setSelectedThumbnailIndex] = useState(0);
@@ -71,6 +72,11 @@ const Deals = () => {
       }
     }
   };
+
+  
+  useEffect(() => {
+    initAOS();
+  }, []);
 
   return (
     <>

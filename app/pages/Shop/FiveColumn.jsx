@@ -7,11 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Tooltip } from "react-tippy";
 import "react-tippy/dist/tippy.css";
 import { FaArrowRightArrowLeft, FaRegEye } from "react-icons/fa6";
-import { IoBagOutline } from "react-icons/io5";
 import WishlistModal from "./WishlistModal";
 import { useRouter } from "next/navigation";
 import {
-  addToCart,
   addToFavorites,
   setProductDetails,
 } from "@/app/lib/redux/slices/cartSlice";
@@ -34,6 +32,7 @@ const FiveColumn = ({
   const [DetailsModalOpen, setDetailsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [CompareModalOpen, setCompareModalOpen] = useState(false);
+  
   const dispatch = useDispatch();
   const router = useRouter();
 

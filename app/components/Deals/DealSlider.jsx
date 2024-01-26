@@ -63,24 +63,7 @@ const DealSlider = () => {
             originalPrice: '$139.00',
             discountedPrice: '$129.00',
         },
-        {
-            id: 7,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_26_3-655x655.jpg',
-            category: 'Bluetooth Speakers',
-            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
-            rating: 5,
-            originalPrice: '$139.00',
-            discountedPrice: '$129.00',
-        },
-        {
-            id: 8,
-            imageUrl: 'https://minimog-4437.kxcdn.com/supergear/wp-content/uploads/sites/2/2022/02/product_gear_26_3-655x655.jpg',
-            category: 'Bluetooth Speakers',
-            title: 'Klipsch R-120SW Powerful Detailed Home Speaker – Unit',
-            rating: 5,
-            originalPrice: '$139.00',
-            discountedPrice: '$129.00',
-        },
+      
 
     ];
     return (

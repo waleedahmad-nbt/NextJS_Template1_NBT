@@ -6,7 +6,7 @@ import {
   increment,
   setProductDetails,
 } from "@/app/lib/redux/slices/cartSlice";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { useDispatch, useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -24,6 +24,7 @@ import { TbTruckDelivery } from "react-icons/tb";
 import Link from "next/link";
 import { GoInbox } from "react-icons/go";
 import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
+import initAOS from "@/utils/aos";
 
 const DetailsModal = ({ modalOpen, closeModal }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -82,7 +83,11 @@ const DetailsModal = ({ modalOpen, closeModal }) => {
       swiperRef.current.swiper.slidePrev();
     }
   };
-  
+
+  useEffect(() => {
+    initAOS();
+  }, []);
+
   return (
     <>
       {modalOpen && (
@@ -121,14 +126,20 @@ const DetailsModal = ({ modalOpen, closeModal }) => {
                         {isHovered && (
                           <>
                             <button
+                              data-aos="fade-right"
+                              data-aos-duration="500"
+                              data-aos-easing="ease-in-sine"
                               onClick={handlePrevSlide}
-                              className="text-black z-50 transition-opacity duration-500 absolute p-2 flex text-center justify-center h-[45px] w-[45px] top-1/2 left-3 transform -translate-y-1/2 text-2xl hover:bg-black hover:text-white bg-[#F2F2F2] rounded-full"
+                              className="text-black z-50 transition-opacity duration-500  ease-in-out absolute p-2 flex text-center justify-center h-[45px] w-[45px] top-1/3 left-20 transform -translate-y-1/2 text-2xl hover:bg-black hover:text-white bg-[#F2F2F2] rounded-full"
                             >
                               <GrFormPreviousLink />
                             </button>
                             <button
+                             data-aos="fade-left"
+                             data-aos-duration="500"
+                             data-aos-easing="ease-in-sine"
                               onClick={handleNextSlide}
-                              className="transition-opacity z-50 ml-7 duration-500 absolute p-2 flex text-center justify-center h-[45px] w-[45px] top-1/2 right-4 transform -translate-y-1/2 text-black text-2xl hover:bg-black hover:text-white bg-[#F2F2F2] rounded-full"
+                              className="transition-opacity z-50 ml-7 duration-500 absolute p-2 flex text-center justify-center h-[45px] w-[45px] top-1/3 right-20  ease-in-out transform -translate-y-1/2 text-black text-2xl hover:bg-black hover:text-white bg-[#F2F2F2] rounded-full"
                             >
                               <GrFormNextLink />
                             </button>

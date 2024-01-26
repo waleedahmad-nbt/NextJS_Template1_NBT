@@ -15,11 +15,17 @@ import {
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import BreadcrumbsCart from "./BreadcrumbsCart";
+import SellerNote from "@/app/components/checkoutModal/SellerNote";
+import Shipping from "@/app/components/checkoutModal/Shipping";
+import Coupen from "@/app/components/checkoutModal/Coupen";
 
 const Page = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const [selectedShippingOption, setSelectedShippingOption] = useState("free");
+  const [isNoteModalOpen, setIsNoteModalOpen] = useState(false);
+  const [isShippingModalOpen, setIsopenShippingModal] = useState(false);
+  const [isCoupenModalOpen, setIsopenCoupenModal] = useState(false);
 
   const CartItems = useSelector((state) => state.cart.items);
   const cartQuantity = CartItems ? CartItems.length : 0;
@@ -52,9 +58,29 @@ const Page = () => {
     router.push(`/pages/Details?id=${item.id}`);
   };
 
+  const openNoteModal = () => {
+    setIsNoteModalOpen(true);
+  };
+  const openShippingModal = () => {
+    setIsopenShippingModal(true);
+  };
+  const openCoupenModal = () => {
+    setIsopenCoupenModal(true);
+  };
+
+  const closeNoteModal = () => {
+    setIsNoteModalOpen(false);
+  };
+  const closeShippingModal = () => {
+    setIsopenShippingModal(false);
+  };
+  const closeCoupenModal = () => {
+    setIsopenCoupenModal(false);
+  };
+
   return (
     <>
-    <BreadcrumbsCart/>
+      <BreadcrumbsCart />
       <div className="xl:container xl:mx-auto">
         {cartQuantity === 0 ? (
           <EmptyCart />
@@ -106,16 +132,16 @@ const Page = () => {
                           onClick={() => handleProductClick(item)}
                           className="flex flex-col mt-5 gap-1"
                         >
-                          <p className="text-md font-semibold hover:text-gray-500">
+                          <p className="text-lg font-bold hover:text-gray-500">
                             {title}
                           </p>
-                          <p className="text-base font-medium">
+                          <p className="text-sm ">
                             Color: Sage Green
                           </p>
-                          <p>Size: GTS 2 Mini</p>
+                          <p className="text-sm ">Size: GTS 2 Mini</p>
                           <p
                             onClick={() => handleRemoveFromCart(item)}
-                            className="md:mt-3 mt-1 text-gray-800 hover:text-gray-500 cursor-pointer"
+                            className="md:mt-3 mt-1 text-sm font-semibold hover:text-gray-500 cursor-pointer"
                           >
                             Remove
                           </p>
@@ -159,15 +185,15 @@ const Page = () => {
 
             <div className="w-full md:w-[400px] h-[350px] bg-[#FFFFFF] shadow-2xl flex flex-col ml-auto p-9 z-50 m-14 rounded-md">
               <div className="flex flex-row gap-2 h-[60px] border-b mx-auto">
-                <div className="flex flex-col w-[70px] sm:w-[100px] items-center border-r mb-2">
+                <div onClick={openNoteModal} className="flex flex-col w-[70px] sm:w-[100px] items-center border-r mb-2">
                   <GoPencil className="text-2xl" />
                   <p>Note</p>
                 </div>
-                <div className="flex flex-col w-[70px] sm:w-[100px] items-center border-r mb-2">
+                <div onClick={openShippingModal} className="flex flex-col w-[70px] sm:w-[100px] items-center border-r mb-2">
                   <LiaShippingFastSolid className="text-2xl" />
                   <p>Shipping</p>
                 </div>
-                <div className="flex flex-col w-[70px] sm:w-[100px] items-center mb-2">
+                <div onClick={openCoupenModal}  className="flex flex-col w-[70px] sm:w-[100px] items-center mb-2">
                   <RiCouponLine className="text-2xl" />
                   <p className="text-lg">Coupon</p>
                 </div>
@@ -222,6 +248,10 @@ const Page = () => {
           </>
         )}
       </div>
+
+      {isNoteModalOpen && <SellerNote onClose={closeNoteModal} />}
+      {isShippingModalOpen && <Shipping onClose={closeShippingModal} />}
+      {isCoupenModalOpen && <Coupen onClose={closeCoupenModal} />}
     </>
   );
 };

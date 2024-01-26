@@ -20,14 +20,15 @@ const ForgotPassword = ({ onClose }) => {
 
   return (
     <>
-        <main
-          id="content"
-          role="main"
-          className="fixed inset-0 z-50 flex items-center justify-center relative"
-        >
+      <main
+        id="content"
+        role="main"
+        className="fixed inset-0 z-50 flex items-center justify-center"
+      >
+        <div className="relative">
           <RxCross2
             onClick={handleCloseModal}
-            className="absolute mb-[340px] ml-[490px] shadow-xl  duration-500 ease-in-out hover:bg-black hover:text-white z-50 cursor-pointer w-10 h-10 font-light rounded-full p-2 text-lg text-black bg-white"
+            className="absolute top-3 -right-4 shadow-xl  duration-500 ease-in-out hover:bg-black hover:text-white z-50 cursor-pointer w-10 h-10 font-light rounded-full p-2 text-lg text-black bg-white"
           />
           <div className="mt-7 bg-white w-[500px] h-[363px] rounded-lg shadow-lg">
             <div className="p-4 sm:p-7">
@@ -82,7 +83,8 @@ const ForgotPassword = ({ onClose }) => {
               </div>
             </div>
           </div>
-        </main>
+        </div>
+      </main>
     </>
   );
 };

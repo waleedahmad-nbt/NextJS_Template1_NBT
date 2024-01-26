@@ -78,13 +78,13 @@ const SignupModal = ({ onClose }) => {
 
   return (
     <>
-      <div className="relative">
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
-          <RxCross2
-            onClick={handleCloseModal}
-            className="absolute mb-[500px] ml-[490px] shadow-xl duration-500 ease-in-out hover:bg-black hover:text-white z-50 cursor-pointer w-10 h-10  rounded-full p-2 text-lg text-black bg-white"
-          />
+      <div className="fixed inset-0 z-50 flex items-center justify-center ">
+        <div className="relative">
           <div className="bg-white p-6 mt-10 rounded-md ">
+            <RxCross2
+              onClick={handleCloseModal}
+              className="absolute top-3 -right-5 shadow-xl duration-500 ease-in-out hover:bg-black hover:text-white z-50 cursor-pointer w-10 h-10  rounded-full p-2 text-lg text-black bg-white"
+            />
             <h3 className="text-4xl font-semibold mb-4 mt-6 text-gray-900  text-center">
               Sign Up
             </h3>

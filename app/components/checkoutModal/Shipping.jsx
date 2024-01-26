@@ -169,7 +169,7 @@ const Shipping = ({ onClose }) => {
             <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
                 <div className='relative'>
                     <RxCross2
-                        className="absolute shadow-md mb-[400px] ml-[410px] duration-500 ease-in-out hover:bg-black hover:text-white z-50 cursor-pointer w-10 h-10 font-light rounded-full p-2 text-lg text-black bg-white"
+                        className="absolute shadow-xl -top-2 -right-4 duration-500 ease-in-out hover:bg-black hover:text-white z-50 cursor-pointer w-10 h-10 font-light rounded-full p-2 text-lg text-black bg-white"
                         onClick={onClose}
                     />
                     <div className="bg-white mt-2 pt-8 rounded-md w-full">

@@ -11,7 +11,6 @@ import Link from "next/link";
 import WishlistModal from "./WishlistModal";
 import { useRouter } from "next/navigation";
 import {
-  addToCart,
   addToFavorites,
   setProductDetails,
 } from "@/app/lib/redux/slices/cartSlice";
